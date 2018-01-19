@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-	public float movementSpeed = 200f;
-	public float maxVelocity = 1f;
-
+	public float movementSpeed = 20f;
 
 	private Rigidbody2D rigBod;
 	private float horizontalInput;
@@ -29,12 +27,7 @@ public class PlayerMovement : MonoBehaviour {
 	//FixedUpdate will handle the response from the user input
 	void FixedUpdate(){
 		//Response for horizontal movement
-		if (horizontalInput != 0) {
-			//Apply a basic force to the object
-			rigBod.AddForce (new Vector2 (horizontalInput * movementSpeed, 0));
-			//We clamp the velocity so the charecter does not inifintly move faster.
-			rigBod.velocity = Vector2.ClampMagnitude(rigBod.velocity, maxVelocity);
-		}
+		rigBod.velocity = new Vector2(horizontalInput * movementSpeed, rigBod.velocity.y);
 
 	}
 
