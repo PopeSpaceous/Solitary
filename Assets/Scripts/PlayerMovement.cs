@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	//For Jumping
 	public bool isGrounded = false;
-	public float jumpForce = 700f; 
+	public float jumpForce; 
 	public Transform groundCheck;
 	public LayerMask whatsGround;
 
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour {
 		//Response for jumping key input
 		//This checks for jump input, and both if the player is not already jumping, and if he is on the ground.
 		if(!isJumping && isGrounded && jumpInput ){
-			rigBod.AddForce (new Vector2(0, jumpForce)); //Jump height is affected by foce and mass from the Rigidbody 
+			rigBod.AddForce (new Vector2(0, jumpForce)); //Jump height is affected by added foce, mass, and gravity scale from Rigidbody 
 			isJumping = true;
 		}
 		/* Jumping animation flag, Place Here. Note: isGrounded and isJumping are both used to determind if the player is jumping  */	
