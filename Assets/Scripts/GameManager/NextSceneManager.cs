@@ -38,4 +38,9 @@ public class NextSceneManager : MonoBehaviour {
 
 		}
 	}
+
+	public void UnloadPuzzleScene(string sceneName){
+		SceneManager.UnloadSceneAsync (sceneName);
+	}
+
 }

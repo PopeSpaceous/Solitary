@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PuzzleCamera : MonoBehaviour {
-
-	//Player Camera
-	private Player playerCam;
+public class PuzzleTemplateScript: MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -16,4 +13,6 @@ public class PuzzleCamera : MonoBehaviour {
 	void Update () {
 		
 	}
+		
+
 }

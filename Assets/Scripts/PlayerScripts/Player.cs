@@ -8,12 +8,9 @@ public class Player : MonoBehaviour {
 	void Awake () {
 		
 		//Set the instance only once.
-		if (instance == null) {
-			
+		if (instance == null) {			
 			instance = this;
-			Debug.Log ("added player instance");
 		} else if (instance != this) {
-			Debug.Log ("Removed player instance");
 			//Enforces that there will always be one instance of a gameObject. This is for type errors prevention
 			Destroy (gameObject);
 		}
