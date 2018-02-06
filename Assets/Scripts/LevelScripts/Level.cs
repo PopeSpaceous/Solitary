@@ -18,6 +18,7 @@ public class Level : MonoBehaviour {
 		//set the player spawn in the level
 		gm.SetPlayerLocation(PlayerSpawn);
 	}
-	
+
+	//TODO: complete level class
 
 }

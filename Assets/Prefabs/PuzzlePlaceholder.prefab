@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33762603354462776}
   - component: {fileID: 23492396079515164}
   - component: {fileID: 58688576654436868}
-  - component: {fileID: 114459185004044014}
+  - component: {fileID: 114181388788934094}
   m_Layer: 9
   m_Name: PuzzlePlaceholder
   m_TagString: Untagged
@@ -99,7 +99,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
---- !u!114 &114459185004044014
+--- !u!114 &114181388788934094
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -107,7 +107,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1399621838967556}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1033b7e5354b7ad419ad45d7046664c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d08e8433dc80284d98b343f0708a928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goToPuzzle: Template
+  difficulty: 1
+  door: {fileID: 0}
+  puzzleGoTo: 

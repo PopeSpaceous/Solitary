@@ -7,8 +7,6 @@ public class PlayerMovement : MonoBehaviour {
 	//For Walking
 	public float movementSpeed;
 
-	private float horizontalInput;
-
 	//For Jumping
 	public float jumpForce; 
 	public Transform groundCheck;
@@ -18,7 +16,6 @@ public class PlayerMovement : MonoBehaviour {
 	public bool isJumping = false;
 	public bool isGrounded = false;
 
-	private bool jumpInput;
 	private float currentJumpAmmount = 0; 	// currentJumpAmmount is the current ammount left while the character is jumping
 	private float groundRadius = 0.4f; // TODO: value needs to be adjusted for our spirte's feet in order to get an accrute edge to edge ground detection.
 
@@ -27,17 +24,6 @@ public class PlayerMovement : MonoBehaviour {
 	void Awake () {
 		//Gets the reference of the attached Rigidbody2D componment from the object
 		rigBod = GetComponent<Rigidbody2D>();
-	}
-
-
-	// This Update function will be use to check user Input
-	void Update () {
-		//Checks if the user pressed 'a' or 'b' keys based on InputManager
-		horizontalInput = Input.GetAxis ("Horizontal");
-
-		//Checks if the user pressed the Jumping Key based on InputManager
-		jumpInput = Input.GetButton("Jump");
-
 	}
 
 	//FixedUpdate will handle the response from the user input
@@ -63,7 +49,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		//Response for jumping. If the user is pressing the jump buttion and there is an ammount for a jump, the actual jump will trigger.
-		if (jumpInput && currentJumpAmmount > 0) {
+		if (Player.instance.jumpInput && currentJumpAmmount > 0) {
 			rigBod.velocity = new Vector2(rigBod.velocity.x, jumpForce); // Add a bit of y velocity 
 			isJumping = true;
 			currentJumpAmmount -= decreaseAmmountBy;
@@ -76,7 +62,7 @@ public class PlayerMovement : MonoBehaviour {
 		/* Jumping animation flag, Place Here.*/	
 
 		//Response for horizontal movement
-		rigBod.velocity = new Vector2(horizontalInput * movementSpeed, rigBod.velocity.y);
+		rigBod.velocity = new Vector2(Player.instance.horizontalInput * movementSpeed, rigBod.velocity.y);
 
 		/* Walking animation flag, Place Here */
 

@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//This class it used for debugging only for exiting the puzzle
 public class GetoutButtion : MonoBehaviour {
 
 	public Button outButton;
+	private Puzzle puzzle;
 
 	void Start(){
 
 		Button btn = outButton.GetComponent<Button> ();
 		btn.onClick.AddListener (TaskOnClick);
-
+		puzzle = GetComponentInParent<Puzzle> ();
 
 	}
 		
 	void TaskOnClick(){
-		//go thru puzzle first!
-		//Debuging...
-		Debug.Log("Clicked! outta here");
-		NextSceneManager.instance.UnloadPuzzleScene("PuzzleTemplate");
+		puzzle.PuzzleExit ();
 	}
 }

@@ -2,25 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Door : MonoBehaviour {
 
-	//if this door goes to a another level populate this field
 	public string levelName;
+	public bool isDoorlocked = false; 
 
-	private PlayerInteraction playerInter;
 
-	void Start(){
-		playerInter = Player.instance.GetComponent<PlayerInteraction> ();
-	}
-	 
+	//TODO: Complete door locking when a level is finished
+
 	void OnTriggerStay2D(Collider2D col)
 	{
 		//if the player is on the trigger and is pressing the action buttion it will go to next scene
-		//TODO: there needs to be a door lock
-		if(levelName != "" && col.gameObject.name.Equals("Player(Clone)") && playerInter.actionButtion) 
+		if(col.gameObject.name.Equals("Player(Clone)") && Player.instance.actionButtion) 
 		{
 			//Load next scene
 			NextSceneManager.instance.LoadLevelScene (levelName);
 		}
+
 	}
+
+
+
+
 }

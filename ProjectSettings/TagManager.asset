@@ -47,3 +47,6 @@ TagManager:
   - name: Background
     uniqueID: 3550187305
     locked: 0
+  - name: Puzzle
+    uniqueID: 2036922747
+    locked: 0

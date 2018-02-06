@@ -14,4 +14,5 @@ public class Level_Hub : MonoBehaviour {
 		//place player at spawn point
 		gm.SetPlayerLocation (PlayerSpawn);
 	}
+
 }

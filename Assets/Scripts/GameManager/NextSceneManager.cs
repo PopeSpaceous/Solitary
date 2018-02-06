@@ -7,6 +7,10 @@ public class NextSceneManager : MonoBehaviour {
 	
 	public static NextSceneManager instance = null;
 
+	//These two vars are for giving information to the current puzzle scene
+	public int setPuzzledifficulty = 0;
+	public PuzzlePlaceholder placeholder;
+
 	void Awake () {
 
 		//Set the instance only once.

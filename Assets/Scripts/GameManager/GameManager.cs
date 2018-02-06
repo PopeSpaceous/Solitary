@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
-		//Makes the gameobject not be unloaded when entering a new scene
+		//Makes this gameobject not be unloaded when entering a new scene
 		DontDestroyOnLoad (this);
 
 		player = Player.instance;
@@ -29,5 +29,8 @@ public class GameManager : MonoBehaviour {
 	public void SetPlayerLocation(Transform sp){
 		player.transform.position = sp.position;
 	}
+
+
+	//TODO: complete GameManager class
 
 }
