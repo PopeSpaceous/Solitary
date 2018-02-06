@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 1300374351}
   - component: {fileID: 1300374352}
   m_Layer: 0
-  m_Name: Level1
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listOfPuzzles:
-  - WordPasscode
+  - PuzzleTemplate
   placeholders:
   - {fileID: 182498808}
   - {fileID: 1920299113}
