@@ -19,7 +19,7 @@ public class NextSceneManager : MonoBehaviour {
 		} else if (instance != this) {
 			//Enforces that there will always be one instance of a gameObject. This is for type errors prevention
 			Destroy (gameObject);
-			Debug.Log ("Ran");
+			Debug.LogWarning ("Another instance of NextSceneManager have been created and destoryed!");
 		}
 
 	}

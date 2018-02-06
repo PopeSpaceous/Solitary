@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+/* This will be the base class of all specific puzzle class */
 public abstract class Puzzle : MonoBehaviour {
 	[HideInInspector]
 	public bool isPuzzleComplete = false; // maybe keep
@@ -16,11 +18,11 @@ public abstract class Puzzle : MonoBehaviour {
 	//update the number of Puzzle completed and what difficulty and unload the scene
 	public void PuzzleComplete(){
 		isPuzzleComplete = true;
-		//unLock the player's movement
+		//unLock's the player's movement
 		Player.instance.canPlayerMove = true;
 
 
-		/*Level function call code here */
+		/*TODO: Level function call code here */
 
 
 		if(placeholder.door != null){
@@ -33,7 +35,7 @@ public abstract class Puzzle : MonoBehaviour {
 	} 
 
 	public void PuzzleExit(){
-		//unLock the player's movement
+		//unLock's the player's movement
 		Player.instance.canPlayerMove = true;
 		//Unload the puzzle scene
 		NextSceneManager.instance.UnloadPuzzleScene (puzzleName);

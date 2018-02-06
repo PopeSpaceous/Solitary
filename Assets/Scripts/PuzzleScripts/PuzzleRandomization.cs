@@ -5,14 +5,12 @@ public class PuzzleRandomization : MonoBehaviour {
 
 	//These will a list of the puzzle scene names
 	public string[] listOfPuzzles; // Testing Note: populate this array in the inspecter, and just add one if u wanna test your own
-	public PuzzlePlaceholder[] placeholders;
+	public PuzzlePlaceholder[] placeholders; // Note: make sure you add a placeholders in the inspecter as well
 
-	// Use this for initialization
+
 	void Start () {
 		DebugPlacePuzzles ();
 	}
-
-
 
 	//TODO: Complete PuzzleRandomization
 

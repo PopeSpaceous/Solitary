@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+/* PuzzlePlaceholder */
 public class PuzzlePlaceholder : MonoBehaviour {
 
-	public int difficulty = 1;
+	//difficultyNeed will be used to influence the PuzzlerRanomization difficulty selection. 
+	//PuzzlerRanomization will ultimately decide on the puzzle's difficulty
+	//For Debugging use, difficultyNeed will be the actual difficulty for the puzzle.
+	public int difficultyNeed = 1; 
+
 	public Level_Door door = null;
 
 	[HideInInspector]
@@ -20,7 +26,7 @@ public class PuzzlePlaceholder : MonoBehaviour {
 
 			//Place the difficulty values in a NextSceneManager var. So when the loaded puzzle scene
 			//is loaded in its Awake() function it will get the NextSceneManager var and set that difficulity 
-			NextSceneManager.instance.setPuzzledifficulty = difficulty;
+			NextSceneManager.instance.setPuzzledifficulty = difficultyNeed;
 			//pass this current placeholder instance for actions changes when the puzzle is complete
 			NextSceneManager.instance.placeholder = this;
 

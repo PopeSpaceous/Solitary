@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
-This class will set the puzzle camera the same size and current position of the main camera
-when the player first triggers the puzzleplaceholder
+ *This class will set the puzzle camera the same size and current position of the main camera 
+ *when the player first triggers the puzzleplaceholder.
 */
 public class PuzzleCamera : MonoBehaviour {
 
@@ -12,7 +12,7 @@ public class PuzzleCamera : MonoBehaviour {
 	private Camera playerCam;
 	//Puzzle Camera
 	private Camera puzzleCam;
-	//gameObject of the parent puzzle
+	//gameObject pf Puzzle Canvas
 	private GameObject puzzle;
 
 	// Use this for initialization

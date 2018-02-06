@@ -4,15 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-//This class it used for debugging only for exiting the puzzle
-public class GetoutButtion : MonoBehaviour {
+/*
+ * This class it used for debugging only for exiting the puzzle 
+ * This could be kept if the player want to just exit the puzzle 
+*/
+public class ExitButton : MonoBehaviour {
 
-	public Button outButton;
+	public Button exitButton;
 	private Puzzle puzzle;
 
 	void Start(){
 
-		Button btn = outButton.GetComponent<Button> ();
+		Button btn = exitButton.GetComponent<Button> ();
 		btn.onClick.AddListener (TaskOnClick);
 		puzzle = GetComponentInParent<Puzzle> ();
 

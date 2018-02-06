@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PuzzleTemplate: Puzzle {
+public class Anagram: Puzzle {
 
 	// Sets the parent fields
 	void Awake () {
-		puzzleName = "PuzzleTemplate";
+		puzzleName = "Anagram";
 		difficulty = NextSceneManager.instance.setPuzzledifficulty;
 		placeholder = NextSceneManager.instance.placeholder;
 		Debug.Log ("Difficulty for puzzle " + puzzleName + " is: "+ this.difficulty);
