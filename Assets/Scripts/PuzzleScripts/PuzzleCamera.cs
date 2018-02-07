@@ -19,7 +19,7 @@ public class PuzzleCamera : MonoBehaviour {
 	void Start () {
 		playerCam = Player.instance.GetComponentInChildren<Camera> ();
 		puzzleCam = GetComponent<Camera> ();
-		puzzle = GameObject.Find ("Puzzle Canvas");
+		puzzle = GameObject.Find ("HackingTool");
 		setPuzzleCamera ();
 	}
 

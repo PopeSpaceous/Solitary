@@ -282,7 +282,7 @@ MonoBehaviour:
   groundCheck: {fileID: 4317798442309590}
   whatsGround:
     serializedVersion: 2
-    m_Bits: 4294966495
+    m_Bits: 4294959817
   jumpAmmount: 200
   decreaseAmmountBy: 10
   isJumping: 0

@@ -137,12 +137,11 @@ Transform:
   m_GameObject: {fileID: 213360415}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.028169014, y: 0.06666667, z: 1}
   m_Children:
-  - {fileID: 602831966}
   - {fileID: 1963174808}
   - {fileID: 1325039006}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 627101039}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &213360417
@@ -182,7 +181,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 429181603}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -192,7 +191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 487, y: 227}
+  m_AnchoredPosition: {x: 487.0024, y: 226.99953}
   m_SizeDelta: {x: 53.5, y: 43.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429181605
@@ -403,17 +402,42 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71d1beba55225ed49bf96ed7d963180d, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &602831966 stripped
+--- !u!1 &627101038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 627101039}
+  m_Layer: 5
+  m_Name: HackingTool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &627101039
 Transform:
-  m_PrefabParentObject: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1250930817}
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 627101038}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 35.5, y: 15, z: 1}
+  m_Children:
+  - {fileID: 1250930818}
+  - {fileID: 213360416}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1250930817
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 213360416}
+    m_TransformParent: {fileID: 627101039}
     m_Modifications:
     - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
       propertyPath: m_LocalPosition.x
@@ -451,9 +475,22 @@ Prefab:
       propertyPath: m_Name
       value: Hacking Tool Background
       objectReference: {fileID: 0}
+    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1250930818 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1250930817}
 --- !u!1 &1325039003
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,11 +547,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1325039003}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -366, y: -206, z: 0}
+  m_LocalPosition: {x: -366.00003, y: -205.99998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 213360416}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1963174804
 GameObject:
@@ -603,7 +640,7 @@ RectTransform:
   m_Children:
   - {fileID: 429181604}
   m_Father: {fileID: 213360416}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
