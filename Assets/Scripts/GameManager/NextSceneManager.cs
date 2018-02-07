@@ -11,6 +11,8 @@ public class NextSceneManager : MonoBehaviour {
 	public int setPuzzledifficulty = 0;
 	public PuzzlePlaceholder placeholder;
 
+	public bool isPuzzleLoaded = false;
+
 	void Awake () {
 
 		//Set the instance only once.
@@ -35,8 +37,9 @@ public class NextSceneManager : MonoBehaviour {
 		
 	public void LoadPuzzleScene (string sceneName)
 	{
-		if (!SceneManager.GetSceneByName (sceneName).isLoaded) 
+		if (!isPuzzleLoaded) 
 		{
+			isPuzzleLoaded = true;
 			//Load Scene on top of the existing one
 			SceneManager.LoadScene (sceneName, LoadSceneMode.Additive);
 
@@ -44,6 +47,7 @@ public class NextSceneManager : MonoBehaviour {
 	}
 
 	public void UnloadPuzzleScene(string sceneName){
+		isPuzzleLoaded = false;
 		SceneManager.UnloadSceneAsync (sceneName);
 	}
 

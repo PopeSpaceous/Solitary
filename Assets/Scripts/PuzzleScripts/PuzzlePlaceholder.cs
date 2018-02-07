@@ -20,7 +20,7 @@ public class PuzzlePlaceholder : MonoBehaviour {
 
 	void OnTriggerStay2D( Collider2D col)
 	{
-		if(col.gameObject.name.Equals("Player(Clone)") && Player.instance.actionButtion){
+		if(col.gameObject.name.Equals("Player(Clone)") && Player.instance.actionButtion && Player.instance.canPlayerMove){
 			//Lock the player's movement
 			Player.instance.canPlayerMove = false;
 
