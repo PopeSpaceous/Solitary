@@ -14,10 +14,10 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
-  - 
-  - 
+  - Platform
+  - Background
+  - Foreground
+  - Puzzle
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 2347313205
+    locked: 0
+  - name: Background
+    uniqueID: 3550187305
+    locked: 0
+  - name: Puzzle
+    uniqueID: 2036922747
     locked: 0
