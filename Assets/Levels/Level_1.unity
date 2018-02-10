@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listOfPuzzles:
-  - PuzzleTemplate
+  - Tangrams
   placeholders:
   - {fileID: 182498808}
   - {fileID: 1920299113}
