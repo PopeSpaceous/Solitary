@@ -33,7 +33,7 @@ public class WireConnection: Puzzle {
 		Debug.Log ("Difficulty for puzzle " + puzzleName + " is: "+ this.difficulty);
 		#endif
 		//Debuging---
-		difficulty = 2;
+		difficulty = 3;
 		//
 		diffLength = difficulty + 2;
 
@@ -86,18 +86,25 @@ public class WireConnection: Puzzle {
 
 		//setup opening lock
 		realLocks [0].neededSum = wires [0].wireIDLink + realLocks [0].lockIDLink;
-		realLocks [0].lockInfluence = null;
-
+		realLocks [0].lockParents = null;
+		realLocks [0].lockChilds = new List<Lock>();
 		//setup other locks
 		for (int ctr = 1; ctr < diffLength ; ctr++) {
+			//calulate needed sum
 			realLocks [ctr].neededSum = wires [ctr].wireIDLink +
 			realLocks [ctr].lockIDLink +
 			realLocks [ctr - 1].neededSum;
-			realLocks [ctr].lockInfluence = new Lock[1] {realLocks [ctr - 1]};
+			//set lock parent
+			realLocks [ctr].lockParents = new List<Lock>() {realLocks [ctr - 1]};
+			//set lock child
+			realLocks[ctr - 1].lockChilds.Add(realLocks[ctr]);
+			//instat current lock child list
+			realLocks [ctr].lockChilds = new List<Lock> ();
 
 		}
 		//set mask
-		realLocks [UnityEngine.Random.Range(2, diffLength - 2)].isMasker = true;
+		//realLocks [UnityEngine.Random.Range(2, diffLength - 2)].isMasker = true;
+		//realLocks [1].isMasker = true;
 		//suffle locks again
 		Shuffle<Lock> (realLocks);
 		//------------------------------------

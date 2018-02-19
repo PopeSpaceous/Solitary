@@ -40,15 +40,19 @@ public class Wire : MonoBehaviour {
 			wireTrans.localScale = new Vector3 (orignalScale.x ,orignalScale.y, orignalScale.z);
 			wireTrans.rotation = Quaternion.Euler (new Vector3(0 , 0, 0));
 		}
-		else{
-			//if the wire is connected and has not disconnected; snap to the connection block.
+		else {
+			//if the wire is connected and has not been disconnected; snap to the connection block.
 			connection.SnapWire ();
 		}
-		//Debug.Log ("MouseUP");
 	}
-		
-		
-	//Given the position the wire will scale on the x axis and rotate to the position
+	//When the player mouse down on the wire that is already connected this will causes it to disconnect	
+	void OnMouseDown(){
+		if(connection != null){
+			connection.DisconnectWireAffect ();
+		}
+	}
+
+	//Given the position, the wire will scale on the x axis and rotate to that position
 	public void FollowTarget(Vector3 targetPos){
 		
 		//rotation to follow 

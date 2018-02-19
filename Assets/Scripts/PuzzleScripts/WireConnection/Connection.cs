@@ -12,7 +12,7 @@ public class Connection : MonoBehaviour {
 	public int connectedWireID = 0;
 	public Wire connectedWire = null;
 
-	void OnTriggerStay2D(Collider2D col){
+	void OnTriggerEnter2D(Collider2D col){
 		
 		if (col.gameObject.name.Equals ("Wire") && connectedWire == null ) {
 			//get the wire ref
@@ -21,30 +21,26 @@ public class Connection : MonoBehaviour {
 			connectedWireID = connectedWire.wireIDLink;
 			connectedWire.connection = this;
 
-
-			//Debug.Log ("Trigged: " + connectedWire.wireIDLink);
 		}
-
-
 	}
+
 	void OnTriggerExit2D(Collider2D col){
-
 		if (col.gameObject.name.Equals ("Wire")) {
-			Wire colWire = col.GetComponent<Wire> ();
-			if(colWire.wireIDLink == connectedWireID){
+			//get the wire ref
+			connectedWire = col.GetComponent<Wire> ();
 
-				//Debug.Log (" Exit, its a wire: " + connectedWireID);
-				connectedWireID = 0;
+			//if wire has not been already connected to another connecter then leave wire's connection
+			if(connectedWire.connection == this){
 				connectedWire.connection = null;
-				connectedWire = null;
-
-				AffectLock ();
 			}
-
+			connectedWire = null;
 		}
-
 	}
 
+	public void DisconnectWireAffect(){
+		connectedWireID = 0;
+		AffectLock ();
+	}
 	public void SnapWire(){
 		
 		connectedWire.FollowTarget (GetComponent<Transform>().position);

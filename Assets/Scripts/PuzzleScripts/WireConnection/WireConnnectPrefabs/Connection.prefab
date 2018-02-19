@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849256543984806}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.44, y: -0.98, z: 0}
+  m_LocalPosition: {x: -5.6559415, y: -0.46170866, z: 0}
   m_LocalScale: {x: 0.12861803, y: 0.12516949, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,7 +56,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 6.5
+  m_Radius: 5
 --- !u!114 &114822042062752532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   realLock: {fileID: 0}
-  dummyLock: {fileID: 0}
-  ExpectedRealWireID: 0
+  connectedWireID: 0
+  connectedWire: {fileID: 0}
 --- !u!212 &212543491864708518
 SpriteRenderer:
   m_ObjectHideFlags: 1
