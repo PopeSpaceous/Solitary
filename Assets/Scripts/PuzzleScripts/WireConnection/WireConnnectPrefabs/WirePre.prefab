@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4309327593039034}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: WirePre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,8 +38,7 @@ GameObject:
   - component: {fileID: 61809229275713210}
   - component: {fileID: 114397156081028978}
   - component: {fileID: 50375972696106006}
-  - component: {fileID: 58992490334028422}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Wire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +53,7 @@ Transform:
   m_GameObject: {fileID: 1615543359956216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.92, y: 0.55, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.05, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.05, z: -2}
   m_Children:
   - {fileID: 4437389742233308}
   m_Father: {fileID: 0}
@@ -93,21 +92,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!58 &58992490334028422
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1710075763480632}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 5.84, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.88
 --- !u!61 &61809229275713210
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -147,7 +131,7 @@ MonoBehaviour:
   wireIDLink: 0
   connection: {fileID: 0}
   wireTrans: {fileID: 4309327593039034}
-  scaleLimit: 2
+  scaleLimit: 1.4
 --- !u!212 &212778128840004128
 SpriteRenderer:
   m_ObjectHideFlags: 1

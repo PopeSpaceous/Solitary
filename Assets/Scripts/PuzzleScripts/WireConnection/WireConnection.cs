@@ -9,16 +9,20 @@ public class WireConnection: Puzzle {
 	public Transform[] wirePlaceholders;
 	public Transform[] connectionPlaceholders;
 	public Transform[] lockPlaceholders;
+
+	//The puzzle canvus transfrom ref so we can still make the game object as child of Puzzle Canvus gameobject
 	public Transform puzzleCan;
 
+	//Prefabs
 	public GameObject connectionPrefab;
 	public GameObject lockPrefab;
 	public GameObject wirePrefab;
 
-	//TODO: maybe make a collection
-	List<Wire> wires; //Wires are linear
+
+	//These are the list of refs for all locks, connections, and wires.
+	List<Wire> wires; 
 	List<Lock> realLocks; 
-	List<Connection> inputConnections; //connections are linear
+	List<Connection> inputConnections; 
 
 	//The number of wires, connections, and locks there will be;
 	private int diffLength;
@@ -26,14 +30,15 @@ public class WireConnection: Puzzle {
 	// Sets the parent fields
 	void Awake () {
 		puzzleName = "WireConnection";
-		#if No_Debug_Puzzle
+		//#if No_Debug_Puzzle
 		difficulty = NextSceneManager.instance.setPuzzledifficulty;
 		placeholder = NextSceneManager.instance.placeholder;
 
-		Debug.Log ("Difficulty for puzzle " + puzzleName + " is: "+ this.difficulty);
-		#endif
+		//Debug.Log ("Difficulty for puzzle " + puzzleName + " is: "+ this.difficulty);
+		//#endif
+
 		//Debuging---
-		difficulty = 3;
+		//difficulty = 3;
 		//
 		diffLength = difficulty + 2;
 
@@ -47,8 +52,7 @@ public class WireConnection: Puzzle {
 
 
 	void InitPuzzle(){
-
-
+		
 		//SetupWires------------------------------------------------------------
 		for(int ctr = 0; ctr < diffLength; ctr++){
 			//Create Object and place it in the given placeholder
@@ -75,13 +79,13 @@ public class WireConnection: Puzzle {
 			//Add it to our list collection
 			realLocks.Add (r);
 		}
-		//Shuffle the locks
+
+		//Shuffle the locks-------------------
 		Shuffle<Lock> (realLocks);
+		//Shuffle the wires-------------------
 		Shuffle<Wire> (wires);
-		//Maybe shuffle wires
 		//---
 
-		//TODO MAJOR WIP
 		//Setup Lock influences for locks-------------------------------------------------
 
 		//setup opening lock
@@ -90,6 +94,7 @@ public class WireConnection: Puzzle {
 		realLocks [0].lockChilds = new List<Lock>();
 		//setup other locks
 		for (int ctr = 1; ctr < diffLength ; ctr++) {
+			
 			//calulate needed sum
 			realLocks [ctr].neededSum = wires [ctr].wireIDLink +
 			realLocks [ctr].lockIDLink +
@@ -101,14 +106,21 @@ public class WireConnection: Puzzle {
 			//instat current lock child list
 			realLocks [ctr].lockChilds = new List<Lock> ();
 
+			//Debug.Log ("Needed sum:"+realLocks [ctr].neededSum+ "Part Sum: " + total + "WIREID: " + wires [ctr].wireIDLink + "Real LockId: " +
+				//realLocks [ctr].lockIDLink);
 		}
-		//set mask
+		//is last
+		realLocks [diffLength - 1].isLast = true;
+		//Set mask-------MAYBE-----------------------------------------
+
 		//realLocks [UnityEngine.Random.Range(2, diffLength - 2)].isMasker = true;
 		//realLocks [1].isMasker = true;
-		//suffle locks again
+
+
+		//suffle locks again-------------------------------------
 		Shuffle<Lock> (realLocks);
-		//------------------------------------
-		//Setup Connections
+
+		//Setup Connections------------------------------------------------------------
 		for(int ctr = 0; ctr < diffLength; ctr++){
 			//Create Object and place it in the given placeholder
 			GameObject obj = Instantiate (connectionPrefab,  puzzleCan) as GameObject;
@@ -123,8 +135,25 @@ public class WireConnection: Puzzle {
 		}
 
 	}
-		
-	public void Shuffle<T>(List<T> array) {
+
+	//This update function will check if all locks are open.If they are it will call PuzzleComplete()
+	//Leo Note: maybe do calls when the a lock has been open
+	void Update(){
+
+		bool hasAllOpen = true;
+		foreach (var aLock in realLocks) {
+			if(!aLock.isOpen){
+				hasAllOpen = false;
+			}
+		}
+
+		if(hasAllOpen == true){
+			Debug.Log ("YOU WIN!");
+			PuzzleComplete ();
+		}
+	}
+
+	private void Shuffle<T>(List<T> array) {
 		var count = array.Count;
 		var last = count - 1;
 		for (var i = 0; i < last; ++i) {
@@ -135,29 +164,4 @@ public class WireConnection: Puzzle {
 		}
 	}
 
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

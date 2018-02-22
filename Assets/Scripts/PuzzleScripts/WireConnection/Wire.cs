@@ -6,8 +6,8 @@ public class Wire : MonoBehaviour {
 
 
 
-	//[HideInInspector] //TODO: for debugging I will allow for now
-	public int wireIDLink = 0; // will be assgined by randomizer
+	//[HideInInspector] 
+	public int wireIDLink = 0; // will be assgined by InitPuzzle()
 	[HideInInspector]
 	public Connection connection = null;
 	public Transform wireTrans; //public GameObject connection;
