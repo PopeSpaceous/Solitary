@@ -16,7 +16,6 @@ public class Wire : MonoBehaviour {
 
 	private Vector3 orignalScale;
 	private Vector3 scaleChange;
-	private bool hasChanged = false;
 
 	void Awake(){
 		cameraTarget = GameObject.Find ("PuzzleCamera").GetComponent<Camera> (); // TODO: maybe have puzzlecamera have its own static instance
@@ -30,8 +29,6 @@ public class Wire : MonoBehaviour {
 
 
 	void OnMouseDrag(){
-		//the wire has changed
-		hasChanged = true;
 		//get mouse position that reps in the game world
 		Vector3 mousePoint = cameraTarget.ScreenToWorldPoint (Input.mousePosition);
 		//Follow the mouse
@@ -40,8 +37,7 @@ public class Wire : MonoBehaviour {
 
 	void OnMouseUp(){
 		//if the wire is not connected it will snap back to its orignal scale and rotation
-		if( connection == null && hasChanged ){
-			hasChanged = false;
+		if( connection == null ){
 			wireTrans.localScale = new Vector3 (orignalScale.x ,orignalScale.y, orignalScale.z);
 			wireTrans.rotation = Quaternion.Euler (new Vector3(0 , 0, 0));
 		}
