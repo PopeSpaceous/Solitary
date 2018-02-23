@@ -30,15 +30,15 @@ public class WireConnection: Puzzle {
 	// Sets the parent fields
 	void Awake () {
 		puzzleName = "WireConnection";
-		//#if No_Debug_Puzzle
+		#if No_Debug_Puzzle
 		difficulty = NextSceneManager.instance.setPuzzledifficulty;
 		placeholder = NextSceneManager.instance.placeholder;
 
 		//Debug.Log ("Difficulty for puzzle " + puzzleName + " is: "+ this.difficulty);
-		//#endif
+		#endif
 
 		//Debuging---
-		//difficulty = 3;
+		difficulty = 2;
 		//
 		diffLength = difficulty + 2;
 
@@ -62,7 +62,7 @@ public class WireConnection: Puzzle {
 			//Get the Wire Script
 			Wire w = obj.GetComponentInChildren<Wire>();
 			//Assgin the var id in the wire script
-			w.wireIDLink = ctr + 1;
+			w.wireIDLink = ctr + diffLength + 1;
 			//Add it to our list collection
 			wires.Add(w);
 
@@ -106,11 +106,13 @@ public class WireConnection: Puzzle {
 			//instat current lock child list
 			realLocks [ctr].lockChilds = new List<Lock> ();
 
+			realLocks [ctr].isLast = true;
+
 			//Debug.Log ("Needed sum:"+realLocks [ctr].neededSum+ "Part Sum: " + total + "WIREID: " + wires [ctr].wireIDLink + "Real LockId: " +
 				//realLocks [ctr].lockIDLink);
 		}
 		//is last
-		realLocks [diffLength - 1].isLast = true;
+
 		//Set mask-------MAYBE-----------------------------------------
 
 		//realLocks [UnityEngine.Random.Range(2, diffLength - 2)].isMasker = true;
@@ -149,7 +151,7 @@ public class WireConnection: Puzzle {
 
 		if(hasAllOpen == true){
 			Debug.Log ("YOU WIN!");
-			PuzzleComplete ();
+			//PuzzleComplete ();
 		}
 	}
 

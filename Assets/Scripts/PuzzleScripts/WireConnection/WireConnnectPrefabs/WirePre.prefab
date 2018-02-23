@@ -132,6 +132,7 @@ MonoBehaviour:
   connection: {fileID: 0}
   wireTrans: {fileID: 4309327593039034}
   scaleLimit: 1.4
+  cameraTarget: {fileID: 0}
 --- !u!212 &212778128840004128
 SpriteRenderer:
   m_ObjectHideFlags: 1

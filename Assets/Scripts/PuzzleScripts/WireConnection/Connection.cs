@@ -11,7 +11,7 @@ public class Connection : MonoBehaviour {
 	public int connectedWireID = 0;
 	public Wire connectedWire = null;
 
-	void OnTriggerEnter2D(Collider2D col){
+	void OnTriggerStay2D(Collider2D col){
 		
 		if (col.gameObject.name.Equals ("Wire") && connectedWire == null ) {
 			//get the wire ref
@@ -25,10 +25,10 @@ public class Connection : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D col){
 		if (col.gameObject.name.Equals ("Wire")) {
 			//get the wire ref
-			connectedWire = col.GetComponent<Wire> ();
+			Wire connectedWireGet = col.GetComponent<Wire> ();
 
 			//if wire has not been already connected to another connecter then leave wire's connection
-			if(connectedWire.connection == this){
+			if(connectedWireGet.connection == this){
 				connectedWire.connection = null;
 
 				//Debug.Log ("Exited");
@@ -37,6 +37,8 @@ public class Connection : MonoBehaviour {
 		}
 	}
 
+
+
 	//will be called in the Wire script when the MouseDown event has been called
 	public void DisconnectWireAffect(){
 		connectedWireID = 0;
@@ -44,6 +46,7 @@ public class Connection : MonoBehaviour {
 	}
 	//will be called by the Wire script when the MouseUp event has been called
 	public void SnapWire(){
+		connectedWireID = connectedWire.wireIDLink;
 		//allow the wire to follow the target of the connection and not the mouse
 		connectedWire.FollowTarget (GetComponent<Transform>().position);
 		//affect the lock

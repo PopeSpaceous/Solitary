@@ -39,7 +39,7 @@ public class Lock : MonoBehaviour {
 		//add it to current sum
 		currentSum = sum;
 
-		//Debug.Log ("Current Sum: " + currentSum + " Needed Sum: "+neededSum + " WIreID: " + ConnWireID + " LockID: " + lockIDLink + " isMakser: " + isMasker);
+		Debug.Log ("Current Sum: " + currentSum + " Needed Sum: "+neededSum + " WIreID: " + ConnWireID + " LockID: " + lockIDLink + " isMakser: " + isMasker);
 
 		//check if the sum is correct and apply the needed changes
 		if (currentSum <= neededSum && !isOpen && (currentSum == neededSum || isLast  ==  false ) && ConnWireID != 0) {
@@ -55,7 +55,7 @@ public class Lock : MonoBehaviour {
 				MoveLock (true);
 			}
 				
-		} else if( currentSum < neededSum  && isOpen ) {
+		} else if(  isOpen ) {
 			isOpen = false;
 
 			ChangeParentMaskState (true);

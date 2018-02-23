@@ -12,10 +12,15 @@ public class Wire : MonoBehaviour {
 	public Connection connection = null;
 	public Transform wireTrans; //public GameObject connection;
 	public float scaleLimit = 0.95f; // solution for now. Ideally have another collider at the tip, that does not scale!
+	public Camera cameraTarget; // Change this if u remove the puzzle camera
 
 	private Vector3 orignalScale;
 	private Vector3 scaleChange;
 	private bool hasChanged = false;
+
+	void Awake(){
+		cameraTarget = GameObject.Find ("PuzzleCamera").GetComponent<Camera> (); // TODO: maybe have puzzlecamera have its own static instance
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +33,7 @@ public class Wire : MonoBehaviour {
 		//the wire has changed
 		hasChanged = true;
 		//get mouse position that reps in the game world
-		Vector3 mousePoint = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+		Vector3 mousePoint = cameraTarget.ScreenToWorldPoint (Input.mousePosition);
 		//Follow the mouse
 		FollowTarget (mousePoint);
 	}
