@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: 1a98cff4d8255064b92dca74553d70f5
+timeCreated: 1518141455
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Tans_0
+    21300002: Tans_1
+    21300004: Tans_2
+    21300006: Tans_3
+    21300008: Tans_4
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tans_0
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 534
+        width: 281
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tans_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 299
+        width: 297
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tans_2
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 15
+        width: 398
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tans_3
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 200
+        width: 198
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tans_4
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 16
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -181, y: -184}
+      - {x: -381, y: -384}
+      - {x: -381, y: -387}
+      - {x: 21, y: -387}
+      - {x: 21, y: -384}
+      - {x: -179, y: -184}
+    - - {x: 56, y: -242}
+      - {x: 56, y: -384}
+      - {x: 58, y: -386}
+      - {x: 198, y: -386}
+      - {x: 200, y: -384}
+      - {x: 200, y: -242}
+    - - {x: 190, y: -99}
+      - {x: 90, y: -199}
+      - {x: 90, y: -200}
+      - {x: 92, y: -202}
+      - {x: 290, y: -202}
+      - {x: 292, y: -200}
+      - {x: 292, y: -199}
+      - {x: 192, y: -99}
+    - - {x: -331, y: 0}
+      - {x: -332, y: -3}
+      - {x: -232, y: -103}
+      - {x: -33, y: -103}
+      - {x: -31, y: -101}
+      - {x: -31, y: -100}
+      - {x: -131, y: 0}
+    - - {x: 118, y: 277}
+      - {x: -24, y: 137}
+      - {x: -24, y: 134}
+      - {x: -23, y: 132}
+      - {x: 259, y: 132}
+      - {x: 261, y: 134}
+      - {x: 261, y: 135}
+      - {x: 119, y: 277}
+    physicsShape:
+    - - {x: -181, y: -184}
+      - {x: -381, y: -383}
+      - {x: -381, y: -387}
+      - {x: 21, y: -387}
+      - {x: 21, y: -384}
+      - {x: -179, y: -184}
+    - - {x: 56, y: -242}
+      - {x: 56, y: -386}
+      - {x: 200, y: -386}
+      - {x: 200, y: -242}
+    - - {x: 190, y: -99}
+      - {x: 90, y: -199}
+      - {x: 90, y: -200}
+      - {x: 92, y: -202}
+      - {x: 290, y: -202}
+      - {x: 292, y: -200}
+      - {x: 292, y: -199}
+      - {x: 192, y: -99}
+    - - {x: -331, y: 0}
+      - {x: -332, y: -3}
+      - {x: -232, y: -103}
+      - {x: -33, y: -103}
+      - {x: -31, y: -101}
+      - {x: -31, y: -100}
+      - {x: -131, y: 0}
+    - - {x: 118, y: 277}
+      - {x: -24, y: 137}
+      - {x: -24, y: 134}
+      - {x: -23, y: 132}
+      - {x: 259, y: 132}
+      - {x: 261, y: 134}
+      - {x: 261, y: 135}
+      - {x: 119, y: 277}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
