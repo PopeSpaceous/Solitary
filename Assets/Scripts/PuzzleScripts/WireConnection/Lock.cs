@@ -4,70 +4,68 @@ using UnityEngine;
 
 public class Lock : MonoBehaviour {
 
-	public List<Lock> lockParents; //TODO: don't make this a list anymore just a single var
-	public List<Lock> lockChilds; //TODO: don't make this a list anymore just a single var
+	public List<Lock> lockParents;
+	public List<Lock> lockChilds;
 
 	public bool isOpen = false;
 
-	public int lockIDLink;
+	public int lockID;
 	public int neededSum; // the needed sum for the lock to move. It will move if the lock is less then
 	public int currentSum; // the current caluated sum
 	private int ConnWireID = 0;
 
-	public bool isLast = false; // this bool is used to force an equal sum on the chosen last lock
+	public bool mustEqual = false;
 
-	public bool isMasker = false; // isMasker will make it so that when a lock state is changed it will not shown as moved in the puzzle unless the child of that lock is changed to true
-	public bool maskState = true; // whats the current mask state if isMasker is true. If not, this does not do anything
+	private static bool isBeingChecked = false; // makes sure that only one check can be done in parent / child at a time
 
+	public void  CheckTheSum(int wireID, bool isBeCheck = false){ // will affect and change its lock state of it infuceners 
 
-	public void  CheckTheSum(int wireID){ // will affect and change its lock state of it infuceners 
 		int sum = 0;
-
 		currentSum = 0;
 		ConnWireID = wireID;
+		bool previousState = isOpen;
 
-		//see if its influcene has the need currentSum for this lock
+		//see if its influcene has the needed currentSum for this lock
 		if(lockParents != null){
-			foreach (var lockIn in lockParents) {
-				sum += lockIn.currentSum;
-				if(lockIn.currentSum > lockIn.neededSum){
-					sum -= lockIn.ConnWireID;
-				}
-			}
+			sum += lockParents[0].currentSum;
 		}
-		sum += ConnWireID + lockIDLink;
+		sum += ConnWireID + lockID;
+
 		//add it to current sum
 		currentSum = sum;
 
-		Debug.Log ("Current Sum: " + currentSum + " Needed Sum: "+neededSum + " WIreID: " + ConnWireID + " LockID: " + lockIDLink + " isMakser: " + isMasker);
-
 		//check if the sum is correct and apply the needed changes
-		if (currentSum <= neededSum && !isOpen && (currentSum == neededSum || isLast  ==  false ) && ConnWireID != 0) {
-			//Debug.Log ("OPEN!");
+		//if (currentSum <= neededSum && !isOpen && (currentSum == neededSum || mustEqual == false ) && ConnWireID != 0) {
+		if (currentSum == neededSum && !isOpen) {
+			Debug.Log ("OPEN!");
 			isOpen = true;
-
-			ChangeParentMaskState (false);
-
-			//recheck the child
-			RecheckChilds ();
-
-			if(!isMasker){
-				MoveLock (true);
-			}
+			MoveLock (true);
 				
-		} else if(  isOpen ) {
+		} else if (isOpen /*&& currentSum != neededSum */ ) {
+			Debug.Log ("Closed!");
 			isOpen = false;
-
-			ChangeParentMaskState (true);
-
-			//recheck the child 
-			RecheckChilds();
-
-			if (!isMasker) {
-				MoveLock (false);
-			}
+			MoveLock (false);
 			
+		} else if (!isOpen && !isBeingChecked) { 
+			Debug.Log ("Parent Affect");
+			isBeingChecked = true;
+			//check parent
+			RecheckParent (); /**/
+			isBeingChecked = false;
+			Debug.Log ("Parent Affect END");
 		}
+
+		//check the childs if the state had been changed and its not being checked by a parent/child already
+		if(previousState != isOpen && !isBeingChecked){
+			isBeingChecked = true;
+			Debug.Log ("Child Affect");
+			//recheck the childs 
+			RecheckChilds ();
+			isBeingChecked = false;
+			Debug.Log ("Child Affect END");
+		}
+
+		Debug.Log ("Current Sum: " + currentSum + " Needed Sum: "+neededSum + " WIreID: " + ConnWireID + " LockID: " + lockID + " IsOpen: " + isOpen + "Must Equal: " + mustEqual);
 	}
 
 	//This function will recall the CheckTheSum when the current lock has changed their state of open or closed
@@ -76,16 +74,10 @@ public class Lock : MonoBehaviour {
 			child.CheckTheSum (child.ConnWireID);
 		}
 	}
-
-	//Will change the mask state of the parent. Thats if thier isMasker bool is set to true by InitPuzzle()
-	void ChangeParentMaskState(bool change){
-		//check mask
+	void RecheckParent(){
 		if(lockParents != null){
 			foreach (var lockIn in lockParents) {
-				if (lockIn.isMasker) {
-					lockIn.maskState = change;
-					lockIn.MoveLock (!change);
-				}
+					lockIn.CheckTheSum (lockIn.ConnWireID, true);
 			}
 		}
 	}

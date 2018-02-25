@@ -30,7 +30,7 @@ public class WireConnection: Puzzle {
 	// Sets the parent fields
 	void Awake () {
 		puzzleName = "WireConnection";
-		#if No_Debug_Puzzle
+		#if NO_DEBUG
 		difficulty = NextSceneManager.instance.setPuzzledifficulty;
 		placeholder = NextSceneManager.instance.placeholder;
 
@@ -75,52 +75,10 @@ public class WireConnection: Puzzle {
 			//Get scripts attached to the gameobject
 			Lock r = obj.GetComponent<Lock> ();
 			//Set the ids
-			r.lockIDLink = ctr + 1;
+			r.lockID = ctr + 1;
 			//Add it to our list collection
 			realLocks.Add (r);
 		}
-
-		//Shuffle the locks-------------------
-		Shuffle<Lock> (realLocks);
-		//Shuffle the wires-------------------
-		Shuffle<Wire> (wires);
-		//---
-
-		//Setup Lock influences for locks-------------------------------------------------
-
-		//setup opening lock
-		realLocks [0].neededSum = wires [0].wireIDLink + realLocks [0].lockIDLink;
-		realLocks [0].lockParents = null;
-		realLocks [0].lockChilds = new List<Lock>();
-		//setup other locks
-		for (int ctr = 1; ctr < diffLength ; ctr++) {
-			
-			//calulate needed sum
-			realLocks [ctr].neededSum = wires [ctr].wireIDLink +
-			realLocks [ctr].lockIDLink +
-			realLocks [ctr - 1].neededSum;
-			//set lock parent
-			realLocks [ctr].lockParents = new List<Lock>() {realLocks [ctr - 1]};
-			//set lock child
-			realLocks[ctr - 1].lockChilds.Add(realLocks[ctr]);
-			//instat current lock child list
-			realLocks [ctr].lockChilds = new List<Lock> ();
-
-			realLocks [ctr].isLast = true;
-
-			//Debug.Log ("Needed sum:"+realLocks [ctr].neededSum+ "Part Sum: " + total + "WIREID: " + wires [ctr].wireIDLink + "Real LockId: " +
-				//realLocks [ctr].lockIDLink);
-		}
-		//is last
-
-		//Set mask-------MAYBE-----------------------------------------
-
-		//realLocks [UnityEngine.Random.Range(2, diffLength - 2)].isMasker = true;
-		//realLocks [1].isMasker = true;
-
-
-		//suffle locks again-------------------------------------
-		Shuffle<Lock> (realLocks);
 
 		//Setup Connections------------------------------------------------------------
 		for(int ctr = 0; ctr < diffLength; ctr++){
@@ -136,6 +94,37 @@ public class WireConnection: Puzzle {
 			inputConnections.Add (c);
 		}
 
+		//Shuffle the locks-------------------
+		Shuffle<Lock> (realLocks);
+		//Shuffle the wires-------------------
+		Shuffle<Wire> (wires);
+
+		//Setup Lock influences for locks-------------------------------------------------
+
+		//setup opening lock
+		realLocks [0].neededSum = wires [0].wireIDLink + realLocks [0].lockID;
+		realLocks [0].lockParents = null;
+		realLocks [0].lockChilds = new List<Lock>();
+		//setup other locks
+		for (int ctr = 1; ctr < diffLength ; ctr++) {
+			
+			//calulate needed sum
+			realLocks [ctr].neededSum = wires [ctr].wireIDLink +
+			realLocks [ctr].lockID +
+			realLocks [ctr - 1].neededSum;
+			//set lock parent and add its child to the current one
+			realLocks [ctr].lockParents = new List<Lock>();
+			for(int count = ctr - 1; count >= 0; count--){
+				realLocks [ctr].lockParents.Add (realLocks [count]);
+				realLocks [count].lockChilds.Add (realLocks [ctr]);
+			}
+			//Make it equal
+			if(ctr % 2 == 1){
+				realLocks [ctr].mustEqual = true;
+			}
+			//setup lock child
+			realLocks [ctr].lockChilds = new List<Lock> ();
+		}
 	}
 
 	//This update function will check if all locks are open.If they are it will call PuzzleComplete()
