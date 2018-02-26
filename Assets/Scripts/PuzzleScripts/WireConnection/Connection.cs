@@ -26,22 +26,31 @@ public class Connection : MonoBehaviour {
 		if (col.gameObject.name.Equals ("Wire")) {
 			//get the wire ref
 			Wire connectedWireGet = col.GetComponent<Wire> ();
-
-			//if wire has not been already connected to another connecter then leave wire's connection
-			if(connectedWireGet.connection == this){
-				connectedWire.connection = null;
-
-				//Debug.Log ("Exited");
-			}
-			connectedWire = null;
+			DisconnectWire (connectedWireGet);
+			//Debug.Log ("Exited");
 		}
 	}
 
-
+	void DisconnectWire(Wire w = null){
+		
+		if(w != null){
+			//if wire has not been already connected to another connecter then leave wire's connection
+			if( w.connection == this){
+				connectedWire.connection = null;
+			}
+		}
+		connectedWire = null;
+		connectedWireID = 0;
+	}
+	//When the player get the input wrong the wire will snap back to its orignal position
+	public void FullySnapDisconnectWire(){
+		connectedWire.SnapWireBack ();
+		DisconnectWireAffect ();
+	}
 
 	//will be called in the Wire script when the MouseDown event has been called
 	public void DisconnectWireAffect(){
-		connectedWireID = 0;
+		DisconnectWire (connectedWire);
 		AffectLock ();
 	}
 	//will be called by the Wire script when the MouseUp event has been called
@@ -55,6 +64,6 @@ public class Connection : MonoBehaviour {
 
 	public void AffectLock(){
 		//Affect real lock
-		realLock.CheckTheSum(connectedWireID);
+		realLock.CheckTheSum(connectedWireID, this);
 	}
 }

@@ -14,11 +14,11 @@ public class Lock : MonoBehaviour {
 	public int currentSum; // the current caluated sum
 	private int ConnWireID = 0;
 
-	public bool mustEqual = false;
-
 	private static bool isBeingChecked = false; // makes sure that only one check can be done in parent / child at a time
 
-	public void  CheckTheSum(int wireID, bool isBeCheck = false){ // will affect and change its lock state of it infuceners 
+	private Connection connection;
+
+	public void  CheckTheSum(int wireID, Connection cw = null){ // will affect and change its lock state of it infuceners 
 
 		int sum = 0;
 		currentSum = 0;
@@ -35,22 +35,29 @@ public class Lock : MonoBehaviour {
 		currentSum = sum;
 
 		//check if the sum is correct and apply the needed changes
-		//if (currentSum <= neededSum && !isOpen && (currentSum == neededSum || mustEqual == false ) && ConnWireID != 0) {
 		if (currentSum == neededSum && !isOpen) {
 			Debug.Log ("OPEN!");
 			isOpen = true;
 			MoveLock (true);
-				
-		} else if (isOpen /*&& currentSum != neededSum */ ) {
+
+			connection = cw;
+		} else if (isOpen ) {
 			Debug.Log ("Closed!");
 			isOpen = false;
 			MoveLock (false);
+
+			if(connection.connectedWire != null){
+				connection.FullySnapDisconnectWire ();
+			}
+			connection = null;
 			
 		} else if (!isOpen && !isBeingChecked) { 
 			Debug.Log ("Parent Affect");
 			isBeingChecked = true;
+			//cw.FullySnapDisconnectWire ();
 			//check parent
-			RecheckParent (); /**/
+			RecheckParent ();
+
 			isBeingChecked = false;
 			Debug.Log ("Parent Affect END");
 		}
@@ -65,7 +72,7 @@ public class Lock : MonoBehaviour {
 			Debug.Log ("Child Affect END");
 		}
 
-		Debug.Log ("Current Sum: " + currentSum + " Needed Sum: "+neededSum + " WIreID: " + ConnWireID + " LockID: " + lockID + " IsOpen: " + isOpen + "Must Equal: " + mustEqual);
+		Debug.Log ("Current Sum: " + currentSum + " Needed Sum: "+neededSum + " WIreID: " + ConnWireID + " LockID: " + lockID + " IsOpen: " + isOpen);
 	}
 
 	//This function will recall the CheckTheSum when the current lock has changed their state of open or closed
@@ -77,7 +84,7 @@ public class Lock : MonoBehaviour {
 	void RecheckParent(){
 		if(lockParents != null){
 			foreach (var lockIn in lockParents) {
-					lockIn.CheckTheSum (lockIn.ConnWireID, true);
+					lockIn.CheckTheSum (lockIn.ConnWireID);
 			}
 		}
 	}

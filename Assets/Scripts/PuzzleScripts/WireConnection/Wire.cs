@@ -38,8 +38,7 @@ public class Wire : MonoBehaviour {
 	void OnMouseUp(){
 		//if the wire is not connected it will snap back to its orignal scale and rotation
 		if( connection == null ){
-			wireTrans.localScale = new Vector3 (orignalScale.x ,orignalScale.y, orignalScale.z);
-			wireTrans.rotation = Quaternion.Euler (new Vector3(0 , 0, 0));
+			SnapWireBack ();
 		}
 		else {
 			//if the wire is connected and has not been disconnected; snap to the connection block.
@@ -51,6 +50,12 @@ public class Wire : MonoBehaviour {
 		if(connection != null){
 			connection.DisconnectWireAffect ();
 		}
+	}
+
+	public void SnapWireBack(){
+		wireTrans.localScale = new Vector3 (orignalScale.x ,orignalScale.y, orignalScale.z);
+		wireTrans.rotation = Quaternion.Euler (new Vector3(0 , 0, 0));
+		connection = null;
 	}
 
 	//Given the position, the wire will scale on the x axis and rotate to that position

@@ -95,7 +95,7 @@ public class WireConnection: Puzzle {
 		}
 
 		//Shuffle the locks-------------------
-		Shuffle<Lock> (realLocks);
+		//Shuffle<Lock> (realLocks);
 		//Shuffle the wires-------------------
 		Shuffle<Wire> (wires);
 
@@ -117,10 +117,6 @@ public class WireConnection: Puzzle {
 			for(int count = ctr - 1; count >= 0; count--){
 				realLocks [ctr].lockParents.Add (realLocks [count]);
 				realLocks [count].lockChilds.Add (realLocks [ctr]);
-			}
-			//Make it equal
-			if(ctr % 2 == 1){
-				realLocks [ctr].mustEqual = true;
 			}
 			//setup lock child
 			realLocks [ctr].lockChilds = new List<Lock> ();
