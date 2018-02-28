@@ -61,17 +61,26 @@ public class Tans : MonoBehaviour {
 	//Check to see if tangram is finished and this and incoming peices have same positions
 	public bool checkPos(Tans inTan){
 		bool xCheck = false, yCheck= false;
-		if (this.myTanPosition.x * 10 < (inTan.myTanPosition.x * 10 + 1) && this.myTanPosition.x * 10 > (inTan.myTanPosition.x * 10 - 1)) {
-			if (this.type == 1)
-				Debug.Log ("X pos is same");
+
+		float xInTan = (float)((Mathf.Round(inTan.transform.position.x * 100)) / 100);
+		float yInTan = (float)((Mathf.Round(inTan.transform.position.y * 100)) / 100);
+		if (this.type == inTan.type) {
+			Debug.Log (this.name + "x:" + this.myTanPosition.x + "   " + inTan.name + "x:" + xInTan);
+			Debug.Log (this.name + "y:" + this.myTanPosition.y + "   " + inTan.name + "y:" + yInTan);
+		}
+		if (this.myTanPosition.x * 10 < (xInTan * 10 + 1) && this.myTanPosition.x * 10 > (xInTan * 10 - 1)) {
+			if (this.type == inTan.type) {
+				Debug.Log ("x matches");
+			}
 			xCheck = true;	
 		}
-		if (this.myTanPosition.y * 10 < (inTan.myTanPosition.y * 10 + 1) && this.myTanPosition.y * 10 > (inTan.myTanPosition.y * 10 - 1)) {
-			if (this.type == 1)
-				Debug.Log ("Y pos is same");
+		if (this.myTanPosition.y * 10 < (yInTan * 10 + 1) && this.myTanPosition.y * 10 > (yInTan * 10 - 1)) {
+			if (this.type == inTan.type) {
+				Debug.Log ("y matches");
+			}
 			yCheck = true;	
 		}
-		return xCheck && yCheck;
+		return (xCheck && yCheck);
 	}
 
 	//checks to see if the direction of the tans are the same

@@ -301,6 +301,7 @@ MonoBehaviour:
   myTans: []
   isStationary: 0
   tansSolved: 
+  pC: {fileID: 0}
 --- !u!114 &213360418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +438,7 @@ MonoBehaviour:
   - {fileID: 839550332}
   isStationary: 1
   tansSolved: 
+  pC: {fileID: 855060439}
 --- !u!1 &276381178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,6 +1211,7 @@ MonoBehaviour:
   - {fileID: 1452740783}
   isStationary: 0
   tansSolved: 00000000000000
+  pC: {fileID: 855060439}
 --- !u!1 &651648221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,6 +1741,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71d1beba55225ed49bf96ed7d963180d, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &855060439 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114726655628297782, guid: 71d1beba55225ed49bf96ed7d963180d,
+    type: 2}
+  m_PrefabInternal: {fileID: 855060438}
+  m_Script: {fileID: 11500000, guid: 89cf97a0b58ef1d41a51a5b5317abe80, type: 3}
 --- !u!1 &868953600
 GameObject:
   m_ObjectHideFlags: 0
