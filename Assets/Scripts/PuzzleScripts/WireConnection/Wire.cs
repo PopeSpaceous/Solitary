@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author: Leonel Jara
 public class Wire : MonoBehaviour {
 
-
-
-	//[HideInInspector] 
 	public int wireIDLink = 0; // will be assgined by InitPuzzle()
-	[HideInInspector]
 	public Connection connection = null;
 	public Transform wireTrans; //public GameObject connection;
 	public float scaleLimit = 0.95f; // solution for now. Ideally have another collider at the tip, that does not scale!
@@ -51,7 +48,7 @@ public class Wire : MonoBehaviour {
 			connection.DisconnectWireAffect ();
 		}
 	}
-
+	//Place the wire to its orginal position
 	public void SnapWireBack(){
 		wireTrans.localScale = new Vector3 (orignalScale.x ,orignalScale.y, orignalScale.z);
 		wireTrans.rotation = Quaternion.Euler (new Vector3(0 , 0, 0));
@@ -70,7 +67,7 @@ public class Wire : MonoBehaviour {
 		float distance = Vector2.Distance(wireTrans.position,  targetPos); // calculates the magnitude between the mouse and this gameobject
 		scaleChange.x = Mathf.Abs(distance) / 11.5f ; // offset the value by 11.5f. This is so it can scale with the distance.
 
-		if(scaleChange.x <= scaleLimit){ //Temp solution for snaping 
+		if(scaleChange.x <= scaleLimit){ 
 			//Apply scale
 			wireTrans.localScale = scaleChange;
 		}

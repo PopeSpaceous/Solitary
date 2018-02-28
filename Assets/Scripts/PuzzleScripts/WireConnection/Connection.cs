@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author: Leonel Jara
 public class Connection : MonoBehaviour {
 
 
 	[HideInInspector] 
-	public Lock realLock = null; //Assgined by InitPuzzle()
+	public Lock assginedLock = null; //will be assgined by InitPuzzle() in WireConnection script
 
 	public int connectedWireID = 0;
 	public Wire connectedWire = null;
 
+	//When the wires enters a connection
 	void OnTriggerStay2D(Collider2D col){
 		
 		if (col.gameObject.name.Equals ("Wire") && connectedWire == null ) {
@@ -19,22 +21,22 @@ public class Connection : MonoBehaviour {
 				//get id and assgin the connection
 				connectedWireID = connectedWire.wireIDLink;
 				connectedWire.connection = this;
-				//Debug.Log ("Entered");
 		}
 	}
+	//when the wire exits the connection
 	void OnTriggerExit2D(Collider2D col){
 		if (col.gameObject.name.Equals ("Wire")) {
 			//get the wire ref
 			Wire connectedWireGet = col.GetComponent<Wire> ();
 			DisconnectWire (connectedWireGet);
-			//Debug.Log ("Exited");
 		}
 	}
 
 	void DisconnectWire(Wire w = null){
 		
 		if(w != null){
-			//if wire has not been already connected to another connecter then leave wire's connection
+            //if wire has not been already connected to another connecter 
+            //then leave wire's connection
 			if( w.connection == this){
 				connectedWire.connection = null;
 			}
@@ -42,10 +44,11 @@ public class Connection : MonoBehaviour {
 		connectedWire = null;
 		connectedWireID = 0;
 	}
-	//When the player get the input wrong the wire will snap back to its orignal position
+    //When the player get the input wrong the wire will snap back 
+    //to its orignal position
 	public void FullySnapDisconnectWire(){
 		connectedWire.SnapWireBack ();
-		DisconnectWireAffect ();
+		DisconnectWire (connectedWire);
 	}
 
 	//will be called in the Wire script when the MouseDown event has been called
@@ -61,9 +64,8 @@ public class Connection : MonoBehaviour {
 		//affect the lock
 		AffectLock ();
 	}
-
+	//Affect lock
 	public void AffectLock(){
-		//Affect real lock
-		realLock.CheckTheSum(connectedWireID, this);
+		assginedLock.CheckTheSum(connectedWireID, this);
 	}
 }
