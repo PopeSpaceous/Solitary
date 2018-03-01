@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour {
 	//For Walking
 	public float movementSpeed;
 
+    public Animator animstate;
+
 	//For Jumping
 	public float jumpForce; 
 	public Transform groundCheck;
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Awake () {
 		//Gets the reference of the attached Rigidbody2D componment from the object
 		rigBod = GetComponent<Rigidbody2D>();
+        animstate = GetComponent<Animator> ();
 	}
 
 	//FixedUpdate will handle the response from the user input
@@ -65,8 +68,18 @@ public class PlayerMovement : MonoBehaviour {
 		rigBod.velocity = new Vector2(Player.instance.horizontalInput * movementSpeed, rigBod.velocity.y);
 
 		/* Walking animation flag, Place Here */
+        if (Input.GetKey (KeyCode.A)) {
+            transform.eulerAngles = new Vector3 (0, 180, 0);
+            animstate.SetInteger ("AnimationState", 1);
+        }
+        else if (Input.GetKey (KeyCode.D)) {
+            animstate.SetInteger ("AnimationState", 1);
+            transform.eulerAngles = new Vector3 (0, 0, 0);
+        } else {
+            animstate.SetInteger ("AnimationState", 0);
+        }
 
-	}
+    }
 
 
 
