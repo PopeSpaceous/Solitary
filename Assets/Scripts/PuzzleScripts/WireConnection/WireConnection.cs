@@ -58,6 +58,7 @@ public class WireConnection: Puzzle {
 
 	void InitPuzzle(){
 		
+
 		//SetupWires--
 		for(int ctr = 0; ctr < diffLength; ctr++){
 			//Create Object and place it in the given placeholder
@@ -65,7 +66,7 @@ public class WireConnection: Puzzle {
 			//Set the position
 			obj.transform.position = wirePlaceholders [ctr].position;
 			//Get the Wire Script
-			Wire w = obj.GetComponentInChildren<Wire>();
+			Wire w = obj.GetComponent<Wire>();
 			//Assgin the var id in the wire script
 			w.wireIDLink = ctr + 1;
 			//Add it to our list collection
@@ -119,13 +120,14 @@ public class WireConnection: Puzzle {
 		foreach (var aLock in realLocks) {
 			if(!aLock.isOpen){
 				hasAllOpen = false;
-			}
+            }
 		}
 
 		if(hasAllOpen == true){
-			Debug.Log ("YOU WIN!");
-			//PuzzleComplete ();
-		}
+			Debug.Log ("WireConnection Puzzle Complete");
+            PuzzleComplete ();
+            Lock.unlocked.Clear(); // cleanup the static var. When unloading a scene a static var is not unloaded
+        }
 	}
     //WIll shuffle the given array
 	private void Shuffle<T>(List<T> array) {

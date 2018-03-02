@@ -7,20 +7,22 @@ public class Wire : MonoBehaviour {
 
 	public int wireIDLink = 0; // will be assgined by InitPuzzle()
 	public Connection connection = null;
-	public Transform wireTrans; //public GameObject connection;
+	
 	public float scaleLimit = 0.95f; // solution for now. Ideally have another collider at the tip, that does not scale!
-	public Camera cameraTarget; // Change this if u remove the puzzle camera
+	private Camera cameraTarget; // Change this if u remove the puzzle camera
 
 	private Vector3 orignalScale;
 	private Vector3 scaleChange;
+    private Transform wireTrans; //public GameObject connection;
 
-	void Awake(){
+    void Awake(){
 		cameraTarget = GameObject.Find ("PuzzleCamera").GetComponent<Camera> (); // TODO: maybe have puzzlecamera have its own static instance
 	}
 
 	// Use this for initialization
 	void Start () {
-		scaleChange = wireTrans.localScale;
+        wireTrans = GetComponent<Transform>();
+        scaleChange = wireTrans.localScale;
 		orignalScale = new Vector3 (wireTrans.localScale.x, wireTrans.localScale.y, wireTrans.localScale.z);
 	}
 
@@ -65,7 +67,7 @@ public class Wire : MonoBehaviour {
 
 		//Scale to follow
 		float distance = Vector2.Distance(wireTrans.position,  targetPos); // calculates the magnitude between the mouse and this gameobject
-		scaleChange.x = Mathf.Abs(distance) / 11.5f ; // offset the value by 11.5f. This is so it can scale with the distance.
+		scaleChange.x = Mathf.Abs(distance) / 2.8f ; // offset the value by 11.5f. This is so it can scale with the distance.
 
 		if(scaleChange.x <= scaleLimit){ 
 			//Apply scale

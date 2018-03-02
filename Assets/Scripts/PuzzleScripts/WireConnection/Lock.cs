@@ -6,7 +6,7 @@ using UnityEngine.UI;
 //Author: Leonel Jara
 public class Lock : MonoBehaviour {
 
-	private static List<Lock> unlocked = new List<Lock>(); // this will hold the list of currently open locks
+	public static List<Lock> unlocked = new List<Lock>(); // this will hold the list of currently open locks
 
 	public bool isOpen = false;
 
@@ -105,7 +105,7 @@ public class Lock : MonoBehaviour {
 	//Move the lock to show it has been open or closed
 	private void MoveLock (bool state){
 		
-		Vector3 ChangePos = GetComponent<Transform> ().position;
+		Vector3 ChangePos = this.GetComponent<Transform> ().position;
 		if (state) {
 			//Change to an open state
 			ChangePos.y += 2;
