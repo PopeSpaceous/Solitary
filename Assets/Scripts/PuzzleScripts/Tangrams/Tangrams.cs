@@ -12,7 +12,7 @@ public class Tangrams: Puzzle {
 		puzzleName = "Tangrams";
 		difficulty = NextSceneManager.instance.setPuzzledifficulty;
 		placeholder = NextSceneManager.instance.placeholder;
-		Debug.Log ("Difficulty for puzzle " + puzzleName + " is: "+ this.difficulty);
+	
 	}
 
 
@@ -29,8 +29,6 @@ public class Tangrams: Puzzle {
 
 	//initialize the tangrams in puzzle(randomize location for scramble puzzle)
 	void Start(){
-		//sets the difficulty (not sure where this sets inside puzzle class)
-		this.difficulty = 1;
 		//if its the outline tangram 
 		if (isStationary) {
 			//gets a random set of coordinates for the tans from file based on difficulty
@@ -55,7 +53,8 @@ public class Tangrams: Puzzle {
 					myT.transform.position = newPosition;
 					myT.snapToGrid();
 					//transforms the rotation of tan
-					myT.transform.Rotate (new Vector3 (0.0f, (float.Parse (tanCoord [2])), (float.Parse (tanCoord [3]))));
+					myT.rotateTan((float.Parse (tanCoord [3])));
+					myT.transform.Rotate (new Vector3 (0.0f, (float.Parse (tanCoord [2])),0.0f ));
 					//check if flipped
 					myT.flipped = (tanCoord [4] == "0") ? false : true;	
 					counter++;
@@ -77,14 +76,17 @@ public class Tangrams: Puzzle {
 					//check to see if the tan types match
 					if (objT.type == puzT.type) {
 						//check to see if both have the same rotation value
-						Debug.Log("Type Matches");
+//						Debug.Log("Type Matches");
 						if (objT.checkRotation (puzT)) {
-							Debug.Log("Rotation Matches");
+//							Debug.Log ("Rotation Matches");
 							//if all those checks match, then set the tan's solved value to true
 							tansSolved [counter] = true;
 							//go to next tan
 							break;
 						}
+//								else {
+//							Debug.Log ("MyTan Dir: " + objT.direction + "  InTan dir: " + puzT.direction);
+//						}
 					} 
 				//if the positions don't match on any tan set that counter to false
 				} else {
@@ -94,18 +96,29 @@ public class Tangrams: Puzzle {
 			foreach (Tans qq in myTans) {
 				//checks to see if any tans are overlapping
 				if (!objT.Equals (qq) && objT.myTanPosition.Equals (qq.transform.position)) {
-					return false;
+					tansSolved[counter] = false;
 				}
 			}
 			//if there are any unsolved 
+			counter++;
+		}
+		foreach (bool ii in tansSolved) {
+			int xx = 0;
+			if (!ii) {
+//				Debug.Log ("My Tan: " + myTans [xx].name + " Did not solve correctly");
+				return false;
+			}
+					xx++;
+		}
+		if (counter < 7) {
 			if (!tansSolved [counter]) {
 				//Debug.Log ("Tan : "+ myTans[counter].name +" Doesn't Match");
 				return false;
 			}
-			counter++;
 		}
 		//send this message if the tangram is solved. Should be removed when we are finished the game
 		Debug.Log("****EVERYTHING MATCHES******");
+		this.PuzzleComplete ();
 		return true;
 	}
 
@@ -167,7 +180,7 @@ public class Tangrams: Puzzle {
 		sr.Close ();
 		//clone the split string by ';' delim
 		string[] parsedString = (string[]) (textString.Split(';')).Clone();
-		//get a random integer between 0 and the length(exclusively) of the string
+		//get a random integer between 0 and thelength(exclusively) of the string
 		int r = (int)(Random.Range(0, (float)parsedString.Length));
 		//Get the random tan coordinate from the string array
 		retString = parsedString [(int)r];

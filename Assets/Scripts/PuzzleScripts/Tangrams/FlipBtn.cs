@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-
+//Button used to flip Parallelogram Tan
 public class FlipBtn : MonoBehaviour {
 
-
+	//references to The button and Parallelogram Tan
 	public Button fButt;
 	public Tans parTan;
 
@@ -19,7 +19,7 @@ public class FlipBtn : MonoBehaviour {
 		//Tans myTan = parTan.GetComponent<Tans> ();
 
 	}
-
+	//when button is clicked call the flip function if the Tangram is a paralellogram
 	void TaskOnClick(){
 		if (parTan.type == 2) {
 			parTan.Flip ();

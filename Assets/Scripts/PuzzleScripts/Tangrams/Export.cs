@@ -8,7 +8,6 @@ using System.IO;
 
 public class Export : MonoBehaviour {
 	//variable needed for file handling
-	string winDir = System.Environment.GetEnvironmentVariable("windir");
 	//reference to the button
 	public Button fButt;
 	//reference to the movable tangram 

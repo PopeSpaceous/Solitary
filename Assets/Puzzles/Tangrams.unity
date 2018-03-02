@@ -561,6 +561,7 @@ MonoBehaviour:
   flipped: 0
   type: 5
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!50 &276381183
 Rigidbody2D:
   serializedVersion: 4
@@ -627,6 +628,7 @@ MonoBehaviour:
   flipped: 0
   type: 2
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!212 &422669178
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -991,6 +993,7 @@ MonoBehaviour:
   flipped: 0
   type: 5
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!212 &599652761
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1081,6 +1084,7 @@ MonoBehaviour:
   flipped: 0
   type: 3
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!212 &601708864
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1609,6 +1613,81 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 809578069}
+--- !u!1 &829553181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 829553182}
+  - component: {fileID: 829553184}
+  - component: {fileID: 829553183}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &829553182
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 829553181}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1963174808}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.51500005}
+  m_AnchoredPosition: {x: 393.9, y: -85.8}
+  m_SizeDelta: {x: 210.3, y: 47.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &829553183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 829553181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9705882, g: 0.95631486, b: 0.95631486, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: These Buttons Are used for Saving tangram patterns. Will be removed Once
+    the game is done
+--- !u!222 &829553184
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 829553181}
 --- !u!1 &839550330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,6 +1734,7 @@ MonoBehaviour:
   flipped: 0
   type: 1
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!212 &839550333
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1793,6 +1873,7 @@ MonoBehaviour:
   flipped: 0
   type: 4
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!212 &868953603
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1871,6 +1952,7 @@ MonoBehaviour:
   flipped: 0
   type: 5
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!212 &905858233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1992,6 +2074,7 @@ MonoBehaviour:
   flipped: 0
   type: 4
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!212 &962144398
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2125,6 +2208,7 @@ MonoBehaviour:
   flipped: 0
   type: 3
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!212 &965765332
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2277,6 +2361,80 @@ Transform:
   m_Father: {fileID: 213360416}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1354957674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1354957675}
+  - component: {fileID: 1354957677}
+  - component: {fileID: 1354957676}
+  m_Layer: 5
+  m_Name: Text (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1354957675
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1354957674}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999968, y: 0.9999968, z: 0.9999968}
+  m_Children: []
+  m_Father: {fileID: 1963174808}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.51500005}
+  m_AnchoredPosition: {x: 407, y: -216.63887}
+  m_SizeDelta: {x: 228.1, y: 12.2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1354957676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1354957674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9705882, g: 0.95631486, b: 0.95631486, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: This Button Flips the Paralellogram
+--- !u!222 &1354957677
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1354957674}
 --- !u!1 &1426870414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2323,6 +2481,7 @@ MonoBehaviour:
   flipped: 0
   type: 5
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!212 &1426870417
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2401,6 +2560,7 @@ MonoBehaviour:
   flipped: 0
   type: 1
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!212 &1452740784
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2681,6 +2841,7 @@ MonoBehaviour:
   flipped: 0
   type: 2
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!1 &1534264664
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,6 +2962,81 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1536717062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1536717063}
+  - component: {fileID: 1536717065}
+  - component: {fileID: 1536717064}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1536717063
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1536717062}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1963174808}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.51500005}
+  m_AnchoredPosition: {x: 119, y: 176.3}
+  m_SizeDelta: {x: 238, y: 68.8}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1536717064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1536717062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 16
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'THE GOAL:  is to move these coloured shapes (aka tans) and arrange them
+    to match the gray outline.'
+--- !u!222 &1536717065
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1536717062}
 --- !u!1 &1545385746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,6 +3191,7 @@ MonoBehaviour:
   flipped: 0
   type: 3
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!212 &1735511693
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3077,7 +3314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 433.75, y: -178.21841}
+  m_AnchoredPosition: {x: 433.75, y: -244}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760439061
@@ -3514,6 +3751,9 @@ RectTransform:
   - {fileID: 809578070}
   - {fileID: 804959589}
   - {fileID: 1842336144}
+  - {fileID: 829553182}
+  - {fileID: 1354957675}
+  - {fileID: 1536717063}
   m_Father: {fileID: 213360416}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3556,6 +3796,7 @@ MonoBehaviour:
   flipped: 0
   type: 3
   myTanPosition: {x: 0, y: 0}
+  direction: 0
 --- !u!212 &2039849431
 SpriteRenderer:
   m_ObjectHideFlags: 0
