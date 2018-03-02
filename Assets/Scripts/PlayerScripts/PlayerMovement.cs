@@ -68,11 +68,11 @@ public class PlayerMovement : MonoBehaviour {
 		rigBod.velocity = new Vector2(Player.instance.horizontalInput * movementSpeed, rigBod.velocity.y);
 
 		/* Walking animation flag, Place Here */
-        if (Input.GetKey (KeyCode.A)) {
+        if (Player.instance.horizontalInput < 0) {
             transform.eulerAngles = new Vector3 (0, 180, 0);
             animstate.SetInteger ("AnimationState", 1);
         }
-        else if (Input.GetKey (KeyCode.D)) {
+        else if (Player.instance.horizontalInput > 0) {
             animstate.SetInteger ("AnimationState", 1);
             transform.eulerAngles = new Vector3 (0, 0, 0);
         } else {
