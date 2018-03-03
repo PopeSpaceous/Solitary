@@ -1520,7 +1520,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Wire Connection - Beta
+  m_Text: Wire Connection
 --- !u!222 &1168548095
 CanvasRenderer:
   m_ObjectHideFlags: 0
