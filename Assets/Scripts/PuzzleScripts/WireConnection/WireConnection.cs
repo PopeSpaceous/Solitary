@@ -43,16 +43,37 @@ public class WireConnection: Puzzle {
 		//#endif
 
 		//Debuging---
-		//difficulty = 2;
-		//
-		diffLength = difficulty + 2;
+		//difficulty = 3;
+        //
 
-		//init Lists
-		wires = new List<Wire>();
-		inputConnections = new List<Connection>();
-		realLocks = new List<Lock>();
 
-		InitPuzzle ();
+        //Makes sure it gets the right difficulty
+        if (difficulty > 3 || difficulty < 1)
+        {
+            Debug.LogError("Difficulty must be in the range of 1-3!");
+        }
+        else {
+           
+            //set diff length
+            if (difficulty == 3)
+            {
+                
+                diffLength = difficulty + 2;
+            }
+            else 
+            {
+                diffLength = difficulty + 3;
+            }
+
+
+            //init Lists
+            wires = new List<Wire>();
+            inputConnections = new List<Connection>();
+            realLocks = new List<Lock>();
+
+            InitPuzzle();
+        }
+
 	}
 
 
@@ -66,7 +87,7 @@ public class WireConnection: Puzzle {
 			//Set the position
 			obj.transform.position = wirePlaceholders [ctr].position;
 			//Get the Wire Script
-			Wire w = obj.GetComponent<Wire>();
+			Wire w = obj.GetComponentInChildren<Wire>();
 			//Assgin the var id in the wire script
 			w.wireIDLink = ctr + 1;
 			//Add it to our list collection
@@ -92,7 +113,14 @@ public class WireConnection: Puzzle {
             //calulate needed sum
             r.neededSum = wires[ctr].wireIDLink + r.lockID;
             //Set Text UI
-            neededNumberText[ctr].text = r.neededSum.ToString();
+            if (difficulty == 3)
+            {
+                neededNumberText[ctr].text = "?";
+            }
+            else {
+                neededNumberText[ctr].text = r.neededSum.ToString();
+            }
+            
             r.textCSum = currentNumberText[ctr];
         }
 

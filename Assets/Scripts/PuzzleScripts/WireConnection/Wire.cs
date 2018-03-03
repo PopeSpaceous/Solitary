@@ -8,23 +8,41 @@ public class Wire : MonoBehaviour {
 	public int wireIDLink = 0; // will be assgined by InitPuzzle()
 	public Connection connection = null;
 	
-	public float scaleLimit = 0.95f; // solution for now. Ideally have another collider at the tip, that does not scale!
+	public float scaleLimit = 20f; // limit the scale. so its does not scale infinitely
+
+    public GameObject neckGO; // the ref of the neck wire
+
 	private Camera cameraTarget; // Change this if u remove the puzzle camera
 
-	private Vector3 orignalScale;
-	private Vector3 scaleChange;
-    private Transform wireTrans; //public GameObject connection;
+    //original positions for the head and neck of the wire
+	private Vector2 orgWireHeadWidth;
+    private Vector2 orgWireNeckWidth;
+
+    //current ref of the head and neck of the wire
+    private Transform wireHeadTrans;
+    private Transform wireNeckTrans;
+
+    //ref of the neck and head for the sprite
+    private SpriteRenderer wireSpriteHead;
+    private SpriteRenderer wireSpriteNeck;
+
+    private Color[] color = { Color.green, Color.gray, Color.white, Color.yellow, Color.red };
 
     void Awake(){
-		cameraTarget = GameObject.Find ("PuzzleCamera").GetComponent<Camera> (); // TODO: maybe have puzzlecamera have its own static instance
+        wireSpriteNeck = neckGO.GetComponent<SpriteRenderer>();
+        wireSpriteHead = GetComponent<SpriteRenderer>();
+        wireNeckTrans = neckGO.GetComponent<Transform>();
+        wireHeadTrans = GetComponent<Transform>();
+        cameraTarget = GameObject.Find ("PuzzleCamera").GetComponent<Camera> (); // TODO: maybe have puzzlecamera have its own static instance
 	}
 
 	// Use this for initialization
 	void Start () {
-        wireTrans = GetComponent<Transform>();
-        scaleChange = wireTrans.localScale;
-		orignalScale = new Vector3 (wireTrans.localScale.x, wireTrans.localScale.y, wireTrans.localScale.z);
-	}
+		orgWireHeadWidth = new Vector2 (wireSpriteHead.size.x, wireSpriteHead.size.y);
+        orgWireNeckWidth = new Vector2(wireSpriteNeck.size.x, wireSpriteNeck.size.y);
+
+        wireSpriteNeck.color = color[wireIDLink - 1];
+    }
 
 
 	void OnMouseDrag(){
@@ -52,27 +70,38 @@ public class Wire : MonoBehaviour {
 	}
 	//Place the wire to its orginal position
 	public void SnapWireBack(){
-		wireTrans.localScale = new Vector3 (orignalScale.x ,orignalScale.y, orignalScale.z);
-		wireTrans.rotation = Quaternion.Euler (new Vector3(0 , 0, 0));
-		connection = null;
+		wireSpriteHead.size = new Vector2 (orgWireHeadWidth.x ,orgWireHeadWidth.y);
+        wireSpriteNeck.size = new Vector2(orgWireNeckWidth.x, orgWireNeckWidth.y);
+        wireHeadTrans.rotation = Quaternion.Euler (new Vector3(0 , 0, 0));
+        wireNeckTrans.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        connection = null;
 	}
 
 	//Given the position, the wire will scale on the x axis and rotate to that position
 	public void FollowTarget(Vector3 targetPos){
 		
 		//rotation to follow 
-		Vector3 toTargetVector = targetPos - wireTrans.position;
+		Vector3 toTargetVector = targetPos - wireHeadTrans.position;
 		float zRotation = Mathf.Atan2( toTargetVector.y, toTargetVector.x ) * Mathf.Rad2Deg;
-		wireTrans.rotation = Quaternion.Euler(new Vector3 ( 0, 0, zRotation));
+		wireHeadTrans.rotation = Quaternion.Euler(new Vector3 ( 0, 0, zRotation));
+        wireNeckTrans.rotation = Quaternion.Euler(new Vector3(0, 0, zRotation ));
 
-		//Scale to follow
-		float distance = Vector2.Distance(wireTrans.position,  targetPos); // calculates the magnitude between the mouse and this gameobject
-		scaleChange.x = Mathf.Abs(distance) / 2.8f ; // offset the value by 11.5f. This is so it can scale with the distance.
+        //Scale to follow
+        float distance = Vector2.Distance(wireHeadTrans.position,  targetPos); // calculates the magnitude between the mouse and this gameobject
+		float widthScaleChange = Mathf.Abs(distance) * 1.2f; // offset the value by 11.5f. This is so it can scale with the distance.
 
-		if(scaleChange.x <= scaleLimit){ 
-			//Apply scale
-			wireTrans.localScale = scaleChange;
-		}
+        //will scale only if the scale change is not less then the current scale. And not passing the limit scale
+        if (widthScaleChange <= scaleLimit && widthScaleChange >= orgWireNeckWidth.x)
+        {
+            //Apply scale
+            wireSpriteHead.size = new Vector2(widthScaleChange + 0.8f, wireSpriteHead.size.y);
+            wireSpriteNeck.size = new Vector2(widthScaleChange, wireSpriteNeck.size.y);
+
+        }
+        else if(widthScaleChange < orgWireNeckWidth.x) {
+            wireSpriteHead.size = new Vector2(orgWireHeadWidth.x, orgWireHeadWidth.y);
+            wireSpriteNeck.size = new Vector2(orgWireNeckWidth.x, orgWireNeckWidth.y);
+        }
 	}
 		
 }

@@ -15,7 +15,7 @@ public class Connection : MonoBehaviour {
 	//When the wires enters a connection
 	void OnTriggerStay2D(Collider2D col){
 		
-		if (col.gameObject.name.Equals ("Wire(Clone)") && connectedWire == null ) {
+		if (col.gameObject.name.Equals ("Head") && connectedWire == null ) {
 			//get the wire ref
 			connectedWire = col.GetComponent<Wire> ();
 				//get id and assgin the connection
@@ -25,7 +25,7 @@ public class Connection : MonoBehaviour {
 	}
 	//when the wire exits the connection
 	void OnTriggerExit2D(Collider2D col){
-		if (col.gameObject.name.Equals ("Wire(Clone)")) {
+		if (col.gameObject.name.Equals ("Head")) {
 			//get the wire ref
 			Wire connectedWireGet = col.GetComponent<Wire> ();
 			DisconnectWire (connectedWireGet);
