@@ -124,8 +124,8 @@ GameObject:
   - component: {fileID: 69315863}
   - component: {fileID: 69315862}
   - component: {fileID: 69315861}
-  m_Layer: 9
-  m_Name: Platform Top Left
+  m_Layer: 2
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,8 +138,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 69315859}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.403, y: 0.027, z: 0}
-  m_LocalScale: {x: 0.1833296, y: 0.035077147, z: 1}
+  m_LocalPosition: {x: -0.517, y: -0.0099, z: 0}
+  m_LocalScale: {x: 0.03649549, y: 0.9776067, z: 1}
   m_Children: []
   m_Father: {fileID: 1132632886}
   m_RootOrder: 1
@@ -356,11 +356,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4385670795813262, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.47076
+      value: 0.445
       objectReference: {fileID: 0}
     - target: {fileID: 4385670795813262, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.324
+      value: -0.2872
       objectReference: {fileID: 0}
     - target: {fileID: 4385670795813262, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -389,18 +389,6 @@ Prefab:
     - target: {fileID: 1507588944314712, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
       propertyPath: m_Name
       value: Door To Level1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385670795813262, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.05469131
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385670795813262, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.14563926
-      objectReference: {fileID: 0}
-    - target: {fileID: 1507588944314712, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
@@ -463,8 +451,8 @@ GameObject:
   - component: {fileID: 1306681479}
   - component: {fileID: 1306681478}
   - component: {fileID: 1306681477}
-  m_Layer: 9
-  m_Name: Platform Top Right
+  m_Layer: 2
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -477,8 +465,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1306681475}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.407, y: 0.03, z: 0}
-  m_LocalScale: {x: 0.18332958, y: 0.03507701, z: 1}
+  m_LocalPosition: {x: 0.5137, y: 0.0099, z: 0}
+  m_LocalScale: {x: 0.027318606, y: 1.0173193, z: 1}
   m_Children: []
   m_Father: {fileID: 1132632886}
   m_RootOrder: 2
