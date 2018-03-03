@@ -15,6 +15,7 @@ public class SimonSays: Puzzle {
 
 
 	/* Your wonderful startup puzzle code here :3 */
+    //all set up puzzle code goes here
 
 }
 
