@@ -242,7 +242,6 @@ GameObject:
   m_Component:
   - component: {fileID: 213360416}
   - component: {fileID: 213360417}
-  - component: {fileID: 213360418}
   m_Layer: 5
   m_Name: Puzzle Canvas
   m_TagString: Untagged
@@ -302,17 +301,6 @@ MonoBehaviour:
   isStationary: 0
   tansSolved: 
   pC: {fileID: 0}
---- !u!114 &213360418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 213360415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e2d4913161ea6a48af6ff95613f2bca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &258382419
 GameObject:
   m_ObjectHideFlags: 0
@@ -3119,8 +3107,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2036922747
-  m_SortingLayer: 3
+  m_SortingLayerID: -744779991
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f27f5e6197649bc4a92dcfe4d7ff5088, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3487,8 +3475,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -744779991
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f27f5e6197649bc4a92dcfe4d7ff5088, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
