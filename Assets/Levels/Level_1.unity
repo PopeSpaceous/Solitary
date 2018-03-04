@@ -1463,7 +1463,7 @@ GameObject:
   - component: {fileID: 1300374348}
   - component: {fileID: 1300374351}
   - component: {fileID: 1300374352}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1723,6 +1723,10 @@ Prefab:
       propertyPath: boundBox
       value: 
       objectReference: {fileID: 1549532393}
+    - target: {fileID: 1343167370880782, guid: eb1c0737ee1ae5e4ba9af5d7d6d74b92, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb1c0737ee1ae5e4ba9af5d7d6d74b92, type: 2}
   m_IsPrefabParent: 0

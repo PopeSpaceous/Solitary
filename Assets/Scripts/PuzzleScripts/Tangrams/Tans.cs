@@ -24,7 +24,7 @@ public class Tans : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		//Ignore the player character when checking colliding
-		Physics2D.IgnoreCollision(Player.instance.GetComponent<Collider2D>(), GetComponent<PolygonCollider2D>());
+		Physics2D.IgnoreCollision(Player.instance.GetComponent<BoxCollider2D>(), GetComponent<PolygonCollider2D>());
 		//set the directions to whatever angle it is
 		direction = Mathf.RoundToInt(this.transform.eulerAngles.z / 45);
 
