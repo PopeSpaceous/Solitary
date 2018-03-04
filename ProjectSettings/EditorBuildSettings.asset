@@ -11,13 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Level_1.unity
     guid: e1e0d484569980b42957d2d3a66f8629
-  - enabled: 1
+  - enabled: 0
     path: Assets/Puzzles/PuzzleTemplate.unity
     guid: f804fd7a378c2c243b02539fded60d3e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Puzzles/Anagram.unity
     guid: ac901bb5d5864f94aabc67ed8e2bde77
-  - enabled: 1
+  - enabled: 0
     path: Assets/Puzzles/Crytogram.unity
     guid: 0954f6f7946df7f44af98bead5d9691b
   - enabled: 1
