@@ -17,6 +17,7 @@ public class Lock : MonoBehaviour {
 
 	private int ConnWireID = 0; // the current connected wire id. This will be used to caluated the current sum 
 
+    public SpriteRenderer lockedSprite;
 
 	private Connection connection;
 
@@ -108,11 +109,14 @@ public class Lock : MonoBehaviour {
 		Vector3 ChangePos = this.GetComponent<Transform> ().position;
 		if (state) {
 			//Change to an open state
-			ChangePos.y += 2;
-		} else {
+			//ChangePos.y += 2;
+            lockedSprite.enabled = false;
+
+        } else {
 			//Change to a close state
-			ChangePos.y -= 2; 
-		}
+			//ChangePos.y -= 2;
+            lockedSprite.enabled = true;
+        }
 		GetComponent<Transform> ().position = ChangePos;
 	} 
 		

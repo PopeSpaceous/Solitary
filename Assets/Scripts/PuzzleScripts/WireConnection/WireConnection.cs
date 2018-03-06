@@ -43,7 +43,7 @@ public class WireConnection: Puzzle {
 		//#endif
 
 		//Debuging---
-		//difficulty = 3;
+		//difficulty = 2;
         //
 
 

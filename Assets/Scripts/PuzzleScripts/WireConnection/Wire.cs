@@ -26,8 +26,8 @@ public class Wire : MonoBehaviour {
     private SpriteRenderer wireSpriteHead;
     private SpriteRenderer wireSpriteNeck;
 
-    private Color[] color = { Color.green, Color.gray, Color.white, Color.yellow, Color.red };
-
+    //private Color[] color = { Color.green, Color.gray, Color.white, Color.blue, Color.red };
+    private Color[] color = { Color.gray, Color.gray, Color.gray, Color.gray, Color.gray };
     void Awake(){
         wireSpriteNeck = neckGO.GetComponent<SpriteRenderer>();
         wireSpriteHead = GetComponent<SpriteRenderer>();
