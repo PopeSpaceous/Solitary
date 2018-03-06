@@ -39,13 +39,15 @@ public class GameController : MonoBehaviour {
 
         for (int r = 0; r < sizeRow; r++) {
             for (int c = 0; c < sizeCol; c++) {
-                if (tiles [r, c].name.CompareTo ("Blank") == 0) {
+                if (tiles [r, c].tag == "Blank") {
                     rowBlank = r;
                     colBlank = c;
                     break;
                 }
             }
         }
+
+        Shuffle ();
 
     }
 
@@ -100,6 +102,7 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    //sorts the image when a tile is clicked
     void SortImage () {
         temp = tiles [rowBlank, colBlank]; // save blank location to temp
         tiles [rowBlank, colBlank] = null; // set blank to null
@@ -109,8 +112,8 @@ public class GameController : MonoBehaviour {
         tiles [row, col] = temp; // sets selected tile to blank location
 
         //move for image
-        tiles [rowBlank, colBlank].GetComponent<ImageController> ().target = checkPoints [rowBlank, colBlank]; //set new point for blank
-        tiles [row, col].GetComponent<ImageController> ().target = checkPoints [row, col];
+        tiles [rowBlank, colBlank].GetComponent<ImageController> ().target = checkPoints [rowBlank, colBlank]; //set new point for blank image
+        tiles [row, col].GetComponent<ImageController> ().target = checkPoints [row, col]; //set new point for image
 
         tiles [rowBlank, colBlank].GetComponent<ImageController> ().startMove = true;
         tiles [row, col].GetComponent<ImageController> ().startMove = true;
@@ -120,6 +123,36 @@ public class GameController : MonoBehaviour {
         colBlank = col;
     }
 
+    //shuffles the puzzle
+    void Shuffle () {
+        //randomizes puzzle by switching random tiles for 500 iterations
+        for (int i = 0; i < 500; i++){
+            //picks random tiles for size
+            row = Random.Range (0, sizeRow);
+            col = Random.Range (0, sizeCol);
+
+            temp = tiles [rowBlank, colBlank]; // save blank location to temp
+            tiles [rowBlank, colBlank] = null; // set blank to null
+
+            tiles [rowBlank, colBlank] = tiles [row, col]; // sets blank to clicked tile
+            tiles [row, col] = null; // set selected tile to null
+            tiles [row, col] = temp; // sets selected tile to blank location
+
+            //move for image
+            tiles [rowBlank, colBlank].GetComponent<ImageController> ().target = checkPoints [rowBlank, colBlank]; //set new point for blank
+            tiles [row, col].GetComponent<ImageController> ().target = checkPoints [row, col];
+
+            tiles [rowBlank, colBlank].GetComponent<ImageController> ().startMove = true;
+            tiles [row, col].GetComponent<ImageController> ().startMove = true;
+
+            //set row and col for image blank
+            rowBlank = row;
+            colBlank = col;
+
+        }
+    }
+
+    //loads in easy puzzle
     void EasyLevel () {
         tiles [0, 0] = tilesList [0];   //A1
         tiles [0, 1] = tilesList [1];   //A2
