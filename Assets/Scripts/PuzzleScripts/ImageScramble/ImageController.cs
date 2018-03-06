@@ -6,12 +6,13 @@ public class ImageController : MonoBehaviour {
 
     public GameObject target;
     public bool startMove = false;
-    ImageScramble gameMN;
+
+    GameController gameMN;
 
 	// Use this for initialization
 	void Start () {
-        GameObject gamemanager = GameObject.Find ("ImageScramble");
-        gameMN = gamemanager.GetComponent<ImageScramble> ();
+        GameObject gamemanager = GameObject.Find ("GameController");
+        gameMN = gamemanager.GetComponent<GameController> ();
 	}
 	
 	// Update is called once per frame
