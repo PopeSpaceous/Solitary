@@ -2442,8 +2442,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 351, y: 184}
-  m_SizeDelta: {x: 214.3, y: 54.6}
+  m_AnchoredPosition: {x: 325.05, y: 186.64}
+  m_SizeDelta: {x: 254.89, y: 57.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989257382
 MonoBehaviour:
@@ -2478,7 +2478,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Instructions: Make all the red locks move up, by dragging the wire to its
-    correct position in its connection.'
+    correct connection.'
 --- !u!222 &1989257383
 CanvasRenderer:
   m_ObjectHideFlags: 0
