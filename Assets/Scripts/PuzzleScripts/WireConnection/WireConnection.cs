@@ -35,15 +35,15 @@ public class WireConnection: Puzzle {
 	// Sets the parent fields
 	void Awake () {
 		puzzleName = "WireConnection";
-		//#if NO_DEBUG
+		#if NO_DEBUG
 		difficulty = NextSceneManager.instance.setPuzzledifficulty;
 		placeholder = NextSceneManager.instance.placeholder;
 
 		Debug.Log ("Difficulty for puzzle " + puzzleName + " is: "+ this.difficulty);
-		//#endif
+		#endif
 
 		//Debuging---
-		//difficulty = 2;
+		difficulty = 2;
         //
 
 
