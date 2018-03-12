@@ -118,11 +118,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 1832838828691172}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 29bd627082c5f8b4ab85695cc1141981, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11714804, y: -0.10896635}
+  m_Offset: {x: -0.11714804, y: -0.09508085}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6760254, y: 6.188842}
+  m_Size: {x: 1.6760254, y: 6.161071}
   m_EdgeRadius: 0
 --- !u!95 &95013354632916956
 Animator:
@@ -164,17 +164,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 12
-  animstate: {fileID: 0}
   jumpForce: 8
-  groundCheck: {fileID: 4641459781550356}
-  whatsGround:
-    serializedVersion: 2
-    m_Bits: 4294959816
   jumpAmmount: 250
   decreaseAmmountBy: 10
   isJumping: 0
   isGrounded: 1
   nextJumpDelay: 0.1
+  groundCheck: {fileID: 4641459781550356}
+  whatsGround:
+    serializedVersion: 2
+    m_Bits: 4294959816
+  hardLandingThreshold: -16
 --- !u!114 &114533088314613284
 MonoBehaviour:
   m_ObjectHideFlags: 1
