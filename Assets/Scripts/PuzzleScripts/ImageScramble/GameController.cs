@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour {
 
         for (int r = 0; r < sizeRow; r++) {
             for (int c = 0; c < sizeCol; c++) {
-                if (tiles [r, c].tag == "Blank") {
+                if (tiles [r, c].CompareTag("Blank")) {
                     rowBlank = r;
                     colBlank = c;
                     break;
@@ -73,30 +73,28 @@ public class GameController : MonoBehaviour {
         if (startControl) {
             startControl = false;
             if (countStep == 1) {
-                if (tiles [row, col] != null && tiles [row, col].tag != "Blank") {
-                    if ((rowBlank != row && colBlank == col)) {
-                        //move
-                        if (Mathf.Abs(row - rowBlank) == 1) {
-                            SortImage ();
-                            countStep = 0;
-                        } else {
-                            countStep = 0;
-                        }
-                    } else if (rowBlank == row && colBlank != col) {
-                        //move
-                        if (Mathf.Abs(col - colBlank) == 1) {
-                            SortImage ();
-                            countStep = 0;
-                        } else {
-                            countStep = 0;
-                        }
-                    } else if ((rowBlank == row && colBlank == col) || (rowBlank != row && colBlank != col)) {
-                        //don't move
-                        countStep = 0;
-                    } else {
-                        //don't move
-                        countStep = 0;
-                    }
+            if ((rowBlank != row && colBlank == col)) {
+                //move
+                if (Mathf.Abs(row - rowBlank) == 1) {
+                    SortImage ();
+                    countStep = 0;
+                } else {
+                    countStep = 0;
+                }
+            } else if (rowBlank == row && colBlank != col) {
+                //move
+                if (Mathf.Abs(col - colBlank) == 1) {
+                     SortImage ();
+                     countStep = 0;
+                } else {
+                    countStep = 0;
+                }
+            } else if ((rowBlank == row && colBlank == col) || (rowBlank != row && colBlank != col)) {
+                //don't move
+                countStep = 0;
+                } else {
+                    //don't move
+                    countStep = 0;
                 }
             }
         }

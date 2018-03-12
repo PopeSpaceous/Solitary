@@ -19,7 +19,7 @@ public class TileMovement : MonoBehaviour {
     }
 
     void OnMouseDown () {
-        Debug.Log ("Row is: " + row + " Col is: " + col);
+        Debug.Log (gameMN.countStep);
         gameMN.countStep += 1;
         gameMN.row = row;
         gameMN.col = col;
