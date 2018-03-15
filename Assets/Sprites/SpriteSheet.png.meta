@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 5b531b2b363280e48b0fcf80c436b880
-timeCreated: 1520118031
+timeCreated: 1520873476
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -69,7 +69,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 40
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -90,9 +90,9 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
   - buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: 25
+    maxTextureSize: 8192
+    resizeAlgorithm: 1
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -127,786 +127,293 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
-        width: 64
-        height: 63
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 27, y: 12.5}
-        - {x: 24, y: 8.5}
-        - {x: 7, y: 31.5}
-        - {x: -21, y: 31.5}
-        - {x: -32, y: 25.5}
-        - {x: -32, y: -31.5}
-        - {x: 13, y: -31.5}
-        - {x: 15.585888, y: -25.374893}
-        - {x: 32, y: -6.5}
-        - {x: 32, y: 9.5}
-      - - {x: 1, y: -14.5}
-        - {x: 0, y: -10.5}
-        - {x: -1, y: -15.5}
-        - {x: 0, y: -16.5}
-        - {x: 0, y: -18.5}
-        - {x: -1, y: -19.5}
-        - {x: 0, y: -21.5}
-        - {x: 1, y: -20.5}
-      - - {x: 29, y: 17.5}
-        - {x: 31, y: 15.5}
-        - {x: 32, y: 15.5}
-        - {x: 32, y: 20.5}
-        - {x: 30, y: 20.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
-        height: 63
+        x: 256
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 27, y: 12.5}
-        - {x: 24, y: 8.5}
-        - {x: 7, y: 31.5}
-        - {x: -21, y: 31.5}
-        - {x: -32, y: 25.5}
-        - {x: -32, y: -31.5}
-        - {x: 13, y: -31.5}
-        - {x: 13, y: -29.5}
-        - {x: 32, y: -6.5}
-        - {x: 32, y: 9.5}
-      - - {x: 1, y: -14.5}
-        - {x: 0, y: -10.5}
-        - {x: -1, y: -15.5}
-        - {x: 0, y: -16.5}
-        - {x: 0, y: -18.5}
-        - {x: -1, y: -19.5}
-        - {x: 0, y: -21.5}
-        - {x: 1, y: -20.5}
-      - - {x: 29, y: 17.5}
-        - {x: 31, y: 15.5}
-        - {x: 32, y: 15.5}
-        - {x: 32, y: 20.5}
-        - {x: 30, y: 20.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
-        height: 63
+        x: 512
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 27, y: 12.5}
-        - {x: 24, y: 8.5}
-        - {x: 7, y: 31.5}
-        - {x: -21, y: 31.5}
-        - {x: -32, y: 25.5}
-        - {x: -32, y: -31.5}
-        - {x: 13, y: -31.5}
-        - {x: 13, y: -29.5}
-        - {x: 32, y: -6.5}
-        - {x: 32, y: 9.5}
-      - - {x: 1, y: -14.5}
-        - {x: 0, y: -10.5}
-        - {x: -1, y: -15.5}
-        - {x: 0, y: -16.5}
-        - {x: 0, y: -18.5}
-        - {x: -1, y: -19.5}
-        - {x: 0, y: -21.5}
-        - {x: 1, y: -20.5}
-      - - {x: 29, y: 17.5}
-        - {x: 31, y: 15.5}
-        - {x: 32, y: 15.5}
-        - {x: 32, y: 20.5}
-        - {x: 30, y: 20.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 64
-        height: 63
+        x: 768
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 32, y: 28.5}
-        - {x: 20, y: 31.5}
-        - {x: -14, y: 31.5}
-        - {x: -32, y: 21.5}
-        - {x: -32, y: -31.5}
-        - {x: 13, y: -31.5}
-        - {x: 13, y: -26.5}
-        - {x: 27, y: -23.5}
-        - {x: 32, y: -21.5}
-      - - {x: 1, y: -14.5}
-        - {x: 0, y: -10.5}
-        - {x: -1, y: -15.5}
-        - {x: 0, y: -16.5}
-        - {x: 0, y: -18.5}
-        - {x: -1, y: -19.5}
-        - {x: 0, y: -21.5}
-        - {x: 1, y: -20.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 192
-        width: 64
-        height: 63
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -10, y: 31.5}
-        - {x: -32, y: 22.5}
-        - {x: -32, y: -24.5}
-        - {x: -14, y: -31.5}
-        - {x: 16, y: -31.5}
-        - {x: 18, y: -28.5}
-        - {x: 18, y: 22.5}
-        - {x: 12, y: 31.5}
-      - - {x: 18, y: -19.5}
-        - {x: 17, y: -21.5}
-        - {x: 17, y: -28.5}
-        - {x: 18, y: -31.5}
-        - {x: 23, y: -31.5}
-        - {x: 23, y: -20.5}
-        - {x: 21, y: -19.5}
-      - - {x: -6, y: -19.5}
-        - {x: -8, y: -19.5}
-        - {x: -11, y: -22.5}
-        - {x: -10, y: -27.5}
-      - - {x: -13, y: -3.5}
-        - {x: -16, y: -6.5}
-        - {x: -16, y: -5.5}
-        - {x: -13, y: -2.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 63
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -20, y: 31.5}
-        - {x: -32, y: 15.5}
-        - {x: -32, y: -24.5}
-        - {x: -19, y: -31.5}
-        - {x: 19.307232, y: -31.5}
-        - {x: 19, y: 19.5}
-        - {x: 9, y: 31.5}
-      - - {x: -9, y: -5.5}
-        - {x: -10, y: -3.5}
-        - {x: -9, y: -2.5}
-        - {x: -9, y: -3.5}
-        - {x: -10, y: -4.5}
-        - {x: -10, y: -8.5}
-        - {x: -9, y: -8.5}
-      - - {x: 8, y: -2.5}
-        - {x: 11, y: -1.5}
-        - {x: 11, y: 1.5}
-        - {x: 8, y: 2.5}
-        - {x: 6, y: 0.5}
-      - - {x: -32, y: 31.5}
-        - {x: -32, y: 26.5}
-        - {x: -10, y: 26.5}
-        - {x: -8, y: 28.5}
-        - {x: -8, y: 31.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 63
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 30, y: 17.5}
-        - {x: 30, y: 22.5}
-        - {x: 8, y: 31.5}
-        - {x: -32, y: 31.5}
-        - {x: -32, y: -31.5}
-        - {x: -18.225975, y: -31.346375}
-        - {x: 6.692772, y: -31.5}
-        - {x: 7, y: -28.5}
-        - {x: 14, y: -19.5}
-        - {x: 16, y: -11.5}
-      - - {x: 23, y: 6.5}
-        - {x: 22, y: 1.5}
-        - {x: 22, y: -18.5}
-        - {x: 32, y: -18.5}
-        - {x: 32, y: 6.5}
-      - - {x: -29, y: 14.5}
-        - {x: -26, y: 15.5}
-        - {x: -26, y: 18.5}
-        - {x: -29, y: 19.5}
-        - {x: -31, y: 17.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 63
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 12, y: 22.5}
-        - {x: 10, y: 20.5}
-        - {x: 9, y: 25.5}
-        - {x: 6, y: 31.5}
-        - {x: -24, y: 31.5}
-        - {x: -32, y: 13.5}
-        - {x: -32, y: -26.5}
-        - {x: -28, y: -27.5}
-        - {x: -5.2307587, y: -28.92833}
-        - {x: 7.2400513, y: -31.5}
-        - {x: 20, y: -31.5}
-        - {x: 20, y: 14.5}
-        - {x: 18, y: 22.5}
-      - - {x: -14, y: -21.5}
-        - {x: -16, y: -23.5}
-        - {x: -16, y: -27.5}
-        - {x: -14, y: -29.5}
-        - {x: -13, y: -29.5}
-        - {x: -10, y: -26.5}
-        - {x: -10, y: -23.5}
-        - {x: -12, y: -21.5}
-      - - {x: -9, y: -1.5}
-        - {x: -10, y: -2.5}
-        - {x: -12, y: -3.5}
-        - {x: -12, y: -9.5}
-        - {x: -9, y: -8.5}
-      - - {x: 26, y: -0.5}
-        - {x: 26, y: -3.5}
-        - {x: 28, y: -5.5}
-        - {x: 32, y: -5.5}
-        - {x: 32, y: 1.5}
-        - {x: 28, y: 1.5}
-      - - {x: 8, y: -2.5}
-        - {x: 11, y: -1.5}
-        - {x: 11, y: 1.5}
-        - {x: 8, y: 2.5}
-        - {x: 6, y: 0.5}
-      - - {x: -32, y: 31.5}
-        - {x: -32, y: 26.5}
-        - {x: -10, y: 26.5}
-        - {x: -8, y: 28.5}
-        - {x: -8, y: 31.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
-        width: 64
-        height: 63
+        x: 2048
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -18, y: -28.5}
-        - {x: -17, y: -31.5}
-        - {x: 32, y: -31.5}
-        - {x: 32, y: -17.5}
-        - {x: 16, y: 18.5}
-        - {x: -8, y: 18.5}
-        - {x: -18, y: 7.5}
-      - - {x: 22, y: -3.5}
-        - {x: 22, y: -5.5}
-        - {x: 24, y: -7.5}
-        - {x: 28, y: -6.5}
-        - {x: 30, y: -4.5}
-        - {x: 29, y: -1.5}
-        - {x: 24, y: -1.5}
-      - - {x: -32, y: 31.5}
-        - {x: -32, y: 25.5}
-        - {x: -31, y: 23.5}
-        - {x: -25, y: 17.5}
-        - {x: -10, y: 18.5}
-        - {x: -8, y: 20.5}
-        - {x: -8, y: 31.5}
-      - - {x: -2, y: 25.5}
-        - {x: 1, y: 22.5}
-        - {x: 5, y: 22.5}
-        - {x: 7, y: 23.5}
-        - {x: 7, y: 31.5}
-        - {x: -2, y: 31.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_9
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
-        width: 64
-        height: 63
+        x: 2304
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -25, y: -12.5}
-        - {x: -18, y: -14.5}
-        - {x: -15, y: -14.5}
-        - {x: -12, y: -11.5}
-        - {x: -17, y: -17.5}
-        - {x: -32, y: -17.5}
-        - {x: -32, y: -30.5}
-        - {x: -20, y: -31.5}
-        - {x: -1, y: -31.5}
-        - {x: 26, y: -16.5}
-        - {x: 26, y: 31.5}
-        - {x: 5, y: 31.5}
-        - {x: -9, y: 23.5}
-      - - {x: -12, y: 24.5}
-        - {x: -14, y: 22.5}
-        - {x: -14, y: 20.5}
-        - {x: -12, y: 18.5}
-        - {x: -8, y: 18.5}
-        - {x: -6, y: 20.5}
-        - {x: -6, y: 22.5}
-        - {x: -8, y: 24.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
+        x: 2560
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 26, y: 27}
-        - {x: 21, y: 32}
-        - {x: 1, y: 32}
-        - {x: -32, y: -4}
-        - {x: -32, y: -32}
-        - {x: -7, y: -32}
-        - {x: 5, y: -25}
-        - {x: 26, y: 14}
-      - - {x: 26, y: -10}
-        - {x: 18, y: -20}
-        - {x: 17, y: -22}
-        - {x: 17, y: -28}
-        - {x: 18, y: -32}
-        - {x: 32, y: -32}
-        - {x: 32, y: -13}
-        - {x: 28, y: -10}
-      - - {x: 23, y: -6}
-        - {x: 26, y: -5}
-        - {x: 26, y: -2}
-        - {x: 23, y: -1}
-        - {x: 21, y: -3}
-      - - {x: -22, y: 28}
-        - {x: -22, y: 22}
-        - {x: -10, y: 22}
-        - {x: -10, y: 28}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_11
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
+        x: 2816
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 26, y: 26}
-        - {x: 23, y: 32}
-        - {x: 2, y: 32}
-        - {x: -32, y: 1}
-        - {x: -32, y: -32}
-        - {x: -7, y: -32}
-        - {x: 5, y: -25}
-        - {x: 26, y: 6}
-      - - {x: 29, y: -10}
-        - {x: 22, y: -19}
-        - {x: 22, y: -25}
-        - {x: 27, y: -32}
-        - {x: 32, y: -32}
-        - {x: 32, y: -10}
-      - - {x: -26, y: 16}
-        - {x: -26, y: 10}
-        - {x: -18, y: 10}
-        - {x: -18, y: 16}
-        - {x: -20, y: 18}
-        - {x: -23, y: 18}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_12
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
+        x: 3072
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -11, y: 32}
-        - {x: -14, y: 31}
-        - {x: -16, y: -2}
-        - {x: -10, y: -5}
-        - {x: -9, y: -5}
-        - {x: -6, y: -7}
-        - {x: -6, y: -9}
-        - {x: -8, y: -6}
-        - {x: -32, y: -6}
-        - {x: -32, y: -32}
-        - {x: 1, y: -32}
-        - {x: 14, y: -12}
-        - {x: 14, y: 19}
-        - {x: 12, y: 32}
-      - - {x: 26, y: 4}
-        - {x: 26, y: 1}
-        - {x: 29, y: -2}
-        - {x: 32, y: -2}
-        - {x: 32, y: 6}
-        - {x: 28, y: 6}
-      - - {x: 22, y: 14}
-        - {x: 23, y: 11}
-        - {x: 26, y: 11}
-        - {x: 28, y: 13}
-        - {x: 27, y: 16}
-        - {x: 24, y: 16}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_13
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 3328
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.459}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 32}
-        - {x: -20, y: 32}
-        - {x: -24, y: 31}
-        - {x: -27, y: 9}
-        - {x: -27, y: -21}
-        - {x: 5, y: -32}
-        - {x: 25, y: -32}
-        - {x: 25, y: 0}
-        - {x: 9, y: 30}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_14
       rect:
         serializedVersion: 2
-        x: 256
-        y: 64
-        width: 64
-        height: 64
+        x: 3584
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 18}
-        - {x: -7, y: 17}
-        - {x: -16, y: 0}
-        - {x: -16, y: -32}
-        - {x: 22, y: -32}
-        - {x: 32, y: -10}
-        - {x: 32, y: 2}
-        - {x: 8, y: 18}
-      - - {x: -23, y: -16}
-        - {x: -25, y: -18}
-        - {x: -25, y: -20}
-        - {x: -23, y: -22}
-        - {x: -20, y: -22}
-        - {x: -18, y: -20}
-        - {x: -18, y: -18}
-        - {x: -20, y: -16}
-      - - {x: -29, y: -12}
-        - {x: -28, y: -15}
-        - {x: -24, y: -15}
-        - {x: -22, y: -13}
-        - {x: -23, y: -10}
-        - {x: -27, y: -10}
-      - - {x: -28, y: 2}
-        - {x: -32, y: 2}
-        - {x: -32, y: -5}
-        - {x: -31, y: -6}
-        - {x: -28, y: -6}
-        - {x: -26, y: -4}
-        - {x: -26, y: 1}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_15
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3840
         y: 0
-        width: 64
-        height: 64
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 32, y: 11}
-        - {x: 32, y: 32}
-        - {x: -17, y: 32}
-        - {x: -26, y: 8}
-        - {x: -26, y: -32}
-        - {x: 22, y: -32}
-        - {x: 26, y: -29}
-        - {x: 23, y: -21}
-        - {x: 19, y: -21}
-      - - {x: 21, y: -4}
-        - {x: 17, y: -7}
-        - {x: 18, y: -10}
-        - {x: 24, y: -10}
-        - {x: 26, y: -9}
-        - {x: 26, y: -6}
-        - {x: 25, y: -4}
-      - - {x: 26, y: 10}
-        - {x: 26, y: -10}
-        - {x: 32, y: -10}
-        - {x: 32, y: 9}
-        - {x: 30, y: 10}
-      - - {x: -32, y: 32}
-        - {x: -32, y: 18}
-        - {x: -23, y: 18}
-        - {x: -19, y: 22}
-        - {x: -19, y: 32}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_16
       rect:
         serializedVersion: 2
-        x: 64
+        x: 4096
         y: 0
-        width: 64
-        height: 64
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 24, y: 8}
-        - {x: 6, y: 32}
-        - {x: -4, y: 32}
-        - {x: -7, y: 29}
-        - {x: -17, y: 32}
-        - {x: -32, y: 32}
-        - {x: -32, y: -21}
-        - {x: -18, y: -32}
-        - {x: 32, y: -32}
-        - {x: 32, y: 9}
-        - {x: 27, y: 12}
-      - - {x: -26, y: -28}
-        - {x: -25, y: -30}
-        - {x: -22, y: -30}
-        - {x: -17, y: -28}
-        - {x: -17, y: -24}
-        - {x: -20, y: -21}
-        - {x: -25, y: -23}
-      - - {x: 16, y: -24}
-        - {x: 16, y: -26}
-        - {x: 18, y: -28}
-        - {x: 21, y: -28}
-        - {x: 24, y: -25}
-        - {x: 23, y: -22}
-        - {x: 19, y: -21}
-      - - {x: 1, y: -15}
-        - {x: 0, y: -11}
-        - {x: -1, y: -16}
-        - {x: 0, y: -17}
-        - {x: 0, y: -19}
-        - {x: -1, y: -20}
-        - {x: 0, y: -22}
-        - {x: 1, y: -21}
-      - - {x: 13, y: -20}
-        - {x: 15, y: -22}
-        - {x: 18, y: -21}
-        - {x: 18, y: -18}
-        - {x: 16, y: -16}
-        - {x: 13, y: -17}
-      - - {x: 29, y: 17}
-        - {x: 31, y: 15}
-        - {x: 32, y: 15}
-        - {x: 32, y: 20}
-        - {x: 30, y: 20}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_17
       rect:
         serializedVersion: 2
-        x: 128
+        x: 4352
         y: 0
-        width: 64
-        height: 64
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 7, y: 32}
-        - {x: -32, y: 32}
-        - {x: -32, y: -32}
-        - {x: 13, y: -32}
-        - {x: 13, y: -27}
-        - {x: 17, y: -8}
-        - {x: 17, y: 18}
-      - - {x: 1, y: -15}
-        - {x: 0, y: -11}
-        - {x: -1, y: -16}
-        - {x: 0, y: -17}
-        - {x: 0, y: -19}
-        - {x: -1, y: -20}
-        - {x: 0, y: -22}
-        - {x: 1, y: -21}
-      - - {x: 29, y: -4}
-        - {x: 31, y: -6}
-        - {x: 32, y: -6}
-        - {x: 32, y: -1}
-        - {x: 30, y: -1}
-      - - {x: 29, y: 17}
-        - {x: 31, y: 15}
-        - {x: 32, y: 15}
-        - {x: 32, y: 20}
-        - {x: 30, y: 20}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_18
       rect:
         serializedVersion: 2
-        x: 192
+        x: 4608
         y: 0
-        width: 64
-        height: 64
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -11, y: 32}
-        - {x: -32, y: 21}
-        - {x: -32, y: -32}
-        - {x: 13, y: -32}
-        - {x: 13, y: 17}
-        - {x: 7, y: 32}
-      - - {x: 1, y: -15}
-        - {x: 0, y: -11}
-        - {x: -1, y: -16}
-        - {x: 0, y: -17}
-        - {x: 0, y: -19}
-        - {x: -1, y: -20}
-        - {x: 0, y: -22}
-        - {x: 1, y: -21}
-      - - {x: 30, y: 7}
-        - {x: 26, y: 2}
-        - {x: 26, y: -3}
-        - {x: 27, y: -4}
-        - {x: 30, y: -4}
-        - {x: 32, y: -2}
-        - {x: 32, y: 7}
-      - - {x: 14, y: 32}
-        - {x: 14, y: 28}
-        - {x: 16, y: 26}
-        - {x: 18, y: 26}
-        - {x: 20, y: 28}
-        - {x: 20, y: 32}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpriteSheet_19
       rect:
         serializedVersion: 2
-        x: 256
+        x: 4864
         y: 0
-        width: 64
-        height: 64
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 32}
-        - {x: -10, y: 31}
-        - {x: -32, y: 22}
-        - {x: -32, y: -32}
-        - {x: 22, y: -32}
-        - {x: 32, y: -20}
-        - {x: 32, y: 5}
-        - {x: 10, y: 32}
-      - - {x: 2, y: -26}
-        - {x: 0, y: -12}
-        - {x: -1, y: -17}
-        - {x: 0, y: -18}
-        - {x: 0, y: -20}
-        - {x: -1, y: -21}
-        - {x: -1, y: -25}
-        - {x: 0, y: -26}
-      - - {x: -32, y: 20}
-        - {x: -32, y: 14}
-        - {x: -28, y: 14}
-        - {x: -26, y: 16}
-        - {x: -26, y: 18}
-        - {x: -28, y: 20}
-      - - {x: -32, y: 22}
-        - {x: -28, y: 22}
-        - {x: -26, y: 23}
-        - {x: -26, y: 28}
-        - {x: -28, y: 30}
-        - {x: -32, y: 30}
-      - - {x: -17, y: 22}
-        - {x: -10, y: 22}
-        - {x: -10, y: 30}
-        - {x: -18, y: 30}
-        - {x: -18, y: 24}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 3928
+        y: 0
+        width: 68
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     outline: []

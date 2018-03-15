@@ -11,77 +11,111 @@ public class PlayerMovement : MonoBehaviour {
 
 	//For Jumping
 	public float jumpForce; 
-	public Transform groundCheck;
-	public LayerMask whatsGround;
 	public float jumpAmmount = 200f; // jumpAmmount is the max ammount of jump the character has.
 	public float decreaseAmmountBy;
 	public bool isJumping = false;
 	public bool isGrounded = false;
+    public float nextJumpDelay = 0.2f;
+    private bool jumpStarted = false;
+    private float currentJumpAmmount = 0;   // currentJumpAmmount is the current ammount left while the character is jumping. This can be use for jump height
 
-	private float currentJumpAmmount = 0; 	// currentJumpAmmount is the current ammount left while the character is jumping
-	private float groundRadius = 0.4f; // TODO: value needs to be adjusted for our spirte's feet in order to get an accrute edge to edge ground detection.
+    public Transform groundCheck;
+    public LayerMask whatsGround;
+    public float hardLandingThreshold = -16f;
+	private float groundRadius = 0.4f;
 
 	private Rigidbody2D rigBod;
+    private Animator animstate;
+    private SpriteRenderer sR;
 
-	void Awake () {
-		//Gets the reference of the attached Rigidbody2D componment from the object
+    void Awake () {
+		//Gets the references
 		rigBod = GetComponent<Rigidbody2D>();
         animstate = GetComponent<Animator> ();
-	}
+        sR = GetComponent<SpriteRenderer>();
+    }
 
-	//FixedUpdate will handle the response from the user input
-	/*   Note for jumping animation: 
-	* 		isJumping can be use from the start of the jump to the apex.
-	*		isGrounded can be use when the character is just falling.
-	*		If there is no falling animation just use isJumping.
-	**/
+	//FixedUpdate will handle the response from the user input for jumping and walking
 	void FixedUpdate(){
-		
-		//checks if a circle that will be below our player's feet is tonching the ground
-		isGrounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatsGround);
 
-		//Check if the character is not jumping already and is touching ground
-		// If its ready for a jump, add a ammount for the jump
-		if(!isJumping && isGrounded){
-			currentJumpAmmount = jumpAmmount;
-		}
-		//This if will cancel the jump if the character has hit his head on a object.
-		if(isJumping && rigBod.velocity.y == 0){
-			isJumping = false;
-			currentJumpAmmount = 0; 
-		}
+        //checks if a circle that will be below our player's feet is tonching the ground
+        isGrounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatsGround);
 
-		//Response for jumping. If the user is pressing the jump buttion and there is an ammount for a jump, the actual jump will trigger.
-		if (Player.instance.jumpInput && currentJumpAmmount > 0) {
-			rigBod.velocity = new Vector2(rigBod.velocity.x, jumpForce); // Add a bit of y velocity 
-			isJumping = true;
-			currentJumpAmmount -= decreaseAmmountBy;
-		} 
-		else {
-			isJumping = false;
-			currentJumpAmmount = 0;
-		}
-			
-		/* Jumping animation flag, Place Here.*/	
+        //Check if the character is not jumping already and is touching ground
+        // If its ready for a jump, add a ammount for the jump and actualy start the jump after a delay
+        if (Player.instance.jumpInput && !isJumping && isGrounded && !jumpStarted)
+        {
+            currentJumpAmmount = jumpAmmount;
+            StartCoroutine(JumpDelay());
 
-		//Response for horizontal movement
-		rigBod.velocity = new Vector2(Player.instance.horizontalInput * movementSpeed, rigBod.velocity.y);
-
-		/* Walking animation flag, Place Here */
-        if (Player.instance.horizontalInput < 0) {
-            transform.eulerAngles = new Vector3 (0, 180, 0);
-            animstate.SetInteger ("AnimationState", 1);
         }
-        else if (Player.instance.horizontalInput > 0) {
-            animstate.SetInteger ("AnimationState", 1);
-            transform.eulerAngles = new Vector3 (0, 0, 0);
-        } else {
-            animstate.SetInteger ("AnimationState", 0);
+        else if (isJumping) // keep calling jump until the jump has ended
+        {
+            RunJump();
         }
+
+        //Jump and fall flags
+        animstate.SetBool("Grounded", isGrounded);
+        animstate.SetFloat("JPotential", currentJumpAmmount + rigBod.velocity.y);
+        animstate.SetBool("JumpStarted", jumpStarted);
+        animstate.SetBool("IsJumping", isJumping);
+        //Hard Landing check
+        if (rigBod.velocity.y <= hardLandingThreshold) {
+            animstate.SetBool("LandHard", true);
+        }
+        else if (animstate.GetCurrentAnimatorStateInfo(0).IsTag("Idle") || jumpStarted) { //will reset the HardLand bool if an Idle or new jump has been set
+           
+            animstate.SetBool("LandHard", false);
+        }
+
+        //Response for horizontal movement
+        rigBod.velocity = new Vector2(Player.instance.horizontalInput * movementSpeed, rigBod.velocity.y);
+        //Walking Animation flags sets
+        if (Player.instance.horizontalInput < 0)
+        {
+            sR.flipX = true;
+        }
+        else if (Player.instance.horizontalInput > 0)
+        {
+            sR.flipX = false;
+        }
+        animstate.SetFloat("WalkState", Mathf.Abs(Player.instance.horizontalInput));
+
+        //Debuging Only
+        //if (rigBod.velocity.y != 0) {
+            //Debug.Log("Potential: " + currentJumpAmmount + rigBod.velocity.y + " Vel: " + rigBod.velocity.y);
+        //}
 
     }
 
+    void RunJump()
+    {
+        //Response for jumping. If the user is pressing the jump buttion and there is an ammount for a jump, the actual jump will trigger.
+        if (Player.instance.jumpInput && currentJumpAmmount > 0)
+        {
+            rigBod.velocity = new Vector2(rigBod.velocity.x, jumpForce); // Add a bit of y velocity 
+            isJumping = true;
+            currentJumpAmmount -= decreaseAmmountBy;
+        }
+        else
+        {
+            isJumping = false;
+            currentJumpAmmount = 0;
+        }
+        //This if will cancel the jump if the character has hit his head on a object.
+        if (isJumping && rigBod.velocity.y == 0)
+        {
+            isJumping = false;
+            currentJumpAmmount = 0;
+        }
+    }
 
-
+    IEnumerator JumpDelay() {
+        jumpStarted = true;
+        yield return new WaitForSeconds(nextJumpDelay);
+        // start jump
+        RunJump(); 
+        jumpStarted = false;
+    }
 
 }
