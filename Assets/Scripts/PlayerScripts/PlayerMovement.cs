@@ -23,13 +23,12 @@ public class PlayerMovement : MonoBehaviour {
 	private float groundRadius = 0.4f;
 
 	private Rigidbody2D rigBod;
-    private Animator animstate;
+    
     private SpriteRenderer sR;
 
     void Awake () {
 		//Gets the references
 		rigBod = GetComponent<Rigidbody2D>();
-        animstate = GetComponent<Animator> ();
         sR = GetComponent<SpriteRenderer>();
     }
 
@@ -53,17 +52,17 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         //Jump and fall flags
-        animstate.SetBool("Grounded", isGrounded);
-        animstate.SetFloat("JPotential", currentJumpAmmount + rigBod.velocity.y);
-        animstate.SetBool("JumpStarted", jumpStarted);
-        animstate.SetBool("IsJumping", isJumping);
+        Player.instance.animstate.SetBool("Grounded", isGrounded);
+        Player.instance.animstate.SetFloat("JPotential", currentJumpAmmount + rigBod.velocity.y);
+        Player.instance.animstate.SetBool("JumpStarted", jumpStarted);
+        Player.instance.animstate.SetBool("IsJumping", isJumping);
         //Hard Landing check
         if (rigBod.velocity.y <= hardLandingThreshold) {
-            animstate.SetBool("LandHard", true);
+            Player.instance.animstate.SetBool("LandHard", true);
         }
-        else if (animstate.GetCurrentAnimatorStateInfo(0).IsTag("Idle") || jumpStarted) { //will reset the HardLand bool if an Idle or new jump has been set
-           
-            animstate.SetBool("LandHard", false);
+        else if (Player.instance.animstate.GetCurrentAnimatorStateInfo(0).IsTag("Idle") || jumpStarted) { //will reset the HardLand bool if an Idle or new jump has been set
+
+            Player.instance.animstate.SetBool("LandHard", false);
         }
 
         //Response for horizontal movement
@@ -77,7 +76,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             sR.flipX = false;
         }
-        animstate.SetFloat("WalkState", Mathf.Abs(Player.instance.horizontalInput));
+        Player.instance.animstate.SetFloat("WalkState", Mathf.Abs(Player.instance.horizontalInput));
 
         //Debuging Only
         //if (rigBod.velocity.y != 0) {
