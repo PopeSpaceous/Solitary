@@ -43,7 +43,7 @@ public class WireConnection: Puzzle {
 		//#endif
 
 		//Debuging---
-		//difficulty = 3;
+		//difficulty = 2;
         //
 
 
@@ -152,7 +152,6 @@ public class WireConnection: Puzzle {
 		}
 
 		if(hasAllOpen == true){
-			//Debug.Log ("WireConnection Puzzle Complete");
             PuzzleComplete ();
             Lock.unlocked.Clear(); // cleanup the static var. When unloading a scene a static var is not unloaded
         }

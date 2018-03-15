@@ -17,6 +17,7 @@ public class Lock : MonoBehaviour {
 
 	private int ConnWireID = 0; // the current connected wire id. This will be used to caluated the current sum 
 
+    public SpriteRenderer lockedSprite;
 
 	private Connection connection;
 
@@ -52,7 +53,6 @@ public class Lock : MonoBehaviour {
 
 		//check if the sum is correct and apply the needed changes
 		if (sum == neededSum && !isOpen && wireID != 0) {
-			//Debug.Log ("OPEN!");
 			isOpen = true;
 
 			MoveLock (true);
@@ -64,7 +64,6 @@ public class Lock : MonoBehaviour {
 			unlocked.Add (this);
 
 		} else if (isOpen ) { // if the lock is already open close it
-			//Debug.Log ("Closed!");
 
 			isOpen = false;
 			MoveLock (false);
@@ -82,7 +81,6 @@ public class Lock : MonoBehaviour {
 			unlocked.Remove (this);
 			
 		} else if (!isOpen ) { //if everything is wrong affect the already unlocked
-			//Debug.Log ("Unlock Affect");
 			//Unlock Affect
 			unlockAffect();
 		}
@@ -97,7 +95,6 @@ public class Lock : MonoBehaviour {
 	//this function will cause to close already open locks
 	public void unlockAffect(){
 		for (int i = unlocked.Count - 1; i >= 0; i--){
-			//Debug.Log ("Affected :"+unlocked[i].lockID);
 			unlocked[i].CheckTheSum (unlocked[i].ConnWireID);
 
 		}
@@ -108,11 +105,14 @@ public class Lock : MonoBehaviour {
 		Vector3 ChangePos = this.GetComponent<Transform> ().position;
 		if (state) {
 			//Change to an open state
-			ChangePos.y += 2;
-		} else {
+			//ChangePos.y += 2;
+            lockedSprite.enabled = false;
+
+        } else {
 			//Change to a close state
-			ChangePos.y -= 2; 
-		}
+			//ChangePos.y -= 2;
+            lockedSprite.enabled = true;
+        }
 		GetComponent<Transform> ().position = ChangePos;
 	} 
 		
