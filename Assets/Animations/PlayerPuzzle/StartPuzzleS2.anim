@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: JumpLand
+  m_Name: StartPuzzleS2
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,16 +19,12 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300040, guid: 5b531b2b363280e48b0fcf80c436b880, type: 3}
-    - time: 0.1923077
-      value: {fileID: 21300042, guid: 5b531b2b363280e48b0fcf80c436b880, type: 3}
-    - time: 0.34615386
-      value: {fileID: 21300040, guid: 5b531b2b363280e48b0fcf80c436b880, type: 3}
+      value: {fileID: 21300032, guid: 5b531b2b363280e48b0fcf80c436b880, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 26
+  m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -43,15 +39,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300040, guid: 5b531b2b363280e48b0fcf80c436b880, type: 3}
-    - {fileID: 21300042, guid: 5b531b2b363280e48b0fcf80c436b880, type: 3}
-    - {fileID: 21300040, guid: 5b531b2b363280e48b0fcf80c436b880, type: 3}
+    - {fileID: 21300032, guid: 5b531b2b363280e48b0fcf80c436b880, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.3846154
+    m_StopTime: 0.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -71,4 +65,12 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.25
+    functionName: GoInPuzzle
+    data: 
+    objectReferenceParameter: {fileID: 1399621838967556, guid: 4bd8000edb3a2e342b2f4f3b0ad80d9d,
+      type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
