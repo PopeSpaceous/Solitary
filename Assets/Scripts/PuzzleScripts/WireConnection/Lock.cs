@@ -53,7 +53,6 @@ public class Lock : MonoBehaviour {
 
 		//check if the sum is correct and apply the needed changes
 		if (sum == neededSum && !isOpen && wireID != 0) {
-			//Debug.Log ("OPEN!");
 			isOpen = true;
 
 			MoveLock (true);
@@ -65,7 +64,6 @@ public class Lock : MonoBehaviour {
 			unlocked.Add (this);
 
 		} else if (isOpen ) { // if the lock is already open close it
-			//Debug.Log ("Closed!");
 
 			isOpen = false;
 			MoveLock (false);
@@ -83,7 +81,6 @@ public class Lock : MonoBehaviour {
 			unlocked.Remove (this);
 			
 		} else if (!isOpen ) { //if everything is wrong affect the already unlocked
-			//Debug.Log ("Unlock Affect");
 			//Unlock Affect
 			unlockAffect();
 		}
@@ -98,7 +95,6 @@ public class Lock : MonoBehaviour {
 	//this function will cause to close already open locks
 	public void unlockAffect(){
 		for (int i = unlocked.Count - 1; i >= 0; i--){
-			//Debug.Log ("Affected :"+unlocked[i].lockID);
 			unlocked[i].CheckTheSum (unlocked[i].ConnWireID);
 
 		}

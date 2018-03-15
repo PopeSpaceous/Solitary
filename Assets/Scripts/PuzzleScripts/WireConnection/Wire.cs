@@ -88,7 +88,7 @@ public class Wire : MonoBehaviour {
 
         //Scale to follow
         float distance = Vector2.Distance(wireHeadTrans.position,  targetPos); // calculates the magnitude between the mouse and this gameobject
-		float widthScaleChange = Mathf.Abs(distance) * 1.2f; // offset the value by 11.5f. This is so it can scale with the distance.
+		float widthScaleChange = Mathf.Abs(distance) * 1.2f; // offset the value. This is so it can scale with the distance.
 
         //will scale only if the scale change is not less then the current scale. And not passing the limit scale
         if (widthScaleChange <= scaleLimit && widthScaleChange >= orgWireNeckWidth.x)
