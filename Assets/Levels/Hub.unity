@@ -319,7 +319,9 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 742592582}
-  m_Text: 'Build Version: Dev 1'
+  m_Text: 'Build Version: Dev 2
+
+'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -402,7 +404,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 750756323}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.281, z: -2}
+  m_LocalPosition: {x: 0, y: -0.308, z: -2}
   m_LocalScale: {x: 0.03880174, y: 0.13648658, z: 1}
   m_Children: []
   m_Father: {fileID: 1132632886}
@@ -688,6 +690,11 @@ Prefab:
       propertyPath: boundBox
       value: 
       objectReference: {fileID: 1719002684}
+    - target: {fileID: 114773017023349068, guid: eb1c0737ee1ae5e4ba9af5d7d6d74b92,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb1c0737ee1ae5e4ba9af5d7d6d74b92, type: 2}
   m_IsPrefabParent: 0
