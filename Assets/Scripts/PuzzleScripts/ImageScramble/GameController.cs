@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
     int countPoint = 0;
     int countImageKey = 0;
+    int numberOfPuzzles = 2;
+    int easyPuzzleRandom = 0;
 
     public int level;
 
@@ -25,12 +27,25 @@ public class GameController : MonoBehaviour {
     GameObject[,] tiles;
     GameObject[,] checkPoints;
 
+    public Sprite[] planetOne3x3;
+    public Sprite[] planetTwo3x3;
+    public Sprite[] planetOne4x4;
+    public Sprite[] planetTwo4x4;
+
     void Start () {
         imageKey = new GameObject [sizeRow, sizeCol];
         tiles = new GameObject [sizeRow, sizeCol];
         checkPoints = new GameObject [sizeRow, sizeCol];
 
-        if(level == 1) {
+        if (level == 1) {
+            sizeRow = 3;
+            sizeCol = 3;
+            easyPuzzleRandom = Random.Range (1, numberOfPuzzles + 1);
+            if (easyPuzzleRandom == 1) {
+                LoadPlanetOne3x3 ();
+            } else if (easyPuzzleRandom == 2) {
+                LoadPlanetTwo3x3 ();
+            }
             EasyLevel ();
         }
 
@@ -124,29 +139,54 @@ public class GameController : MonoBehaviour {
     //shuffles the puzzle
     void Shuffle () {
         //randomizes puzzle by switching random tiles for 500 iterations
-        for (int i = 0; i < 500; i++){
-            //picks random tiles for size
+        for (int i = 0; i < 500; i++) {
+            //picks random tiles for shuffling
             row = Random.Range (0, sizeRow);
             col = Random.Range (0, sizeCol);
 
-            temp = tiles [rowBlank, colBlank]; // save blank location to temp
-            tiles [rowBlank, colBlank] = null; // set blank to null
+            //makes sure random tile is next to a blank to make the puzzle solvable
+            if ((rowBlank != row && colBlank == col)) {
+                if (Mathf.Abs (row - rowBlank) == 1) {
+                    temp = tiles [rowBlank, colBlank]; // save blank location to temp
+                    tiles [rowBlank, colBlank] = null; // set blank to null
 
-            tiles [rowBlank, colBlank] = tiles [row, col]; // sets blank to clicked tile
-            tiles [row, col] = null; // set selected tile to null
-            tiles [row, col] = temp; // sets selected tile to blank location
+                    tiles [rowBlank, colBlank] = tiles [row, col]; // sets blank to clicked tile
+                    tiles [row, col] = null; // set selected tile to null
+                    tiles [row, col] = temp; // sets selected tile to blank location
 
-            //move for image
-            tiles [rowBlank, colBlank].GetComponent<ImageController> ().target = checkPoints [rowBlank, colBlank]; //set new point for blank
-            tiles [row, col].GetComponent<ImageController> ().target = checkPoints [row, col];
+                    //move for image
+                    tiles [rowBlank, colBlank].GetComponent<ImageController> ().target = checkPoints [rowBlank, colBlank]; //set new point for blank
+                    tiles [row, col].GetComponent<ImageController> ().target = checkPoints [row, col];
 
-            tiles [rowBlank, colBlank].GetComponent<ImageController> ().startMove = true;
-            tiles [row, col].GetComponent<ImageController> ().startMove = true;
+                    tiles [rowBlank, colBlank].GetComponent<ImageController> ().startMove = true;
+                    tiles [row, col].GetComponent<ImageController> ().startMove = true;
 
-            //set row and col for image blank
-            rowBlank = row;
-            colBlank = col;
+                    //set row and col for image blank
+                    rowBlank = row;
+                    colBlank = col;
+                }
+            } 
+            else if ((rowBlank == row && colBlank != col)) {
+                if (Mathf.Abs (col - colBlank) == 1) {
+                    temp = tiles [rowBlank, colBlank]; // save blank location to temp
+                    tiles [rowBlank, colBlank] = null; // set blank to null
 
+                    tiles [rowBlank, colBlank] = tiles [row, col]; // sets blank to clicked tile
+                    tiles [row, col] = null; // set selected tile to null
+                    tiles [row, col] = temp; // sets selected tile to blank location
+
+                    //move for image
+                    tiles [rowBlank, colBlank].GetComponent<ImageController> ().target = checkPoints [rowBlank, colBlank]; //set new point for blank
+                    tiles [row, col].GetComponent<ImageController> ().target = checkPoints [row, col];
+
+                    tiles [rowBlank, colBlank].GetComponent<ImageController> ().startMove = true;
+                    tiles [row, col].GetComponent<ImageController> ().startMove = true;
+
+                    //set row and col for image blank
+                    rowBlank = row;
+                    colBlank = col;
+                }
+            }
         }
     }
 
@@ -165,5 +205,33 @@ public class GameController : MonoBehaviour {
         tiles [2, 0] = tilesList [6];   //C1
         tiles [2, 1] = tilesList [7];   //C2
         tiles [2, 2] = tilesList [8];   //Blank
+    }
+
+    void LoadPlanetOne3x3 () {
+        for (int i = 0; i <= tilesList.Count - 2; i++) {
+            tilesList [i].AddComponent<SpriteRenderer> ();
+            tilesList [i].GetComponent<SpriteRenderer> ().sprite = planetOne3x3 [i];
+            tilesList [i].GetComponent<SpriteRenderer> ().sortingLayerName = "Puzzle";
+            tilesList [i].GetComponent<SpriteRenderer> ().sortingOrder = 1;
+
+            imageKeyList [i].AddComponent<SpriteRenderer> ();
+            imageKeyList [i].GetComponent<SpriteRenderer> ().sprite = planetOne3x3 [i];
+            imageKeyList [i].GetComponent<SpriteRenderer> ().sortingLayerName = "Puzzle";
+            imageKeyList [i].GetComponent<SpriteRenderer> ().sortingOrder = 1;
+        }
+    }
+
+    void LoadPlanetTwo3x3 () {
+        for (int i = 0; i <= tilesList.Count - 2; i++) {
+            tilesList [i].AddComponent<SpriteRenderer> ();
+            tilesList [i].GetComponent<SpriteRenderer> ().sprite = planetTwo3x3 [i];
+            tilesList [i].GetComponent<SpriteRenderer> ().sortingLayerName = "Puzzle";
+            tilesList [i].GetComponent<SpriteRenderer> ().sortingOrder = 1;
+
+            imageKeyList [i].AddComponent<SpriteRenderer> ();
+            imageKeyList [i].GetComponent<SpriteRenderer> ().sprite = planetTwo3x3 [i];
+            imageKeyList [i].GetComponent<SpriteRenderer> ().sortingLayerName = "Puzzle";
+            imageKeyList [i].GetComponent<SpriteRenderer> ().sortingOrder = 1;
+        }
     }
 }
