@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 866297575c70fc7488d7d73e5824887d
-timeCreated: 1519000358
+guid: 00bc6b6a899a36f41b2d63a196c74053
+timeCreated: 1521189416
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ImageScramblePicture1-4x4_0
-    21300002: ImageScramblePicture1-4x4_1
-    21300004: ImageScramblePicture1-4x4_2
-    21300006: ImageScramblePicture1-4x4_3
-    21300008: ImageScramblePicture1-4x4_4
-    21300010: ImageScramblePicture1-4x4_5
-    21300012: ImageScramblePicture1-4x4_6
-    21300014: ImageScramblePicture1-4x4_7
-    21300016: ImageScramblePicture1-4x4_8
-    21300018: ImageScramblePicture1-4x4_9
-    21300020: ImageScramblePicture1-4x4_10
-    21300022: ImageScramblePicture1-4x4_11
-    21300024: ImageScramblePicture1-4x4_12
-    21300026: ImageScramblePicture1-4x4_13
-    21300028: ImageScramblePicture1-4x4_14
-    21300030: ImageScramblePicture1-4x4_15
+    21300000: ImageScramble1_44_0
+    21300002: ImageScramble1_44_1
+    21300004: ImageScramble1_44_2
+    21300006: ImageScramble1_44_3
+    21300008: ImageScramble1_44_4
+    21300010: ImageScramble1_44_5
+    21300012: ImageScramble1_44_6
+    21300014: ImageScramble1_44_7
+    21300016: ImageScramble1_44_8
+    21300018: ImageScramble1_44_9
+    21300020: ImageScramble1_44_10
+    21300022: ImageScramble1_44_11
+    21300024: ImageScramble1_44_12
+    21300026: ImageScramble1_44_13
+    21300028: ImageScramble1_44_14
+    21300030: ImageScramble1_44_15
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -47,7 +47,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -96,13 +96,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_0
+      name: ImageScramble1_44_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 384
-        width: 128
-        height: 128
+        y: 42
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -110,13 +110,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_1
+      name: ImageScramble1_44_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 384
-        width: 128
-        height: 128
+        x: 14
+        y: 42
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,13 +124,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_2
+      name: ImageScramble1_44_2
       rect:
         serializedVersion: 2
-        x: 256
-        y: 384
-        width: 128
-        height: 128
+        x: 28
+        y: 42
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,13 +138,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_3
+      name: ImageScramble1_44_3
       rect:
         serializedVersion: 2
-        x: 384
-        y: 384
-        width: 128
-        height: 128
+        x: 42
+        y: 42
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,69 +152,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_5
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_6
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_7
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_8
+      name: ImageScramble1_44_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
-        width: 128
-        height: 128
+        y: 28
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,13 +166,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_9
+      name: ImageScramble1_44_5
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 128
-        height: 128
+        x: 14
+        y: 28
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,13 +180,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_10
+      name: ImageScramble1_44_6
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
-        width: 128
-        height: 128
+        x: 28
+        y: 28
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,13 +194,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_11
+      name: ImageScramble1_44_7
       rect:
         serializedVersion: 2
-        x: 384
-        y: 128
-        width: 128
-        height: 128
+        x: 42
+        y: 28
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,13 +208,69 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_12
+      name: ImageScramble1_44_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 14
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ImageScramble1_44_9
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 14
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ImageScramble1_44_10
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 14
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ImageScramble1_44_11
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 14
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ImageScramble1_44_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,13 +278,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_13
+      name: ImageScramble1_44_13
       rect:
         serializedVersion: 2
-        x: 128
+        x: 14
         y: 0
-        width: 128
-        height: 128
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,13 +292,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_14
+      name: ImageScramble1_44_14
       rect:
         serializedVersion: 2
-        x: 256
+        x: 28
         y: 0
-        width: 128
-        height: 128
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,13 +306,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ImageScramblePicture1-4x4_15
+      name: ImageScramble1_44_15
       rect:
         serializedVersion: 2
-        x: 384
+        x: 42
         y: 0
-        width: 128
-        height: 128
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
