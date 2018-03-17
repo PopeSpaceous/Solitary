@@ -66,7 +66,15 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         //Response for horizontal movement
-        rigBod.velocity = new Vector2(Player.instance.horizontalInput * movementSpeed, rigBod.velocity.y);
+        if (!jumpStarted )
+        {
+            rigBod.velocity = new Vector2(Player.instance.horizontalInput * movementSpeed, rigBod.velocity.y);
+
+        }
+        else {
+            //cut the movement speed by half when a jump has started
+            rigBod.velocity = new Vector2((Player.instance.horizontalInput) * (movementSpeed/2), rigBod.velocity.y);
+        }
         //Walking Animation flags sets
         if (Player.instance.horizontalInput < 0)
         {

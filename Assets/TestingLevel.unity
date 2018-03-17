@@ -198,6 +198,14 @@ Prefab:
       propertyPath: m_Name
       value: Player(Clone)
       objectReference: {fileID: 0}
+    - target: {fileID: 4749825098732496, guid: a9a8b10fa8a3af540a5e2c0450f1c9f3, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749825098732496, guid: a9a8b10fa8a3af540a5e2c0450f1c9f3, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.56
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9a8b10fa8a3af540a5e2c0450f1c9f3, type: 2}
   m_IsPrefabParent: 0
