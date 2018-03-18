@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40adee82805cfbd448a5f44e1a15228d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1471014789904894, guid: a9a8b10fa8a3af540a5e2c0450f1c9f3, type: 2}
+  player: {fileID: 1832838828691172, guid: a9a8b10fa8a3af540a5e2c0450f1c9f3, type: 2}
   manager: {fileID: 1999432921975204, guid: b24751505665bc343a94ddf6d13d022c, type: 2}
 --- !u!1001 &1194107760
 Prefab:
