@@ -12,19 +12,30 @@ public class PuzzlePlaceholder : MonoBehaviour {
 	//For Debugging use, difficultyNeed will be the actual difficulty for the puzzle.
 	public int difficultyNeed = 1; 
 
-	public Level_Door door = null;
+	public WorldObject wObject = null;
 
     //use for setting the appropriate set when a puzzle is completed
     [HideInInspector]
     public Level level; //Must be set by PuzzleRandomization class
+    [HideInInspector]
+    public Sprite puzzleSprite = null; //Must be set by PuzzleRandomization class
 
     //To what puzzle this placeholder must go to
-    [HideInInspector]
-	public string puzzleGoTo= "PuzzleTemplate";
+    //[HideInInspector]
+	public string puzzleGoTo= "PuzzleTemplate"; //Must be set by PuzzleRandomization class
 
+    private void Start()
+    {
 
+        //Set the puzzle sprite its given to
+        if (puzzleSprite != null)
+            GetComponent<SpriteRenderer>().sprite = puzzleSprite;
+        //Lock the world object
+        if(wObject != null)
+            wObject.Lock();
+    }
 
-	void OnTriggerStay2D( Collider2D col)
+    void OnTriggerStay2D( Collider2D col)
 	{
 		if(col.gameObject.CompareTag("Player") && Player.instance.actionButtion && !Player.instance.isInPuzzle)
         {
@@ -67,10 +78,10 @@ public class PuzzlePlaceholder : MonoBehaviour {
             //TODO: add the other updates it needs to do when the puzzle is completed
 
                //Door unlock
-            if (door != null)
+            if (wObject != null)
             {
-                //set the bool to allow the door to open
-               door.DoorLockChange(true);
+                //unlock the world Object
+               wObject.Unlock();
             }
         }
         //Unload Puzzle scene
