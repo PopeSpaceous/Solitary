@@ -1,17 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*This Level_Door class will be used for door that are in a level. The type of door can change */
-public class Level_Door : MonoBehaviour {
+/*This Level_Door class will be used for door that are in a level */
+public class Level_Door : WorldObject {
 
-	//TODO: Complete door unlocking when a puzzle is finished
+    private Animator animat;
+    private BoxCollider2D door;
 
-	public bool isDoorlocked = false;
+    private void Start()
+    {
+        objectName = "Level_Door";
+        door = GetComponent<BoxCollider2D>();
+        animat = GetComponent<Animator>();
+        //Start the door locked
+        Lock();
+    }
 
-	/*Level door trigger and lock and unlock code here */
-	
-	//the passed bool will either lock or unlock the door
-	public void DoorLockChange(bool key){
-		isDoorlocked = key;
-	}
+    public override void Lock()
+    {
+        isLocked = true;
+        animat.SetBool("IsLocked", isLocked);
+    }
+    public override void Unlock()
+    {
+        isLocked = false;
+        animat.SetBool("IsLocked", isLocked);
+    }
+
+    public override void OpenMove()
+    {
+        if (!isLocked) {
+            door.enabled = false;
+            isOpen = true;
+        }
+        
+    }
+
+    public override void CloseMove()
+    {
+        if (isLocked)
+        {
+            door.enabled = true;
+            isOpen = false;
+        }
+    }
+    //The animation controller will take care when to take off the collider, or put on.
+    public void AffectDoorState(AnimationEvent eventOpen) {
+        if (eventOpen.intParameter == 0)
+        {
+            OpenMove();
+        }
+        else {
+            CloseMove();
+        }
+    }
+
 }
