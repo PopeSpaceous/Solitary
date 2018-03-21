@@ -7,7 +7,7 @@ public class Level_Door : WorldObject {
     private Animator animat;
     private BoxCollider2D door;
 
-    private void Start()
+    private void Awake()
     {
         objectName = "Level_Door";
         door = GetComponent<BoxCollider2D>();

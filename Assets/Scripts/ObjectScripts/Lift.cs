@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Lift : WorldObject {
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool activate = false;//Begin moving the lift when true
 
     public float liftDistance = 5f;
     public float liftSpeed = 3f;
     public bool DirectionUp = true; //if false, the direction will be down
     public float waitTime = 1f; // wait time before it should start moving again after it reaches its distance
+    [HideInInspector]
+    public bool isPlayerIn = false; // checks if the player is on the platfrom or not
 
-    private Animator liftSate;
-    private bool isPlayerIn = false; // checks if the player is on the platfrom or not
+    private Animator liftSate;    
     private float currentDistance = 0;
     private Rigidbody2D rigdL;
 
@@ -43,7 +44,7 @@ public class Lift : WorldObject {
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && isPlayerIn)
         {
             isPlayerIn = false;
         }
@@ -66,15 +67,14 @@ public class Lift : WorldObject {
             }
         }
         else if(rigdL.velocity.y != 0) {
-
-            if (isPlayerIn) { // cut the velocity of the player when the lift stops
+            if (isPlayerIn)
+            { // cut the velocity of the player when the lift stops
                 Player.instance.GetComponent<Rigidbody2D>().velocity = new Vector3(Player.instance.GetComponent<Rigidbody2D>().velocity.x, 0, 0);
             }
-            
             rigdL.velocity = new Vector3(0, 0, 0);
         }
 
-        liftSate.SetBool("IsOpen", isOpen);
+        liftSate.SetBool("IsOpen", isOpen && activate);
         liftSate.SetBool("DirectionUp", DirectionUp);
     }
 
