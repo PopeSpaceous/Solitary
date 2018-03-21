@@ -10,10 +10,11 @@ public class LiftStopper : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Will stop the lift if the player is not in the lift, and the lift is going down
-        if (collision.CompareTag("Player") && !lift.isPlayerIn && !lift.DirectionUp)
+        if (collision.CompareTag("Player") && !lift.isPlayerIn && !lift.DirectionUp && lift.activate)
         {
-            lift.activate = false;
+            lift.activate = false;            
         }
+        //Debug.Log("Lift Stop Enter");
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -21,6 +22,10 @@ public class LiftStopper : MonoBehaviour {
         {
             lift.activate = true;
         }
+        //Debug.Log("Lift Stop Exit");
     }
+
+
+    
 
 }
