@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-guid: 41f31d194450d154e8fd8c1bffe03b14
-timeCreated: 1521594610
+guid: 5be27150aa9d9914eb9b217ef75823fe
+timeCreated: 1521683340
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Catwalk_0
-    21300002: Catwalk_1
+    21300000: StairTile_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -48,7 +47,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 16
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -102,13 +101,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Catwalk_0
+      name: StairTile_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
-        width: 126
-        height: 110
+        x: 34
+        y: 0
+        width: 67
+        height: 28
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

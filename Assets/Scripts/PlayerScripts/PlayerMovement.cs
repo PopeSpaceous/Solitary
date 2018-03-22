@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour {
     public Transform groundCheck;
     public LayerMask whatsGround;
     public float hardLandingThreshold = -16f;
-	private float groundRadius = 0.4f;
+	private float groundRadius = 0.42f;
 
 	private Rigidbody2D rigBod;
     
@@ -121,6 +121,10 @@ public class PlayerMovement : MonoBehaviour {
         // start jump
         RunJump(); 
         jumpStarted = false;
+    }
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
     }
 
 }
