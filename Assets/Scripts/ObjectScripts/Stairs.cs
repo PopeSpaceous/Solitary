@@ -10,7 +10,7 @@ public class Stairs : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player"))
         {
            Player.instance.GetComponent<Rigidbody2D>().velocity = new Vector2(Player.instance.GetComponent<Rigidbody2D>().velocity.x, 0);
-           Debug.Log("Cut");
+           //Debug.Log("Cut Vel");
         }
     }
 
