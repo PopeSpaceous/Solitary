@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Door : MonoBehaviour {
 
 	public string levelName;
+    public int levelID = 0;
 	public bool isDoorlocked = false;
     public Level level = null;// hub will be the only scene to not populate this var
     public Level_Hub levelHub = null;

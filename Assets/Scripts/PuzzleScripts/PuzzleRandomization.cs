@@ -34,7 +34,7 @@ public class PuzzleRandomization : MonoBehaviour {
         refDictionary = new Dictionary<string, PlaceholderRefs>();
         refDictionary.Add("Anagram",new PlaceholderRefs(sprites_P[0], null));
         refDictionary.Add("Crytogram", new PlaceholderRefs(sprites_P[1], null)); // Spelling error, the scene name must be change first to fix this
-        refDictionary.Add("WireConnection", new PlaceholderRefs(sprites_P[2], animatorConrollers[0]));
+        refDictionary.Add("WireConnection", new PlaceholderRefs(sprites_P[2], animatorConrollers[2]));
         //TODO: Add more to dictionary when more sprites are made
         
 

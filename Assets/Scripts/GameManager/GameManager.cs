@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance = null;
 
     public int currentScore = 0;
+    private Level_Hub hub; // this hub ref is used for the level doors. Set each element of the leveldoors array in LoadGame 
 
 	void Awake () {
 		
@@ -21,13 +22,28 @@ public class GameManager : MonoBehaviour {
 			Destroy (gameObject);
 			Debug.LogWarning ("Another instance of GameManager has been created and destoryed!");
 		}
-
+        
 		//Makes this gameobject not be unloaded when entering a new scene
 		DontDestroyOnLoad (this);
-	}
+        //get level_hub ref
+        hub = GameObject.Find("Hub").GetComponent<Level_Hub>();
+        
+    }
 
-	//set the player location based on given spawn point
-	public void SetPlayerLocation(Transform sp){
+    //NOTE: this method must be called in a start method when loading the game from a file
+    public void LoadGame(/* TODO: add params */) {
+
+        //TODO: complete load game for GM
+        //GM needs to set : currentScore and levelDoors when loading the game
+        //You must set the values of leveldoors in the hub:  this.levelDoors = hub.levelDoors;
+    }
+    
+    public void SaveGame() {
+        //TODO: complete save game
+    }
+
+    //set the player location based on given spawn point
+    public void SetPlayerLocation(Transform sp){
 		Player.instance.transform.position = sp.position;
 	}
 
@@ -39,7 +55,12 @@ public class GameManager : MonoBehaviour {
     
     public void LevelCompleted(int i)
     {
-        //TODO: code to to unlock another door
+        //Unlock another door
+        if (hub.levelDoors[i - 1].levelID != hub.levelDoors.Length) {
+            hub.levelDoors[i + 1].isDoorlocked = false;
+        }
+
+        SaveGame();
     }
 	//TODO: complete GameManager class. Still need Upload to DB
 

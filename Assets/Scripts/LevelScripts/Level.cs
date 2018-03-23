@@ -8,7 +8,7 @@ public class Level : MonoBehaviour {
 	//A gameobject place marker that we will reference in the Inspector
 	public Transform PlayerSpawn = null;
 
-    public int levelNumber = 0;
+    public int levelID = 0;
 
     public Text timerText;
     public Text levelCompleteMessage;
@@ -55,13 +55,13 @@ public class Level : MonoBehaviour {
         CalulateLevelScore();
         //Update the player's score
         GameManager.instance.UpdateScore(currentLevelScore);
-        GameManager.instance.LevelCompleted(levelNumber);
+        GameManager.instance.LevelCompleted(levelID);
 
         //Level complete message
-        levelCompleteMessage.text = "Level " + levelNumber.ToString() + " Complete!";
+        levelCompleteMessage.text = "Level " + levelID.ToString() + " Complete!";
         levelCompleteMessage.gameObject.SetActive(true);
         //Lock player's movement
-        Player.instance.ChangeMovementLock(false); // fix this, its does not apply it due to puzzleEnd animation
+        Player.instance.ChangeMovementLock(false);
         //Exit Level
         StartCoroutine(WaitBackToHub());
     }

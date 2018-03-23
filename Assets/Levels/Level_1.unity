@@ -317,6 +317,11 @@ Prefab:
       propertyPath: level
       value: 
       objectReference: {fileID: 1300374351}
+    - target: {fileID: 114283037590794166, guid: be94336f7fb83224b9768e08f711a9c4,
+        type: 2}
+      propertyPath: levelID
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
   m_IsPrefabParent: 0
@@ -645,7 +650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerSpawn: {fileID: 838778182}
-  levelNumber: 1
+  levelID: 1
   timerText: {fileID: 393625074}
   levelCompleteMessage: {fileID: 1483280725}
   backToHub: {fileID: 667669125}
@@ -671,6 +676,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bf8ef0ce48372644c934d1f0de38a6e2, type: 3}
   - {fileID: 21300006, guid: 4cf70bcf4c33dec4583db9cd2b09ed09, type: 3}
   animatorConrollers:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 9100000, guid: 96bc191add2a07647a2e0884f2d605b2, type: 2}
 --- !u!1001 &1483280723
 Prefab:
