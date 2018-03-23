@@ -1407,6 +1407,8 @@ MonoBehaviour:
   - {fileID: 21300016, guid: 571d294dcb388bc49a446e9bd46def62, type: 3}
   planetOne4x4: []
   planetTwo4x4: []
+  planetOne5x5: []
+  planetTwo5x5: []
 --- !u!114 &114702012641809784
 MonoBehaviour:
   m_ObjectHideFlags: 1
