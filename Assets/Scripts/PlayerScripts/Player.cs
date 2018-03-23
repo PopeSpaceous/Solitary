@@ -10,6 +10,10 @@ public class Player : MonoBehaviour {
 	//Used for locking the player movement
 	private bool canPlayerMove = true;
 
+    //Used to take priority which movement lock can change the canPlayerMove value. 
+    //This is so it can help prevent race conditions to which lock change can change the playermovement.
+    //The script call of lock change will take priority 
+    private bool plocked = false; 
     //bool when or not the player is in a puzzle
     public bool isInPuzzle = false;
     //Animator 
@@ -79,11 +83,13 @@ public class Player : MonoBehaviour {
 
     //Set the movement lock done by a animation
     public void ChangeMovementLock(AnimationEvent animationEvent = null) {
-        canPlayerMove = (animationEvent.intParameter == 0) ? true : false;
+        if (!plocked)
+            canPlayerMove = (animationEvent.intParameter == 0) ? true : false;
     }
     //Set the movement lock done by a script call
     public void ChangeMovementLock(bool set) {
         canPlayerMove = set;
+        plocked = !set;
     }
 
 }

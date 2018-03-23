@@ -12,35 +12,51 @@ public class PuzzlePlaceholder : MonoBehaviour {
 	//For Debugging use, difficultyNeed will be the actual difficulty for the puzzle.
 	public int difficultyNeed = 1; 
 
-	public WorldObject wObject = null;
+	public WorldObject worldObject = null;
 
+    public bool isLastPuzzle = false; // If it is last a level completion call will be done
+
+    public bool isPuzzleComplete = false;
     //use for setting the appropriate set when a puzzle is completed
     [HideInInspector]
     public Level level; //Must be set by PuzzleRandomization class
     [HideInInspector]
     public Sprite puzzleSprite = null; //Must be set by PuzzleRandomization class
-
+    [HideInInspector]
+    public int difficulty = 1;//The actual puzzle difficulty //Must be set by PuzzleRandomization class    
+    [HideInInspector]
+    public RuntimeAnimatorController aniControl; // must be set by puzzleRandomization
     //To what puzzle this placeholder must go to
-    //[HideInInspector]
+    [HideInInspector]
 	public string puzzleGoTo= "PuzzleTemplate"; //Must be set by PuzzleRandomization class
+
+    private Animator puzzleAni;
 
     private void Start()
     {
-
+        
         //Set the puzzle sprite its given to
         if (puzzleSprite != null)
             GetComponent<SpriteRenderer>().sprite = puzzleSprite;
         //Lock the world object
-        if(wObject != null)
-            wObject.Lock();
+        if(worldObject != null)
+            worldObject.Lock();
+        //Add a animator controller if there is one
+        if (aniControl != null) {
+            puzzleAni = GetComponent<Animator>();
+            puzzleAni.runtimeAnimatorController = aniControl;
+        }
+        //Debugging only
+        if (isPuzzleComplete) {
+            PuzzleExit(true);
+        }
+        difficulty = difficultyNeed;
     }
 
     void OnTriggerStay2D( Collider2D col)
 	{
 		if(col.gameObject.CompareTag("Player") && Player.instance.actionButtion && !Player.instance.isInPuzzle)
         {
-			//Lock the player's movement
-			Player.instance.ChangeMovementLock(false);
             //set the bool that the player is in a puzzle
             Player.instance.isInPuzzle = true;
             //Give the placeholder ref to player. So when animation is ready to start the puzzle it will call GoToPuzzle()
@@ -55,7 +71,7 @@ public class PuzzlePlaceholder : MonoBehaviour {
     public void GoToPuzzle() {
         //Place the difficulty values in a NextSceneManager var. So when the loaded puzzle scene
         //is loaded in its Awake() function it will get the NextSceneManager var and set that difficulity 
-        NextSceneManager.instance.setPuzzledifficulty = difficultyNeed;
+        NextSceneManager.instance.setPuzzledifficulty = difficulty;
         //pass this current placeholder instance for actions changes when the puzzle is complete
         NextSceneManager.instance.placeholder = this;
 
@@ -66,22 +82,24 @@ public class PuzzlePlaceholder : MonoBehaviour {
     //Unload the puzzle scene and do the appropriate calls and sets. When a puzzle has exited
     public void PuzzleExit(bool isCompleted)
     {
+        isPuzzleComplete = true;
         //set the bool that the player is not in a puzzle
         Player.instance.isInPuzzle = false;
         Player.instance.puzzle = null;
         Player.instance.animstate.SetBool("IsInPuzzle", false);
         
-        //unLocking the player's movement will be handled by the animator 
-
         if (isCompleted)
         {
-            //TODO: add the other updates it needs to do when the puzzle is completed
-
+            level.PuzzleUpdateScore(difficulty);
                //Door unlock
-            if (wObject != null)
+            if (worldObject != null)
             {
                 //unlock the world Object
-               wObject.Unlock();
+               worldObject.Unlock();
+            }
+            if (isLastPuzzle) {
+                //level call completion call
+                level.LevelComplete();
             }
         }
         //Unload Puzzle scene

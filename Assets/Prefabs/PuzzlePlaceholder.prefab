@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 58688576654436868}
   - component: {fileID: 114181388788934094}
   - component: {fileID: 212995161561039664}
+  - component: {fileID: 95519884514249784}
   m_Layer: 10
   m_Name: PuzzlePlaceholder
   m_TagString: Untagged
@@ -56,7 +57,24 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1.2
+--- !u!95 &95519884514249784
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1399621838967556}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114181388788934094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,8 +87,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyNeed: 1
-  door: {fileID: 0}
+  worldObject: {fileID: 0}
+  isLastPuzzle: 0
+  isPuzzleComplete: 0
   level: {fileID: 0}
+  puzzleSprite: {fileID: 0}
+  difficulty: 1
+  aniControl: {fileID: 0}
   puzzleGoTo: 
 --- !u!212 &212995161561039664
 SpriteRenderer:
@@ -105,7 +128,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -744779991
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: f27f5e6197649bc4a92dcfe4d7ff5088, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

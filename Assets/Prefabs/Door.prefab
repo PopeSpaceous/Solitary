@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23412220831017552}
   - component: {fileID: 61730813393205812}
   - component: {fileID: 114283037590794166}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1507588944314712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4599, y: -0.30328, z: -1}
-  m_LocalScale: {x: 0.07995498, y: 0.17845167, z: 1}
+  m_LocalPosition: {x: -0.47799993, y: -0.349, z: -1}
+  m_LocalScale: {x: 0.04425818, y: 0.09558156, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -120,4 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72a154acb249d84f88f621aa8a55b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Level_1
+  levelName: Hub
+  isDoorlocked: 0
+  fadeObject: {fileID: 0}
