@@ -156,10 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPuzzleComplete: 0
-  easyPuzzle: {fileID: 1050662520798152, guid: a37f90637b2444b4880854ef6b6a2919, type: 2}
-  mediumPuzzle: {fileID: 1592317336375472, guid: 803675cfad2e5bc42b3ca8511d0674e1,
-    type: 2}
-  hardPuzzle: {fileID: 1869469755206646, guid: 51d8b4a83ff464d488c5b4e35f0c2827, type: 2}
 --- !u!1 &429181603
 GameObject:
   m_ObjectHideFlags: 0

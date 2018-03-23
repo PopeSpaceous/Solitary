@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour {
     int PuzzleRandom = 0;
     int countCorrect = 0;
 
-    bool win = false;
+    public bool win = false;
     
     public int level;
     public int row, col, countStep;
