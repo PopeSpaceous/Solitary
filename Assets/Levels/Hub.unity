@@ -451,8 +451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerSpawn: {fileID: 750756324}
   score: {fileID: 573980230}
-  levelDoors:
-  - {fileID: 1463726607}
+  levelDoors: []
 --- !u!114 &1132632888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,12 +697,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1306681475}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1463726607 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114283037590794166, guid: be94336f7fb83224b9768e08f711a9c4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1194107760}
-  m_Script: {fileID: 11500000, guid: d72a154acb249d84f88f621aa8a55b6a, type: 3}
 --- !u!4 &1575761146 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4284307661338346, guid: e2afc3ecf8a1faf4e968d2a8b03ab22a,
