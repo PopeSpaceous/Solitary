@@ -12,9 +12,7 @@ public abstract class WorldObject : MonoBehaviour {
     //Need vars for all world objects
     [HideInInspector]
     public string objectName;
-    [HideInInspector]
     public bool isLocked = false;
-    [HideInInspector]
     public bool isOpen = false;
 
 

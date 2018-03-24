@@ -121,5 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: Hub
+  levelID: 0
   isDoorlocked: 0
+  level: {fileID: 0}
+  levelHub: {fileID: 0}
   fadeObject: {fileID: 0}
