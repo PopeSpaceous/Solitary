@@ -45,9 +45,9 @@ public class Level : MonoBehaviour {
         float t = Time.time - startTime;
         currentTimeMin = ((int)t / 59);
         currentTimeSecs = (t % 59);
-        
+
         //Update UI timer text
-        timerText.text = "Time\n" +  currentTimeMin.ToString() + ":" + currentTimeSecs.ToString("f0");
+        timerText.text = "Time\n" +  currentTimeMin.ToString("00") + ":" + currentTimeSecs.ToString("00");
     }
     public void LevelComplete()
     {
@@ -84,6 +84,7 @@ public class Level : MonoBehaviour {
     //When a puzzle is completed this function will be called for score calulation
     public void PuzzleUpdateScore(int diff) {
         //TODO: Do partial score calulation here, when a puzzle is completed. Update currentLevelScore 
+        currentLevelScore += 100;
     }
     public void CalulateLevelScore()
     {

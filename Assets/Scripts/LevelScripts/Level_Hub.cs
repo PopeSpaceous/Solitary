@@ -36,7 +36,7 @@ public class Level_Hub : MonoBehaviour {
     private void Update()
     {
         //update Score UI
-        score.text = "Score\n" + GameManager.instance.currentScore.ToString();
+        score.text = "Score " + GameManager.instance.currentScore.ToString();
     }
 
     public void Exit() {

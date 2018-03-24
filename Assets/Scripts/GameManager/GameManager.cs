@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour {
     
     public void LevelCompleted(int i)
     {
-        Debug.Log(i);
         //Unlock another door
         if (i < hub.levelDoors.Length) {
             hub.levelDoors[i + 1].isDoorlocked = false;
