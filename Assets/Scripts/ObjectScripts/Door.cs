@@ -19,8 +19,6 @@ public class Door : MonoBehaviour {
     private Animator fader;
     private Image im;
 
-    //TODO: Complete door locking / unlocking for level entry
-
     void Awake()
     {
         fader = fadeObject.GetComponent<Animator>();

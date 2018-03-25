@@ -72,7 +72,7 @@ BlendTree:
   m_Childs:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: ea47b4cc3113db44f907c16d1c8866d7, type: 2}
-    m_Threshold: 5.049458
+    m_Threshold: 5
     m_Position: {x: 0, y: 0}
     m_TimeScale: 4
     m_CycleOffset: 0
@@ -80,7 +80,7 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: e8a146a5a51ea5f489394420a6003e30, type: 2}
-    m_Threshold: 340
+    m_Threshold: 400
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -88,8 +88,8 @@ BlendTree:
     m_Mirror: 0
   m_BlendParameter: JPotential
   m_BlendParameterY: JSpeed
-  m_MinThreshold: 5.049458
-  m_MaxThreshold: 340
+  m_MinThreshold: 5
+  m_MaxThreshold: 400
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 1
   m_BlendType: 0

@@ -69,15 +69,15 @@ public class GameManager : MonoBehaviour {
                 break;
             case 2:
                 Player.instance.playerProgress.level2 = true;
-                doorLocks[i + 1] = false;
+                doorLocks[i] = false;
                 break;
             case 3:
                 Player.instance.playerProgress.level3 = true;
-                doorLocks[i + 1] = false;
+                doorLocks[i] = false;
                 break;
             case 4:
                 Player.instance.playerProgress.level4 = true;
-                doorLocks[i + 1] = false;
+                doorLocks[i] = false;
                 break;
             case 5:
                 Player.instance.playerProgress.level5 = true;

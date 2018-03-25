@@ -34,7 +34,7 @@ public class Level : MonoBehaviour {
         //set timer
         startTime = Time.time;
         //set the current score to levelScore 
-        currentLevelScore = GameManager.instance.currentScore;
+        currentLevelScore = 0;
         //turn on some UIs
         timerText.gameObject.SetActive(true);
 
@@ -55,7 +55,7 @@ public class Level : MonoBehaviour {
     }
     public void LevelComplete()
     {
-
+        
         CalulateLevelScore();
         //Level completion call
         GameManager.instance.LevelCompleted(levelID, currentLevelScore);
@@ -90,7 +90,7 @@ public class Level : MonoBehaviour {
     //When a puzzle is completed this function will be called for score calulation
     public void PuzzleUpdateScore(int diff) {
         //TODO: Do partial score calulation here, when a puzzle is completed. Update currentLevelScore 
-        currentLevelScore += 100;
+        currentLevelScore += 100; // temp
     }
     public void CalulateLevelScore()
     {
