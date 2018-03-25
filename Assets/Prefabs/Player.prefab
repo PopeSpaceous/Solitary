@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1704596829205528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.38, z: 0}
+  m_LocalPosition: {x: 0, y: -2.335, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4749825098732496}
@@ -68,8 +68,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1832838828691172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.7, y: -0.48, z: -3}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: -1.1, y: -5.49, z: -3}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 1}
   m_Children:
   - {fileID: 4641459781550356}
   m_Father: {fileID: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
   groundCheck: {fileID: 4641459781550356}
   whatsGround:
     serializedVersion: 2
-    m_Bits: 4294959816
+    m_Bits: 4294951624
   hardLandingThreshold: -16
 --- !u!114 &114533088314613284
 MonoBehaviour:

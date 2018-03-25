@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour {
     public Transform groundCheck;
     public LayerMask whatsGround;
     public float hardLandingThreshold = -16f;
-	private float groundRadius = 0.42f;
+	private float groundRadius = 0.38f;
 
 	private Rigidbody2D rigBod;
     

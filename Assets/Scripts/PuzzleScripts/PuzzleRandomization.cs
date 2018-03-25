@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 public class PuzzleRandomization : MonoBehaviour {
 
-	//These will a list of the puzzle scene names
-	public string[] listOfPuzzles; // Testing Note: populate this array in the inspecter, and just add one if u wanna test your own
-	public PuzzlePlaceholder[] placeholders; // Note: make sure you add a placeholders in the inspecter as well
-
     public Level level; //ref of level, will be set in the inspecter
+
+    //These will a list of the puzzle scene names
+    public string[] listOfPuzzles; // Testing Note: populate this array in the inspecter, and just add one if u wanna test your own
+	public PuzzlePlaceholder[] placeholders; // Note: make sure you add a placeholders in the inspecter as well    
 
     //These are sequential arrays. The order of these arrays are important!
     public Sprite[] sprites_P;
@@ -37,8 +37,8 @@ public class PuzzleRandomization : MonoBehaviour {
         refDictionary.Add("WireConnection", new PlaceholderRefs(sprites_P[2], animatorConrollers[2]));
         //TODO: Add more to dictionary when more sprites are made
         
-
-        DebugPlacePuzzles();
+        if(placeholders != null)
+            DebugPlacePuzzles();
 	}
 
 	//TODO: Complete PuzzleRandomization
