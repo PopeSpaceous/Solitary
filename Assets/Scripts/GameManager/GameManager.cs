@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance = null;
 
     public int currentScore = 0;
-    private Level_Hub hub; // this hub ref is used for the level doors. Set each element of the leveldoors array in LoadGame 
+    public bool[] doorLocks; // this array will hold what doors should be locked or not for each level
+    public bool isGameComplete = false;
 
 	void Awake () {
 		
@@ -25,21 +26,19 @@ public class GameManager : MonoBehaviour {
         
 		//Makes this gameobject not be unloaded when entering a new scene
 		DontDestroyOnLoad (this);
-        //get level_hub ref
-        hub = GameObject.Find("Hub").GetComponent<Level_Hub>();
-        
+        //Starting locks for each level doors
+        doorLocks = new bool [5]{ false, false, false, false, false };
     }
 
     //NOTE: this method must be called in a start method when loading the game from a file
-    public void LoadGame(/* TODO: add params */) {
+    public void LoadGame(int score) {
 
-        //TODO: complete load game for GM
-        //GM needs to set : currentScore and levelDoors when loading the game
-        //You must set the values of leveldoors in the hub:  this.levelDoors = hub.levelDoors;
+        currentScore = score;
+
     }
     
-    public void SaveGame() {
-        //TODO: complete save game
+    public void SaveGame() {        
+        Player.instance.playerProgress.SaveGame();
     }
 
     //set the player location based on given spawn point
@@ -48,20 +47,47 @@ public class GameManager : MonoBehaviour {
 	}
 
     public void UpdateScore(int addScore) {
-        currentScore += addScore;
-        //TODO: update score in player progress
+        currentScore += addScore;                
     }
 
+    public void CheckCompletion() {
+        //TODO: complete this method
+    }
     
-    public void LevelCompleted(int i)
+    public void LevelCompleted(int i, int addScore)
     {
-        //Unlock another door
-        if (i < hub.levelDoors.Length) {
-            hub.levelDoors[i + 1].isDoorlocked = false;
+
+        UpdateScore(addScore);
+        
+        //Update completed levels and door locks
+        switch (i) {
+
+            case 1:
+                
+                Player.instance.playerProgress.level1 = true;
+                doorLocks[i] = false;
+                break;
+            case 2:
+                Player.instance.playerProgress.level2 = true;
+                doorLocks[i + 1] = false;
+                break;
+            case 3:
+                Player.instance.playerProgress.level3 = true;
+                doorLocks[i + 1] = false;
+                break;
+            case 4:
+                Player.instance.playerProgress.level4 = true;
+                doorLocks[i + 1] = false;
+                break;
+            case 5:
+                Player.instance.playerProgress.level5 = true;
+                break;
         }
+        Player.instance.playerProgress.UpdatePlayerStats(currentScore);
 
         SaveGame();
+        CheckCompletion();
     }
-	//TODO: complete GameManager class. Still need Upload to DB
+	//TODO: complete GameManager class. Still needs Upload to DB
 
 }

@@ -30,8 +30,10 @@ public class Player : MonoBehaviour {
 	[HideInInspector] 
 	public float horizontalInput;
 
+    public PlayerProgress playerProgress;
 
-	void Awake () {
+
+    void Awake () {
 		
 		//Set the instance only once.
 		if (instance == null) {			

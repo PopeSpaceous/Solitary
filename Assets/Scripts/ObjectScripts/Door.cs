@@ -29,9 +29,10 @@ public class Door : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D col)
 	{
-		//if a player is on the trigger and is pressing the action buttion it will go to next scene
-		if(col.gameObject.CompareTag("Player") && Player.instance.actionButtion && !isDoorlocked) 
+        //if a player is on the trigger and is pressing the action buttion it will go to next scene
+        if (col.gameObject.CompareTag("Player") && Player.instance.actionButtion && !isDoorlocked) 
 		{
+            
             DoorTigger();
         }
 	}

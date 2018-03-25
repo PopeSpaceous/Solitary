@@ -8,7 +8,7 @@ public class Level : MonoBehaviour {
 	//A gameobject place marker that we will reference in the Inspector
 	public Transform PlayerSpawn = null;
 
-    public int levelID = 0;
+    private int levelID = 0;
 
     public Text timerText;
     public Text levelCompleteMessage;
@@ -24,6 +24,8 @@ public class Level : MonoBehaviour {
 
     //wait time until back to hub is called when the level is complete
     private float delayTime = 2f;
+    //time in the level
+    private float time;
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +37,8 @@ public class Level : MonoBehaviour {
         currentLevelScore = GameManager.instance.currentScore;
         //turn on some UIs
         timerText.gameObject.SetActive(true);
+
+        levelID = backToHub.levelID;
     }
 
 
@@ -42,9 +46,9 @@ public class Level : MonoBehaviour {
     private void Update()
     {
         //Timer updates
-        float t = Time.time - startTime;
-        currentTimeMin = ((int)t / 59);
-        currentTimeSecs = (t % 59);
+        time = Time.time - startTime;
+        currentTimeMin = ((int)time / 59);
+        currentTimeSecs = (time % 59);
 
         //Update UI timer text
         timerText.text = "Time\n" +  currentTimeMin.ToString("00") + ":" + currentTimeSecs.ToString("00");
@@ -53,9 +57,8 @@ public class Level : MonoBehaviour {
     {
 
         CalulateLevelScore();
-        //Update the player's score
-        GameManager.instance.UpdateScore(currentLevelScore);
-        GameManager.instance.LevelCompleted(levelID);
+        //Level completion call
+        GameManager.instance.LevelCompleted(levelID, currentLevelScore);
 
         //Level complete message
         levelCompleteMessage.text = "Level " + levelID.ToString() + " Complete!";
@@ -81,6 +84,9 @@ public class Level : MonoBehaviour {
         //turn off some UIs
         timerText.gameObject.SetActive(false);
     }
+
+
+
     //When a puzzle is completed this function will be called for score calulation
     public void PuzzleUpdateScore(int diff) {
         //TODO: Do partial score calulation here, when a puzzle is completed. Update currentLevelScore 

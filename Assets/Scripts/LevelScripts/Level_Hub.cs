@@ -12,18 +12,13 @@ public class Level_Hub : MonoBehaviour {
 
     public Door[] levelDoors; // for now, the order of this array must be the same to the order to the levels unlocked
 
-
-    private void Awake()
-    {
-        //set Doors
-        //for now we will assume the array order is the same to levels numbers
-        for (int ctr = 0; ctr < levelDoors.Length - 1; ctr++)
-        {
-            levelDoors[ctr].isDoorlocked = true;
-        }
-    }
+    
     void Start()
     {
+        //set up door locks every time the hub scene is loaded
+        for (int ctr = 0; ctr < levelDoors.Length; ctr++) {
+            levelDoors[ctr].isDoorlocked = GameManager.instance.doorLocks[ctr];
+        }
         //place player at spawn point
         GameManager.instance.SetPlayerLocation(PlayerSpawn);
         //show score

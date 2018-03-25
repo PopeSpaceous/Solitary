@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 95013354632916956}
   - component: {fileID: 61498873011437590}
   - component: {fileID: 58780488856986376}
+  - component: {fileID: 114926181879341938}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 12
   jumpForce: 8
-  jumpAmmount: 250
+  jumpAmmount: 350
   decreaseAmmountBy: 10
   isJumping: 0
   isGrounded: 1
@@ -192,6 +193,24 @@ MonoBehaviour:
   actionButtion: 0
   jumpInput: 0
   horizontalInput: 0
+  playerProgress: {fileID: 114926181879341938}
+--- !u!114 &114926181879341938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832838828691172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b14f0860a191946bf935f04825d4e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelDoors: []
+  level1: 0
+  level2: 0
+  level3: 0
+  level4: 0
+  level5: 0
 --- !u!212 &212386175380232282
 SpriteRenderer:
   m_ObjectHideFlags: 1
