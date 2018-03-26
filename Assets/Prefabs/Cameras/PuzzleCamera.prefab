@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 20957238518179282}
   - component: {fileID: 124057948621204710}
   - component: {fileID: 114726655628297782}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PuzzleCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
