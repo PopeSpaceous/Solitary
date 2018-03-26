@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 560e65975fd623941ab7b98ba5c736ac
-timeCreated: 1522095463
+guid: 047b266d5f196cd46919c508b119b26d
+timeCreated: 1522089063
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: MetalTile2_0
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -41,13 +40,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 0
   spriteMeshType: 0
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 14, z: 0, w: 16}
-  spritePixelsToUnits: 60
+  alignment: 9
+  spritePivot: {x: 0.89223564, y: 0.5147256}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 12
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -99,21 +98,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: MetalTile2_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 14
-        width: 128
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
+    sprites: []
     outline: []
     physicsShape: []
   spritePackingTag: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 560e65975fd623941ab7b98ba5c736ac
-timeCreated: 1522095463
+guid: ebbe815d53731b64e854bb4912d7fe37
+timeCreated: 1522084587
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: MetalTile2_0
+    21300000: Desk_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -46,8 +46,8 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 14, z: 0, w: 16}
-  spritePixelsToUnits: 60
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 30
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -101,16 +101,16 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MetalTile2_0
+      name: Desk_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 14
-        width: 128
-        height: 34
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 8, y: 0, z: 8, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0

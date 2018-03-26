@@ -14,8 +14,11 @@ public class PuzzlePlaceholder : MonoBehaviour {
 
 	public WorldObject worldObject = null;
 
-    public bool isLastPuzzle = false; // If it is last a level completion call will be done
+    //Will flip the lock calls for a worldobject
+    public bool flipLockState = false;
 
+    public bool isLastPuzzle = false; // If it is last a level completion call will be done
+    [HideInInspector]
     public bool isPuzzleComplete = false;
     //use for setting the appropriate set when a puzzle is completed
     [HideInInspector]
@@ -38,9 +41,17 @@ public class PuzzlePlaceholder : MonoBehaviour {
         //Set the puzzle sprite its given to
         if (puzzleSprite != null)
             GetComponent<SpriteRenderer>().sprite = puzzleSprite;
-        //Lock the world object
-        if(worldObject != null)
-            worldObject.Lock();
+        //Lock or unlock the world object
+        if (worldObject != null)
+        {
+            if (flipLockState)
+            {
+                worldObject.Unlock();
+            }
+            else {
+                worldObject.Lock();
+            }
+        }
         //Add a animator controller if there is one
         if (aniControl != null) {
             puzzleAni = GetComponent<Animator>();
@@ -50,7 +61,9 @@ public class PuzzlePlaceholder : MonoBehaviour {
         if (isPuzzleComplete) {
             PuzzleExit(true);
         }
-        difficulty = difficultyNeed;
+        
+        //Deubbing only
+        difficulty = difficultyNeed; // TODO: remove this when doing the puzzle rando
     }
 
     void OnTriggerStay2D( Collider2D col)
@@ -91,11 +104,17 @@ public class PuzzlePlaceholder : MonoBehaviour {
         if (isCompleted)
         {
             level.PuzzleUpdateScore(difficulty);
-               //Door unlock
+
             if (worldObject != null)
             {
-                //unlock the world Object
-               worldObject.Unlock();
+                //unlock or lock the world Object
+                if (flipLockState)
+                {
+                    worldObject.Lock();
+                }
+                else {
+                    worldObject.Unlock();
+                } 
             }
             if (isLastPuzzle) {
                 //level call completion call

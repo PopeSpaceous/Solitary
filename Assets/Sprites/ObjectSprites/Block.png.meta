@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 560e65975fd623941ab7b98ba5c736ac
-timeCreated: 1522095463
+guid: 4d71c9b0411eaa940832aa0a78a84fd7
+timeCreated: 1522085511
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: MetalTile2_0
+    21300000: Block_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -46,8 +46,8 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 14, z: 0, w: 16}
-  spritePixelsToUnits: 60
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 36
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -101,13 +101,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MetalTile2_0
+      name: Block_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 14
-        width: 128
-        height: 34
+        x: 23
+        y: 23
+        width: 82
+        height: 82
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
