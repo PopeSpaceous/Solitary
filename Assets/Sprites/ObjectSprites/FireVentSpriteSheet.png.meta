@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 560e65975fd623941ab7b98ba5c736ac
-timeCreated: 1522095463
+guid: 3a24a3a9175f1d24186208919f0f3ebd
+timeCreated: 1522094659
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: MetalTile2_0
+    21300000: FireVentSpriteSheet_0
+    21300002: FireVentSpriteSheet_1
+    21300004: FireVentSpriteSheet_2
+    21300006: FireVentSpriteSheet_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -46,8 +49,8 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 14, z: 0, w: 16}
-  spritePixelsToUnits: 60
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 35
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -101,15 +104,57 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MetalTile2_0
+      name: FireVentSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 14
+        y: 0
         width: 128
-        height: 34
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: FireVentSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: FireVentSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: FireVentSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
