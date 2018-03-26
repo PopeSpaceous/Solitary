@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95850086642551478}
   - component: {fileID: 61834223544735764}
   - component: {fileID: 114742702618515514}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PivotDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
