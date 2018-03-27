@@ -16,6 +16,16 @@ public class PlayerProgress : MonoBehaviour {
     public bool level4 = false;
     public bool level5 = false;
 
+    //Show instructions bools
+    public bool i_PuzzleTemplate_100 = true;
+    public bool i_WordPasscode_101 = true;
+    public bool i_SimonSays_102 = true;
+    public bool i_Tangrams_103 = true;
+    public bool i_Cryptogram_104 = true;
+    public bool i_WireConnection_105 = true;
+    public bool i_anagrams_106 = true;
+    public bool i_ImageScramble_107 = true;
+
 
     private void Awake()
     {
