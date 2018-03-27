@@ -12,6 +12,7 @@ public abstract class Puzzle : MonoBehaviour {
 	protected string puzzleName;
 	protected int difficulty;
 	protected PuzzlePlaceholder placeholder;
+    public int puzzleID; // must be set in inspector  
 
 
     // This function will allow for the door to unlock, call PuzzleExit to 
