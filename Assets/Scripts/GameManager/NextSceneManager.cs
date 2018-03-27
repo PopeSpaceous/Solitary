@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class NextSceneManager : MonoBehaviour {
 	
@@ -26,12 +27,24 @@ public class NextSceneManager : MonoBehaviour {
 
 	}
 	
-	public void LoadLevelScene (string sceneName)
+	public void LoadLevelScene (string sceneName, Animator fader = null, Image im = null)
 	{
 		if (!SceneManager.GetSceneByName (sceneName).isLoaded) 
 		{
-			//Load new Scene
-			SceneManager.LoadScene (sceneName, LoadSceneMode.Single);
+            // will allow a fade if the needed vars are not null
+            if (im != null && fader != null) 
+            {
+                if (!fader.GetBool("Fade"))  // Really make sure we don't keep calling the coroutine while the scene is still the fade transition.
+                {
+                    //Fade to next scene
+                    StartCoroutine(FadeToNextScene(fader, im, sceneName));
+                }
+            }
+            else
+            {
+                //Load new Scene
+                SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+            }
 		}
 	}
 		
@@ -50,5 +63,14 @@ public class NextSceneManager : MonoBehaviour {
 		isPuzzleLoaded = false;
 		SceneManager.UnloadSceneAsync (sceneName);
 	}
+
+    IEnumerator FadeToNextScene(Animator f, Image i, string sceneName)
+    {
+        f.SetBool("Fade", true); // start fade
+        yield return new WaitUntil(() => i.color.a >= 1); // wait until fade has ended
+        //Load next scene
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+
+    }
 
 }
