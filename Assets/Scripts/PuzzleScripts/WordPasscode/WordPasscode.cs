@@ -32,11 +32,14 @@ public class WordPasscode : Puzzle
 
     private Questions currentQuestion;
 
+    //variable to store random integer for question randomization
+    private int randQuestionIndex;
+
     //counter variables
     //try making these static so they dont reset after scene is restarted
     //take the variables out from Question.cs
-    //private int totalQuestionsAnswered;
-    //private int numErrors;
+    private int totalQuestionsAnswered;
+    private int numErrors;
 
     [SerializeField]
     private Text questionText;
@@ -54,25 +57,70 @@ public class WordPasscode : Puzzle
     private Text optionD;
 
     [SerializeField]
-    private Text questionsAnswered;
+    private Text incorrectAnswers;
+
+    //sound files for correct/incorrect answer
+    public AudioSource correct;
+    public AudioSource incorrect;
+
+    //difficulty buttons
+    //need to get code to hide buttons after difficulty selected
+    Button easy;
+    Button medium;
+    Button hard;
 
     private void Start()
     {
+        //reset error counter
+        totalQuestionsAnswered = 1;
+        numErrors = 0;
+
         //load all unanswered questions into unanswered question list
         if (unansweredQuestions == null || unansweredQuestions.Count == 0)
         {
             unansweredQuestions = questions.ToList<Questions>();
         }
 
-        //get a random question
-        SetCurrentQuestion();
-        //debugging
-        //Debug.Log(currentQuestion.question + " has possible answers: " + currentQuestion.a + currentQuestion.b + currentQuestion.c + currentQuestion.d + " and the answer is " + currentQuestion.answer);
+        //get a random question -- comment out for difficulties?
+        //SetCurrentQuestion();
+        
     }
 
+    /*
+    void HideButton()
+    {
+        medium.gameObject.SetActive(false);
+        hard.gameObject.SetActive(false);
+    }
+    */
+    public void Easy_Difficulty()
+    {
+        randQuestionIndex = Random.Range(0, 20);
+        SetCurrentQuestion();
+        //medium = GetComponent<Button>();
+        //medium.onClick.AddListener(() => HideButton());
+        //hard = GetComponent<Button>();
+        //hard.onClick.AddListener(() => HideButton());
+
+    }
+
+    public void Medium_Difficulty()
+    {
+        randQuestionIndex = Random.Range(21, 39);
+        SetCurrentQuestion();
+    }
+
+    public void Hard_Difficulty()
+    {
+        randQuestionIndex = Random.Range(40, 59);
+        SetCurrentQuestion();
+    }
+    
     void SetCurrentQuestion()
     {
-        int randQuestionIndex = Random.Range(0, unansweredQuestions.Count);
+
+        //proper code. 
+        //int randQuestionIndex = Random.Range(0, unansweredQuestions.Count);
 
         //set current question to randomly selected question
         currentQuestion = unansweredQuestions[randQuestionIndex];
@@ -86,15 +134,30 @@ public class WordPasscode : Puzzle
         optionC.text = currentQuestion.c;
         optionD.text = currentQuestion.d;
 
+        incorrectAnswers.text = numErrors.ToString();
+
         
-        //questionsAnswered = totalQuestionsAnswered;
- 
     }
 
     //transition to next question
     void LoadNextQuestion()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //10 questions to complete a difficulty
+        if (totalQuestionsAnswered < 11)
+        {
+            //remove element -- not index
+            unansweredQuestions.Remove(currentQuestion);
+            SetCurrentQuestion();
+        }
+        else
+        {
+            questionText.text = "Finished!";
+            optionA.text = "";
+            optionB.text = "";
+            optionC.text = "";
+            optionD.text = "";
+        }
+       
     }
 
     //code for users selected answer
@@ -104,18 +167,18 @@ public class WordPasscode : Puzzle
         if (currentQuestion.a == currentQuestion.answer)
         {
             Debug.Log("CORRECT");
-            currentQuestion.totalQuestionsAnswered += 1;
+            //correct.Play();
             Invoke("LoadNextQuestion", 0.5f);
-            Debug.Log("total questions answered " + currentQuestion.totalQuestionsAnswered);
-            Debug.Log("total questions wrong " + currentQuestion.totalErrors);
+            Debug.Log("total questions wrong " + numErrors);
+            Debug.Log("TOTAL ANSWERED: " + totalQuestionsAnswered);
+            totalQuestionsAnswered += 1;
         } else
         {
             Debug.Log("INCORRECT");
-            currentQuestion.totalErrors += 1;
-            Debug.Log("total questions answered " + currentQuestion.totalQuestionsAnswered);
-            Debug.Log("total questions wrong " + currentQuestion.totalErrors);
+            //incorrect.Play();
+            numErrors += 1;
+            Debug.Log("total questions wrong " + numErrors);
         }
-
     }
 
     //option B
@@ -124,68 +187,63 @@ public class WordPasscode : Puzzle
         if (currentQuestion.b == currentQuestion.answer)
         {
             Debug.Log("CORRECT");
-            currentQuestion.totalQuestionsAnswered += 1;
+            //correct.Play(); 
             Invoke("LoadNextQuestion", 0.5f);
-            Debug.Log("total questions answered " + currentQuestion.totalQuestionsAnswered);
-            Debug.Log("total questions wrong " + currentQuestion.totalErrors);
+            Debug.Log("total questions wrong " + numErrors);
+            Debug.Log("TOTAL ANSWERED: " + totalQuestionsAnswered);
+            totalQuestionsAnswered += 1;
         }
         else
         {
             Debug.Log("INCORRECT");
-            currentQuestion.totalErrors += 1;
-            Debug.Log("total questions answered " + currentQuestion.totalQuestionsAnswered);
-            Debug.Log("total questions wrong " + currentQuestion.totalErrors);
-        }
+            //incorrect.Play();
+            numErrors += 1;
+            Debug.Log("total questions wrong " + numErrors);
 
+        }
     }
 
     //option C
     public void UserSelectC() {
-        
+
         if (currentQuestion.c == currentQuestion.answer)
         {
-            if (currentQuestion.c == currentQuestion.answer)
-            {
-                Debug.Log("CORRECT");
-                currentQuestion.totalQuestionsAnswered += 1;
-                Invoke("LoadNextQuestion", 0.5f);
-                Debug.Log("total questions answered " + currentQuestion.totalQuestionsAnswered);
-                Debug.Log("total questions wrong " + currentQuestion.totalErrors);
-            }
-            else
-            {
-                Debug.Log("INCORRECT");
-                currentQuestion.totalErrors += 1;
-                Debug.Log("total questions answered " + currentQuestion.totalQuestionsAnswered);
-                Debug.Log("total questions wrong " + currentQuestion.totalErrors);
-            }
+            Debug.Log("CORRECT");
+            //correct.Play();         
+            Invoke("LoadNextQuestion", 0.5f);
+            Debug.Log("total questions wrong " + numErrors);
+            Debug.Log("TOTAL ANSWERED: " + totalQuestionsAnswered);
+            totalQuestionsAnswered += 1;
         }
+        else
+        {
+            Debug.Log("INCORRECT");
+            //incorrect.Play();
+            numErrors += 1;
+            Debug.Log("total questions wrong " + numErrors);
 
-        
+        }
+           
     }
 
     //option D
-    public void UserSelectD() { 
-        
+    public void UserSelectD() {
+
         if (currentQuestion.d == currentQuestion.answer)
         {
-            if (currentQuestion.d == currentQuestion.answer)
-            {
-                Debug.Log("CORRECT");
-                currentQuestion.totalQuestionsAnswered += 1;
-                Invoke("LoadNextQuestion", 0.5f);
-                Debug.Log("total questions answered " + currentQuestion.totalQuestionsAnswered);
-                Debug.Log("total questions wrong " + currentQuestion.totalErrors);
-            }
-            else
-            {
-                Debug.Log("INCORRECT");
-                currentQuestion.totalErrors += 1;
-                Debug.Log("total questions answered " + currentQuestion.totalQuestionsAnswered);
-                Debug.Log("total questions wrong " + currentQuestion.totalErrors);
+            Debug.Log("CORRECT");
+            //correct.Play();
+            Invoke("LoadNextQuestion", 0.5f);
+            Debug.Log("total questions wrong " + numErrors);
+            Debug.Log("TOTAL ANSWERED: " + totalQuestionsAnswered);
+            totalQuestionsAnswered += 1;
+        }
+        else
+        {
+            Debug.Log("INCORRECT");
+            //incorrect.Play();
+            numErrors += 1;
+            Debug.Log("total questions wrong " + numErrors);     
             }
         }
-
     }
-
-}

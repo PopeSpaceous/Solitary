@@ -11,7 +11,8 @@ public class Questions {
     public string d;
     //store answer
     public string answer;
+    //store question id#
+    public int id;
 
-    public int totalQuestionsAnswered = 0;
-    public int totalErrors = 0;
+    //public int totalErrors = 0;
 }
