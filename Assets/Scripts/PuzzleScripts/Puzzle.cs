@@ -4,40 +4,25 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-/* This will be the base class of all specific puzzle class */
+/* This will be the base class of all specific puzzle classes */
 public abstract class Puzzle : MonoBehaviour {
 	[HideInInspector]
-	public bool isPuzzleComplete = false; // maybe keep
+	public bool isPuzzleComplete = false;
 
 	protected string puzzleName;
 	protected int difficulty;
 	protected PuzzlePlaceholder placeholder;
+    public int puzzleID; // must be set in inspector  
 
 
-	// This function will allow for the door to unlock, call level's WhenPuzzleComplete to 
-	//update the number of Puzzle completed and what difficulty and unload the scene
-	public void PuzzleComplete(){
+    // This function will allow for the door to unlock, call PuzzleExit to 
+    //update the number of Puzzles completed, what difficulty, and unload the scene
+    public void PuzzleComplete(){
 		isPuzzleComplete = true;
-		//unLock's the player's movement
-		Player.instance.canPlayerMove = true;
-
-
-		/*TODO: Level function call code here */
-
-
-		if(placeholder.door != null){
-			//set the bool to allow the door to open
-			placeholder.door.DoorLockChange(true);
-		}
-
-		//Unload the puzzle scene
-		NextSceneManager.instance.UnloadPuzzleScene (puzzleName);
-	} 
-
-	public void PuzzleExit(){
-		//unLock's the player's movement
-		Player.instance.canPlayerMove = true;
-		//Unload the puzzle scene
-		NextSceneManager.instance.UnloadPuzzleScene (puzzleName);
+        placeholder.PuzzleExit(isPuzzleComplete);
 	}
+    // Will call PuzzleExit to unload the scene
+    public void PuzzleExit(){
+        placeholder.PuzzleExit(isPuzzleComplete);
+    }
 }
