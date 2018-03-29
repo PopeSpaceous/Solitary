@@ -156,6 +156,8 @@ public class WordPasscode : Puzzle
             optionB.text = "";
             optionC.text = "";
             optionD.text = "";
+
+            Start();
         }
        
     }
