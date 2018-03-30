@@ -27,13 +27,14 @@ public class PlayerProgress : MonoBehaviour {
     public bool i_ImageScramble_107 = true;
 
 
-	private void Awake(){
-	}
-
     private void Start()
     {
-		doorLocks = GameManager.instance.doorLocks;  // get a ref by the gm
-        //load game gets called here
+        //Door lock ref from GM
+		doorLocks = GameManager.instance.doorLocks;
+        //Check if the game needs to load
+        if (GameManager.instance.loadGameFile) {
+            LoadGame();
+        }
     }
 
     public void UpdatePlayerStats(int s) {
