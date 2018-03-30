@@ -16,9 +16,9 @@ public class Loader : MonoBehaviour {
 
 	void Awake () {
 		//We create the static gameObjects once.
-		if(Player.instance == null && GameManager.instance == null){
+		if(Player.instance == null /*&& GameManager.instance == null */){
 			Object.Instantiate (player);
-			Object.Instantiate (manager);
+			//Object.Instantiate (manager);
 		}
 
 	}
