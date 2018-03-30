@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
 
     public GameObject main;
     public GameObject credits;
+    public GameObject scoresList;
 
     public Button loadGameButton;
     public Button newGameButton;
     public Button exitButton;
     public Button highScoresButton;
+    public Button highScoresexitButton;
     public Button creditsButton;
     public Button creditsExitButton;
 
@@ -19,16 +22,28 @@ public class MainMenu : MonoBehaviour {
 	void Start () {
         //main menu buttons
         newGameButton.onClick.AddListener(delegate { NextSceneManager.instance.LoadLevelScene("Hub");  });
+        loadGameButton.onClick.AddListener(RunLoadGame);
         exitButton.onClick.AddListener(delegate { Application.Quit(); });
-        //TODO: complete loadgamebutton highscorebutton
+        highScoresButton.onClick.AddListener(EnterHighScores);
+        highScoresexitButton.onClick.AddListener(ExitScores);
 
-        //highScoresButton load high score scene
-        //Maybe add a bool to true when loading the game. Have Playerprogress check it and load the game if true 
+        if (CheckLoadGame()) {
+            loadGameButton.gameObject.SetActive(true);            
+        }
 
         //credits buttons
         creditsButton.onClick.AddListener(EnterCredits);
         creditsExitButton.onClick.AddListener(ExitCredits);
 
+    }
+
+    bool CheckLoadGame() {
+        return File.Exists(Application.persistentDataPath + "/savedGames.gd");
+    }
+
+    void RunLoadGame() {
+        GameManager.instance.loadGameFile = true;
+        NextSceneManager.instance.LoadLevelScene("Hub");
     }
 
     void EnterCredits() {
@@ -39,6 +54,15 @@ public class MainMenu : MonoBehaviour {
     void ExitCredits() {
         main.SetActive(true);
         credits.SetActive(false);
+    }
+
+    void EnterHighScores() {
+        main.SetActive(false);
+        scoresList.SetActive(true);
+    }
+    void ExitScores() {
+        main.SetActive(true);
+        scoresList.SetActive(false);
     }
 
 }
