@@ -7,7 +7,7 @@ public class Level : MonoBehaviour {
 
 	//A gameobject place marker that we will reference in the Inspector
 	public Transform PlayerSpawn = null;
-
+	public float scoreSum=0;
     private int levelID = 0;
 
     public Text timerText;
@@ -37,7 +37,6 @@ public class Level : MonoBehaviour {
         currentLevelScore = 0;
         //turn on some UIs
         timerText.gameObject.SetActive(true);
-
         levelID = backToHub.levelID;
     }
 
@@ -90,10 +89,16 @@ public class Level : MonoBehaviour {
     //When a puzzle is completed this function will be called for score calulation
     public void PuzzleUpdateScore(int diff) {
         //TODO: Do partial score calulation here, when a puzzle is completed. Update currentLevelScore 
-        currentLevelScore += 100; // temp
+		scoreSum+=(diff *150);
     }
     public void CalulateLevelScore()
     {
+		//FOREACH PUZZLE(puzzle difficulty *1500)
+		//(SUM/TIME IN MINUTES)*100 (MAKE WHOLE NUMBER)
+		float timeInMin = (time/60f);
+		scoreSum = ((float)scoreSum / timeInMin)*10;
+		currentLevelScore = (int)scoreSum;
+
         //TODO: calulate score based on time here. Use: currentTimeMin, currentTimeSecs. 
         //Update the currentLevelScore field
     }
