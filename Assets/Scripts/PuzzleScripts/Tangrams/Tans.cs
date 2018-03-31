@@ -137,11 +137,9 @@ public class Tans : MonoBehaviour {
 		//pass those mouse coordinates based on the camera's position
 		Vector3 objPosition = Camera.main.ScreenToWorldPoint (mousePosition);
 		//change the object to those points
-		this.transform.position = objPosition;
-//		if (Input.mousePosition.x > inX) {
-//			Debug.Log (Input.mousePosition.x+"  :   "+inX);
-//			moveL = true;
-//		}
+		this.transform.position =new Vector3((Mathf.Round(objPosition.x*10)*0.1f),
+			(float)(Mathf.Round(objPosition.y*10)*0.1f),
+			Mathf.Round(objPosition.z));
 	}
 	//For letting go of Mouse after drag
 	void OnMouseUp(){
@@ -151,7 +149,7 @@ public class Tans : MonoBehaviour {
 //		moveU = true;
 //		moveR = true;
 		//Calls snap to grid function
-		snapToGrid ();
+		//snapToGrid ();
 		//Debug.Log ("ACTUAL TAN LOCATION: "+ this.transform.position.ToString());
 		//checks to see if puzzle is solved. 
 		collectionTan.checkSolve (puzzTan);
@@ -183,8 +181,8 @@ public class Tans : MonoBehaviour {
 	public void snapToGrid(){
 		var currentPos = transform.position;
 		//we take the the x,y variables and round them after being * by 4. Then we divide again by 4 that snaps them to a grid
-		this.transform.position =new Vector3((Mathf.Round(currentPos.x*4)*0.25f),
-			(float)(Mathf.Round(currentPos.y*4)*0.25f),
+		this.transform.position =new Vector3((Mathf.Round(currentPos.x*8)*0.125f),
+			(float)(Mathf.Round(currentPos.y*8)*0.125f),
 			Mathf.Round(currentPos.z));
 		//apply the changed coordinates
 		this.myTanPosition = new Vector2(this.transform.position.x,this.transform.position.y);

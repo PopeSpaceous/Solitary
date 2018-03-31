@@ -10,7 +10,7 @@ using UnityEngine;
 public class Loader : MonoBehaviour {
 
 	//PreFab referneces 
-	public GameObject  player;
+	public GameObject player;
 	public GameObject manager;
 
 

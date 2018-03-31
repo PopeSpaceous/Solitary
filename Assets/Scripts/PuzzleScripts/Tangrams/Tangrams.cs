@@ -51,12 +51,14 @@ public class Tangrams: Puzzle {
 					//transforms the positions
 					Vector3 newPosition = new Vector3 (tempX+pC.transform.position.x, tempY+pC.transform.position.y, 1.0f);
 					myT.transform.position = newPosition;
-					myT.snapToGrid();
+					//myT.snapToGrid();
 					//transforms the rotation of tan
-					myT.rotateTan((float.Parse (tanCoord [3])));
 					myT.transform.Rotate (new Vector3 (0.0f, (float.Parse (tanCoord [2])),0.0f ));
+					myT.rotateTan((float.Parse (tanCoord [3])));
+
 					//check if flipped
 					myT.flipped = (tanCoord [4] == "0") ? false : true;	
+					myT.transform.localScale += new Vector3 (0.04f, 0.04f, 0);
 					counter++;
 				}
 			}
@@ -117,7 +119,7 @@ public class Tangrams: Puzzle {
 			}
 		}
 		//send this message if the tangram is solved. Should be removed when we are finished the game
-		Debug.Log("****EVERYTHING MATCHES******");
+	
 		this.PuzzleComplete ();
 		return true;
 	}
@@ -135,8 +137,8 @@ public class Tangrams: Puzzle {
 			//if its the first tan, add nothing else add a colon and newline
 			outString += (count == 0) ? "" : ":\r\n";
 			//add x,y position, y,z rotation, and if its flipped
-			outString += (Mathf.Round((t.transform.position.x -pC.transform.position.x)*100)/100).ToString () 
-				+ "," +(Mathf.Round((t.transform.position.y - pC.transform.position.y)*100)/100).ToString () 
+			outString += (Mathf.Round((t.transform.position.x -pC.transform.position.x)*10000)/10000).ToString () 
+				+ "," +(Mathf.Round((t.transform.position.y - pC.transform.position.y)*10000)/10000).ToString () 
 				+ "," + ((int)t.transform.eulerAngles.y).ToString ()
 				+ "," + ((int)t.transform.eulerAngles.z).ToString () + "," + 
 				((t.flipped) ? 1 : 0).ToString ();
