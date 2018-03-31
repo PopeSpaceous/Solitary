@@ -13,7 +13,9 @@ public class PuzzleTemplate: Puzzle {
 		Debug.Log ("Difficulty for puzzle " + puzzleName + " is: "+ this.difficulty);
 	}
 
-
-	/* Your wonderful startup puzzle code here :3 */
+    //Debugging Only
+    public void FinishPuzzle() {
+        PuzzleComplete();
+    }
 
 }

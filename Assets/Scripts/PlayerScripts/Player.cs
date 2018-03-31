@@ -8,17 +8,32 @@ public class Player : MonoBehaviour {
 	public static Player instance = null;
 
 	//Used for locking the player movement
-	public bool canPlayerMove = true;
+	private bool canPlayerMove = true;
 
-	[HideInInspector] 
+    //Used to take priority which movement lock can change the canPlayerMove value. 
+    //This is so it can help prevent race conditions to which lock change can change the playermovement.
+    //The script call of lock change will take priority 
+    private bool plocked = false; 
+    //bool when or not the player is in a puzzle
+    public bool isInPuzzle = false;
+    //Animator 
+    [HideInInspector]
+    public Animator animstate;
+    //this will be the current ref has to what placeholder the player is in
+    [HideInInspector]
+    public PuzzlePlaceholder puzzle = null;
+
+    [HideInInspector] 
 	public bool actionButtion = false;
 	[HideInInspector] 
 	public bool jumpInput = false;
 	[HideInInspector] 
 	public float horizontalInput;
 
+    public PlayerProgress playerProgress;
 
-	void Awake () {
+
+    void Awake () {
 		
 		//Set the instance only once.
 		if (instance == null) {			
@@ -31,7 +46,9 @@ public class Player : MonoBehaviour {
 			
 		//Makes the gameobject not be unloaded when entering a new scene
 		DontDestroyOnLoad (this);
-	}
+
+        animstate = GetComponent<Animator>();
+    }
 
 	// This Update function will be use to check user Input
 	void Update(){
@@ -60,5 +77,21 @@ public class Player : MonoBehaviour {
 		jumpInput = Input.GetButton("Jump");
 	
 	}
+
+    //GoInPuzzle will be called by an animation event call
+    void GoInPuzzle() {
+        puzzle.GoToPuzzle();
+    }
+
+    //Set the movement lock done by a animation
+    public void ChangeMovementLock(AnimationEvent animationEvent = null) {
+        if (!plocked)
+            canPlayerMove = (animationEvent.intParameter == 0) ? true : false;
+    }
+    //Set the movement lock done by a script call
+    public void ChangeMovementLock(bool set) {
+        canPlayerMove = set;
+        plocked = !set;
+    }
 
 }
