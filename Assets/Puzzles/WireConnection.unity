@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPuzzleComplete: 0
-  puzzleID: 0
+  puzzleID: 105
   wirePlaceholders:
   - {fileID: 1038776750}
   - {fileID: 1859434460}
@@ -1439,7 +1439,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1963174808}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2608,11 +2608,11 @@ RectTransform:
   - {fileID: 1383033240}
   - {fileID: 2033038327}
   - {fileID: 244025782}
+  - {fileID: 1168548093}
   - {fileID: 1875024761}
   - {fileID: 2029152485}
   - {fileID: 1610766886}
   - {fileID: 1287212130}
-  - {fileID: 1168548093}
   - {fileID: 773667709}
   - {fileID: 590853792}
   - {fileID: 920158887}
