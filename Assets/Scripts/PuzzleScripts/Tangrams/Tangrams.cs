@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 using System.IO;
 
 public class Tangrams: Puzzle {
-	//needed for Text files
-	string winDir = System.Environment.GetEnvironmentVariable("windir");
 	// Sets the parent fields
 	void Awake () {
 		puzzleName = "Tangrams";
