@@ -17,7 +17,7 @@ public class PuzzleCamera : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		playerCam = Player.instance.GetComponentInChildren<Camera> ();
+		playerCam = GameObject.Find ("Main Camera").GetComponent<Camera> ();;
 		puzzleCam = GetComponent<Camera> ();
 		puzzle = GameObject.Find ("HackingTool");
 		setPuzzleCamera ();
