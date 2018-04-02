@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour {
     public bool[] doorLocks; // this array will hold what doors should be locked or not for each level
     public bool isGameComplete = false;
 
+    //used to trigger a load game sequence 
+    public bool loadGameFile = false;
+
 	void Awake () {
 		
 		//Set the instance only once.
@@ -88,6 +91,9 @@ public class GameManager : MonoBehaviour {
         SaveGame();
         CheckCompletion();
     }
-	//TODO: complete GameManager class. Still needs Upload to DB
+
+    void UploadToDB() {
+        //TODO: need login first to complete this method
+    }
 
 }
