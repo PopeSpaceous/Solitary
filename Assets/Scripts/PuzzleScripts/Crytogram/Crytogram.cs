@@ -17,14 +17,15 @@ public class Crytogram: Puzzle {
 	public List<char> scramAlphaList = new List<char>();
 	//visual Scrambled Alphabet that you see in UI
 	public Text scramAlpha;
+	public Text unUsed;
 
-	//not used?
-	List <char> scramTextList = new List<char> ();
+
+	//List <char> scramTextList = new List<char> ();
 	//List<char> TempCharList = new List<char> ();
-	string cipherWord;
+	string cipherWord="";
 	//65-90
 	string myWord;
-	string mySWord = "";
+	string mySWord;
 	public Text pText;
 
 
@@ -35,7 +36,6 @@ public class Crytogram: Puzzle {
 			scramAlphaList.Add ('0');
 		}
 		cipherStart ();
-		string mySWord = "";
 		foreach (var z in this.myZones) {
 			//set mysWord to blank
 			this.mySWord = "";
@@ -73,6 +73,8 @@ public class Crytogram: Puzzle {
 		}
 		//gets a word from file
 		cipherWord = getStringFromFile (5);
+		cipherWord += getStringFromFile (5);
+		cipherWord += getStringFromFile (5);
 		//adds word to beginning of cipher (character instance only once)
 		foreach (char x in cipherWord) {
 			if (!puzCipher.Contains (x)) {
@@ -176,12 +178,19 @@ public class Crytogram: Puzzle {
 	}
 
 	public void updateScramAlpha(){
+		unUsed.text = "";
 		scramAlpha.text = "";
 		foreach (char x in scramAlphaList) {
-			if (x == '0') {
-				scramAlpha.text += " \r\n";
+				if (x == '0') {
+				scramAlpha.text += "  ";
 			} else {
-				scramAlpha.text += x.ToString () + "\r\n";
+				scramAlpha.text += x.ToString () + " ";
+			}
+		}
+
+		foreach (char x in alpha) {
+			if (!scramAlphaList.Contains (x)) {
+				unUsed.text += x.ToString () + " ";
 			}
 		}
 	}

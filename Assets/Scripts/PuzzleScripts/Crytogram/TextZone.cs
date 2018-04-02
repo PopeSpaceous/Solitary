@@ -8,13 +8,16 @@ public class TextZone : MonoBehaviour {
 	public List<InputField> inFields;
 	public Crytogram myCryp;
 	public string codedWord, actWord;
-
+	public Color myCol;
+	public Color redC;
 	// Use this for initialization
 	void Start () {
 		inFields.ForEach(x => x.onValueChanged.AddListener(delegate {
 			ValueChangeCheck(x);}));
+		ColorUtility.TryParseHtmlString ("01764FFF",out myCol);
+		ColorUtility.TryParseHtmlString ("#FF002FFF",out redC);
 	}
-	
+	//
 	// Update is called once per frame
 	void Update () {
 		//Changes all letters to Uppercase
@@ -22,6 +25,8 @@ public class TextZone : MonoBehaviour {
 			if (x.text != "") {
 				if ((x.text.ToUpper () [0] < 'A') || x.text.ToUpper () [0] > 'Z') {
 					x.image.color = Color.white;
+					x.placeholder.color = myCol;
+					x.image.color = myCol;
 					x.text = "";
 				}
 			}
@@ -47,7 +52,8 @@ public class TextZone : MonoBehaviour {
 			myCryp.updateAlphaLegend (codedWord [counter], inF.text.ToUpper() [0]);
 		} else {
 			myCryp.updateAlphaLegend (codedWord [counter], '0');
-			inF.image.color = Color.white;
+
+			inF.image.color = myCol;
 		}
 
 	}
@@ -64,9 +70,13 @@ public class TextZone : MonoBehaviour {
 		foreach (InputField inF in this.inFields) {
 			if (inF.text != "") {
 				if (x.Contains (inF.text [0])) {
-					inF.image.color = Color.red;
+					inF.image.color = Color.white;
+					inF.placeholder.color = redC;
+					inF.image.color = redC;
 				} else {
 					inF.image.color = Color.white;
+					inF.placeholder.color = myCol;
+					inF.image.color = myCol;
 				}
 			}
 		}
