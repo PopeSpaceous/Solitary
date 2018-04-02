@@ -178,81 +178,7 @@ Prefab:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 1399621838967556, guid: 4bd8000edb3a2e342b2f4f3b0ad80d9d, type: 2}
-      propertyPath: m_Name
-      value: PuzzlePlaceholder
-      objectReference: {fileID: 0}
-    - target: {fileID: 114181388788934094, guid: 4bd8000edb3a2e342b2f4f3b0ad80d9d,
-        type: 2}
-      propertyPath: difficulty
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4585893070247692, guid: 4bd8000edb3a2e342b2f4f3b0ad80d9d, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.1013662
-      objectReference: {fileID: 0}
-    - target: {fileID: 4585893070247692, guid: 4bd8000edb3a2e342b2f4f3b0ad80d9d, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.1016307
-      objectReference: {fileID: 0}
-    - target: {fileID: 4585893070247692, guid: 4bd8000edb3a2e342b2f4f3b0ad80d9d, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1399621838967556, guid: 4bd8000edb3a2e342b2f4f3b0ad80d9d, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114181388788934094, guid: 4bd8000edb3a2e342b2f4f3b0ad80d9d,
-        type: 2}
-      propertyPath: difficultyNeed
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4bd8000edb3a2e342b2f4f3b0ad80d9d, type: 2}
-  m_IsPrefabParent: 0
---- !u!114 &182498808 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114181388788934094, guid: 4bd8000edb3a2e342b2f4f3b0ad80d9d,
-    type: 2}
-  m_PrefabInternal: {fileID: 182498807}
-  m_Script: {fileID: 11500000, guid: 7d08e8433dc80284d98b343f0708a928, type: 3}
---- !u!1001 &667669123
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1300374350}
-    m_Modifications:
-    - target: {fileID: 4385670795813262, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.47799993
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385670795813262, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.349
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385670795813262, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385670795813262, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385670795813262, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385670795813262, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385670795813262, guid: be94336f7fb83224b9768e08f711a9c4, type: 2}
-=======
     - target: {fileID: 4284307661338346, guid: e2afc3ecf8a1faf4e968d2a8b03ab22a, type: 2}
->>>>>>> master
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -726,29 +652,11 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!114 &1674500948 stripped
 MonoBehaviour:
-<<<<<<< HEAD
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1300374347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 446a4138dcb0a264aa24372eca59962f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listOfPuzzles:
-  - Tangrams
-  placeholders:
-  - {fileID: 182498808}
-  - {fileID: 1920299113}
---- !u!1001 &1920299111
-=======
   m_PrefabParentObject: {fileID: 114283037590794166, guid: be94336f7fb83224b9768e08f711a9c4,
     type: 2}
   m_PrefabInternal: {fileID: 1674500946}
   m_Script: {fileID: 11500000, guid: d72a154acb249d84f88f621aa8a55b6a, type: 3}
 --- !u!1001 &1988157799
->>>>>>> master
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2

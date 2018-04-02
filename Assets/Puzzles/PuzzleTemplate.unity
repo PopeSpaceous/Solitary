@@ -236,10 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a246d4291ed52c4191663f99862f90c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  exitButton: {fileID: 0}
---- !u!1 &467558429
-=======
   tem: {fileID: 213360417}
   buttion: {fileID: 79398848}
 --- !u!1001 &151384194
@@ -285,7 +281,6 @@ Prefab:
   m_ParentPrefab: {fileID: 100100000, guid: 71d1beba55225ed49bf96ed7d963180d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &213360415
->>>>>>> master
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
