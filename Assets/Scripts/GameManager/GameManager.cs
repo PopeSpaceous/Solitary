@@ -91,6 +91,9 @@ public class GameManager : MonoBehaviour {
         SaveGame();
         CheckCompletion();
     }
-	//TODO: complete GameManager class. Still needs Upload to DB
+
+    void UploadToDB() {
+        //TODO: need login first to complete this method
+    }
 
 }
