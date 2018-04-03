@@ -91,6 +91,16 @@ public class GameManager : MonoBehaviour {
         SaveGame();
         CheckCompletion();
     }
+    //This method will clean up the static objects and take the player back to the main menu.
+    //This will casue any unsaved progress to be lost
+    public void ExitBackMainMenu() {
+
+        NextSceneManager.instance.LoadLevelScene("MainMenu");
+        //Destroy GM. A new one will be created in the mainmenu
+        Destroy(gameObject);
+        //Destroy player. Playerprogress will also be gone
+        Destroy(Player.instance.gameObject);
+    }
 
     void UploadToDB() {
         //TODO: need login first to complete this method

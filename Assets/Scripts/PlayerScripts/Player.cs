@@ -29,6 +29,8 @@ public class Player : MonoBehaviour {
 	public bool jumpInput = false;
 	[HideInInspector] 
 	public float horizontalInput;
+    [HideInInspector]
+    public bool escapeInput = false;
 
     public PlayerProgress playerProgress;
 
@@ -55,7 +57,7 @@ public class Player : MonoBehaviour {
 		//Check if the player can move
 		if (canPlayerMove) {
 			
-			CheckInput ();
+			CheckMovementInput ();
 
 		} else {
 			
@@ -64,9 +66,12 @@ public class Player : MonoBehaviour {
 			horizontalInput = 0;
 
 		}
-	}
+        //check for eascape button input
+        escapeInput = Input.GetButtonDown("Cancel");
 
-	void CheckInput(){
+    }
+
+	void CheckMovementInput(){
 		//Action buttion will be used for any interactions
 		actionButtion = Input.GetButton ("Action");
 
