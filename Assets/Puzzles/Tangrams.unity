@@ -578,7 +578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 260871739}
   - component: {fileID: 260871740}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PuzzleTangram
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 276381182}
   - component: {fileID: 276381179}
   - component: {fileID: 276381183}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Big_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 422669176}
   - component: {fileID: 422669178}
   - component: {fileID: 422669177}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: gPar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -940,7 +940,7 @@ GameObject:
   - component: {fileID: 599652759}
   - component: {fileID: 599652761}
   - component: {fileID: 599652760}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: gBig2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1031,7 +1031,7 @@ GameObject:
   - component: {fileID: 601708862}
   - component: {fileID: 601708864}
   - component: {fileID: 601708863}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: gSmall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,7 +1156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 637438304}
   - component: {fileID: 637438305}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: MovableTangram
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1535,7 +1535,7 @@ GameObject:
   - component: {fileID: 839550331}
   - component: {fileID: 839550333}
   - component: {fileID: 839550332}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: gSqu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1674,7 +1674,7 @@ GameObject:
   - component: {fileID: 868953601}
   - component: {fileID: 868953603}
   - component: {fileID: 868953602}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: gMed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1766,7 +1766,7 @@ GameObject:
   - component: {fileID: 905858233}
   - component: {fileID: 905858232}
   - component: {fileID: 905858235}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Big_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1888,7 +1888,7 @@ GameObject:
   - component: {fileID: 962144398}
   - component: {fileID: 962144397}
   - component: {fileID: 962144400}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2009,7 +2009,7 @@ GameObject:
   - component: {fileID: 965765330}
   - component: {fileID: 965765332}
   - component: {fileID: 965765331}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: gSmall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2282,7 +2282,7 @@ GameObject:
   - component: {fileID: 1426870415}
   - component: {fileID: 1426870417}
   - component: {fileID: 1426870416}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: gBig1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2374,7 +2374,7 @@ GameObject:
   - component: {fileID: 1452740784}
   - component: {fileID: 1452740783}
   - component: {fileID: 1452740786}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2568,7 +2568,7 @@ GameObject:
   - component: {fileID: 1470447800}
   - component: {fileID: 1470447802}
   - component: {fileID: 1470447799}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Paralellogram
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2864,7 +2864,7 @@ GameObject:
   - component: {fileID: 1735511693}
   - component: {fileID: 1735511692}
   - component: {fileID: 1735511695}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Small_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3338,7 +3338,7 @@ GameObject:
   - component: {fileID: 2039849431}
   - component: {fileID: 2039849430}
   - component: {fileID: 2039849433}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Small_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
