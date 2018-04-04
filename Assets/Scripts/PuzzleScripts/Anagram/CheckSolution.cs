@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class CheckButton : MonoBehaviour {
+public class CheckSolution : MonoBehaviour {
 	public Anagram myAnagram;
 	public Button myButt;
 
