@@ -314,11 +314,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPuzzleComplete: 0
   puzzleID: 107
---- !u!4 &602831966 stripped
+--- !u!1001 &607806589
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1925505837}
+    m_Modifications:
+    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.035544574
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.28670874
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.8984375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054823597885898, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+      propertyPath: m_Name
+      value: Hacking Tool Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.77421
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.80527997
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &607806590 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f,
     type: 2}
-  m_PrefabInternal: {fileID: 1250930817}
+  m_PrefabInternal: {fileID: 607806589}
 --- !u!1001 &884342674
 Prefab:
   m_ObjectHideFlags: 0
@@ -487,52 +541,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224209465077643160, guid: cea9a0e53ea3908478c4899bba909596,
     type: 2}
   m_PrefabInternal: {fileID: 884342674}
---- !u!1001 &1250930817
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1925505837}
-    m_Modifications:
-    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.28670874
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -1.8984375
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181245740393302, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1054823597885898, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
-      propertyPath: m_Name
-      value: Hacking Tool Background
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: be8428c3af1cf2d48bd9ab9d7890483f, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1325039003
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +976,7 @@ Transform:
   m_LocalPosition: {x: 0.035544574, y: 0.28670874, z: 1.8984375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 602831966}
+  - {fileID: 607806590}
   - {fileID: 213360416}
   m_Father: {fileID: 0}
   m_RootOrder: 1
