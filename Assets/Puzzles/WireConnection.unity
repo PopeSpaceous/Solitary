@@ -2307,7 +2307,7 @@ Prefab:
     - target: {fileID: 114401561735230380, guid: cea9a0e53ea3908478c4899bba909596,
         type: 2}
       propertyPath: m_Text
-      value: Wire Connection Instructions
+      value: Wire Connection
       objectReference: {fileID: 0}
     - target: {fileID: 114349145947184352, guid: cea9a0e53ea3908478c4899bba909596,
         type: 2}
