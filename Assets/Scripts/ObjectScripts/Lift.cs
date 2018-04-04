@@ -81,13 +81,13 @@ public class Lift : WorldObject {
     public override void Lock()
     {
         isLocked = true;
-        activate = false;
     }
     /* Note: if you unlokcing a lift and want to activate 
      * right now, then set the activate bool to true as well*/
     public override void Unlock()
     {
         isLocked = false;
+        isOpen = true;
     }
 
     public override void OpenMove()
