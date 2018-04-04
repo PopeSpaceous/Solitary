@@ -28,6 +28,9 @@ public class gameMang : MonoBehaviour {
     public AudioSource correct;
     public AudioSource incorrect;
 
+    //counter to track correct responses
+    public int correctGuesses;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -41,7 +44,7 @@ public class gameMang : MonoBehaviour {
             if (stayLitCounter < 0)
             {
                 colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.5f);
-                buttonSounds[activeSequence[positionInSequence]].Stop();
+                //buttonSounds[activeSequence[positionInSequence]].Stop();
                 shouldBeLit = false;
 
                 shouldBeDark = true;
@@ -64,8 +67,8 @@ public class gameMang : MonoBehaviour {
                 if (waitBetweenCounter < 0)
                 {
                     //light up selected colour
-                    colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
-                    buttonSounds[activeSequence[positionInSequence]].Play();
+                    colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.5f);
+                    //buttonSounds[activeSequence[positionInSequence]].Play();
 
                     stayLitCounter = stayLit;
                     shouldBeLit = true;
@@ -82,6 +85,9 @@ public class gameMang : MonoBehaviour {
         positionInSequence = 0;
         inputInSequence = 0;
 
+        //reset counter
+        correctGuesses = 0;
+
         colourSelect = Random.Range(0, colours.Length);
 
         //add random number to list
@@ -89,7 +95,7 @@ public class gameMang : MonoBehaviour {
 
         //light up selected colour
         colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
-        buttonSounds[activeSequence[positionInSequence]].Play();
+        //buttonSounds[activeSequence[positionInSequence]].Play();
 
         stayLitCounter = stayLit;
         shouldBeLit = true;
@@ -99,41 +105,58 @@ public class gameMang : MonoBehaviour {
     {
         if (gameActive)
         {
+            //if button in sequence is equal to button user pressed
             if (activeSequence[inputInSequence] == whichButton)
             {
                 Debug.Log("Correct");
-                
                 inputInSequence++;
 
-                //add check to see if user presses right button
-                if (inputInSequence >= activeSequence.Count)
+                for (int i = correctGuesses; i < 7; i++)
                 {
-                    positionInSequence = 0;
-                    inputInSequence = 0;
+                    //add check to see current position equals end of list
+                    if (inputInSequence >= activeSequence.Count)
+                    {
+                        correctGuesses++;
+                        Debug.Log("Correct number of sequences: " + correctGuesses);
 
-                    colourSelect = Random.Range(0, colours.Length);
+                        positionInSequence = 0;
+                        inputInSequence = 0;
 
-                    //add random number to list
-                    activeSequence.Add(colourSelect);
+                        colourSelect = Random.Range(0, colours.Length);
 
-                    //light up selected colour
-                    colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
-                    buttonSounds[activeSequence[positionInSequence]].Play();
+                        //add random number to list
+                        activeSequence.Add(colourSelect);
 
-                    stayLitCounter = stayLit;
-                    shouldBeLit = true;
+                        //light up selected colour
+                        colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
+                        //buttonSounds[activeSequence[positionInSequence]].Play();
 
-                    gameActive = false;
+                        stayLitCounter = stayLit;
+                        shouldBeLit = true;
 
-                    correct.Play();
+                        gameActive = false;
+
+                        //correct.Play();
+                    }
                 }
             }
             else
             {
                 Debug.Log("WRONG!");
-                incorrect.Play();
+                //incorrect.Play();
                 gameActive = false;
             }
         }
     }
+
+    /*
+     * Stil working on the button to replay the sequence if the user is stuck
+    public void ReplayPattern()
+    {
+        for (int i = 0; i < activeSequence.Count; i++)
+        {
+            colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.75f);
+        }
+    }
+    */
 }

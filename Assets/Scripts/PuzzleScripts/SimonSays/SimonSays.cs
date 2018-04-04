@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SimonSays: Puzzle {
 
+    /*
 	// Sets the parent fields
 	void Awake () {
 		puzzleName = "SimonSays";
@@ -13,7 +14,7 @@ public class SimonSays: Puzzle {
 		Debug.Log ("Difficulty for puzzle " + puzzleName + " is: "+ this.difficulty);
 	}
 
-
+    */
 	/* Your wonderful startup puzzle code here :3 */
     //all set up puzzle code goes here
 
