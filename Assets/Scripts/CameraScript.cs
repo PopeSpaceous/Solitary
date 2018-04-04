@@ -38,15 +38,17 @@ public class CameraScript : MonoBehaviour
 
     void LateUpdate()
     {
-		this.transform.position = new Vector3(playerTrans.position.x + offset.x,
-											  playerTrans.position.y + offset.y,
-											  playerTrans.position.z + offset.z);
+        if (playerTrans != null)
+        {
+            this.transform.position = new Vector3(playerTrans.position.x + offset.x,
+                                                  playerTrans.position.y + offset.y,
+                                                  playerTrans.position.z + offset.z);
 
-		float clampedX = Mathf.Clamp(playerTrans.position.x, minBounds.x + halfWidth, maxBounds.x - halfWidth);
-		float clampedY = Mathf.Clamp(playerTrans.position.y, minBounds.y + halfHeight, maxBounds.y - halfHeight);
+            float clampedX = Mathf.Clamp(playerTrans.position.x, minBounds.x + halfWidth, maxBounds.x - halfWidth);
+            float clampedY = Mathf.Clamp(playerTrans.position.y, minBounds.y + halfHeight, maxBounds.y - halfHeight);
 
-        this.transform.position = new Vector3(clampedX, clampedY, transform.position.z);
-
+            this.transform.position = new Vector3(clampedX, clampedY, transform.position.z);
+        }
     }
 
 }
