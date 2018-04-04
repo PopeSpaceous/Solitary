@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour {
     public static bool isGamePaused = false;
     //menu sceen reference
     public GameObject pauseMenu;
+    //hacking tool to be shown when in puzzle and it is puased
+    public GameObject hackingTool;
 
     void Update () {
         //check if the player has pressed on the cancel key
@@ -28,6 +30,10 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 0;
         //show pause screen
         pauseMenu.SetActive(true);
+        if (!NextSceneManager.instance.isPuzzleLoaded)
+        {
+            hackingTool.SetActive(false);
+        }
     }
 
     public void ResumeGame() {
@@ -39,8 +45,9 @@ public class PauseMenu : MonoBehaviour {
     }
     //Trigger a back to the main menu procedure 
     public void Menu() {
-        ResumeGame();
+        
         GameManager.instance.ExitBackMainMenu();
+        ResumeGame();
     }
 
 }

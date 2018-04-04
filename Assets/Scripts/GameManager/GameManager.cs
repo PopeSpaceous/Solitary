@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 /*Game Manager will always be static throughout the game and forced to not be unloaded when a new scene is loaded */
@@ -10,7 +11,9 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance = null;
 
     public int currentScore = 0;
-    public bool[] doorLocks; // this array will hold what doors should be locked or not for each level
+    //This array will hold what doors should be locked or not for each level
+    public bool[] doorLocks;
+    //Bool to check if game is complete
     public bool isGameComplete = false;
 
     //used to trigger a load game sequence 
@@ -29,8 +32,15 @@ public class GameManager : MonoBehaviour {
         
 		//Makes this gameobject not be unloaded when entering a new scene
 		DontDestroyOnLoad (this);
+        NewGame(); // TODO: remove this when game is ready for deployment
+    }
+    //Clean vars and starts a new game
+    public void NewGame() {
+        isGameComplete = false;
+        currentScore = 0;
+        loadGameFile = false;
         //Starting locks for each level doors
-        doorLocks = new bool [5]{ false, false, false, false, false };
+        doorLocks = new bool[5] { false, false, false, false, false };
     }
 
     //NOTE: this method must be called in a start method when loading the game from a file
@@ -55,11 +65,11 @@ public class GameManager : MonoBehaviour {
 
     public void CheckCompletion() {
         //TODO: complete this method
+        //Also delete the save file when the game has completed
     }
     
     public void LevelCompleted(int i, int addScore)
     {
-
         UpdateScore(addScore);
         
         //Update completed levels and door locks
@@ -94,11 +104,13 @@ public class GameManager : MonoBehaviour {
     //This method will clean up the static objects and take the player back to the main menu.
     //This will casue any unsaved progress to be lost
     public void ExitBackMainMenu() {
-
-        NextSceneManager.instance.LoadLevelScene("MainMenu");
-        //Destroy GM. A new one will be created in the mainmenu
-        Destroy(gameObject);
-        //Destroy player. Playerprogress will also be gone
+        //Get the fader
+        GameObject fader = GameObject.Find("Fade");
+        Animator a = fader.GetComponent<Animator>();
+        Image i = fader.GetComponent<Image>();
+        //Load back to main menu with fade
+        NextSceneManager.instance.LoadLevelScene("MainMenu", a, i);
+        //Destroy the player. Playerprogress will also be gone
         Destroy(Player.instance.gameObject);
     }
 
