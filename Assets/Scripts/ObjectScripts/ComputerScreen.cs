@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ComputerScreen : MonoBehaviour {
-	bool showScreen =false;
-
+	bool showScreen =true;
 	public Image screen;
 	public Button exButt;
 	public Text logText;
@@ -18,10 +17,11 @@ public class ComputerScreen : MonoBehaviour {
 	void Start () {
 		regAlpha=screen.canvasRenderer.GetAlpha();
 		addLogs ();
-		toggleView ();
+		textToDisplay ="";
+		//toggleView ();
 	}
-	// Update is called once per frame
-	void Update () {
+	public void runStart(){
+		Start ();
 	}
 
 

@@ -11,7 +11,6 @@ public class ComputerExitButton : MonoBehaviour {
 	void Start () {
 		Button btn = myButt.GetComponent<Button> ();
 		btn.onClick.AddListener (taskOnClick);
-
 	}
 	
 	void taskOnClick(){
