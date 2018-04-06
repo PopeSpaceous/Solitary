@@ -5,7 +5,7 @@ using UnityEngine;
 public class ComputerTerminal : MonoBehaviour {
 	public Animator ani;
 	public ComputerScreen comp;
-	public UIcomputer uiComp;
+	public GameObject uiComp;
 	// Use this for initialization
 	void Start () {
 		ani.speed = 0.25f;

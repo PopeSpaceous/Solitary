@@ -210,6 +210,11 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &77887490 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95951290029533438, guid: 6a416a6f6dc0c5247bd96ec0d0f8cc97,
+    type: 2}
+  m_PrefabInternal: {fileID: 1047478479}
 --- !u!1001 &196258029
 Prefab:
   m_ObjectHideFlags: 0
@@ -552,7 +557,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 509930334}
-  - component: {fileID: 509930333}
   m_Layer: 5
   m_Name: Computer
   m_TagString: Untagged
@@ -560,17 +564,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &509930333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 509930332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13812f3db1598cd4585b58d162fcf109, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &509930334
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1301,7 +1294,12 @@ Prefab:
         type: 2}
       propertyPath: uiComp
       value: 
-      objectReference: {fileID: 509930333}
+      objectReference: {fileID: 509930332}
+    - target: {fileID: 114477510837643772, guid: 6a416a6f6dc0c5247bd96ec0d0f8cc97,
+        type: 2}
+      propertyPath: ani
+      value: 
+      objectReference: {fileID: 77887490}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a416a6f6dc0c5247bd96ec0d0f8cc97, type: 2}
   m_IsPrefabParent: 0
