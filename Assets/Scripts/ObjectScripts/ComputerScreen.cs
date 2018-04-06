@@ -11,7 +11,6 @@ public class ComputerScreen : MonoBehaviour {
 	public Text butttext;
 	string textToDisplay ="";
 	List<string> Logs= new List<string>();
-	public List<Door> hubDoors = new List<Door>();
 	private float regAlpha;
 	// Use this for initialization
 	void Start () {
@@ -23,7 +22,7 @@ public class ComputerScreen : MonoBehaviour {
 	public void runStart(){
 		Start ();
 	}
-
+     
 
 
 
@@ -52,7 +51,7 @@ public class ComputerScreen : MonoBehaviour {
 		textToDisplay = "";
 		textToDisplay += Logs [0];
 		for (int i = 1; i < 5; i++) {
-			if (!hubDoors [i].isDoorlocked) {
+			if (!GameManager.instance.doorLocks[i]) {
 				textToDisplay += "\n\n" + Logs [i];
 			}
 		}
