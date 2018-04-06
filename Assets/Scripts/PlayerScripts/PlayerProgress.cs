@@ -5,7 +5,15 @@ using UnityEngine;
 public class PlayerProgress : MonoBehaviour {
 
 	public GameData myGame;
+
+    //Player id
+    public int id = 0;
+
+    //Game completion bool
+    public bool isGameCompleted = false;
+
     private int score;
+
     private int highScore;
 
 	public bool[] doorLocks = null;
@@ -30,6 +38,7 @@ public class PlayerProgress : MonoBehaviour {
 
     private void Awake()
     {
+        
         //Door lock ref from GM
         doorLocks = GameManager.instance.doorLocks;
         //Check if the game needs to load. Set by the main menu
@@ -48,6 +57,8 @@ public class PlayerProgress : MonoBehaviour {
     public void SaveGame() {
 		//set game data to the current data set
 		GameData.current = myGame;
+        GameData.current.id = id;
+        GameData.current.isGameCompleted = isGameCompleted;
 		GameData.current.score =score;
 		GameData.current.highScore =highScore;
 
@@ -75,8 +86,11 @@ public class PlayerProgress : MonoBehaviour {
     public void LoadGame() {
 		//load the data
 		SaveLoad.Load ();
-		//sets the player's progress to what the saved data was
-		score = GameData.current.score;
+        //sets the player's progress to what the saved data was
+        id = GameData.current.id;
+        isGameCompleted = GameData.current.isGameCompleted;
+
+        score = GameData.current.score;
 		highScore = GameData.current.highScore;
 
 		doorLocks = GameData.current.doorLocks;
@@ -96,7 +110,7 @@ public class PlayerProgress : MonoBehaviour {
 		i_WordPasscode_101 = GameData.current.i_WordPasscode_101;
         
 		GameManager.instance.doorLocks = doorLocks;
-		//updates the current score in gameManager
-        GameManager.instance.LoadGame(score);
+		//updates the current score and game status in gameManager
+        GameManager.instance.LoadStats(score, isGameCompleted);
     }
 }

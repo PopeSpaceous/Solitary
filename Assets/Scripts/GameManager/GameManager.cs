@@ -40,17 +40,18 @@ public class GameManager : MonoBehaviour {
         currentScore = 0;
         loadGameFile = false;
         //Starting locks for each level doors
-        doorLocks = new bool[5] { false, true, true, true, true };
+        doorLocks = new bool[5] { false, false, false, false, false };
     }
 
-    //NOTE: this method must be called in a start method when loading the game from a file
-    public void LoadGame(int score) {
+    //Set the states of the player
+    //this method will only be called when loading
+    public void LoadStats(int score, bool gameCompleted) {
 
         currentScore = score;
-
+        gameCompleted = isGameComplete;
     }
     
-    public void SaveGame() {        
+    public void SaveGame() {              
         Player.instance.playerProgress.SaveGame();
     }
 
@@ -62,14 +63,14 @@ public class GameManager : MonoBehaviour {
     public void UpdateScore(int addScore) {
         currentScore += addScore;                
     }
-
+    //Check game completion
     public void CheckCompletion() {
-        //TODO: complete this method
+        //When level 5 is completed the game is completed
         if (Player.instance.playerProgress.level5)
         {
             isGameComplete = true;
-        }
-        //Also delete the save file when the game has completed
+            Player.instance.playerProgress.isGameCompleted = isGameComplete;
+        }        
     }
     
     public void LevelCompleted(int i, int addScore)
@@ -102,8 +103,9 @@ public class GameManager : MonoBehaviour {
         }
         Player.instance.playerProgress.UpdatePlayerStats(currentScore);
 
-        SaveGame();
         CheckCompletion();
+        SaveGame();
+        
     }
     //This method will clean up the static objects and take the player back to a givin scene
     //This will casue any unsaved progress to be lost
