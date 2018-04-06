@@ -7,7 +7,7 @@ public class Level_Hub : MonoBehaviour {
 
 	//A gameobject place marker that we will reference in the Inspector
 	public Transform PlayerSpawn = null;
-
+	//private AudioSource backgroundMusic;
     public Text score; // score to display
 
     public Door[] levelDoors; // for now, the order of this array must be the same to the order to the levels unlocked
@@ -15,6 +15,8 @@ public class Level_Hub : MonoBehaviour {
     
     void Start()
     {
+		//backgroundMusic = GameObject.FindGameObjectWithTag ("music").GetComponent<AudioSource> ();
+		//StartCoroutine(AudioFadeIn.FadeIn(backgroundMusic, 3f));
         //set up door locks every time the hub scene is loaded
         for (int ctr = 0; ctr < levelDoors.Length; ctr++) {
             levelDoors[ctr].isDoorlocked = GameManager.instance.doorLocks[ctr];
@@ -36,6 +38,9 @@ public class Level_Hub : MonoBehaviour {
 
     public void Exit() {
         //don't show score when we leave the hub
+
+		//music transition
+		//StartCoroutine(AudioFadeOut.FadeOut(backgroundMusic, 5f));
         score.gameObject.SetActive(false);
     }
 }
