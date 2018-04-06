@@ -101,15 +101,15 @@ public class GameManager : MonoBehaviour {
         SaveGame();
         CheckCompletion();
     }
-    //This method will clean up the static objects and take the player back to the main menu.
+    //This method will clean up the static objects and take the player back to a givin scene
     //This will casue any unsaved progress to be lost
-    public void ExitBackMainMenu() {
+    public void ExitGame(string sceneToLeave) {
         //Get the fader
         GameObject fader = GameObject.Find("Fade");
         Animator a = fader.GetComponent<Animator>();
         Image i = fader.GetComponent<Image>();
         //Load back to main menu with fade
-        NextSceneManager.instance.LoadLevelScene("MainMenu", a, i);
+        NextSceneManager.instance.LoadLevelScene(sceneToLeave, a, i);
         //Destroy the player. Playerprogress will also be gone
         Destroy(Player.instance.gameObject);
     }

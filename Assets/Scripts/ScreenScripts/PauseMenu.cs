@@ -46,7 +46,7 @@ public class PauseMenu : MonoBehaviour {
     //Trigger a back to the main menu procedure 
     public void Menu() {
         
-        GameManager.instance.ExitBackMainMenu();
+        GameManager.instance.ExitGame("MainMenu");
         ResumeGame();
     }
 

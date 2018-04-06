@@ -45,7 +45,7 @@ public class MainMenu : MonoBehaviour {
 
     void NewGame() {
         GameManager.instance.NewGame();
-        NextSceneManager.instance.LoadLevelScene("Hub");        
+        NextSceneManager.instance.LoadLevelScene("IntroScreen");        
     }
 
     //Check if there is a save file
