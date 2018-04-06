@@ -24,6 +24,7 @@ public class Level_Hub : MonoBehaviour {
         }
         if (!GameManager.instance.doorLocks[4]) {
             ladderLevel5.SetActive(true);
+            ladderLevel5.GetComponent<Animator>().SetBool("Freeze", GameManager.instance.isGameComplete);
         }
 
         //place player at spawn point

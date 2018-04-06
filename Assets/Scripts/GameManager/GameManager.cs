@@ -65,6 +65,10 @@ public class GameManager : MonoBehaviour {
 
     public void CheckCompletion() {
         //TODO: complete this method
+        if (Player.instance.playerProgress.level5)
+        {
+            isGameComplete = true;
+        }
         //Also delete the save file when the game has completed
     }
     
