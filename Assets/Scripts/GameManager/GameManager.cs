@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
         currentScore = 0;
         loadGameFile = false;
         //Starting locks for each level doors
-        doorLocks = new bool[5] { false, false, false, false, false };
+        doorLocks = new bool[5] { false, true, true, true, true };
     }
 
     //NOTE: this method must be called in a start method when loading the game from a file

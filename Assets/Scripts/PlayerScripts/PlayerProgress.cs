@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerProgress : MonoBehaviour {
+
 	public GameData myGame;
     private int score;
     private int highScore;
@@ -27,16 +28,15 @@ public class PlayerProgress : MonoBehaviour {
     public bool i_ImageScramble_107 = true;
 
 
-    private void Start()
+    private void Awake()
     {
         //Door lock ref from GM
-		doorLocks = GameManager.instance.doorLocks;
-        //Check if the game needs to load
+        doorLocks = GameManager.instance.doorLocks;
+        //Check if the game needs to load. Set by the main menu
         if (GameManager.instance.loadGameFile) {
             LoadGame();
         }
     }
-
     public void UpdatePlayerStats(int s) {
         if (s >= highScore)
         {
