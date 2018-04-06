@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Level : MonoBehaviour {
 
 	//A gameobject place marker that we will reference in the Inspector
@@ -27,6 +28,8 @@ public class Level : MonoBehaviour {
     private float delayTime = 2f;
     //time in the level
     private float time;
+    //timer stop
+    private bool timeStop = false;
 
 	// Use this for initialization
 	void Start () {
@@ -41,7 +44,7 @@ public class Level : MonoBehaviour {
         //turn on some UIs
         timerText.gameObject.SetActive(true);
 		//set audio transition fade in
-
+        //set level ID based on the door
         levelID = backToHub.levelID;
     }
 
@@ -49,17 +52,20 @@ public class Level : MonoBehaviour {
     //UI  / Time
     private void Update()
     {
-        //Timer updates
-        time = Time.time - startTime;
-        currentTimeMin = ((int)time / 59);
-        currentTimeSecs = (time % 59);
-
+        if (!timeStop)
+        {
+            //Timer updates
+            time = Time.time - startTime;
+            currentTimeMin = ((int)time / 59);
+            currentTimeSecs = ((int)time % 59);
+        }
         //Update UI timer text
         timerText.text = "Time\n" +  currentTimeMin.ToString("00") + ":" + currentTimeSecs.ToString("00");
     }
     public void LevelComplete()
     {
-        
+        //stop the timer
+        timeStop = true;
         CalulateLevelScore();
         //Level completion call
         GameManager.instance.LevelCompleted(levelID, currentLevelScore);
@@ -72,8 +78,6 @@ public class Level : MonoBehaviour {
         //Exit Level
         StartCoroutine(WaitBackToHub());
     }
-
-
 
     //This method will wait a few secounds until the player returns back to hub when the level is completed
     IEnumerator WaitBackToHub()
@@ -91,17 +95,17 @@ public class Level : MonoBehaviour {
         timerText.gameObject.SetActive(false);
     }
 
-
-
     //When a puzzle is completed this function will be called for score calulation
-    public void PuzzleUpdateScore(int diff) {
-        //TODO: Do partial score calulation here, when a puzzle is completed. Update currentLevelScore 
-        currentLevelScore += 100; // temp
+    public void PuzzleUpdateScore(int diff)
+    {
+		currentLevelScore+=(diff *150);
     }
     public void CalulateLevelScore()
     {
-        //TODO: calulate score based on time here. Use: currentTimeMin, currentTimeSecs. 
-        //Update the currentLevelScore field
+		//FOREACH PUZZLE(puzzle difficulty *1500)
+		//(SUM/TIME IN MINUTES)*100 (MAKE WHOLE NUMBER)
+        //WHATS WITH THE CAPS, CILL MAN. - Love, Leo
+		currentLevelScore = ((currentLevelScore / (currentTimeMin + 1))*10);
     }
 
 }
