@@ -22,7 +22,7 @@ GameObject:
   m_Layer: 8
   m_Name: GroundChecker
   m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 61498873011437590}
   - component: {fileID: 58780488856986376}
   - component: {fileID: 114926181879341938}
+  - component: {fileID: 70781487184880886}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -56,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1704596829205528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.335, z: 0}
+  m_LocalPosition: {x: 0, y: -2.368, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4749825098732496}
@@ -69,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1832838828691172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1, y: -5.49, z: -3}
+  m_LocalPosition: {x: -12.9, y: -2.39, z: 0}
   m_LocalScale: {x: 0.42, y: 0.42, z: 1}
   m_Children:
   - {fileID: 4641459781550356}
@@ -94,7 +95,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 29bd627082c5f8b4ab85695cc1141981, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &58780488856986376
 CircleCollider2D:
@@ -117,7 +118,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1832838828691172}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 29bd627082c5f8b4ab85695cc1141981, type: 2}
   m_IsTrigger: 0
@@ -136,6 +137,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7228405, y: 4.9563694}
   m_EdgeRadius: 0
+--- !u!70 &70781487184880886
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832838828691172}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 29bd627082c5f8b4ab85695cc1141981, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.051690284, y: 0.14695638}
+  m_Size: {x: 2.4367855, y: 5.73608}
+  m_Direction: 0
 --- !u!95 &95013354632916956
 Animator:
   serializedVersion: 3
@@ -164,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f5e70813565a640a7e97639fef92f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 12
+  movementSpeed: 9.5
   jumpForce: 8
   jumpAmmount: 350
   decreaseAmmountBy: 10
@@ -193,6 +209,7 @@ MonoBehaviour:
   actionButtion: 0
   jumpInput: 0
   horizontalInput: 0
+  escapeInput: 0
   playerProgress: {fileID: 114926181879341938}
 --- !u!114 &114926181879341938
 MonoBehaviour:
@@ -205,12 +222,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b14f0860a191946bf935f04825d4e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelDoors: []
+  myGame:
+    id: 0
+    isGameCompleted: 0
+    score: 0
+    highScore: 0
+    doorLocks: 
+    level1: 0
+    level2: 0
+    level3: 0
+    level4: 0
+    level5: 0
+    i_PuzzleTemplate_100: 0
+    i_WordPasscode_101: 0
+    i_SimonSays_102: 0
+    i_Tangrams_103: 0
+    i_Cryptogram_104: 0
+    i_WireConnection_105: 0
+    i_anagrams_106: 0
+    i_ImageScramble_107: 0
+  id: 0
+  isGameCompleted: 0
+  doorLocks: 
   level1: 0
   level2: 0
   level3: 0
   level4: 0
   level5: 0
+  i_PuzzleTemplate_100: 1
+  i_WordPasscode_101: 1
+  i_SimonSays_102: 1
+  i_Tangrams_103: 1
+  i_Cryptogram_104: 1
+  i_WireConnection_105: 1
+  i_anagrams_106: 1
+  i_ImageScramble_107: 1
 --- !u!212 &212386175380232282
 SpriteRenderer:
   m_ObjectHideFlags: 1
