@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour {
 
         //Check if the character is not jumping already and is touching ground
         // If its ready for a jump, add a ammount for the jump and actualy start the jump after a delay
-        if (Player.instance.jumpInput && !isJumping && isGrounded && !jumpStarted)
+        if (Player.instance.jumpInput && !isJumping && isGrounded && !jumpStarted && !Player.instance.animstate.GetBool("LandHard"))
         {
             currentJumpAmmount = jumpAmmount;
             StartCoroutine(JumpDelay());
@@ -60,7 +60,8 @@ public class PlayerMovement : MonoBehaviour {
         if (rigBod.velocity.y <= hardLandingThreshold) {
             Player.instance.animstate.SetBool("LandHard", true);
         }
-        else if (Player.instance.animstate.GetCurrentAnimatorStateInfo(0).IsTag("Idle") || jumpStarted) { //will reset the HardLand bool if an Idle or new jump has been set
+        //will reset the HardLand bool if an Idle state has been triggered
+        else if (Player.instance.animstate.GetCurrentAnimatorStateInfo(0).IsTag("Idle") ) { 
 
             Player.instance.animstate.SetBool("LandHard", false);
         }
