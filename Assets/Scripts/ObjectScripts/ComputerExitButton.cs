@@ -14,7 +14,11 @@ public class ComputerExitButton : MonoBehaviour {
 	}
 	
 	void taskOnClick(){
+		if (!Player.instance.playerProgress.isGameCompleted) {
 			comp.toggleView ();
+		} else {
+			comp.endChoice.gameObject.SetActive (true);
+		}
 	}
 
 }

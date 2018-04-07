@@ -9,6 +9,7 @@ public class ComputerScreen : MonoBehaviour {
 	public Button exButt;
 	public Text logText;
 	public Text butttext;
+	public Canvas endChoice;
 	string textToDisplay ="";
 	List<string> Logs= new List<string>();
 	private float regAlpha;
@@ -17,6 +18,7 @@ public class ComputerScreen : MonoBehaviour {
 		regAlpha=screen.canvasRenderer.GetAlpha();
 		addLogs ();
 		textToDisplay ="";
+		endChoice.gameObject.SetActive (false);
 		//toggleView ();
 	}
 	public void runStart(){

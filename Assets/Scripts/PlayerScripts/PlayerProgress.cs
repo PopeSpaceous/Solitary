@@ -11,7 +11,7 @@ public class PlayerProgress : MonoBehaviour {
 
     //Game completion bool
     public bool isGameCompleted = false;
-
+	public bool goToPhobos = false;
     private int score;
 
     private int highScore;
