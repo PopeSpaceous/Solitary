@@ -560,7 +560,7 @@ Prefab:
     - target: {fileID: 114331658813377490, guid: 2ac78fa0d4526c241a32463c2df5722d,
         type: 2}
       propertyPath: liftDistance
-      value: 27
+      value: 26.2
       objectReference: {fileID: 0}
     - target: {fileID: 4677722198923014, guid: 2ac78fa0d4526c241a32463c2df5722d, type: 2}
       propertyPath: m_LocalScale.x
@@ -2935,7 +2935,7 @@ Prefab:
     - target: {fileID: 114451612562976632, guid: 8a6e42a261d057846b74abd06db7dd5a,
         type: 2}
       propertyPath: isOpen
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a6e42a261d057846b74abd06db7dd5a, type: 2}
