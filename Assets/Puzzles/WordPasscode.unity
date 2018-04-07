@@ -540,7 +540,7 @@ MonoBehaviour:
     answer: 94
     id: 15
   - question: 21 / 7 =
-    a: '3 '
+    a: 3
     b: 4
     c: 5
     d: 6
@@ -1383,7 +1383,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 0
 --- !u!222 &1124985998
 CanvasRenderer:
   m_ObjectHideFlags: 0
