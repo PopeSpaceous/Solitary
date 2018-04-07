@@ -10,8 +10,15 @@ public class GameData {
 	//reference to itself
 	public static GameData current;
 
-	//Data members that mirror playerProgress class
-	public  int score;
+    //Data members that mirror playerProgress class
+
+    //Player id
+    public int id;
+
+    //Game completion bool
+    public bool isGameCompleted;
+
+    public  int score;
 	public  int highScore;
 
 	public  bool[] doorLocks = null;
