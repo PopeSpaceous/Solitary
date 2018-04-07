@@ -261,7 +261,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1804391292}
-  - {fileID: 1624048598}
   - {fileID: 1849810270}
   - {fileID: 1591661834}
   - {fileID: 1911100811}
@@ -1733,7 +1732,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4900037666471640, guid: 7fbab085a72dd8c4691e1f5823c488ad, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 212908408365115132, guid: 7fbab085a72dd8c4691e1f5823c488ad,
         type: 2}
@@ -2779,7 +2778,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1537060930190740, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
       propertyPath: m_Name
@@ -2799,57 +2798,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1269593436}
   m_Script: {fileID: 11500000, guid: 7d08e8433dc80284d98b343f0708a928, type: 3}
---- !u!1001 &1624048597
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 153009211}
-    m_Modifications:
-    - target: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -26.694
-      objectReference: {fileID: 0}
-    - target: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -8.176
-      objectReference: {fileID: 0}
-    - target: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537060930190740, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
-      propertyPath: m_Name
-      value: Block (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &1624048598 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
-    type: 2}
-  m_PrefabInternal: {fileID: 1624048597}
 --- !u!1001 &1625402078
 Prefab:
   m_ObjectHideFlags: 0
@@ -3096,11 +3044,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -25.01
+      value: -26.685
       objectReference: {fileID: 0}
     - target: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -10.454
+      value: -10.449
       objectReference: {fileID: 0}
     - target: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3314,7 +3262,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4710470993170770, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1537060930190740, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
       propertyPath: m_Name
