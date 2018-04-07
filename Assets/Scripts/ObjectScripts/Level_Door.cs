@@ -12,8 +12,19 @@ public class Level_Door : WorldObject {
         objectName = "Level_Door";
         door = GetComponent<BoxCollider2D>();
         animat = GetComponent<Animator>();
-        //Start the door locked
-        Lock();
+
+    }
+    private void Start()
+    {
+        if (!isOpen)
+        {
+            //Start the door locked
+            Lock();
+        }
+        else {
+            //Start the door unlocked
+            Unlock();
+        }
     }
 
     public override void Lock()
