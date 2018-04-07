@@ -191,7 +191,7 @@ MonoBehaviour:
   whatsGround:
     serializedVersion: 2
     m_Bits: 4294951624
-  hardLandingThreshold: -16
+  hardLandingThreshold: -19
 --- !u!114 &114533088314613284
 MonoBehaviour:
   m_ObjectHideFlags: 1
