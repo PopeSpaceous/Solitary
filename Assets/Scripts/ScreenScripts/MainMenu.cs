@@ -17,11 +17,17 @@ public class MainMenu : MonoBehaviour {
     public Button highScoresexitButton;
     public Button creditsButton;
     public Button creditsExitButton;
+    public GameObject manager;
+
 
 	// Use this for initialization
 	void Start () {
+
+        if (GameManager.instance == null) {
+            Object.Instantiate(manager);
+        }
         //main menu buttons
-        newGameButton.onClick.AddListener(delegate { NextSceneManager.instance.LoadLevelScene("Hub");  });
+        newGameButton.onClick.AddListener(NewGame);
         loadGameButton.onClick.AddListener(RunLoadGame);
         exitButton.onClick.AddListener(delegate { Application.Quit(); });
         highScoresButton.onClick.AddListener(EnterHighScores);
@@ -36,6 +42,12 @@ public class MainMenu : MonoBehaviour {
         creditsExitButton.onClick.AddListener(ExitCredits);
 
     }
+
+    void NewGame() {
+        GameManager.instance.NewGame();
+        NextSceneManager.instance.LoadLevelScene("IntroScreen");        
+    }
+
     //Check if there is a save file
     bool CheckLoadGame() {
         return File.Exists(Application.persistentDataPath + "/savedGames.gd");
