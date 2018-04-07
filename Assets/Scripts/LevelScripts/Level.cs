@@ -105,7 +105,7 @@ public class Level : MonoBehaviour {
 		//FOREACH PUZZLE(puzzle difficulty *1500)
 		//(SUM/TIME IN MINUTES)*100 (MAKE WHOLE NUMBER)
         //WHATS WITH THE CAPS, CILL MAN. - Love, Leo
-		currentLevelScore = ((currentLevelScore / (currentTimeMin + 1))*10);
+		currentLevelScore = (int)((currentLevelScore / (currentTimeMin + 1))*10);
     }
 
 }
