@@ -111,7 +111,7 @@ public class WordPasscode : Puzzle
         optionD.text = currentQuestion.d;
 
         //display number of incorrect answers
-        incorrectAnswers.text = numErrors.ToString();
+        //incorrectAnswers.text = numErrors.ToString();
     }
 
     //transition to next question
@@ -144,6 +144,13 @@ public class WordPasscode : Puzzle
         {
             incorrect.Play();
             numErrors += 1;
+
+            UpdateErrors();
+
+            if (numErrors == 3)
+            {
+                manyErrors();
+            }
         }
     }
 
@@ -160,6 +167,13 @@ public class WordPasscode : Puzzle
         {
             incorrect.Play();
             numErrors += 1;
+
+            UpdateErrors();
+
+            if (numErrors == 3)
+            {
+                manyErrors();
+            }
         }
     }
 
@@ -174,9 +188,20 @@ public class WordPasscode : Puzzle
         }
         else
         {
+            //display number of incorrect answers
+            incorrectAnswers.text = numErrors.ToString();
+
             incorrect.Play();
             numErrors += 1;
-        }      
+
+            UpdateErrors();
+
+            if (numErrors == 3)
+            {
+                manyErrors();
+            }
+        }   
+        
     }
 
     //option D
@@ -192,6 +217,32 @@ public class WordPasscode : Puzzle
         {
             incorrect.Play();
             numErrors += 1;
+
+            UpdateErrors();
+
+            if (numErrors == 3)
+            {
+                manyErrors();
             }
         }
+     }
+
+    public void manyErrors()
+    {
+        questionText.text = "3 strikes -- you're out!";
+        optionA.text = "";
+        optionB.text = "";
+        optionC.text = "";
+        optionD.text = "";
+        incorrectAnswers.text = "";
+
+        Invoke("PuzzleExit", 1.5f);
+    }
+
+    public void UpdateErrors()
+    {
+        //display number of incorrect answers
+        incorrectAnswers.text = numErrors.ToString();
+    }
+
     }
