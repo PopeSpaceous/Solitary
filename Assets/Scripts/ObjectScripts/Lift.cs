@@ -17,11 +17,12 @@ public class Lift : WorldObject {
     private Animator liftSate;    
     private float currentDistance = 0;
     private Rigidbody2D rigdL;
-
+	public AudioSource mySound;
     private void Awake()
     {
         rigdL = GetComponent<Rigidbody2D>();
         liftSate = GetComponent<Animator>();
+		mySound = GetComponent<AudioSource> ();
     }
 
     // Use this for initialization
@@ -44,10 +45,9 @@ public class Lift : WorldObject {
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && isPlayerIn)
-        {
-            isPlayerIn = false;
-        }
+		if (collision.CompareTag ("Player") && isPlayerIn) {
+			isPlayerIn = false;
+		} 
     }
     // FixedUpdate will handle the lift's movement
     void FixedUpdate () {
@@ -57,20 +57,24 @@ public class Lift : WorldObject {
             //Keep applying distance
             if (currentDistance < liftDistance)
             {                
-                currentDistance+= 0.1f;     //cut the distance    
+                currentDistance+= 0.1f;     //cut the distance
+				if (!mySound.isPlaying && isPlayerIn) {
+					mySound.Play ();
+				} else if (!isPlayerIn) {
+					mySound.Stop ();
+				}
                 OpenMove();
             }
-            else
+			else 
             {                
                 isOpen = false;
                 StartCoroutine(NextMove());
             }
         }
         else if(rigdL.velocity.y != 0) {
-            if (isPlayerIn)
-            { // cut the velocity of the player when the lift stops
-                Player.instance.GetComponent<Rigidbody2D>().velocity = new Vector3(Player.instance.GetComponent<Rigidbody2D>().velocity.x, 0, 0);
-            }
+			if (isPlayerIn) { // cut the velocity of the player when the lift stops
+				Player.instance.GetComponent<Rigidbody2D> ().velocity = new Vector3 (Player.instance.GetComponent<Rigidbody2D> ().velocity.x, 0, 0);
+			} 
             rigdL.velocity = new Vector3(0, 0, 0);
         }
 
@@ -94,6 +98,7 @@ public class Lift : WorldObject {
     {
         //Depending the Direction apply the needed velocity
         if (DirectionUp) {
+			
             rigdL.velocity = new Vector3(0, liftSpeed, 0);
         }
         else        
@@ -102,6 +107,7 @@ public class Lift : WorldObject {
             {
                 Player.instance.GetComponent<Rigidbody2D>().velocity = new Vector3(Player.instance.GetComponent<Rigidbody2D>().velocity.x, liftSpeed  * -1, 0);
             }
+
             rigdL.velocity = new Vector3(0, liftSpeed * -1, 0);
         }
     }

@@ -22,7 +22,7 @@ public class WireConnection: Puzzle {
 	public GameObject connectionPrefab;
 	public GameObject lockPrefab;
 	public GameObject wirePrefab;
-
+	public List<AudioSource> mySounds = new List<AudioSource>();
 
 	//These are the list of refs for all locks, connections, and wires.
 	List<Wire> wires; 
@@ -38,6 +38,7 @@ public class WireConnection: Puzzle {
 		//#if NO_DEBUG
 		difficulty = NextSceneManager.instance.setPuzzledifficulty;
 		placeholder = NextSceneManager.instance.placeholder;
+		mySounds = new List<AudioSource>(GetComponents<AudioSource> ());
 
 		Debug.Log ("Difficulty for puzzle " + puzzleName + " is: "+ this.difficulty);
 		//#endif
