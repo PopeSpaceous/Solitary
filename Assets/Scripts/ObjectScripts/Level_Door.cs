@@ -13,8 +13,6 @@ public class Level_Door : WorldObject {
 		door = GetComponent<BoxCollider2D>();
 		animat = GetComponent<Animator>();
 		mySound = GetComponent<AudioSource> ();
-		//Start the door locked
-		Lock();
 	}
     private void Start()
     {
