@@ -8,12 +8,21 @@ public class EndScreen : MonoBehaviour {
     //For Development only
     //TODO: remove during deployment, or keep it if there is a need
     public Button goToMainMenu;
+	public Text myText;
 
     // Use this for initialization
     void Start()
     {
         goToMainMenu.onClick.AddListener(GoToMainMenu);
+		if (Player.instance.playerProgress.goToPhobos) {
+			myText.text = "Attempts were made by the USSR to send probes to Phobos in 1988, and again in 2011. All attempts were classified as failures.\n\nYou set your course for Phobos.\n\n\n\nThe End";
+
+		} else {
+			myText.text = "Attempts were made by the USSR to send probes to Phobos in 1988, and again in 2011. All attempts were classified as failures.\n\nYou set your course for Mars to continue your mission to terraform Mars.\n\n\n\nThe End";
+		}
     }
+
+
 
 
     public void GoToMainMenu()

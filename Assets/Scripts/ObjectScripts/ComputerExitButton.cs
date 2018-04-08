@@ -12,9 +12,13 @@ public class ComputerExitButton : MonoBehaviour {
 		Button btn = myButt.GetComponent<Button> ();
 		btn.onClick.AddListener (taskOnClick);
 	}
-	
+
 	void taskOnClick(){
+		if (!Player.instance.playerProgress.isGameCompleted) {
 			comp.toggleView ();
+		} else {
+			comp.endChoice.SetActive (true);
+		}
 	}
 
 }
