@@ -56,7 +56,7 @@ public class Level : MonoBehaviour {
             currentTimeSecs = ((int)time % 59);
         }
         //Update UI timer text
-        timerText.text = "Time\n" +  currentTimeMin.ToString("00") + ":" + currentTimeSecs.ToString("00");
+        timerText.text = currentTimeMin.ToString("00") + ":" + currentTimeSecs.ToString("00");
     }
     public void LevelComplete()
     {
@@ -67,7 +67,7 @@ public class Level : MonoBehaviour {
         GameManager.instance.LevelCompleted(levelID, currentLevelScore);
 
         //Level complete message
-        levelCompleteMessage.text = "Level " + levelID.ToString() + " Complete!";
+        levelCompleteMessage.text = "Level " + levelID.ToString() + " Complete!" + "\n" + "Score: " + currentLevelScore;
         levelCompleteMessage.gameObject.SetActive(true);
         //Lock player's movement
         Player.instance.ChangeMovementLock(false);
