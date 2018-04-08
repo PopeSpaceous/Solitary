@@ -10,7 +10,8 @@ public class ButtonController : MonoBehaviour {
 
     public int thisButtonNumber;
 
-    private gameMang theGM;
+    private SimonSays script;
+    //private gameMang theGM;
 
     private AudioSource theSound;
 
@@ -18,7 +19,8 @@ public class ButtonController : MonoBehaviour {
     void Start () {
 
         theSprite = GetComponent<SpriteRenderer>();
-        theGM = FindObjectOfType<gameMang>();
+        //theGM = FindObjectOfType<gameMang>();
+        script = FindObjectOfType<SimonSays>();
         theSound = GetComponent<AudioSource>();
         
 	}
@@ -41,8 +43,9 @@ public class ButtonController : MonoBehaviour {
     void OnMouseUp()
     {
 
-        theSprite.color = new Color(theSprite.color.r, theSprite.color.g, theSprite.color.b, 0.5f);
-        theGM.ColourPressed(thisButtonNumber);
+        theSprite.color = new Color(theSprite.color.r, theSprite.color.g, theSprite.color.b, 0.25f);
+        //theGM.ColourPressed(thisButtonNumber);
+        script.ColourPressed(thisButtonNumber);
         theSound.Stop();
         
 
