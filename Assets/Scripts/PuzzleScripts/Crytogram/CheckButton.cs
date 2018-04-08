@@ -16,6 +16,7 @@ public class CheckButton : MonoBehaviour {
 		if (Cryptogram.checkAllWords ()) {
 			Cryptogram.PuzzleComplete ();
 		} else {
+			Cryptogram.GetComponent<AudioSource> ().Play ();
 			Cryptogram.getWrongLetters ();
 			//myText.text = Cryptogram.getWrongLetters ();
 		}

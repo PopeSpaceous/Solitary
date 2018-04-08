@@ -20,8 +20,9 @@ public class Level : MonoBehaviour {
     private float startTime;
 
     //total time fields 
-    private int currentTimeMin = 0;
-    private int currentTimeSecs = 0;
+    private float currentTimeMin = 0;
+    private float currentTimeSecs = 0;
+	//private AudioSource backgroundMusic;
 
     //wait time until back to hub is called when the level is complete
     private float delayTime = 2f;
@@ -32,6 +33,8 @@ public class Level : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//backgroundMusic = GameObject.FindGameObjectWithTag ("music").GetComponent<AudioSource> ();
+		//StartCoroutine(AudioFadeIn.FadeIn(backgroundMusic, 3f));
 		//set the player spawn in the level
 		GameManager.instance.SetPlayerLocation(PlayerSpawn);
         //set timer
@@ -40,6 +43,7 @@ public class Level : MonoBehaviour {
         currentLevelScore = 0;
         //turn on some UIs
         timerText.gameObject.SetActive(true);
+		//set audio transition fade in
         //set level ID based on the door
         levelID = backToHub.levelID;
     }
@@ -85,6 +89,8 @@ public class Level : MonoBehaviour {
 
     public void LevelExit()
     {
+		//set transition
+		//StartCoroutine(AudioFadeOut.FadeOut(backgroundMusic, 5f));
         //turn off some UIs
         timerText.gameObject.SetActive(false);
     }
@@ -99,7 +105,7 @@ public class Level : MonoBehaviour {
 		//FOREACH PUZZLE(puzzle difficulty *1500)
 		//(SUM/TIME IN MINUTES)*100 (MAKE WHOLE NUMBER)
         //WHATS WITH THE CAPS, CILL MAN. - Love, Leo
-		currentLevelScore = ((currentLevelScore / (currentTimeMin + 1))*10);
+		currentLevelScore = (int)((currentLevelScore / (currentTimeMin + 1))*10);
     }
 
 }

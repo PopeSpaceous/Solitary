@@ -54,7 +54,7 @@ public class Lock : MonoBehaviour {
 		//check if the sum is correct and apply the needed changes
 		if (sum == neededSum && !isOpen && wireID != 0) {
 			isOpen = true;
-
+			GetComponentsInParent<AudioSource>()[0].Play();
 			MoveLock (true);
 
 			//set vars----
@@ -64,7 +64,6 @@ public class Lock : MonoBehaviour {
 			unlocked.Add (this);
 
 		} else if (isOpen ) { // if the lock is already open close it
-
 			isOpen = false;
 			MoveLock (false);
 
@@ -81,6 +80,9 @@ public class Lock : MonoBehaviour {
 			unlocked.Remove (this);
 			
 		} else if (!isOpen ) { //if everything is wrong affect the already unlocked
+			if (sum!=0&&wireID!=0){
+				GetComponentsInParent<AudioSource>()[1].Play();
+			}
 			//Unlock Affect
 			unlockAffect();
 		}
