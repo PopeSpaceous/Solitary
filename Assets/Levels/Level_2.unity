@@ -435,7 +435,12 @@ Prefab:
     - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
@@ -1131,7 +1136,12 @@ Prefab:
     - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
@@ -1327,7 +1337,12 @@ Prefab:
     - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
@@ -1487,11 +1502,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4599919110333288, guid: 8a6e42a261d057846b74abd06db7dd5a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.167
+      value: -4.362
       objectReference: {fileID: 0}
     - target: {fileID: 4599919110333288, guid: 8a6e42a261d057846b74abd06db7dd5a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -12.714
+      value: -12.722
       objectReference: {fileID: 0}
     - target: {fileID: 4599919110333288, guid: 8a6e42a261d057846b74abd06db7dd5a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1520,6 +1535,16 @@ Prefab:
     - target: {fileID: 1227253725042106, guid: 8a6e42a261d057846b74abd06db7dd5a, type: 2}
       propertyPath: m_Name
       value: LevelDoor (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212384906869817994, guid: 8a6e42a261d057846b74abd06db7dd5a,
+        type: 2}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212384906869817994, guid: 8a6e42a261d057846b74abd06db7dd5a,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a6e42a261d057846b74abd06db7dd5a, type: 2}
@@ -2403,7 +2428,12 @@ Prefab:
     - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
@@ -3125,7 +3155,12 @@ Prefab:
     - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
@@ -3660,7 +3695,12 @@ Prefab:
     - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
@@ -4322,7 +4362,12 @@ Prefab:
     - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61213163948121900, guid: 896b46b04a0729241ab2ea67e7a1bfe5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 896b46b04a0729241ab2ea67e7a1bfe5, type: 2}
