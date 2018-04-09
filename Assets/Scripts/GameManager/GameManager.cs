@@ -86,7 +86,9 @@ public class GameManager : MonoBehaviour {
             isGameComplete = true;
             Player.instance.playerProgress.isGameCompleted = isGameComplete;
         }
-        //TODO:lock the doors?
+        //Like level 1 and level 2 door when the game is completed
+        doorLocks[0] = true;
+        doorLocks[1] = true;
     }
     
     public void LevelCompleted(int i, int addScore)

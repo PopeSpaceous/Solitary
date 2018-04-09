@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class EndScreen : MonoBehaviour {
 
-    //For Development only
-    //TODO: remove during deployment, or keep it if there is a need
     public Button goToMainMenu;
 	public Text myText;
 
