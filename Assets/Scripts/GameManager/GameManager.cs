@@ -15,12 +15,10 @@ public class GameManager : MonoBehaviour {
     public bool[] doorLocks;
     //Bool to check if game is complete
     public bool isGameComplete = false;
-
     //used to trigger a load game sequence 
     public bool loadGameFile = false;
-
+    //Id Data static class
     public DBData dBData;
-
     //Player data
     public int playerId = 0;
     public int highScore = 0;
@@ -38,12 +36,16 @@ public class GameManager : MonoBehaviour {
 			Destroy (gameObject);
 			Debug.LogWarning ("Another instance of GameManager has been created and destoryed!");
 		}
+        //Get the DB data script ref
         dBData = GetComponent<DBData>();
+
         //Makes this gameobject not be unloaded when entering a new scene
         DontDestroyOnLoad (this);
+
         NewGame(); // TODO: remove this when game is ready for deployment
 
         idData = new IdentifyData();
+
         //Load in idData id there is any
         LoadIdentify();
     }
@@ -85,14 +87,15 @@ public class GameManager : MonoBehaviour {
         {
             isGameComplete = true;
             Player.instance.playerProgress.isGameCompleted = isGameComplete;
+
+            //Like level 1 and level 2 door when the game is completed
+            doorLocks[0] = true;
+            doorLocks[1] = true;
         }
-        //Like level 1 and level 2 door when the game is completed
-        doorLocks[0] = true;
-        doorLocks[1] = true;
+
     }
     
-    public void LevelCompleted(int i, int addScore)
-    {
+    public void LevelCompleted(int i, int addScore) {
         UpdateScore(addScore);
         
         //Update completed levels and door locks
