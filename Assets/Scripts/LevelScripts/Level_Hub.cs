@@ -12,13 +12,13 @@ public class Level_Hub : MonoBehaviour {
     // Hub doors ref (volatile of values after every new scene load). 
     //For now, the order of this array must be the same to the order to the levels unlocked
     public Door[] levelDoors; 
-	//private AudioSource backgroundMusic;
+	private AudioSource backgroundMusic;
     public GameObject ladderLevel5;
 
     void Start()
     {
-		//backgroundMusic = GameObject.FindGameObjectWithTag ("music").GetComponent<AudioSource> ();
-		//StartCoroutine(AudioFadeIn.FadeIn(backgroundMusic, 3f));
+		backgroundMusic = GameObject.FindGameObjectWithTag ("music").GetComponent<AudioSource> ();
+		StartCoroutine(AudioFadeIn.FadeIn(backgroundMusic, 3f));
         //set up door locks every time the hub scene is loaded
         for (int ctr = 0; ctr < levelDoors.Length; ctr++) {
             levelDoors[ctr].isDoorlocked = GameManager.instance.doorLocks[ctr];
@@ -47,7 +47,7 @@ public class Level_Hub : MonoBehaviour {
         //don't show score when we leave the hub
 
 		//music transition
-		//StartCoroutine(AudioFadeOut.FadeOut(backgroundMusic, 5f));
+		StartCoroutine(AudioFadeOut.FadeOut(backgroundMusic, 5f));
         score.gameObject.SetActive(false);
     }
 }
