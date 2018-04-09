@@ -15,7 +15,7 @@ public class GameData {
     //Game completion bool
     public bool isGameCompleted;
 
-    public  int score;
+    public  int score = 0;
 
 
 	public  bool[] doorLocks = null;

@@ -70,7 +70,7 @@ public class MainMenu : MonoBehaviour {
 
         //Upload highScores View-----
         //TODO: Change this check add another check maybe...
-        if (GameManager.instance.isGameComplete) {
+        if (GameManager.instance.isGameComplete && GameData.current.score >= GameManager.instance.highScore) {
             //TODO:dump save file here..
 
             //add the listeners for the buttons
