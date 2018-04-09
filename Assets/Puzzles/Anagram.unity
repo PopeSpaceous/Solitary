@@ -710,6 +710,11 @@ Prefab:
       propertyPath: puz
       value: 
       objectReference: {fileID: 213360417}
+    - target: {fileID: 114401561735230380, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_Text
+      value: Anagram
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cea9a0e53ea3908478c4899bba909596, type: 2}
   m_IsPrefabParent: 0
