@@ -15,10 +15,26 @@ public class Level_Hub : MonoBehaviour {
 	private AudioSource backgroundMusic;
     public GameObject ladderLevel5;
 
+    public GameObject player;
+
+    private void Awake()
+    {
+        if (Player.instance == null)
+        {
+            Object.Instantiate(player);
+        }
+    }
+
     void Start()
     {
-		backgroundMusic = GameObject.FindGameObjectWithTag ("music").GetComponent<AudioSource> ();
-		StartCoroutine(AudioFadeIn.FadeIn(backgroundMusic, 3f));
+        backgroundMusic = GetComponent<AudioSource>();
+        if (!GameManager.instance.isGameComplete)
+        {            
+            StartCoroutine(AudioFadeIn.FadeIn(backgroundMusic, 3f));
+        }
+        else {
+            backgroundMusic.Stop();
+        }
         //set up door locks every time the hub scene is loaded
         for (int ctr = 0; ctr < levelDoors.Length; ctr++) {
             levelDoors[ctr].isDoorlocked = GameManager.instance.doorLocks[ctr];

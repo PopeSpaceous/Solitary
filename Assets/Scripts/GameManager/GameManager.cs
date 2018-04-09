@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System.IO;
 
 /*Game Manager will always be static throughout the game and forced to not be unloaded when a new scene is loaded */
 public class GameManager : MonoBehaviour {
@@ -15,16 +15,16 @@ public class GameManager : MonoBehaviour {
     public bool[] doorLocks;
     //Bool to check if game is complete
     public bool isGameComplete = false;
-
     //used to trigger a load game sequence 
     public bool loadGameFile = false;
-
+    //Id Data static class
     public DBData dBData;
-
     //Player data
     public int playerId = 0;
     public int highScore = 0;
     IdentifyData idData = null;
+    //the bool for when the game has fully ended
+    public bool gameEnded = false;
 
     void Awake () {
 		
@@ -36,12 +36,16 @@ public class GameManager : MonoBehaviour {
 			Destroy (gameObject);
 			Debug.LogWarning ("Another instance of GameManager has been created and destoryed!");
 		}
+        //Get the DB data script ref
         dBData = GetComponent<DBData>();
+
         //Makes this gameobject not be unloaded when entering a new scene
         DontDestroyOnLoad (this);
+
         NewGame(); // TODO: remove this when game is ready for deployment
 
         idData = new IdentifyData();
+
         //Load in idData id there is any
         LoadIdentify();
     }
@@ -83,12 +87,15 @@ public class GameManager : MonoBehaviour {
         {
             isGameComplete = true;
             Player.instance.playerProgress.isGameCompleted = isGameComplete;
+
+            //Like level 1 and level 2 door when the game is completed
+            doorLocks[0] = true;
+            doorLocks[1] = true;
         }
-        //TODO:lock the doors?
+
     }
     
-    public void LevelCompleted(int i, int addScore)
-    {
+    public void LevelCompleted(int i, int addScore) {
         UpdateScore(addScore);
         
         //Update completed levels and door locks
@@ -161,5 +168,20 @@ public class GameManager : MonoBehaviour {
 
     public void UploadToDB(string username = null){
         dBData.UploadHighScores(username);
+    }
+
+    //Game End will wipe the save data of player progress.
+    //But it will keep the id and highscore data
+    public void GameEnd() {
+        gameEnded = true;
+        //Dump save file
+        if (File.Exists(Application.persistentDataPath + "/savedGames.gd"))
+        {
+            File.Delete(Application.persistentDataPath + "/savedGames.gd");
+
+#if UNITY_EDITOR
+            UnityEditor.AssetDatabase.Refresh();
+#endif
+        }
     }
 }

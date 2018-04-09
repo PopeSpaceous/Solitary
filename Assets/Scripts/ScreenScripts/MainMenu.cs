@@ -69,10 +69,7 @@ public class MainMenu : MonoBehaviour {
         creditsExitButton.onClick.AddListener(ExitCredits);
 
         //Upload highScores View-----
-        //TODO: Change this check add another check maybe...
-        if (GameManager.instance.isGameComplete && GameData.current.score >= GameManager.instance.highScore) {
-            //TODO:dump save file here..
-
+        if (GameManager.instance.gameEnded && GameData.current.score >= GameManager.instance.highScore) {
             //add the listeners for the buttons
             buttonUploadDB.onClick.AddListener(CheckCanUpload);
             buttonUploadCancel.onClick.AddListener(ExitScores);

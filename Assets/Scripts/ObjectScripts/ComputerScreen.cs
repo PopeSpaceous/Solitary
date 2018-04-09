@@ -53,7 +53,7 @@ public class ComputerScreen : MonoBehaviour {
 		textToDisplay = "";
 		textToDisplay += Logs [0];
 		for (int i = 1; i < 5; i++) {
-			if (!GameManager.instance.doorLocks[i]) {
+			if (!GameManager.instance.doorLocks[i] || GameManager.instance.isGameComplete) {
 				textToDisplay += "\n\n" + Logs [i];
 			}
 		}

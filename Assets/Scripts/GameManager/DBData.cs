@@ -53,8 +53,7 @@ public class DBData : MonoBehaviour {
                     if (feedBackId == GameManager.instance.playerId)
                     {
                         Debug.Log("ID Found! Username: " + feedBackData[1] + " Updating...");
-                        hasIDInDB = true;
-                        //TODO: fix this so the Update happens after some UI update happends
+                        hasIDInDB = true;                        
                         StartUpdateHighScores();
 
 
@@ -79,7 +78,10 @@ public class DBData : MonoBehaviour {
         WWW www = new WWW(updateScoreURL, form);
 
         yield return www;
-        Debug.Log("Updated data? :" + www.text);
+        if (www.text == "") {
+            Debug.Log("Updated data");
+        }
+        
         //TODO: need feedback if the update worked
     }
 

@@ -31,7 +31,7 @@ public class Wire : MonoBehaviour {
         wireSpriteHead = GetComponent<SpriteRenderer>();
         wireNeckTrans = neckGO.GetComponent<Transform>();
         wireHeadTrans = GetComponent<Transform>();
-        cameraTarget = GameObject.Find ("PuzzleCamera").GetComponent<Camera> (); // TODO: maybe have puzzlecamera have its own static instance
+        cameraTarget = GameObject.Find ("PuzzleCamera").GetComponent<Camera> ();
 	}
 
 	// Use this for initialization
