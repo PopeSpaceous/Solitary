@@ -15,11 +15,15 @@ public class Loader : MonoBehaviour {
 
 
 	void Awake () {
-		//We create the static gameObjects once.
-		if(Player.instance == null && GameManager.instance == null){
+        if (GameManager.instance == null)
+        {
+            Object.Instantiate(manager);
+        }
+        //We create the static gameObjects once.
+        if (Player.instance == null){
 			Object.Instantiate (player);
-			Object.Instantiate (manager);
 		}
+
 
 	}
 

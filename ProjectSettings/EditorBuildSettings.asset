@@ -6,11 +6,29 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Screens/MainMenu.unity
+    guid: 7cb0630052118614fb87fb368f79fecc
+  - enabled: 1
+    path: Assets/Screens/IntroScreen.unity
+    guid: 57f613e1997f9d74a9d4f4e6f91b9cd4
+  - enabled: 1
     path: Assets/Levels/Hub.unity
     guid: 2096c218592b6b742ab34eaf5e48df44
   - enabled: 1
     path: Assets/Levels/Level_1.unity
     guid: e1e0d484569980b42957d2d3a66f8629
+  - enabled: 1
+    path: Assets/Levels/Level_2.unity
+    guid: 354cbf9500ce3b74e9874aa9efb104ba
+  - enabled: 1
+    path: Assets/Levels/Level_3.unity
+    guid: 8349f1bd4dc9a9b4982cc22d0664f5b6
+  - enabled: 1
+    path: Assets/Levels/Level_4.unity
+    guid: aba852831c2ecac4c9f3c3efd5df7175
+  - enabled: 1
+    path: Assets/Levels/Level_5.unity
+    guid: f41a41e44b484c2499db201254fbf198
   - enabled: 1
     path: Assets/Puzzles/PuzzleTemplate.unity
     guid: f804fd7a378c2c243b02539fded60d3e
@@ -35,3 +53,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Puzzles/WordPasscode.unity
     guid: 128d6c3d47f35f94d8a000ed64adeb0a
+  - enabled: 1
+    path: Assets/Screens/EndScreen.unity
+    guid: 7d5a68b818ed8d14c863bc532a9ab966
