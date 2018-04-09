@@ -15,6 +15,10 @@ public class EndScreen : MonoBehaviour {
     {
 		StartCoroutine(AudioFadeIn.FadeIn(GetComponent<AudioSource>(), 3f));
         goToMainMenu.onClick.AddListener(GoToMainMenu);
+
+        //Call Game End
+        GameManager.instance.GameEnd();
+
 		if (Player.instance.playerProgress.goToPhobos) {
 			myText.text = "Attempts were made by the USSR to send probes to Phobos in 1988, and again in 2011. All attempts were classified as failures.\n\nYou set your course for Phobos.\n\n\n\nThe End";
 		} else {
