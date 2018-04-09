@@ -328,6 +328,7 @@ MonoBehaviour:
     type: 2}
   lockPrefab: {fileID: 1542061763500396, guid: 35d9e88919b953b49bbefa8aa56db2c9, type: 2}
   wirePrefab: {fileID: 1615543359956216, guid: 4845bd655bfa5354dac1b2888cbf6c6f, type: 2}
+  mySounds: []
 --- !u!82 &213360418
 AudioSource:
   m_ObjectHideFlags: 0
@@ -339,7 +340,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 270226d3144ac064c85e4c4a750907ad, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.508
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -419,7 +420,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5cddd4672742d7c41a249e35b120c696, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.844
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2485,7 +2486,7 @@ Prefab:
     - target: {fileID: 114349145947184352, guid: cea9a0e53ea3908478c4899bba909596,
         type: 2}
       propertyPath: m_FontData.m_FontSize
-      value: 20
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 114349145947184352, guid: cea9a0e53ea3908478c4899bba909596,
         type: 2}
