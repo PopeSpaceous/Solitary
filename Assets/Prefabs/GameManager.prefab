@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073b900f26da772488ccfdb5d0dd9d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputUsername: Loops
+  inputUsername: looper
 --- !u!114 &114413001833000272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,6 +69,9 @@ MonoBehaviour:
   doorLocks: 
   isGameComplete: 0
   loadGameFile: 0
+  dBData: {fileID: 0}
+  playerId: 0
+  highScore: 0
 --- !u!114 &114763898072296946
 MonoBehaviour:
   m_ObjectHideFlags: 1

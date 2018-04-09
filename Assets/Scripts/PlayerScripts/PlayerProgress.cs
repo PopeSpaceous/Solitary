@@ -14,7 +14,7 @@ public class PlayerProgress : MonoBehaviour {
 	public bool goToPhobos = false;
     public  int score;
 
-    public int highScore;
+    public int highScore = 0;
 
 	public bool[] doorLocks = null;
 
@@ -111,6 +111,6 @@ public class PlayerProgress : MonoBehaviour {
         
 		GameManager.instance.doorLocks = doorLocks;
 		//updates the current score and game status in gameManager
-        GameManager.instance.LoadStats(score, isGameCompleted);
+        GameManager.instance.LoadStats(score, isGameCompleted, id);
     }
 }

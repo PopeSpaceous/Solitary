@@ -22,16 +22,31 @@ public class MainMenu : MonoBehaviour {
     public Button creditsExitButton;
     public GameObject manager;
 
+    //HighScores Fields
     string[] items;
     WWW www;
 
-    //scorestable panel
+    //Highscores connecting panel
     public GameObject connectingOB;
-    //scorestable text
-    public Text topscores;
-
+    //Highscores data
     public Text[] names;
     public Text[] scores;
+
+    //View for uploading highscores
+    public GameObject UploadHighScoreView;
+    //Input field for inputing username
+    public GameObject UploadHighScoreNewView;
+    //View for updaing higscores
+    public GameObject UpdateHighScoresView;
+    //show the player's highscores
+    public Text highScoreNumber;
+
+    public InputField nameInput;
+
+    public Button buttonUploadDB;
+    public Button buttonUploadCancel;
+    //allow the upload button to reg once!
+    private bool hasClickedUpload = false;
 
     // Use this for initialization
     void Start () {
@@ -53,9 +68,20 @@ public class MainMenu : MonoBehaviour {
         }
         //credits exit button        
         creditsExitButton.onClick.AddListener(ExitCredits);
+        //Upload highScores View-----
+        //TODO: Change this check
+        if (GameManager.instance.isGameComplete) {
+            //add the listeners for the buttons
+            buttonUploadDB.onClick.AddListener(CheckCanUpload);
+            buttonUploadCancel.onClick.AddListener(ExitScores);
+            //Show upload highscore view
+            ShowUploadHighScoresView();
 
-        //panel
-        //scoresTable.gameObject.SetActive = (false);
+            hasClickedUpload = false;
+        }
+
+        
+
     }
 
     void NewGame() {
@@ -93,7 +119,7 @@ public class MainMenu : MonoBehaviour {
        
         StartCoroutine(LoadHighScoresData());
     }
-
+    //Load in HighScores table
     IEnumerator LoadHighScoresData() {
 
         www = new WWW("https://anthonynguyen435.000webhostapp.com/highscores_data.php");
@@ -121,15 +147,65 @@ public class MainMenu : MonoBehaviour {
                 }
             }
         }
-
-
-    
     }
 
     //Exit Highscore table and go back to main screen
     void ExitScores() {
         main.SetActive(true);
         scoresList.SetActive(false);
+    }
+
+    //Exit Highscore upload
+    void ExitUploadScores()
+    {
+        main.SetActive(true);
+        UploadHighScoreView.SetActive(false);
+    }
+
+    //Upload highscores. will show in main meni first if game iscompleted
+    void ShowUploadHighScoresView() {
+        //turn off the main view
+        main.SetActive(false);
+
+        //turn on the upload view
+        UploadHighScoreView.SetActive(true);
+        //show highscore number
+        highScoreNumber.text = GameManager.instance.highScore.ToString();
+
+        //Check if user has id
+        //TODO: fix this, so a fetch happens first to check if there is data in the db
+        if (GameManager.instance.playerId != 0)
+        {
+            UpdateHighScoresView.SetActive(true);
+            UploadHighScoreNewView.SetActive(false);
+        }
+
+    }
+    //check if the input feild is filled to start an upload
+    void CheckCanUpload() {
+        if (!hasClickedUpload)
+        {
+            hasClickedUpload = true;
+            //TODO: fix this, so a fetch happens first to check if there is data in the db
+            if (nameInput.text != "" && GameManager.instance.playerId == 0)
+            {
+                UploadStart(nameInput.text);
+            }
+            else if (GameManager.instance.playerId != 0)
+            {
+                UploadStart();
+            }
+            else
+            {
+                //TODO: do feed back to UI that the input field is empty
+            }
+        }
+
+    }
+    //Start upload to DB
+    void UploadStart( string name = null) {
+        GameManager.instance.UploadToDB(name);
+        ExitUploadScores();        
     }
 
 }

@@ -19,6 +19,12 @@ public class GameManager : MonoBehaviour {
     //used to trigger a load game sequence 
     public bool loadGameFile = false;
 
+    public DBData dBData;
+
+    //Player data
+    public int playerId = 0;
+    public int highScore = 0;
+
 	void Awake () {
 		
 		//Set the instance only once.
@@ -29,9 +35,9 @@ public class GameManager : MonoBehaviour {
 			Destroy (gameObject);
 			Debug.LogWarning ("Another instance of GameManager has been created and destoryed!");
 		}
-        
-		//Makes this gameobject not be unloaded when entering a new scene
-		DontDestroyOnLoad (this);
+        dBData = GetComponent<DBData>();
+        //Makes this gameobject not be unloaded when entering a new scene
+        DontDestroyOnLoad (this);
         NewGame(); // TODO: remove this when game is ready for deployment
     }
     //Clean vars and starts a new game
@@ -45,10 +51,11 @@ public class GameManager : MonoBehaviour {
 
     //Set the states of the player
     //this method will only be called when loading
-    public void LoadStats(int score, bool gameCompleted) {
+    public void LoadStats(int score, bool gameCompleted, int id) {
 
         currentScore = score;
         gameCompleted = isGameComplete;
+        playerId = id;
     }
     
     public void SaveGame() {              
@@ -70,7 +77,10 @@ public class GameManager : MonoBehaviour {
         {
             isGameComplete = true;
             Player.instance.playerProgress.isGameCompleted = isGameComplete;
-        }        
+        }
+        //get the highscore of theplayer
+        highScore = Player.instance.playerProgress.highScore;
+        //TODO:lock the doors?
     }
     
     public void LevelCompleted(int i, int addScore)
@@ -120,8 +130,8 @@ public class GameManager : MonoBehaviour {
         Destroy(Player.instance.gameObject);
     }
 
-    void UploadToDB() {
-        //TODO: need login first to complete this method
+    public void UploadToDB(string username = null) {
+        dBData.UploadHighScores(username);
     }
 
 }
