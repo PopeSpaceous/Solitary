@@ -40,8 +40,10 @@ public class CheckSolution : MonoBehaviour {
 			counter++;
 		}
 		//if any of the bools are false fail to complete puzzle
-		if (!comp.Contains(false)) {
+		if (!comp.Contains (false)) {
 			myAnagram.PuzzleComplete ();
+		} else {
+			myAnagram.GetComponent<AudioSource> ().Play ();
 		}
 	}
 	
