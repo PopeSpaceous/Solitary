@@ -19,7 +19,14 @@ public class GameManager : MonoBehaviour {
     //used to trigger a load game sequence 
     public bool loadGameFile = false;
 
-	void Awake () {
+    public DBData dBData;
+
+    //Player data
+    public int playerId = 0;
+    public int highScore = 0;
+    IdentifyData idData = null;
+
+    void Awake () {
 		
 		//Set the instance only once.
 		if (instance == null) {
@@ -29,10 +36,14 @@ public class GameManager : MonoBehaviour {
 			Destroy (gameObject);
 			Debug.LogWarning ("Another instance of GameManager has been created and destoryed!");
 		}
-        
-		//Makes this gameobject not be unloaded when entering a new scene
-		DontDestroyOnLoad (this);
+        dBData = GetComponent<DBData>();
+        //Makes this gameobject not be unloaded when entering a new scene
+        DontDestroyOnLoad (this);
         NewGame(); // TODO: remove this when game is ready for deployment
+
+        idData = new IdentifyData();
+        //Load in idData id there is any
+        LoadIdentify();
     }
     //Clean vars and starts a new game
     public void NewGame() {
@@ -53,6 +64,8 @@ public class GameManager : MonoBehaviour {
     
     public void SaveGame() {              
         Player.instance.playerProgress.SaveGame();
+        //Save id info / highscore
+        SaveIdentify();
     }
 
     //set the player location based on given spawn point
@@ -70,7 +83,8 @@ public class GameManager : MonoBehaviour {
         {
             isGameComplete = true;
             Player.instance.playerProgress.isGameCompleted = isGameComplete;
-        }        
+        }
+        //TODO:lock the doors?
     }
     
     public void LevelCompleted(int i, int addScore)
@@ -101,8 +115,15 @@ public class GameManager : MonoBehaviour {
                 Player.instance.playerProgress.level5 = true;
                 break;
         }
-        Player.instance.playerProgress.UpdatePlayerStats(currentScore);
 
+        //Update highscore
+        if (currentScore >= highScore)
+        {
+            highScore = currentScore;
+        }
+
+        //Update player's score
+        Player.instance.playerProgress.UpdatePlayerStats(currentScore);
         CheckCompletion();
         SaveGame();
         
@@ -120,8 +141,25 @@ public class GameManager : MonoBehaviour {
         Destroy(Player.instance.gameObject);
     }
 
-    void UploadToDB() {
-        //TODO: need login first to complete this method
+    //Load in the Identification Data (id, and high score)
+    public void LoadIdentify() {
+        if (SaveLoad.LoadIdentification())
+        {
+            playerId = IdentifyData.current.id;
+            highScore = IdentifyData.current.highScore;
+        }
+    }
+    //Save in the Identification Data (id, and high score)
+    public void SaveIdentify() {
+        IdentifyData.current = idData;
+
+        IdentifyData.current.id = playerId;
+        IdentifyData.current.highScore = highScore;
+
+        SaveLoad.SaveIdentification();
     }
 
+    public void UploadToDB(string username = null){
+        dBData.UploadHighScores(username);
+    }
 }

@@ -6,15 +6,11 @@ public class PlayerProgress : MonoBehaviour {
 
 	public GameData myGame;
 
-    //Player id
-    public int id = 0;
 
     //Game completion bool
     public bool isGameCompleted = false;
 	public bool goToPhobos = false;
-    private int score;
-
-    private int highScore;
+    public  int score;
 
 	public bool[] doorLocks = null;
 
@@ -47,20 +43,15 @@ public class PlayerProgress : MonoBehaviour {
         }
     }
     public void UpdatePlayerStats(int s) {
-        if (s >= highScore)
-        {
-            highScore = s;
-        }
         score = s;      
     }
 
     public void SaveGame() {
 		//set game data to the current data set
 		GameData.current = myGame;
-        GameData.current.id = id;
+
         GameData.current.isGameCompleted = isGameCompleted;
 		GameData.current.score =score;
-		GameData.current.highScore =highScore;
 
 		GameData.current.doorLocks =doorLocks;
 		GameData.current.level1 = level1;
@@ -87,11 +78,10 @@ public class PlayerProgress : MonoBehaviour {
 		//load the data
 		SaveLoad.Load ();
         //sets the player's progress to what the saved data was
-        id = GameData.current.id;
+
         isGameCompleted = GameData.current.isGameCompleted;
 
         score = GameData.current.score;
-		highScore = GameData.current.highScore;
 
 		doorLocks = GameData.current.doorLocks;
 		level1 = GameData.current.level1;
