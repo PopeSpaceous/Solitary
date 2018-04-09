@@ -4,9 +4,7 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 using System.Text;
-using System.Data.SqlClient;
 using System;
-using System.Data;
 
 
 public class MainMenu : MonoBehaviour {
@@ -24,12 +22,22 @@ public class MainMenu : MonoBehaviour {
     public Button creditsExitButton;
     public GameObject manager;
 
+    string[] items;
+    WWW www;
 
-	// Use this for initialization
-	void Start () {
+    //scorestable panel
+    public GameObject connectingOB;
+    //scorestable text
+    public Text topscores;
+
+    public Text[] names;
+    public Text[] scores;
+
+    // Use this for initialization
+    void Start () {
 
         if (GameManager.instance == null) {
-            Object.Instantiate(manager);
+            Instantiate(manager);
         }
         //main menu buttons
         newGameButton.onClick.AddListener(NewGame);
@@ -87,23 +95,34 @@ public class MainMenu : MonoBehaviour {
     }
 
     IEnumerator LoadHighScoresData() {
-        //TODO: add load high score data here
 
         www = new WWW("https://anthonynguyen435.000webhostapp.com/highscores_data.php");
 
         yield return www;
-        
-        string scores = www.text;
+        string tableData = www.text;
 
-        items = scores.Split(';');
-        
-        //print scores into console
-        foreach (string i in items)
-        {
-            print(i);
+        if (www.text != "") {
+            connectingOB.SetActive(false);
+            
+
+            items = tableData.Split(';');
+
+            int ctr = 0;
+
+            foreach (string row in items)
+            {
+                if (row != "") {
+                    string[] cols = row.Split(':');
+                    if (cols != null) {
+                        names[ctr].text = cols[0];
+                        scores[ctr].text = cols[1];
+                    }
+                    ctr++;
+                }
+            }
         }
 
-        //print scores into scorepanel
+
     
     }
 
