@@ -7,11 +7,18 @@ public class PivotDoor : WorldObject {
     private Animator ani;
     private BoxCollider2D door;
 
+    //Lift the animation to open to the left, then the right
+    public bool flipY = false;
 
     private void Awake()
     {
         ani = GetComponent<Animator>();
         door = GetComponent<BoxCollider2D>();
+    }
+
+    private void Start()
+    {
+        ani.SetBool("Flip", flipY);
     }
 
     public override void Lock()

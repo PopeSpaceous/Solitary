@@ -12,6 +12,7 @@ public class Tans : MonoBehaviour {
 	public int type;
 	public Vector2 myTanPosition;
 	public int direction;
+	bool hasPlayed = false;
 	//variables used for border detection. Not Implimented yet
 	//	float b1X,b2X,b3Y,b4Y;
 	//bool moveL, moveR, moveU, moveD;
@@ -125,6 +126,10 @@ public class Tans : MonoBehaviour {
 	// Mouse Functions On Tans
 	//Function for dragging Tan
 	void OnMouseDrag(){
+		if (!hasPlayed) {
+			collectionTan.GetComponent<AudioSource> ().Play ();
+			hasPlayed = true;
+		}
 		placed = false;
 		//vars to hold mouse input
 		float inX = Input.mousePosition.x;
@@ -144,6 +149,8 @@ public class Tans : MonoBehaviour {
 	//For letting go of Mouse after drag
 	void OnMouseUp(){
 		placed = true;
+		collectionTan.GetComponent<AudioSource> ().Play ();
+		hasPlayed = false;
 //		moveL = true;
 //		moveD = true; 
 //		moveU = true;

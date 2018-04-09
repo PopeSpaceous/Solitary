@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour {
     int numberOfPuzzles = 2;
     int PuzzleRandom = 0;
     int countCorrect = 0;
-
+	public AudioSource mySound;
     public bool win = false;
     
     public int level;
@@ -107,6 +107,7 @@ public class GameController : MonoBehaviour {
                 if ((rowBlank != row && colBlank == col)) {
                     //move
                     if (Mathf.Abs (row - rowBlank) == 1) {
+						mySound.Play ();
                         SortImage ();
                         countStep = 0;
                     } else {
@@ -115,6 +116,7 @@ public class GameController : MonoBehaviour {
                 } else if (rowBlank == row && colBlank != col) {
                     //move
                     if (Mathf.Abs (col - colBlank) == 1) {
+						mySound.Play ();
                         SortImage ();
                         countStep = 0;
                     } else {

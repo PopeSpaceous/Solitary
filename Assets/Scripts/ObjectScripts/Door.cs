@@ -10,12 +10,14 @@ public class Door : MonoBehaviour {
 	public string levelName;
     public int levelID = 0;
 	public bool isDoorlocked = false;
-    public Level level = null;// hub will be the only scene to not populate this var
+    public WorldObject worldObject;
+    // Level will be the only scene to populate this var
+    public Level level = null;
+    // Hub will be the only scene to populate this var
     public Level_Hub levelHub = null;
-
-    public GameObject fadeObject; // ref of the fade UI object. This must be filled in the inspecter
-
-    //Needed fade vars
+    // ref of the fade UI object. This must be filled in the inspecter
+    public GameObject fadeObject; 
+    //Fade vars
     private Animator fader;
     private Image im;
 
@@ -24,7 +26,18 @@ public class Door : MonoBehaviour {
         fader = fadeObject.GetComponent<Animator>();
         im = fadeObject.GetComponent<Image>();
     }
+    //Set the worldobject state. This method will be called by level_hub
+    public void SetWorldObject() {
+        if (worldObject != null)
+        {
+            worldObject.Lock();
 
+            if (!isDoorlocked && !GameManager.instance.isGameComplete)
+            {
+                worldObject.Unlock();
+            }
+        }
+    }
     void OnTriggerStay2D(Collider2D col)
 	{
         //if a player is on the trigger and is pressing the action buttion it will go to next scene
@@ -35,8 +48,9 @@ public class Door : MonoBehaviour {
         }
 	}
     public  void DoorTigger() {
+        // make sure we don't keep calling the load level scene while the scene is still the fade transition
         if (!fader.GetBool("Fade"))
-        { // make sure we don't keep calling the load level scene while the scene is still the fade transition
+        { 
             NextSceneManager.instance.LoadLevelScene(levelName, fader, im);
         }
         //Exit the level

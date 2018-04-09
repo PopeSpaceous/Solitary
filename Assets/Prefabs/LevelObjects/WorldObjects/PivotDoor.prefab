@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4820912681028404}
+  - component: {fileID: 114742702618515514}
   - component: {fileID: 212185405506748358}
   - component: {fileID: 95850086642551478}
   - component: {fileID: 61834223544735764}
-  - component: {fileID: 114742702618515514}
   m_Layer: 9
   m_Name: PivotDoor
   m_TagString: Untagged
@@ -99,6 +99,7 @@ MonoBehaviour:
   objectName: 
   isLocked: 0
   isOpen: 0
+  flip: 0
 --- !u!212 &212185405506748358
 SpriteRenderer:
   m_ObjectHideFlags: 1

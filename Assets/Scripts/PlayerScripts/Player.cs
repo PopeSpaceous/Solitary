@@ -29,9 +29,18 @@ public class Player : MonoBehaviour {
 	public bool jumpInput = false;
 	[HideInInspector] 
 	public float horizontalInput;
+    [HideInInspector]
+    public bool escapeInput = false;
 
     public PlayerProgress playerProgress;
 
+    //Audio Sources
+    AudioSource[] audControls;
+    //Audio Clips
+    public AudioClip jog_LandSFX;
+    public AudioClip jog_SwitchSFX;
+    public AudioClip jumpStartSFX;
+    public AudioClip jumpLandSFX;
 
     void Awake () {
 		
@@ -48,6 +57,9 @@ public class Player : MonoBehaviour {
 		DontDestroyOnLoad (this);
 
         animstate = GetComponent<Animator>();
+
+        audControls = GetComponents<AudioSource>();
+
     }
 
 	// This Update function will be use to check user Input
@@ -55,7 +67,7 @@ public class Player : MonoBehaviour {
 		//Check if the player can move
 		if (canPlayerMove) {
 			
-			CheckInput ();
+			CheckMovementInput ();
 
 		} else {
 			
@@ -64,9 +76,11 @@ public class Player : MonoBehaviour {
 			horizontalInput = 0;
 
 		}
-	}
+        //check for eascape button input
+        escapeInput = Input.GetButtonDown("Cancel");
+    }
 
-	void CheckInput(){
+	void CheckMovementInput(){
 		//Action buttion will be used for any interactions
 		actionButtion = Input.GetButton ("Action");
 
@@ -92,6 +106,51 @@ public class Player : MonoBehaviour {
     public void ChangeMovementLock(bool set) {
         canPlayerMove = set;
         plocked = !set;
+    }
+
+    //Audio Event Methods
+
+    //Play jog_land audio clip, with sound balancing 
+    public void PlayJogLand() {
+
+        if (audControls[0].isPlaying)
+        {
+           audControls[1].clip = jog_LandSFX;
+           audControls[1].Play();
+        }
+        else {
+           audControls[0].clip = jog_LandSFX;
+           audControls[0].Play();
+        }
+    }
+    //Play jog_switch audio clip, with sound balancing 
+    public void PlayJogSwitch()
+    {
+
+        if (audControls[0].isPlaying)
+        {
+            audControls[1].clip = jog_SwitchSFX;
+            audControls[1].Play();
+        }
+        else
+        {
+            audControls[0].clip = jog_SwitchSFX;
+            audControls[0].Play();
+        }
+    }
+    //Stop any current sounds, and play jump start sound
+    public void JumpStartSFX() {
+        audControls[0].Stop();
+        audControls[0].clip = jumpStartSFX;
+        audControls[0].Play();
+
+    }
+    //Stop any current sounds, and play hard landing sound
+    public void JumpHardLandFX()
+    {
+        audControls[0].Stop();
+        audControls[0].clip = jumpLandSFX;
+        audControls[0].Play();
     }
 
 }
