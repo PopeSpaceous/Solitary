@@ -11,6 +11,7 @@ public class IntroScreen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
         goToButtonHub.onClick.AddListener(GoToHub);
     }
 	
