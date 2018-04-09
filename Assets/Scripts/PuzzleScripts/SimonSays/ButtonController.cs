@@ -11,15 +11,13 @@ public class ButtonController : MonoBehaviour {
     public int thisButtonNumber;
 
     private SimonSays script;
-    //private gameMang theGM;
-
+    
     private AudioSource theSound;
 
     // Use this for initialization
     void Start () {
 
         theSprite = GetComponent<SpriteRenderer>();
-        //theGM = FindObjectOfType<gameMang>();
         script = FindObjectOfType<SimonSays>();
         theSound = GetComponent<AudioSource>();
         
@@ -44,7 +42,6 @@ public class ButtonController : MonoBehaviour {
     {
 
         theSprite.color = new Color(theSprite.color.r, theSprite.color.g, theSprite.color.b, 0.25f);
-        //theGM.ColourPressed(thisButtonNumber);
         script.ColourPressed(thisButtonNumber);
         theSound.Stop();
         

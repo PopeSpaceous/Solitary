@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SimonSays: Puzzle {
@@ -40,8 +41,22 @@ public class SimonSays: Puzzle {
     public AudioSource correct;
     public AudioSource incorrect;
 
-    //counter to track correct responses
+    //check for difficulty
+    private int theDifficultyTarget;
+
+    //set sequence targets for appropriate difficulties
+    private int easy = 5;
+    private int medium = 7;
+    private int hard = 9;
+
+    //counter to track responses
     public int correctGuesses;
+    public int guessCounter;
+
+    GameObject start;
+    GameObject replay;
+
+    public Text gCounter;
 
     // Update is called once per frame
     void Update()
@@ -52,7 +67,7 @@ public class SimonSays: Puzzle {
             if (stayLitCounter < 0)
             {
                 colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 0.25f);
-                //buttonSounds[activeSequence[positionInSequence]].Stop();
+                buttonSounds[activeSequence[positionInSequence]].Stop();
                 shouldBeLit = false;
 
                 shouldBeDark = true;
@@ -77,7 +92,7 @@ public class SimonSays: Puzzle {
                 {
                     //light up selected colour
                     colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
-                    //buttonSounds[activeSequence[positionInSequence]].Play();
+                    buttonSounds[activeSequence[positionInSequence]].Play();
 
                     stayLitCounter = stayLit;
                     shouldBeLit = true;
@@ -89,25 +104,62 @@ public class SimonSays: Puzzle {
 
     public void StartGame()
     {
+        //reset sequence
         activeSequence.Clear();
 
+        //reset counters
         positionInSequence = 0;
         inputInSequence = 0;
-
-        //reset counter
         correctGuesses = 0;
+        guessCounter = 3;
 
-        colourSelect = Random.Range(0, colours.Length);
+        gCounter.text = guessCounter.ToString();
 
-        //add random number to list
-        activeSequence.Add(colourSelect);
+        //check difficulty 
+        if (difficulty == 1)
+        {
+            theDifficultyTarget = easy;
+        }
+
+        if (difficulty == 2)
+        {
+            theDifficultyTarget = medium;
+        }
+
+        if (difficulty == 3)
+        {
+            theDifficultyTarget = hard;
+        }
+
+        //add 4 to beginning sequence
+        for (int i = 0; i < 4; i++)
+        {
+            colourSelect = Random.Range(0, colours.Length);
+
+            //add random number to list
+            activeSequence.Add(colourSelect);
+        }
+        
 
         //light up selected colour
         colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
-        //buttonSounds[activeSequence[positionInSequence]].Play();
+        buttonSounds[activeSequence[positionInSequence]].Play();
 
         stayLitCounter = stayLit;
         shouldBeLit = true;
+
+        start = GameObject.Find("startGame");
+        start.SetActive(false);
+
+        replay = GameObject.Find("replayButton");
+        replay.SetActive(true);
+
+    }
+
+    IEnumerator SequencePause()
+    {
+        yield return new WaitForSeconds(2);
+        
     }
 
     public void ColourPressed(int whichButton)
@@ -117,15 +169,13 @@ public class SimonSays: Puzzle {
             //if button in sequence is equal to button user pressed
             if (activeSequence[inputInSequence] == whichButton)
             {
-                Debug.Log("Correct");
                 inputInSequence++;
 
                     //add check to see current position equals end of list
                     if (inputInSequence >= activeSequence.Count)
                     {
                         correctGuesses++;
-                        Debug.Log("Correct number of sequences: " + correctGuesses);
-
+                      
                         positionInSequence = 0;
                         inputInSequence = 0;
 
@@ -136,27 +186,38 @@ public class SimonSays: Puzzle {
 
                         //light up selected colour
                         colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
-                        //buttonSounds[activeSequence[positionInSequence]].Play();
+                        buttonSounds[activeSequence[positionInSequence]].Play();
 
                         stayLitCounter = stayLit;
                         shouldBeLit = true;
 
                         gameActive = false;
 
-                        //correct.Play();
+                        correct.Play();
+
+                        //call pause
+                        StartCoroutine("SequencePause");
+                      
                 }
             }
             else
             {
-                Debug.Log("WRONG!");
-                //incorrect.Play();
+                incorrect.Play();
                 gameActive = false;
+                guessCounter--;
+                gCounter.text = guessCounter.ToString();                
             }
         }
 
-        if (correctGuesses == 5)
+        if (correctGuesses == theDifficultyTarget)
         {
             PuzzleComplete();
+        }
+
+        //3 incorrect guesses
+        if (guessCounter == 0)
+        {
+            PuzzleExit();
         }
     }
 
@@ -167,7 +228,7 @@ public class SimonSays: Puzzle {
 
         //light up selected colour
         colours[activeSequence[positionInSequence]].color = new Color(colours[activeSequence[positionInSequence]].color.r, colours[activeSequence[positionInSequence]].color.g, colours[activeSequence[positionInSequence]].color.b, 1f);
-        //buttonSounds[activeSequence[positionInSequence]].Play();
+        buttonSounds[activeSequence[positionInSequence]].Play();
 
         stayLitCounter = stayLit;
         shouldBeLit = true;
