@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
+using System.Text;
+using System.Data.SqlClient;
+using System;
+using System.Data;
+
 
 public class MainMenu : MonoBehaviour {
 
@@ -41,6 +46,8 @@ public class MainMenu : MonoBehaviour {
         //credits exit button        
         creditsExitButton.onClick.AddListener(ExitCredits);
 
+        //panel
+        //scoresTable.gameObject.SetActive = (false);
     }
 
     void NewGame() {
@@ -75,11 +82,31 @@ public class MainMenu : MonoBehaviour {
         main.SetActive(false);
 
         scoresList.SetActive(true);
+       
+        StartCoroutine(LoadHighScoresData());
     }
 
-    void LoadHighScoresData() {
+    IEnumerator LoadHighScoresData() {
         //TODO: add load high score data here
+
+        www = new WWW("https://anthonynguyen435.000webhostapp.com/highscores_data.php");
+
+        yield return www;
+        
+        string scores = www.text;
+
+        items = scores.Split(';');
+        
+        //print scores into console
+        foreach (string i in items)
+        {
+            print(i);
+        }
+
+        //print scores into scorepanel
+    
     }
+
     //Exit Highscore table and go back to main screen
     void ExitScores() {
         main.SetActive(true);
