@@ -102,7 +102,9 @@ public class DBData : MonoBehaviour {
             string[] feedBackID = www.text.Split(';');
             if (feedBackID[0] != null) {
                 Debug.Log("New Entry ID:" + feedBackID[0] + " Username: " + inputUsername);
+                //TODO: make the player wait until the uploading and saving is done
                 GameManager.instance.playerId = int.Parse(feedBackID[0]);
+                GameManager.instance.SaveIdentify();
             }
             
         }

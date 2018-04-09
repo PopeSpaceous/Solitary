@@ -12,14 +12,11 @@ public class GameData {
 
     //Data members that mirror playerProgress class
 
-    //Player id
-    public int id;
-
     //Game completion bool
     public bool isGameCompleted;
 
     public  int score;
-	public  int highScore;
+
 
 	public  bool[] doorLocks = null;
 

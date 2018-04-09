@@ -48,12 +48,16 @@ public class MainMenu : MonoBehaviour {
     //allow the upload button to reg once!
     private bool hasClickedUpload = false;
 
-    // Use this for initialization
-    void Start () {
-
-        if (GameManager.instance == null) {
+    private void Awake()
+    {
+        if (GameManager.instance == null)
+        {
             Instantiate(manager);
         }
+    }
+
+    // Use this for initialization
+    void Start () {
         //main menu buttons
         newGameButton.onClick.AddListener(NewGame);
         loadGameButton.onClick.AddListener(RunLoadGame);
@@ -61,16 +65,14 @@ public class MainMenu : MonoBehaviour {
         highScoresButton.onClick.AddListener(EnterHighScores);
         creditsButton.onClick.AddListener(EnterCredits);
         //Highscores exit button
-        highScoresexitButton.onClick.AddListener(ExitScores);
-        //Show load game button if there is a save file
-        if (CheckLoadGame()) {
-            loadGameButton.gameObject.SetActive(true);            
-        }
-        //credits exit button        
+        highScoresexitButton.onClick.AddListener(ExitScores);       
         creditsExitButton.onClick.AddListener(ExitCredits);
+
         //Upload highScores View-----
-        //TODO: Change this check
+        //TODO: Change this check add another check maybe...
         if (GameManager.instance.isGameComplete) {
+            //TODO:dump save file here..
+
             //add the listeners for the buttons
             buttonUploadDB.onClick.AddListener(CheckCanUpload);
             buttonUploadCancel.onClick.AddListener(ExitScores);
@@ -80,7 +82,12 @@ public class MainMenu : MonoBehaviour {
             hasClickedUpload = false;
         }
 
-        
+        //Show load game button if there is a save file
+        if (CheckLoadGame())
+        {
+            loadGameButton.gameObject.SetActive(true);
+        }
+        //credits exit button 
 
     }
 
