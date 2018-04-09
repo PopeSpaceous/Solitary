@@ -95,7 +95,7 @@ public class PuzzlePlaceholder : MonoBehaviour {
     //Unload the puzzle scene and do the appropriate calls and sets. When a puzzle has exited
     public void PuzzleExit(bool isCompleted)
     {
-        isPuzzleComplete = true;
+        
         //set the bool that the player is not in a puzzle
         Player.instance.isInPuzzle = false;
         Player.instance.puzzle = null;
@@ -103,6 +103,7 @@ public class PuzzlePlaceholder : MonoBehaviour {
         
         if (isCompleted)
         {
+            isPuzzleComplete = true;
             level.PuzzleUpdateScore(difficulty);
 
             if (worldObject != null)
