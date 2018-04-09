@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4054432931783882}
   - component: {fileID: 114413001833000272}
   - component: {fileID: 114763898072296946}
+  - component: {fileID: 114365984343270710}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -41,6 +42,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114365984343270710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1999432921975204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073b900f26da772488ccfdb5d0dd9d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputUsername: looper
 --- !u!114 &114413001833000272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,7 +65,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5beba0745a18324ebcbe1807bc0b0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  currentScore: 0
+  doorLocks: 
+  isGameComplete: 0
+  loadGameFile: 0
+  dBData: {fileID: 0}
+  playerId: 0
+  highScore: 0
 --- !u!114 &114763898072296946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64,3 +83,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc459fad58c54346b651a1a57cb1968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  setPuzzledifficulty: 0
+  placeholder: {fileID: 0}
+  isPuzzleLoaded: 0

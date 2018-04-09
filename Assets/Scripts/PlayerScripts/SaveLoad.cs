@@ -16,10 +16,22 @@ public static class SaveLoad{
 		bf.Serialize(file, GameData.current);
 		//closes the file
 		file.Close();
-	} 
+	}
+    //Save method. 
+    public static void SaveIdentification()
+    {
+        //sets binary formatter
+        BinaryFormatter bf = new BinaryFormatter();
+        //opens the filestream and saves file to local appdata
+        FileStream file = File.Create(Application.persistentDataPath + "/IdentificationData.gd");
+        //serilalizes the gamedata
+        bf.Serialize(file, IdentifyData.current);
+        //closes the file
+        file.Close();
+    }
 
-	//Load method
-	public static void Load() {
+    //Load method
+    public static void Load() {
 		//check if file exists
 		if(File.Exists(Application.persistentDataPath + "/savedGames.gd")) {
 			//set the binary formatter
@@ -32,4 +44,25 @@ public static class SaveLoad{
 			file.Close();
 		}
 	}
+
+    //Load method. Returns false if the file does not exists
+    public static bool LoadIdentification()
+    {
+        //check if file exists
+        if (File.Exists(Application.persistentDataPath + "/IdentificationData.gd"))
+        {
+            //set the binary formatter
+            BinaryFormatter bf = new BinaryFormatter();
+            //open the filestream
+            FileStream file = File.Open(Application.persistentDataPath + "/IdentificationData.gd", FileMode.Open);
+            //assign the current game data
+            IdentifyData.current = (IdentifyData)bf.Deserialize(file);
+            //close the file
+            file.Close();
+        }
+        else {
+            return false;
+        }
+        return true;
+    }
 }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ImageScramble: Puzzle {
 
     GameController gameMN;
-
+	public AudioSource mySound;
     // Sets the parent fields
     void Awake () {
 		puzzleName = "ImageScramble";
@@ -17,6 +17,7 @@ public class ImageScramble: Puzzle {
 
     /* Your wonderful startup puzzle code here :3 */
     void Start () {
+		
         if (difficulty == 1) {
             GameObject easyPuzzle = Instantiate (Resources.Load("3x3 Puzzle"), new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
             easyPuzzle.transform.parent = GameObject.Find ("Puzzle Canvas").transform;
@@ -37,6 +38,7 @@ public class ImageScramble: Puzzle {
 
         GameObject gamemanager = GameObject.Find ("GameController");
         gameMN = gamemanager.GetComponent<GameController> ();
+		gameMN.mySound = mySound;
     }
 
     void Update () {

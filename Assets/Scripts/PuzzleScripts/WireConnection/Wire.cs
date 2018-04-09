@@ -7,9 +7,7 @@ public class Wire : MonoBehaviour {
 
 	public int wireIDLink = 0; // will be assgined by InitPuzzle()
 	public Connection connection = null;
-	
 	public float scaleLimit = 20f; // limit the scale. so its does not scale infinitely
-
     public GameObject neckGO; // the ref of the neck wire
 
 	private Camera cameraTarget; // Change this if u remove the puzzle camera
@@ -33,7 +31,7 @@ public class Wire : MonoBehaviour {
         wireSpriteHead = GetComponent<SpriteRenderer>();
         wireNeckTrans = neckGO.GetComponent<Transform>();
         wireHeadTrans = GetComponent<Transform>();
-        cameraTarget = GameObject.Find ("PuzzleCamera").GetComponent<Camera> (); // TODO: maybe have puzzlecamera have its own static instance
+        cameraTarget = GameObject.Find ("PuzzleCamera").GetComponent<Camera> ();
 	}
 
 	// Use this for initialization
@@ -61,6 +59,7 @@ public class Wire : MonoBehaviour {
 			//if the wire is connected and has not been disconnected; snap to the connection block.
 			connection.SnapWire ();
 		}
+
 	}
 	//When the player mouse down on the wire that is already connected this will causes it to disconnect	
 	void OnMouseDown(){

@@ -68,7 +68,7 @@ public class PuzzlePlaceholder : MonoBehaviour {
 
     void OnTriggerStay2D( Collider2D col)
 	{
-		if(col.gameObject.CompareTag("Player") && Player.instance.actionButtion && !Player.instance.isInPuzzle)
+		if(col.gameObject.CompareTag("Player") && Player.instance.actionButtion && !Player.instance.isInPuzzle && !isPuzzleComplete)
         {
             //set the bool that the player is in a puzzle
             Player.instance.isInPuzzle = true;
