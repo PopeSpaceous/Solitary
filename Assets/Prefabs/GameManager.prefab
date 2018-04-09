@@ -53,8 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073b900f26da772488ccfdb5d0dd9d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputUsername: jake
-  totalscore: 77331
+  inputUsername: Loops
 --- !u!114 &114413001833000272
 MonoBehaviour:
   m_ObjectHideFlags: 1

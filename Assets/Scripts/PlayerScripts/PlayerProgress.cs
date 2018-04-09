@@ -12,9 +12,9 @@ public class PlayerProgress : MonoBehaviour {
     //Game completion bool
     public bool isGameCompleted = false;
 	public bool goToPhobos = false;
-    private int score;
+    public  int score;
 
-    private int highScore;
+    public int highScore;
 
 	public bool[] doorLocks = null;
 
