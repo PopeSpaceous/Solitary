@@ -407,7 +407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1294552010
 RectTransform:
   m_ObjectHideFlags: 0
@@ -559,7 +559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1494719162
 RectTransform:
   m_ObjectHideFlags: 0
@@ -576,8 +576,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18, y: -0.00011063}
-  m_SizeDelta: {x: 539.25, y: 248.5}
+  m_AnchoredPosition: {x: 0.000030518, y: 31.2}
+  m_SizeDelta: {x: 1290.3, y: 344.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1494719163
 MonoBehaviour:
@@ -611,7 +611,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Move - WASD or Arrow Keys
+  m_Text: 'Move Left and Right - A,D or Arrow Keys
+
+
+    Jump - Space
 
 
     Interact - E
