@@ -37,8 +37,8 @@ public class SimonSays: Puzzle {
 
 	//set sequence targets for appropriate difficulties
 	private int easy = 4;
-	private int medium = 4;
-	private int hard = 5;
+	private int medium = 5;
+	private int hard = 7;
 
 	//counter to track responses
 	public int correctGuesses;
