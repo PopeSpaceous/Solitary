@@ -2125,7 +2125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &880702460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2227,7 +2227,8 @@ MonoBehaviour:
   highScoresexitButton: {fileID: 1599948757}
   creditsButton: {fileID: 1267485907}
   creditsExitButton: {fileID: 1984164477}
-  sfxTOG: {fileID: 1358527191}
+  sfxCreditsButton: {fileID: 1358527191}
+  SFXcredits: {fileID: 68144778}
   manager: {fileID: 1999432921975204, guid: b24751505665bc343a94ddf6d13d022c, type: 2}
   connectingOB: {fileID: 755519677}
   names:
@@ -2248,7 +2249,6 @@ MonoBehaviour:
   UploadHighScoreNewView: {fileID: 508745246}
   UpdateHighScoresView: {fileID: 530843879}
   highScoreNumber: {fileID: 48463668}
-  SFXcredits: {fileID: 68144780}
   nameInput: {fileID: 508745248}
   buttonUploadDB: {fileID: 369869347}
   buttonUploadCancel: {fileID: 1750452502}
@@ -2929,7 +2929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1246932215
 RectTransform:
   m_ObjectHideFlags: 0
