@@ -6,57 +6,61 @@ using UnityEngine.SceneManagement;
 
 public class SimonSays: Puzzle {
 
-    
+	/* Your wonderful startup puzzle code here :3 */
+	//all set up puzzle code goes here
+	public SpriteRenderer[] colours;
+	public AudioSource[] buttonSounds;
+
+	private int colourSelect;
+
+	//keeps track of how long colour stays lit for
+	public float stayLit;
+	private float stayLitCounter;
+
+	public float waitBetweenLights;
+	private float waitBetweenCounter;
+
+	private bool shouldBeLit;
+	private bool shouldBeDark;
+
+	public List<int> activeSequence;
+	private int positionInSequence;
+
+	private bool gameActive;
+	private int inputInSequence;
+
+	public AudioSource correct;
+	public AudioSource incorrect;
+
+	//check for difficulty
+	private int theDifficultyTarget;
+
+	//set sequence targets for appropriate difficulties
+	private int easy = 5;
+	private int medium = 7;
+	private int hard = 9;
+
+	//counter to track responses
+	public int correctGuesses;
+	public int guessCounter;
+	public bool firstTime= true;
+	public Button replayButton;
+	private Text btnText;
+	public Text gCounter;
 	// Sets the parent fields
 	void Awake () {
 		puzzleName = "SimonSays";
 		difficulty = NextSceneManager.instance.setPuzzledifficulty;
 		placeholder = NextSceneManager.instance.placeholder;
 		Debug.Log ("Difficulty for puzzle " + puzzleName + " is: "+ this.difficulty);
+		btnText = replayButton.GetComponentInChildren<Text> ();
+		btnText.text = "Start";
+		foreach (SpriteRenderer sr in colours) {
+			sr.gameObject.SetActive (false);
+		}
 	}
     
-    /* Your wonderful startup puzzle code here :3 */
-    //all set up puzzle code goes here
-    public SpriteRenderer[] colours;
-    public AudioSource[] buttonSounds;
-
-    private int colourSelect;
-
-    //keeps track of how long colour stays lit for
-    public float stayLit;
-    private float stayLitCounter;
-
-    public float waitBetweenLights;
-    private float waitBetweenCounter;
-
-    private bool shouldBeLit;
-    private bool shouldBeDark;
-
-    public List<int> activeSequence;
-    private int positionInSequence;
-
-    private bool gameActive;
-    private int inputInSequence;
-
-    public AudioSource correct;
-    public AudioSource incorrect;
-
-    //check for difficulty
-    private int theDifficultyTarget;
-
-    //set sequence targets for appropriate difficulties
-    private int easy = 5;
-    private int medium = 7;
-    private int hard = 9;
-
-    //counter to track responses
-    public int correctGuesses;
-    public int guessCounter;
-
-    GameObject start;
-    GameObject replay;
-
-    public Text gCounter;
+    
 
     // Update is called once per frame
     void Update()
@@ -104,6 +108,11 @@ public class SimonSays: Puzzle {
 
     public void StartGame()
     {
+		foreach (SpriteRenderer sr in colours) {
+			sr.gameObject.SetActive (true);
+		}
+		btnText.text = "Replay Sequence";
+		firstTime = false;
         //reset sequence
         activeSequence.Clear();
 
@@ -147,12 +156,6 @@ public class SimonSays: Puzzle {
 
         stayLitCounter = stayLit;
         shouldBeLit = true;
-
-        start = GameObject.Find("startGame");
-        start.SetActive(false);
-
-        replay = GameObject.Find("replayButton");
-        replay.SetActive(true);
 
     }
 

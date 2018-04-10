@@ -658,6 +658,8 @@ MonoBehaviour:
   incorrect: {fileID: 852518316}
   correctGuesses: 0
   guessCounter: 0
+  firstTime: 1
+  replayButton: {fileID: 1381658778}
   gCounter: {fileID: 1684319226}
 --- !u!1 &381673527
 GameObject:
@@ -1067,13 +1069,95 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1089830930526244, guid: cea9a0e53ea3908478c4899bba909596, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114757126573403878, guid: cea9a0e53ea3908478c4899bba909596,
         type: 2}
       propertyPath: instrButtion
       value: 
       objectReference: {fileID: 136756099}
+    - target: {fileID: 114401561735230380, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_Text
+      value: Sequence Puzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 114333231953929056, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.15294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 114333231953929056, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.13725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 114333231953929056, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.13725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 114333231953929056, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.15294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 114333231953929056, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.13725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 114333231953929056, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.13725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 114134552410061298, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114134552410061298, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.6627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 114134552410061298, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.11372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 114134552410061298, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114134552410061298, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114349145947184352, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Goal: Complete the sequence by clicking the matching coloured buttons.
+
+
+        Controls: Click the start button to start the puzzle. Click the coloured buttons
+        to follow the sequence. Click "Replay Sequence" to see the sequence again.
+
+
+        Tips: You have 3 tries before you have to restart the puzzle.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114349145947184352, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114349145947184352, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cea9a0e53ea3908478c4899bba909596, type: 2}
   m_IsPrefabParent: 0
@@ -1650,6 +1734,7 @@ GameObject:
   - component: {fileID: 1381658780}
   - component: {fileID: 1381658779}
   - component: {fileID: 1381658778}
+  - component: {fileID: 1381658781}
   m_Layer: 5
   m_Name: ReplayButton
   m_TagString: Untagged
@@ -1761,6 +1846,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1381658776}
+--- !u!114 &1381658781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1381658776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbfb19d3eed54bb4ca7c9283a3e90d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myButt: {fileID: 1381658778}
+  game: {fileID: 213360417}
 --- !u!1 &1427538592
 GameObject:
   m_ObjectHideFlags: 0
@@ -2405,7 +2503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -281.46, y: -121.2}
+  m_AnchoredPosition: {x: -280.66815, y: -126.00001}
   m_SizeDelta: {x: 36.64, y: 34.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684319226
@@ -2440,9 +2538,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-'
+  m_Text: 
 --- !u!222 &1684319227
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2618,7 +2714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1911090928
 RectTransform:
   m_ObjectHideFlags: 0
