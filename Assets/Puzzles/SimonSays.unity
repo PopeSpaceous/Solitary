@@ -1158,6 +1158,11 @@ Prefab:
       propertyPath: m_FontData.m_MinSize
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114757126573403878, guid: cea9a0e53ea3908478c4899bba909596,
+        type: 2}
+      propertyPath: puz
+      value: 
+      objectReference: {fileID: 213360417}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cea9a0e53ea3908478c4899bba909596, type: 2}
   m_IsPrefabParent: 0
