@@ -42,8 +42,6 @@ public class GameManager : MonoBehaviour {
         //Makes this gameobject not be unloaded when entering a new scene
         DontDestroyOnLoad (this);
 
-        NewGame(); // TODO: remove this when game is ready for deployment
-
         idData = new IdentifyData();
 
         //Load in idData id there is any
@@ -55,7 +53,7 @@ public class GameManager : MonoBehaviour {
         currentScore = 0;
         loadGameFile = false;
         //Starting locks for each level doors
-        doorLocks = new bool[5] { false, false, false, false, false };
+        doorLocks = new bool[5] { false, true, true, true, true };
     }
 
     //Set the states of the player
