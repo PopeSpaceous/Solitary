@@ -20,12 +20,19 @@ public class MainMenu : MonoBehaviour {
     public Button highScoresexitButton;
     public Button creditsButton;
     public Button creditsExitButton;
+
+    //Toggle SFX
+    public Button sfxCreditsButton;
+    public GameObject SFXcredits;
+    
+
     public GameObject manager;
 
     //HighScores Fields
     string[] items;
     WWW www;
 
+	bool showSFX = true;
     //Highscores connecting panel
     public GameObject connectingOB;
     //Highscores data
@@ -40,6 +47,7 @@ public class MainMenu : MonoBehaviour {
     public GameObject UpdateHighScoresView;
     //show the player's highscores
     public Text highScoreNumber;
+
 
     public InputField nameInput;
 
@@ -67,6 +75,7 @@ public class MainMenu : MonoBehaviour {
         //Highscores exit button
         highScoresexitButton.onClick.AddListener(ExitScores);       
         creditsExitButton.onClick.AddListener(ExitCredits);
+        sfxCreditsButton.onClick.AddListener(TogSFX);
 
         //Upload highScores View-----
         if (GameManager.instance.gameEnded && GameData.current.score >= GameManager.instance.highScore) {
@@ -158,6 +167,11 @@ public class MainMenu : MonoBehaviour {
         main.SetActive(true);
         scoresList.SetActive(false);
     }
+
+	void TogSFX(){
+		SFXcredits.gameObject.SetActive (showSFX);
+		showSFX = !showSFX;
+	}
 
     //Exit Highscore upload
     void ExitUploadScores()
