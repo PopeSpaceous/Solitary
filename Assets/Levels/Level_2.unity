@@ -2933,6 +2933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerSpawn: {fileID: 838778182}
   timerText: {fileID: 393625074}
+  levelMsgView: {fileID: 1483280726}
   levelCompleteMessage: {fileID: 1483280725}
   backToHub: {fileID: 1674500948}
 --- !u!114 &1300374352
@@ -3570,6 +3571,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1483280723}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &1483280726 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1102662037807758, guid: f14c99c8fe2fc75479af850b7ab6d9d2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1483280723}
 --- !u!1001 &1491158118
 Prefab:
   m_ObjectHideFlags: 0

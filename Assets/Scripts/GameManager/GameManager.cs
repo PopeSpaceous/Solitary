@@ -68,8 +68,6 @@ public class GameManager : MonoBehaviour {
     
     public void SaveGame() {              
         Player.instance.playerProgress.SaveGame();
-        //Save id info / highscore
-        SaveIdentify();
     }
 
     //set the player location based on given spawn point
@@ -173,6 +171,10 @@ public class GameManager : MonoBehaviour {
     //Game End will wipe the save data of player progress.
     //But it will keep the id and highscore data
     public void GameEnd() {
+        
+        //Save id info / highscore
+        SaveIdentify();
+
         gameEnded = true;
         //Dump save file
         if (File.Exists(Application.persistentDataPath + "/savedGames.gd"))
