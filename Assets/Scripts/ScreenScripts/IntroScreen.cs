@@ -8,13 +8,22 @@ public class IntroScreen : MonoBehaviour {
 
     public Button goToButtonHub;
 
+    public GameObject controlsView;
+    public GameObject introText;
+
     public GameObject fade;
 	// Use this for initialization
 	void Start () {
 		
+        goToButtonHub.onClick.AddListener(ShowControls);
+    }
+
+
+    void ShowControls() {
+        controlsView.SetActive(true);
+        introText.SetActive(false);
         goToButtonHub.onClick.AddListener(GoToHub);
     }
-	
 
     public void GoToHub() {
         //Note: If you want to add a fade. Make sure you add the fader prefab in your scene. 
