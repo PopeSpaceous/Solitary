@@ -21,9 +21,9 @@ public class PuzzlePlaceholder : MonoBehaviour {
     [HideInInspector]
     public bool isPuzzleComplete = false;
     //use for setting the appropriate set when a puzzle is completed
-    [HideInInspector]
+    //[HideInInspector]
     public Level level; //Must be set by PuzzleRandomization class
-    [HideInInspector]
+   // [HideInInspector]
     public Sprite puzzleSprite = null; //Must be set by PuzzleRandomization class
     //[HideInInspector]
     public int difficulty = 1;//The actual puzzle difficulty //Must be set by PuzzleRandomization class    
