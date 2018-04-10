@@ -12,6 +12,8 @@ public class Level : MonoBehaviour {
     private int levelID = 0;
 
     public Text timerText;
+    //Level completion message view
+    public GameObject levelMsgView;
     public Text levelCompleteMessage;
 
     public Door backToHub;// Door will be used when the level is completed to exit the level
@@ -35,8 +37,8 @@ public class Level : MonoBehaviour {
 	void Start () {
 		backgroundMusic = GameObject.FindGameObjectWithTag ("music").GetComponent<AudioSource> ();
 		StartCoroutine(AudioFadeIn.FadeIn(backgroundMusic, 3f));
-		//set the player spawn in the level
-		GameManager.instance.SetPlayerLocation(PlayerSpawn);
+        //set the player spawn in the level
+        GameManager.instance.SetPlayerLocation(PlayerSpawn);
         //set timer
         startTime = Time.time;
         //set the current score to levelScore 
@@ -72,6 +74,7 @@ public class Level : MonoBehaviour {
 
         //Level complete message
         levelCompleteMessage.text = "Level " + levelID.ToString() + " Complete!" + "\n" + "Score: " + currentLevelScore;
+        levelMsgView.SetActive(true);
         levelCompleteMessage.gameObject.SetActive(true);
         //Lock player's movement
         Player.instance.ChangeMovementLock(false);
@@ -93,6 +96,7 @@ public class Level : MonoBehaviour {
 		StartCoroutine(AudioFadeOut.FadeOut(backgroundMusic, 5f));
         //turn off some UIs
         timerText.gameObject.SetActive(false);
+        levelMsgView.SetActive(false);
     }
 
     //When a puzzle is completed this function will be called for score calulation

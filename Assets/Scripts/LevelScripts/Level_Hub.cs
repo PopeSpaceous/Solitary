@@ -9,6 +9,9 @@ public class Level_Hub : MonoBehaviour {
 	public Transform PlayerSpawn = null;
     // score UI to display
     public Text score;
+    //UI highScore to display
+    public GameObject h_score;
+    public Text h_text_score;
     // Hub doors ref (volatile of values after every new scene load). 
     //For now, the order of this array must be the same to the order to the levels unlocked
     public Door[] levelDoors; 
@@ -49,6 +52,8 @@ public class Level_Hub : MonoBehaviour {
         GameManager.instance.SetPlayerLocation(PlayerSpawn);
         //show score
         score.gameObject.SetActive(true);
+        //show highscore
+        h_score.SetActive(true);
         //unlock the player's movement
         Player.instance.ChangeMovementLock(true);
     }
@@ -56,14 +61,16 @@ public class Level_Hub : MonoBehaviour {
     private void Update()
     {
         //update Score UI
-        score.text = "Score " + GameManager.instance.currentScore.ToString();
+        score.text = "Score:" + GameManager.instance.currentScore.ToString();
+        //update HighScore UI
+        h_text_score.text = "HighScore:" + GameManager.instance.highScore.ToString();
     }
 
     public void Exit() {
-        //don't show score when we leave the hub
-
-		//music transition
-		StartCoroutine(AudioFadeOut.FadeOut(backgroundMusic, 5f));
+        //don't show scores when we leave the hub
         score.gameObject.SetActive(false);
+        //music transition
+        StartCoroutine(AudioFadeOut.FadeOut(backgroundMusic, 5f));
+        
     }
 }
