@@ -7,7 +7,7 @@ public class PuzzleRandomization : MonoBehaviour {
     public Level level; 
 
     //These will a list of the puzzle scene names
-    [HideInInspector]
+    //[HideInInspector]
     public string[] listOfPuzzles;
     public PuzzlePlaceholder[] placeholders; 
 
@@ -44,7 +44,7 @@ public class PuzzleRandomization : MonoBehaviour {
             SpriteRandomization();
             PuzzleRando();
             PlacePuzzles();
-           // DebugPlacePuzzles();
+           //DebugPlacePuzzles();
         }
     }
 
@@ -71,11 +71,10 @@ public class PuzzleRandomization : MonoBehaviour {
             }
             if (rnd == 5) {
                 listOfPuzzles [i] = "WordPasscode";
-            }
-            //uncomment and change randomization range finished
-            /*if (rnd == 6) {
+            }            
+            if (rnd == 6) {
                 listOfPuzzles [i] = "SimonSays";
-            }*/
+            }
         }
     }
 
@@ -135,7 +134,5 @@ public class PuzzleRandomization : MonoBehaviour {
             }
 
         }
-
-
     }
 }
