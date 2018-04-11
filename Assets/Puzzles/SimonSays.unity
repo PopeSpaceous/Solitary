@@ -183,7 +183,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 40603842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.475708, y: 0.81604004, z: 0}
+  m_LocalPosition: {x: -7.59, y: 1, z: 0}
   m_LocalScale: {x: 25.2159, y: 23.46993, z: 840.6129}
   m_Children: []
   m_Father: {fileID: 213360416}
@@ -644,6 +644,13 @@ MonoBehaviour:
   - {fileID: 1092944185}
   - {fileID: 1427538593}
   - {fileID: 1620810030}
+  coloursCollider:
+  - {fileID: 1661534641}
+  - {fileID: 40603846}
+  - {fileID: 1040524514}
+  - {fileID: 1092944188}
+  - {fileID: 1427538596}
+  - {fileID: 1620810033}
   buttonSounds:
   - {fileID: 1661534642}
   - {fileID: 40603847}
@@ -1142,11 +1149,11 @@ Prefab:
       value: 'Goal: Complete the sequence by clicking the matching coloured buttons.
 
 
-        Controls: Click the start button to start the puzzle. Click the coloured buttons
-        to follow the sequence. Click "Replay Sequence" to see the sequence again.
+        Controls: Click the start button to start the puzzle. You can click "Replay
+        Sequence" to see the sequence again.
 
 
-        Tips: You have 3 tries before you have to restart the puzzle.'
+        Note: You have 3 tries before you have to restart the puzzle.'
       objectReference: {fileID: 0}
     - target: {fileID: 114349145947184352, guid: cea9a0e53ea3908478c4899bba909596,
         type: 2}
@@ -1350,7 +1357,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1040524510}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.784668, y: 0.81604004, z: 0}
+  m_LocalPosition: {x: -2.5900002, y: 1, z: 0}
   m_LocalScale: {x: 25.2159, y: 23.46993, z: 840.6129}
   m_Children: []
   m_Father: {fileID: 213360416}
@@ -1543,7 +1550,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1092944184}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4606934, y: 0.69821167, z: 0}
+  m_LocalPosition: {x: 2.4099998, y: 1, z: 0}
   m_LocalScale: {x: 25.2159, y: 23.46993, z: 840.6129}
   m_Children: []
   m_Father: {fileID: 213360416}
@@ -1763,7 +1770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: -114}
+  m_AnchoredPosition: {x: -0.0000123981845, y: -114}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1381658778
@@ -1934,7 +1941,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1427538592}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.7197266, y: 0.7265625, z: 0}
+  m_LocalPosition: {x: 7.41, y: 1, z: 0}
   m_LocalScale: {x: 25.2159, y: 23.46993, z: 840.6129}
   m_Children: []
   m_Father: {fileID: 213360416}
@@ -2127,7 +2134,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1620810029}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.118469, y: 0.69821167, z: 0}
+  m_LocalPosition: {x: 12.41, y: 1, z: 0}
   m_LocalScale: {x: 25.2159, y: 23.46993, z: 840.6129}
   m_Children: []
   m_Father: {fileID: 213360416}
@@ -2353,7 +2360,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1661534637}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.219238, y: 0.78549194, z: 0}
+  m_LocalPosition: {x: -12.59, y: 1, z: 0}
   m_LocalScale: {x: 25.2159, y: 23.46993, z: 622.8538}
   m_Children: []
   m_Father: {fileID: 213360416}

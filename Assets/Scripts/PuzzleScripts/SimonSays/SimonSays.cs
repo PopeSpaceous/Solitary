@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class SimonSays: Puzzle {
 
-	/* Your wonderful startup puzzle code here :3 */
 	//all set up puzzle code goes here
 	public SpriteRenderer[] colours;
+    public BoxCollider2D[] coloursCollider;
 	public AudioSource[] buttonSounds;
 
 	private int colourSelect;
@@ -36,9 +36,9 @@ public class SimonSays: Puzzle {
 	private int theDifficultyTarget;
 
 	//set sequence targets for appropriate difficulties
-	private int easy = 4;
-	private int medium = 5;
-	private int hard = 7;
+	private int easy = 3;
+	private int medium = 4;
+	private int hard = 5;
 
 	//counter to track responses
 	public int correctGuesses;
@@ -55,8 +55,8 @@ public class SimonSays: Puzzle {
 		Debug.Log ("Difficulty for puzzle " + puzzleName + " is: "+ this.difficulty);
 		btnText = replayButton.GetComponentInChildren<Text> ();
 		btnText.text = "Start";
-		foreach (SpriteRenderer sr in colours) {
-			sr.gameObject.SetActive (false);
+		foreach (BoxCollider2D sr in coloursCollider) {
+			sr.enabled =  false;
 		}
 	}
     
@@ -108,10 +108,11 @@ public class SimonSays: Puzzle {
 
     public void StartGame()
     {
-		foreach (SpriteRenderer sr in colours) {
-			sr.gameObject.SetActive (true);
-		}
-		btnText.text = "Replay Sequence";
+        foreach (BoxCollider2D sr in coloursCollider)
+        {
+            sr.enabled = true;
+        }
+        btnText.text = "Replay Sequence";
 		firstTime = false;
         //reset sequence
         activeSequence.Clear();
