@@ -25,7 +25,7 @@ public class PuzzlePlaceholder : MonoBehaviour {
     public Level level; //Must be set by PuzzleRandomization class
    // [HideInInspector]
     public Sprite puzzleSprite = null; //Must be set by PuzzleRandomization class
-    //[HideInInspector]
+    [HideInInspector]
     public int difficulty = 1;//The actual puzzle difficulty //Must be set by PuzzleRandomization class    
     [HideInInspector]
     public RuntimeAnimatorController aniControl; // must be set by puzzleRandomization
@@ -61,45 +61,45 @@ public class PuzzlePlaceholder : MonoBehaviour {
         if (isPuzzleComplete) {
             PuzzleExit(true);
         }
-
-        //difficulty randomization
-        int diffpercent = 0;
-        if (difficultyNeed == 1)
-        {
-            diffpercent = Random.Range(0, 101);
-            if (diffpercent <= 70)
-            {
-                difficulty = 1;
-            }
-            else
-            {
-                difficulty = 2;
-            }
-        }
-        if (difficultyNeed == 2)
-        {
-            diffpercent = Random.Range(0, 101);
-            if (diffpercent <= 70)
-            {
-                difficulty = 2;
-            }
-            else
-            {
-                difficulty = 3;
-            }
-        }
-        if (difficultyNeed == 3)
-        {
-            diffpercent = Random.Range(0, 101);
-            if (diffpercent <= 70)
-            {
-                difficulty = 3;
-            }
-            else
-            {
-                difficulty = 2;
-            }
-        }
+        difficulty = difficultyNeed;
+        ////difficulty randomization
+        //int diffpercent = 0;
+        //if (difficultyNeed == 1)
+        //{
+        //    diffpercent = Random.Range(0, 101);
+        //    if (diffpercent <= 70)
+        //    {
+        //        difficulty = 1;
+        //    }
+        //    else
+        //    {
+        //        difficulty = 2;
+        //    }
+        //}
+        //if (difficultyNeed == 2)
+        //{
+        //    diffpercent = Random.Range(0, 101);
+        //    if (diffpercent <= 70)
+        //    {
+        //        difficulty = 2;
+        //    }
+        //    else
+        //    {
+        //        difficulty = 3;
+        //    }
+        //}
+        //if (difficultyNeed == 3)
+        //{
+        //    diffpercent = Random.Range(0, 101);
+        //    if (diffpercent <= 70)
+        //    {
+        //        difficulty = 3;
+        //    }
+        //    else
+        //    {
+        //        difficulty = 2;
+        //    }
+        //}
     }
 
     void OnTriggerStay2D( Collider2D col)

@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1507588944314712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.14900637, y: -13.110999, z: -1}
+  m_LocalPosition: {x: -0.14900637, y: -13.110999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,6 +81,7 @@ MonoBehaviour:
   levelName: Hub
   levelID: 0
   isDoorlocked: 0
+  worldObject: {fileID: 0}
   level: {fileID: 0}
   levelHub: {fileID: 0}
   fadeObject: {fileID: 0}
