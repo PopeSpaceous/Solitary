@@ -15,6 +15,7 @@ public class PuzzleRandomization : MonoBehaviour {
     public Sprite[] sprites_P;
     public RuntimeAnimatorController[] animatorConrollers;
 
+    public bool randomizePuzzles = true;
 
     //a key value pair, used for finding the right needed refs for a puzzleplaceholder
     private Dictionary<string, PlaceholderRefs> refDictionary;
@@ -42,7 +43,11 @@ public class PuzzleRandomization : MonoBehaviour {
         if (placeholders != null)
         {
             SpriteRandomization();
-            PuzzleRando();
+            if (randomizePuzzles)
+            {
+                PuzzleRando();
+            }
+
             PlacePuzzles();
            //DebugPlacePuzzles();
         }
@@ -52,8 +57,8 @@ public class PuzzleRandomization : MonoBehaviour {
         listOfPuzzles = new string [placeholders.Length];
         int rnd = 0;
         for (int i = 0; i < placeholders.Length; i++) {
-            //change the range from 0 -> however many puzzles, 5 at the moment
-            rnd = UnityEngine.Random.Range (0, 6);
+            //change the range from 0 -> however many puzzles
+            rnd = UnityEngine.Random.Range (0, 7);
             if (rnd == 0) {
                 listOfPuzzles [i] = "Anagram";
             }
@@ -97,8 +102,8 @@ public class PuzzleRandomization : MonoBehaviour {
         int puzzleCounter = 0;
         for (int counter = 0; counter < placeholders.Length; counter++)
         {
-
-            placeholders[counter].puzzleGoTo = listOfPuzzles[puzzleCounter];
+            if (randomizePuzzles)
+                placeholders[counter].puzzleGoTo = listOfPuzzles[puzzleCounter];
             //Set level ref
             placeholders[counter].level = this.level;
 
@@ -118,7 +123,7 @@ public class PuzzleRandomization : MonoBehaviour {
         for (int counter = 0; counter < placeholders.Length; counter++) {
 
 
-            placeholders [counter].puzzleGoTo = listOfPuzzles [puzzleCounter];
+            //placeholders [counter].puzzleGoTo = listOfPuzzles [puzzleCounter];
             //Set refs
             if (refDictionary.ContainsKey (listOfPuzzles [puzzleCounter])) { //TODO: Maybe hash the keys and listOfPuzzles and compare the hashes
                 placeholders [counter].puzzleSprite = refDictionary [listOfPuzzles [puzzleCounter]].sprite; // set sprite
