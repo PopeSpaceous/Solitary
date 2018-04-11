@@ -55,8 +55,8 @@ public class PuzzleRandomization : MonoBehaviour {
         listOfPuzzles = new string [placeholders.Length];
         int rnd = 0;
         for (int i = 0; i < placeholders.Length; i++) {
-            //change the range from 0 -> however many puzzles, 5 at the moment
-            rnd = UnityEngine.Random.Range (0, 6);
+            //change the range from 0 -> however many puzzles
+            rnd = UnityEngine.Random.Range (0, 7);
             if (rnd == 0) {
                 listOfPuzzles [i] = "Anagram";
             }
