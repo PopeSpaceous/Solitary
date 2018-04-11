@@ -64,7 +64,8 @@ public class GameManager : MonoBehaviour {
         gameCompleted = isGameComplete;
     }
     
-    public void SaveGame() {              
+    public void SaveGame() {
+        SaveIdentify();
         Player.instance.playerProgress.SaveGame();
     }
 
