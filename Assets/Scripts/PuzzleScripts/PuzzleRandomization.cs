@@ -43,8 +43,10 @@ public class PuzzleRandomization : MonoBehaviour {
         if (placeholders != null)
         {
             SpriteRandomization();
-            if(randomizePuzzles)
+            if (randomizePuzzles)
+            {
                 PuzzleRando();
+            }
 
             PlacePuzzles();
            //DebugPlacePuzzles();
@@ -100,7 +102,8 @@ public class PuzzleRandomization : MonoBehaviour {
         int puzzleCounter = 0;
         for (int counter = 0; counter < placeholders.Length; counter++)
         {
-            placeholders[counter].puzzleGoTo = listOfPuzzles[puzzleCounter];
+            if (randomizePuzzles)
+                placeholders[counter].puzzleGoTo = listOfPuzzles[puzzleCounter];
             //Set level ref
             placeholders[counter].level = this.level;
 
