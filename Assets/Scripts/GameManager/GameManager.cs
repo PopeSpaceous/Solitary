@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour {
         isGameComplete = false;
         currentScore = 0;
         loadGameFile = false;
+        gameEnded = false;
         //Starting locks for each level doors
         doorLocks = new bool[5] { false, true, true, true, true };
     }
@@ -74,8 +75,22 @@ public class GameManager : MonoBehaviour {
 		Player.instance.transform.position = sp.position;
 	}
 
-    public void UpdateScore(int addScore) {
-        currentScore += addScore;                
+    public void UpdateScore() {
+        currentScore = 0;
+        //Add up the score
+        for (int ctr = 0; ctr < Player.instance.playerProgress.Level_Scores.Length; ctr++)
+        {
+            currentScore += Player.instance.playerProgress.Level_Scores[ctr];
+        }
+
+        //Update highscore
+        if (currentScore >= highScore)
+        {
+            highScore = currentScore;
+        }
+
+        //Update player's score
+        Player.instance.playerProgress.UpdatePlayerStats(currentScore);
     }
     //Check game completion
     public void CheckCompletion() {
@@ -93,41 +108,48 @@ public class GameManager : MonoBehaviour {
     }
     
     public void LevelCompleted(int i, int addScore) {
-        UpdateScore(addScore);
-        
-        //Update completed levels and door locks
+
+        //Update completed levels,  door locks, and level score
         switch (i) {
 
             case 1:
-                
+                if(addScore > Player.instance.playerProgress.Level_Scores[0])
+                    Player.instance.playerProgress.Level_Scores[0] = addScore;
+
                 Player.instance.playerProgress.level1 = true;
                 doorLocks[i] = false;
                 break;
             case 2:
+                if (addScore > Player.instance.playerProgress.Level_Scores[1])
+                    Player.instance.playerProgress.Level_Scores[1] = addScore;
+
                 Player.instance.playerProgress.level2 = true;
                 doorLocks[i] = false;
                 break;
             case 3:
+                if (addScore > Player.instance.playerProgress.Level_Scores[2])
+                    Player.instance.playerProgress.Level_Scores[2] = addScore;
+            
                 Player.instance.playerProgress.level3 = true;
                 doorLocks[i] = false;
                 break;
             case 4:
+                if (addScore > Player.instance.playerProgress.Level_Scores[3])
+                    Player.instance.playerProgress.Level_Scores[3] = addScore;
+
                 Player.instance.playerProgress.level4 = true;
                 doorLocks[i] = false;
                 break;
             case 5:
+                if (addScore > Player.instance.playerProgress.Level_Scores[4])
+                    Player.instance.playerProgress.Level_Scores[4] = addScore;
+
                 Player.instance.playerProgress.level5 = true;
                 break;
         }
 
-        //Update highscore
-        if (currentScore >= highScore)
-        {
-            highScore = currentScore;
-        }
 
-        //Update player's score
-        Player.instance.playerProgress.UpdatePlayerStats(currentScore);
+        UpdateScore();
         CheckCompletion();
         SaveGame();
         

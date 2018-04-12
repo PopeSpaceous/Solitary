@@ -55,7 +55,6 @@ public class MainMenu : MonoBehaviour {
     public Button buttonUploadCancel;
     //allow the upload button to reg once!
     private bool hasClickedUpload = false;
-
     private void Awake()
     {
         if (GameManager.instance == null)
@@ -81,7 +80,7 @@ public class MainMenu : MonoBehaviour {
         if (GameManager.instance.gameEnded && GameData.current.score >= GameManager.instance.highScore) {
             //add the listeners for the buttons
             buttonUploadDB.onClick.AddListener(CheckCanUpload);
-            buttonUploadCancel.onClick.AddListener(ExitScores);
+            buttonUploadCancel.onClick.AddListener(ExitUploadScores);
             //Show upload highscore view
             ShowUploadHighScoresView();
 
@@ -93,7 +92,7 @@ public class MainMenu : MonoBehaviour {
         {
             loadGameButton.gameObject.SetActive(true);
         }
-        //credits exit button 
+
 
     }
 
@@ -176,8 +175,8 @@ public class MainMenu : MonoBehaviour {
     //Exit Highscore upload
     void ExitUploadScores()
     {
-        main.SetActive(true);
         UploadHighScoreView.SetActive(false);
+        main.SetActive(true);
     }
 
     //Upload highscores. will show in main meni first if game iscompleted

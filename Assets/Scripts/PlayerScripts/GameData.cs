@@ -27,8 +27,11 @@ public class GameData {
 	public  bool level4;
 	public  bool level5;
 
-	//Show instructions bools
-	public  bool i_PuzzleTemplate_100;
+    //level scores
+    public int[] Level_Scores;
+
+    //Show instructions bools
+    public  bool i_PuzzleTemplate_100;
 	public  bool i_WordPasscode_101;
 	public  bool i_SimonSays_102;
 	public  bool i_Tangrams_103;

@@ -21,6 +21,9 @@ public class PlayerProgress : MonoBehaviour {
     public bool level4 = false;
     public bool level5 = false;
 
+    //Level scores
+    public int[] Level_Scores;
+
     //Show instructions bools
     public bool i_PuzzleTemplate_100 = true;
     public bool i_WordPasscode_101 = true;
@@ -34,7 +37,11 @@ public class PlayerProgress : MonoBehaviour {
 
     private void Awake()
     {
-        
+        Level_Scores = new int[5];
+
+        for (int ctr =0; ctr < Level_Scores.Length; ctr++) {
+            Level_Scores[0] = 0;
+        }
         //Door lock ref from GM
         doorLocks = GameManager.instance.doorLocks;
         //Check if the game needs to load. Set by the main menu
@@ -59,6 +66,8 @@ public class PlayerProgress : MonoBehaviour {
 		GameData.current.level3= level3;
 		GameData.current.level4=level4;
 		GameData.current.level5=level5;
+
+        GameData.current.Level_Scores = Level_Scores;
 
 		GameData.current.i_anagrams_106=i_anagrams_106;
 		GameData.current.i_Cryptogram_104 =i_Cryptogram_104;
@@ -89,6 +98,8 @@ public class PlayerProgress : MonoBehaviour {
 		level3 = GameData.current.level3;
 		level4 = GameData.current.level4;
 		level5 = GameData.current.level5;
+
+        Level_Scores = GameData.current.Level_Scores;
 
 		i_anagrams_106 = GameData.current.i_anagrams_106;
 		i_Cryptogram_104 = GameData.current.i_Cryptogram_104;
