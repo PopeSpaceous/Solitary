@@ -2377,7 +2377,7 @@ Prefab:
     - target: {fileID: 224209465077643160, guid: cea9a0e53ea3908478c4899bba909596,
         type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 224209465077643160, guid: cea9a0e53ea3908478c4899bba909596,
         type: 2}
@@ -2479,21 +2479,21 @@ Prefab:
       propertyPath: m_Text
       value: "Goal: Connect all the wires to their correct positions on the right
         to complete the puzzle.\n\nControls: Click and drag the wires on the left
-        to a connerction on the right. \n\nHint: Connecting the right wire will unlock
-        a lock on the right. The green numbers on the top will tell you what number
-        it needs to unlock. the black number at the bottom gives the current number
-        you get when you connect a wire. If you place the wire in the wrong spot it
-        will short circuit and reset your wires. "
+        to a connerction on the right. Connecting the right wire will unlock a lock
+        on the right.\n\nHint: \nThe green numbers on the top will tell you what number
+        it needs to unlock. \nThe black number at the bottom gives the current number
+        you get when you connect a wire. \n\nIf you place the wire in the wrong spot
+        it will short circuit and reset your wires. "
       objectReference: {fileID: 0}
     - target: {fileID: 114349145947184352, guid: cea9a0e53ea3908478c4899bba909596,
         type: 2}
       propertyPath: m_FontData.m_FontSize
-      value: 22
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114349145947184352, guid: cea9a0e53ea3908478c4899bba909596,
         type: 2}
       propertyPath: m_FontData.m_MinSize
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cea9a0e53ea3908478c4899bba909596, type: 2}
