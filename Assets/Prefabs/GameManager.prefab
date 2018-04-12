@@ -100,7 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 1d4684cb35546664fb6eca15f06c937f, type: 2}
-  master: {fileID: 0}
-  music: {fileID: 0}
-  sfx: {fileID: 0}
-  playerSFX: {fileID: 0}
+  SFXlvl: 0
+  musiclvl: -30
+  puzzlvl: 0

@@ -10,9 +10,9 @@ public class AudioMix : MonoBehaviour {
 
     public AudioMixer mixer;
 
-    public float SFXlvl = 0;
-    public float musiclvl = 0;
-    public float puzzlvl = 0;
+    public float SFXlvl;
+    public float musiclvl;
+    public float puzzlvl;
 
     private void Awake()
     {
@@ -27,21 +27,46 @@ public class AudioMix : MonoBehaviour {
             Destroy(gameObject);
             Debug.LogWarning("Another instance of AudoMix has been created and destoryed!");
         }
+        
+    }
+    private void Start()
+    {
+        SetStartLevels();
+    }
+    void SetStartLevels() {
+        SetSFXLvl(SFXlvl);
+        SetMusicLvl(musiclvl);
+        SetPuzzLvl(puzzlvl);
     }
 
     public void SetSFXLvl(float lvl) {
-        mixer.SetFloat("SFX", lvl);
         SFXlvl = lvl;
+        if (lvl == -60) {
+            lvl = -80;
+        }
+            mixer.SetFloat("SFX", lvl);
+        
+
     }
     public void SetMusicLvl(float lvl)
     {
-        mixer.SetFloat("Music", lvl);
         musiclvl = lvl;
+        if (lvl == -60)
+        {
+            lvl = -80;
+        }
+        mixer.SetFloat("Music", lvl);
+        
     }
     public void SetPuzzLvl(float lvl)
     {
-        mixer.SetFloat("PuzzleSFX", lvl);
         puzzlvl = lvl;
+        if (lvl == -60)
+        {
+            lvl = -80;
+        }
+        mixer.SetFloat("PuzzleSFX", lvl);
+        
     }
 
 }
