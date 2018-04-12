@@ -1952,7 +1952,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Version: Alpha 0.22'
+  m_Text: 'Version: Alpha 0.24'
 --- !u!222 &847006424
 CanvasRenderer:
   m_ObjectHideFlags: 0
