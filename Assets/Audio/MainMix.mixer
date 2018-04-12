@@ -14,7 +14,15 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 7e0f4d0d8dd08494e923e46e4da2b856
+    name: Master
+  - guid: f94e9f6b8ce2ff345b36968412047751
+    name: Music
+  - guid: 8d7e79ef70b256145830a1e17a0d0bbd
+    name: PuzzleSFX
+  - guid: a273152c53cbcc8438681dddbff2fc82
+    name: SFX
   m_AudioMixerGroupViews:
   - guids:
     - 267f834b59793544a903f497809486b6
@@ -33,8 +41,9 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 267f834b59793544a903f497809486b6
   m_Children:
-  - {fileID: 243590638060327816}
   - {fileID: 243964968125806636}
+  - {fileID: 243590638060327816}
+  - {fileID: 243365023514080060}
   m_Volume: 7e0f4d0d8dd08494e923e46e4da2b856
   m_Pitch: 4ee24b367de252a4db19f12c375ab898
   m_Effects:
@@ -65,8 +74,8 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 48b0dc23e6cc919438412a527296bcc8
   m_FloatValues:
-    f94e9f6b8ce2ff345b36968412047751: -0.16685188
-    a273152c53cbcc8438681dddbff2fc82: -0.16685188
+    f94e9f6b8ce2ff345b36968412047751: 0.23288241
+    a273152c53cbcc8438681dddbff2fc82: -0.10231405
   m_TransitionOverrides: {}
 --- !u!243 &243365023514080060
 AudioMixerGroupController:
@@ -93,8 +102,7 @@ AudioMixerGroupController:
   m_Name: SFX
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 7145e3b46e739dc4c920a0e05a24eb86
-  m_Children:
-  - {fileID: 243365023514080060}
+  m_Children: []
   m_Volume: a273152c53cbcc8438681dddbff2fc82
   m_Pitch: 84b1e6338bfc7fe459bc2552f50f13d8
   m_Effects:

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114413001833000272}
   - component: {fileID: 114763898072296946}
   - component: {fileID: 114365984343270710}
+  - component: {fileID: 114939791463241430}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -72,6 +73,7 @@ MonoBehaviour:
   dBData: {fileID: 0}
   playerId: 0
   highScore: 0
+  gameEnded: 0
 --- !u!114 &114763898072296946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86,3 +88,19 @@ MonoBehaviour:
   setPuzzledifficulty: 0
   placeholder: {fileID: 0}
   isPuzzleLoaded: 0
+--- !u!114 &114939791463241430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1999432921975204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e843596c5a3994aa272f045c185290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 1d4684cb35546664fb6eca15f06c937f, type: 2}
+  master: {fileID: 0}
+  music: {fileID: 0}
+  sfx: {fileID: 0}
+  playerSFX: {fileID: 0}
