@@ -682,14 +682,12 @@ Prefab:
 
 
         Tip: Sometimes the scrambled letters could produce multiple words. If your
-        solution is incorreect, try a
-
-        nother word.'
+        solution is incorrect, try another word.'
       objectReference: {fileID: 0}
     - target: {fileID: 114349145947184352, guid: cea9a0e53ea3908478c4899bba909596,
         type: 2}
       propertyPath: m_FontData.m_FontSize
-      value: 26
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 114349145947184352, guid: cea9a0e53ea3908478c4899bba909596,
         type: 2}

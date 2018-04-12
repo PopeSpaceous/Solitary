@@ -31,6 +31,18 @@ public class PuzzleRandomization : MonoBehaviour {
         }
     }
 
+    //Max number of the same puzzle there can be in the a level
+    public int maxNumberOfSamePuzzles = 2;
+
+    //Number of the same puzzles placed in a level
+    int num_Anagrams = 0;
+    int num_Cryptogram = 0;
+    int num_ImageScramble = 0;
+    int num_Tangrams = 0;
+    int num_WireConnection = 0;
+    int num_WordPasscode = 0;
+    int num_SimonSays = 0;
+
     void Awake () {
         
         //populate Dictionary. The order of the refs need to match the key name
@@ -60,25 +72,81 @@ public class PuzzleRandomization : MonoBehaviour {
             //change the range from 0 -> however many puzzles
             rnd = UnityEngine.Random.Range (0, 7);
             if (rnd == 0) {
-                listOfPuzzles [i] = "Anagram";
+                num_Anagrams++;
+                if (num_Anagrams > maxNumberOfSamePuzzles)
+                {
+                    i--;
+                }
+                else {
+                    listOfPuzzles[i] = "Anagram";
+                }
             }
             if (rnd == 1) {
-                listOfPuzzles [i] = "Crytogram";
+                num_Cryptogram++;
+                if (num_Cryptogram > maxNumberOfSamePuzzles)
+                {
+                    i--;
+                }
+                else {
+                    listOfPuzzles[i] = "Crytogram";
+                }                
             }
             if (rnd == 2) {
-                listOfPuzzles [i] = "ImageScramble";
+                num_ImageScramble++;
+                if (num_ImageScramble > maxNumberOfSamePuzzles)
+                {
+                    i--;
+                }
+                else {
+                    listOfPuzzles[i] = "ImageScramble";
+                }
+                
             }
             if (rnd == 3) {
-                listOfPuzzles [i] = "Tangrams";
+                num_Tangrams++;
+                if (num_Tangrams > maxNumberOfSamePuzzles)
+                {
+                    i--;
+                }
+                else {
+                    listOfPuzzles[i] = "Tangrams";
+                }
+                
             }
             if (rnd == 4) {
-                listOfPuzzles [i] = "WireConnection";
+                num_WireConnection++;
+                if (num_WireConnection > maxNumberOfSamePuzzles)
+                {
+                    i--;
+                }
+                else
+                {
+                    listOfPuzzles[i] = "WireConnection";
+                }
+                    
             }
             if (rnd == 5) {
-                listOfPuzzles [i] = "WordPasscode";
+                num_WordPasscode++;
+                if (num_WordPasscode > maxNumberOfSamePuzzles)
+                {
+                    i--;
+                }
+                else
+                {
+                    listOfPuzzles[i] = "WordPasscode";
+                }
+                
             }            
             if (rnd == 6) {
-                listOfPuzzles [i] = "SimonSays";
+                num_SimonSays++;
+                if (num_SimonSays > maxNumberOfSamePuzzles)
+                {
+                    i--;
+                }
+                else
+                {
+                    listOfPuzzles[i] = "SimonSays";
+                }
             }
         }
     }
