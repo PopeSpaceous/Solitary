@@ -77,7 +77,7 @@ public class MainMenu : MonoBehaviour {
         sfxCreditsButton.onClick.AddListener(TogSFX);
 
         //Upload highScores View-----
-        if (GameManager.instance.gameEnded && GameData.current.score >= GameManager.instance.highScore) {
+        if (GameManager.instance.gameEnded && Player.instance.playerProgress.score >= GameManager.instance.highScore) {
             //add the listeners for the buttons
             buttonUploadDB.onClick.AddListener(CheckCanUpload);
             buttonUploadCancel.onClick.AddListener(ExitUploadScores);
@@ -134,7 +134,7 @@ public class MainMenu : MonoBehaviour {
     //Load in HighScores table
     IEnumerator LoadHighScoresData() {
 
-        www = new WWW("https://anthonynguyen435.000webhostapp.com/highscores_data.php");
+        www = new WWW("https://anthonynguyen435.000webhostapp.com/Solitary/HighscoresGetData.php");
 
         yield return www;
         string tableData = www.text;
