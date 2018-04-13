@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Nathan Misener
+// Date: 04/13/2018
+/* Summary: 
+ * Script for button exit from the computer screen
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

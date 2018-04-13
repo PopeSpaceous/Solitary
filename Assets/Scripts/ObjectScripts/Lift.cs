@@ -1,20 +1,33 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * A child of WorldObject for the lift sprite that can be interacted with another object that support WorldObjects
+ * The lift will move up and down in a loop when activated
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Lift : WorldObject {
 
-    //[HideInInspector]
-    public bool activate = false;//Begin moving the lift when true
-
+    //Begin moving the lift when true
+    public bool activate = false;
+    //Amount of distance to move
     public float liftDistance = 5f;
+    //Speed of the lift
     public float liftSpeed = 3f;
-    public bool DirectionUp = true; //if false, the direction will be down
-    public float waitTime = 1f; // wait time before it should start moving again after it reaches its distance
+    //if false, the direction will be down
+    public bool DirectionUp = true; 
+    // wait time before it should start moving again after it reaches its distance
+    public float waitTime = 1f; 
+    // checks if the player is on the platfrom or not
     [HideInInspector]
-    public bool isPlayerIn = false; // checks if the player is on the platfrom or not
+    public bool isPlayerIn = false;
 
-    private Animator liftSate;    
+    private Animator liftSate;   
+    //current distance the player is in
     private float currentDistance = 0;
     private Rigidbody2D rigdL;
 	public AudioSource mySound;
@@ -57,12 +70,14 @@ public class Lift : WorldObject {
             //Keep applying distance
             if (currentDistance < liftDistance)
             {                
-                currentDistance+= 0.1f;     //cut the distance
+                currentDistance+= 0.1f;
+                //Sound to play
 				if (!mySound.isPlaying && isPlayerIn) {
 					mySound.Play ();
 				} else if (!isPlayerIn) {
 					mySound.Stop ();
 				}
+
                 OpenMove();
             }
 			else 
@@ -86,8 +101,7 @@ public class Lift : WorldObject {
     {
         isLocked = true;
     }
-    /* Note: if you unlokcing a lift and want to activate 
-     * right now, then set the activate bool to true as well*/
+    /* Note: if you unlocking a lift and want to set activate to true */
     public override void Unlock()
     {
         isLocked = false;

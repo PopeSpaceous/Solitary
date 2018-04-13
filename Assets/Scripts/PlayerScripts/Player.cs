@@ -1,7 +1,16 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * Checks the player input, and acts like a interface for other object interaction with the player.
+ * This class makes the player static and not be unloaded automatically when a new scene is loaded
+ * It also, holds all the references of the other player's object script
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*Player will always be static throughout the game and forced to not be unloaded when a new scene is loaded */
+
 public class Player : MonoBehaviour {
 
 	//make this instance static so it can be used across scripts
@@ -12,7 +21,7 @@ public class Player : MonoBehaviour {
 
     //Used to take priority which movement lock can change the canPlayerMove value. 
     //This is so it can help prevent race conditions to which lock change can change the playermovement.
-    //The script call of lock change will take priority 
+    //The script call of locking the player's movement change will take priority 
     private bool plocked = false; 
     //bool when or not the player is in a puzzle
     public bool isInPuzzle = false;
@@ -31,7 +40,7 @@ public class Player : MonoBehaviour {
 	public float horizontalInput;
     [HideInInspector]
     public bool escapeInput = false;
-
+    //Ref of the player progress object
     public PlayerProgress playerProgress;
 
     //Audio Sources

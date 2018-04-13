@@ -1,7 +1,16 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * A child of WorldObject for the level door sprite that can be interacted with another object that support WorldObjects
+ * Door will open or close with a animation
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*This Level_Door class will be used for door that are in a level */
+
 public class Level_Door : WorldObject {
 
 	private Animator animat;
@@ -55,7 +64,8 @@ public class Level_Door : WorldObject {
 			isOpen = false;
 		}
 	}
-	//The animation controller will take care when to take off the collider, or put on.
+
+	//The animation controller will take care when to take off the collider, or put it on.
 	public void AffectDoorState(AnimationEvent eventOpen) {
 		if (eventOpen.intParameter == 0)
 		{

@@ -1,11 +1,18 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * This class will used to stop the lift if the player is at at the bottom of the lift
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/* This class will used to stop the lift if the player is in the way of the lift */
 public class LiftStopper : MonoBehaviour {
 
-    public Lift lift; // ref of lift to affect
+    //Reference to the lift to affect
+    public Lift lift;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,7 +21,6 @@ public class LiftStopper : MonoBehaviour {
         {
             lift.activate = false;            
         }
-        //Debug.Log("Lift Stop Enter");
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -22,7 +28,6 @@ public class LiftStopper : MonoBehaviour {
         {
             lift.activate = true;
         }
-        //Debug.Log("Lift Stop Exit");
     }
 
 

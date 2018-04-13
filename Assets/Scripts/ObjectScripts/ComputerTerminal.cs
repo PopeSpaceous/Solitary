@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Nathan Misener
+// Date: 04/13/2018
+/* Summary: 
+ * Computer terminal sprite for triggering the computer screen view
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

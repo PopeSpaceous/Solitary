@@ -1,4 +1,10 @@
-﻿
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Jacob Holland
+// Date: 04/13/2018
+/* Summary: 
+ * Will make the camera follow the player, and also restrict the camera from moving with the given bounds
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

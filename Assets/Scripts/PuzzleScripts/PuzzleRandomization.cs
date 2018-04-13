@@ -1,4 +1,12 @@
-﻿using System;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Authors: Jacob Holland, Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * This class will set the reference of each PuzzlePlaceHolder array with a random puzzle to go to when triggered by the player,
+ * and small references of the level, sprites and animation controller.
+*/
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

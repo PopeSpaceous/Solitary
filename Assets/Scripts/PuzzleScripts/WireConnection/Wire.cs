@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * Used for dragging and connecting toa connection object
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

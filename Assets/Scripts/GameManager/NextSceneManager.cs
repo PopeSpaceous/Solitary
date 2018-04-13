@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * For loading in a level scene, or a puzzle scene.
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,7 +33,7 @@ public class NextSceneManager : MonoBehaviour {
 		}
 
 	}
-	
+	//Load / unloads a level scene with fade or not
 	public void LoadLevelScene (string sceneName, Animator fader = null, Image im = null)
 	{
 		if (!SceneManager.GetSceneByName (sceneName).isLoaded) 
@@ -47,7 +54,7 @@ public class NextSceneManager : MonoBehaviour {
             }
 		}
 	}
-		
+	//Load in a puzzle scene
 	public void LoadPuzzleScene (string sceneName)
 	{
 		if (!isPuzzleLoaded) 
@@ -58,16 +65,18 @@ public class NextSceneManager : MonoBehaviour {
 
 		}
 	}
-
+    //unload a puzzle scene
 	public void UnloadPuzzleScene(string sceneName){
 		isPuzzleLoaded = false;
 		SceneManager.UnloadSceneAsync (sceneName);
 	}
 
+    //Will start a wait for fade transition. It will wait once the fade had fully faded to load in the nextr scene
     IEnumerator FadeToNextScene(Animator f, Image i, string sceneName)
     {
-        f.SetBool("Fade", true); // start fade
-        yield return new WaitUntil(() => i.color.a >= 1); // wait until fade has ended
+        f.SetBool("Fade", true);
+        // wait until fade has ended
+        yield return new WaitUntil(() => i.color.a >= 1); 
         //Load next scene
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
 

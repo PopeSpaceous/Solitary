@@ -1,10 +1,18 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * The primary management for managing the game's current state
+ * Game Manager will always be static throughout the game, and forced to not be unloaded when a new scene is loaded.
+ * All other objects use this class for triggering certain calls for the game
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
-/*Game Manager will always be static throughout the game and forced to not be unloaded when a new scene is loaded */
 public class GameManager : MonoBehaviour {
 
 	//make this instance static so it can be used across scripts
@@ -74,7 +82,7 @@ public class GameManager : MonoBehaviour {
     public void SetPlayerLocation(Transform sp){
 		Player.instance.transform.position = sp.position;
 	}
-
+    //Updates the player current score
     public void UpdateScore() {
         currentScore = 0;
         //Add up the score
@@ -106,7 +114,7 @@ public class GameManager : MonoBehaviour {
         }
 
     }
-    
+    // Level completion call
     public void LevelCompleted(int i, int addScore) {
 
         //Update completed levels,  door locks, and level score

@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * This will be the base class of all specific puzzle classes.
+ * All puzzle classes inherit this class for triggering a exit or completion calls.
+ * Also, for setting the difficulty and assgined puzzle placeholder that the puzzle has been triggered in.
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

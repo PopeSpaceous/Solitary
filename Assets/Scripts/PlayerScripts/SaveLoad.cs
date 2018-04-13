@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Nathan Misener
+// Co-Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * This class will load or save a file SavedGames.gd or IdentificationData.gd to a persistent data path
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;

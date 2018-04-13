@@ -1,4 +1,10 @@
-﻿
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Anthony Nguyen
+// Date: 04/13/2018
+/* Summary: 
+ *
+*/
 [System.Serializable]
 public class Questions {
 

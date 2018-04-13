@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Authors: Leonel Jara, Nathan Misener
+// Date: 04/13/2018
+/* Summary: 
+ * This class will manage a level's score, music, puzzle completion time, and level completion.
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

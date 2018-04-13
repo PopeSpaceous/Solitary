@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Jacob Holland
+// Date: 04/13/2018
+/* Summary: 
+ *
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

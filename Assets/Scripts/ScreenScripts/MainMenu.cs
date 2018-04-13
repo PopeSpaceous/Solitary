@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Co-Authors (Helpers): Nathan Misener, Anthony Nguyen
+// Date: 04/13/2018
+/* Summary: 
+ * Class for managing the main menu view, and game starting / loading / ending sequences.
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -9,10 +17,11 @@ using System;
 
 public class MainMenu : MonoBehaviour {
 
+    //Main views
     public GameObject main;
     public GameObject credits;
     public GameObject scoresList;
-
+    //button refs
     public Button loadGameButton;
     public Button newGameButton;
     public Button exitButton;
@@ -47,8 +56,7 @@ public class MainMenu : MonoBehaviour {
     public GameObject UpdateHighScoresView;
     //show the player's highscores
     public Text highScoreNumber;
-
-
+    //Upload name input
     public InputField nameInput;
 
     public Button buttonUploadDB;
@@ -166,7 +174,7 @@ public class MainMenu : MonoBehaviour {
         main.SetActive(true);
         scoresList.SetActive(false);
     }
-
+    //Button to show the sfx credits
 	void TogSFX(){
 		SFXcredits.gameObject.SetActive (showSFX);
 		showSFX = !showSFX;

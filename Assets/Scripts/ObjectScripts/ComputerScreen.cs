@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Nathan Misener
+// Date: 04/13/2018
+/* Summary: 
+ * For showing text on the the computer screen, depending on the progress the player has made in a level
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,10 +30,7 @@ public class ComputerScreen : MonoBehaviour {
 	}
 	public void runStart(){
 		Start ();
-	}
-     
-
-
+	}     
 
 	public void toggleView(){
 		if (showScreen) {
@@ -82,8 +86,6 @@ public class ComputerScreen : MonoBehaviour {
 	public void Show(CanvasRenderer Cr){
 		Cr.SetAlpha (regAlpha);
 	}
-
-
 
 	public void addLogs(){
 		Logs.Add ("Log 1: Transmission successful. Power failure. Transmission lost. Auxiliary power running");
