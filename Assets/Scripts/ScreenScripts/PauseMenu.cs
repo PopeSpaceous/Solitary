@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * Will show the pause menu if the scene has the UI canvas prefab.
+ * Game will freeze time, and show options for the player.
+ * Options include: Resume Game, Main menu, and audio sliders for music, sfx, and puzzle sfx.
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,11 +20,11 @@ public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenu;
     //hacking tool to be shown when in puzzle and it is puased
     public GameObject hackingTool;
-
+    //Audio sliders UI refs
     public Slider musicSlider;
     public Slider sFXSlider;
     public Slider puzzleSFXSlider;
-
+    //a bool to check if the audio sliders has been set with the proper values
     private bool setSliderListen = false;
 
    
@@ -42,7 +51,7 @@ public class PauseMenu : MonoBehaviour {
         {
             hackingTool.SetActive(false);
         }
-
+        //first time audio slider sets
         if (!setSliderListen)
         {
             setSliderListen = true;

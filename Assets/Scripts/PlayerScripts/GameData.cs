@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Nathan Misener
+// Date: 04/13/2018
+/* Summary:
+ * Object container for holding the player progress during the game from start to end.
+ * This is the class that will be saved and be loaded by SaveLoad
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;

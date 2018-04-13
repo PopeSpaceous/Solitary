@@ -1,4 +1,12 @@
-﻿using System;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Helper: Anthony Nguyen
+// Date: 04/13/2018
+/* Summary: 
+ * For inserting, and uplading the player's highscore to a database table called scores.
+*/
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +14,9 @@ using UnityEngine;
 
 public class DBData : MonoBehaviour {
 
- 
+    //givin user name
     public string inputUsername;
-
+    //Connection strings
     string CreateUserURL = "https://anthonynguyen435.000webhostapp.com/Solitary/InsertNewHS.php";
     string GetIDURL = "https://anthonynguyen435.000webhostapp.com/Solitary/GetHSId.php";
     string updateScoreURL = "https://anthonynguyen435.000webhostapp.com/Solitary/UpdateHS.php";
@@ -20,7 +28,7 @@ public class DBData : MonoBehaviour {
         //StartCoroutine(NewScoreEntry());
 
     }
-
+    //Trigger a upload to the database table highscores
     public void UploadHighScores(string username) {
         inputUsername = username;
         Debug.Log("Upload Started....");
@@ -33,6 +41,8 @@ public class DBData : MonoBehaviour {
         }
     }
 
+    //Gets the id in the table for the player.
+    //This is used for checking if the player has a score entry to the database highscores table
     IEnumerator LoadID() {
         WWWForm form = new WWWForm();
         Debug.Log("Checking ID.....");
@@ -67,7 +77,7 @@ public class DBData : MonoBehaviour {
         if(hasIDInDB)
             StartCoroutine(UpdateScore());
     }
-
+    //Updates an entry in the highscore table
     IEnumerator UpdateScore()
     {
         WWWForm form = new WWWForm();
@@ -85,7 +95,7 @@ public class DBData : MonoBehaviour {
         //TODO: need feedback if the update worked
     }
 
-
+    //Add in a new entry in the highscores table
     IEnumerator NewScoreEntry() {
 
         WWWForm form = new WWWForm();

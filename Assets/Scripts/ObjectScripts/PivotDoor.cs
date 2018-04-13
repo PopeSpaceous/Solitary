@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * A child of WorldObject for the pivot door sprite that can be interacted with another object that support WorldObjects
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

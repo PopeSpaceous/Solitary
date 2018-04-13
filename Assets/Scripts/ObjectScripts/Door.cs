@@ -1,10 +1,17 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * The main door for entering a level
+ * this door can also use worldobjects if connected
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-/*This Door class will only be used for door that switch to another level*/
 public class Door : MonoBehaviour {
 
 	public string levelName;

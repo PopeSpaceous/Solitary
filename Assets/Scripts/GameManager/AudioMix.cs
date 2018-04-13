@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * For managing the audio level using a mixer.
+ * This is used by the pause main menu for now.
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -8,8 +16,10 @@ public class AudioMix : MonoBehaviour {
 
     public static AudioMix instance = null;
 
+    //Ref to the ixer
     public AudioMixer mixer;
 
+    //Starting values for each sound group
     public float SFXlvl;
     public float musiclvl;
     public float puzzlvl;
@@ -31,6 +41,7 @@ public class AudioMix : MonoBehaviour {
     }
     private void Start()
     {
+        //Set the audio level with starting values
         SetStartLevels();
     }
     void SetStartLevels() {
@@ -38,7 +49,7 @@ public class AudioMix : MonoBehaviour {
         SetMusicLvl(musiclvl);
         SetPuzzLvl(puzzlvl);
     }
-
+    //Set SFX volume
     public void SetSFXLvl(float lvl) {
         SFXlvl = lvl;
         if (lvl == -60) {
@@ -48,6 +59,7 @@ public class AudioMix : MonoBehaviour {
         
 
     }
+    //Set music volume
     public void SetMusicLvl(float lvl)
     {
         musiclvl = lvl;
@@ -58,6 +70,7 @@ public class AudioMix : MonoBehaviour {
         mixer.SetFloat("Music", lvl);
         
     }
+    //set puzzle sfx volume
     public void SetPuzzLvl(float lvl)
     {
         puzzlvl = lvl;

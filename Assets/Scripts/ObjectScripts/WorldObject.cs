@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+* Any gameobject that is part of the world and is interactable, besides the puzzle placeholder,
+* all inherhit from world Object. The need functions and vars must be coded when they inherit this class 
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-/* 
- * Any gameobject that is part of the world and is interactable, beside the puzzle placeholder,
- * all inherhit from world Object. The need functions and vars must be coded when they inherit this class 
- */
 public abstract class WorldObject : MonoBehaviour {
 
     //Need vars for all world objects

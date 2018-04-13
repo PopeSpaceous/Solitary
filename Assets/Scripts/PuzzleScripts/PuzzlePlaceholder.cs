@@ -1,10 +1,19 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * This class will act a placeholder to trigger a random puzzle scene assgined by the PuzzleRandomization class.
+ * The tirgger will start when the player has entered his action key in its range.
+ * When a puzzle is completed, a call will be made to the Level class to perfrom the calulations of score.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-/* PuzzlePlaceholder */
 public class PuzzlePlaceholder : MonoBehaviour {
 
 	//difficultyNeed will be used to influence the PuzzlerRanomization difficulty selection. 

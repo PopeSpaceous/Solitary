@@ -1,9 +1,16 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * Lock for managing the connected wires
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//Author: Leonel Jara
 public class Lock : MonoBehaviour {
 
 	public static List<Lock> unlocked = new List<Lock>(); // this will hold the list of currently open locks

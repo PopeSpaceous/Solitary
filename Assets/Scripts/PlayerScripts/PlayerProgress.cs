@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Authors: Nathan Misener, Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * This class will keep track of player progress data. 
+ * It also will trigger a save or load by the SaveLoad Class
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

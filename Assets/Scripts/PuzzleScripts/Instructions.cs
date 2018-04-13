@@ -1,13 +1,15 @@
-﻿using System.Collections;
+﻿// Company: The Puzzlers
+// Copyright (c) 2018 All Rights Reserved
+// Author: Leonel Jara
+// Date: 04/13/2018
+/* Summary: 
+ * This class will be used for opening and exiting a puzzle instruction
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-/*
- * This class will be used for opening and exiting a puzzle instruction
- * 
-*/
 public class Instructions : MonoBehaviour {
 
     public Button exitButton;
