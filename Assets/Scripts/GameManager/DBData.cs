@@ -9,9 +9,9 @@ public class DBData : MonoBehaviour {
  
     public string inputUsername;
 
-    string CreateUserURL = "https://anthonynguyen435.000webhostapp.com/insertUser.php";
-    string GetIDURL = "https://anthonynguyen435.000webhostapp.com/GetId.php";
-    string updateScoreURL = "https://anthonynguyen435.000webhostapp.com/UpdateUser.php";
+    string CreateUserURL = "https://anthonynguyen435.000webhostapp.com/Solitary/InsertNewHS.php";
+    string GetIDURL = "https://anthonynguyen435.000webhostapp.com/Solitary/GetHSId.php";
+    string updateScoreURL = "https://anthonynguyen435.000webhostapp.com/Solitary/UpdateHS.php";
 
     bool hasIDInDB = false;
     // Use this for initialization
