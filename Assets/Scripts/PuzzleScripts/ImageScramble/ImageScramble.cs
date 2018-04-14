@@ -2,7 +2,7 @@
 // Copyright (c) 2018 All Rights Reserved
 // Author: Jacob Holland
 // Date: 04/13/2018
-/* Summary: 
+/* Summary: called when image scramble is the puzzle. checks the difficulty and then loads the prefab for a 3x3, 4x4, or 5x5 puzzle.
  *
 */
 using System.Collections;
