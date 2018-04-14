@@ -2,7 +2,7 @@
 // Copyright (c) 2018 All Rights Reserved
 // Author: Jacob Holland
 // Date: 04/13/2018
-/* Summary: 
+/* Summary: controlls the images and moves them on click.
  *
 */
 using System.Collections;

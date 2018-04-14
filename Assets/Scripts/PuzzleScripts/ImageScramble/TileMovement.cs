@@ -2,7 +2,7 @@
 // Copyright (c) 2018 All Rights Reserved
 // Author: Jacob Holland
 // Date: 04/13/2018
-/* Summary: 
+/* Summary: checks for a mouse click then sends the info to the game manager
  *
 */
 using System.Collections;

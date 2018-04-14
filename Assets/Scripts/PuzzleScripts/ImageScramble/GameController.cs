@@ -2,7 +2,8 @@
 // Copyright (c) 2018 All Rights Reserved
 // Author: Jacob Holland
 // Date: 04/13/2018
-/* Summary: 
+/* Summary: Main control of the image scramble puzzle. rearranges the images, shuffles the puzzle, handles the movements after a click
+            and checks for completion.
  *
 */
 using System.Collections;
