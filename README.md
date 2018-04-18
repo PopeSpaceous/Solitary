@@ -13,3 +13,9 @@ Here are some resources to learn Git
  - Basic Git Commands, and nice little walkthrough https://try.github.io/levels/1/challenges/1
  - How to do pull requests https://yangsu.github.io/pull-request-tutorial/
  - Some Common mistakes fixes https://services.github.com/on-demand/git-trouble/
+
+# Creators
+•	Nathan Misener
+•	Jacob Holland
+•	Leonel Jara
+•	Anthony Nguyen
