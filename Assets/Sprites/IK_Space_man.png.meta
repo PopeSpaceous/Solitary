@@ -1,0 +1,309 @@
+fileFormatVersion: 2
+guid: 646d29f3eed038e479310ab4e83049fb
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: IK_Space_man_0
+    21300002: IK_Space_man_1
+    21300004: IK_Space_man_2
+    21300006: IK_Space_man_3
+    21300008: IK_Space_man_4
+    21300010: IK_Space_man_5
+    21300012: IK_Space_man_6
+    21300014: IK_Space_man_7
+    21300016: IK_Space_man_8
+    21300018: IK_Space_man_9
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IK_Space_man_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 324
+        width: 52
+        height: 55
+      alignment: 9
+      pivot: {x: 0.46574312, y: 0.014176802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb646843f15a0e46b14a0f741218a9f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 273
+        width: 23
+        height: 31
+      alignment: 9
+      pivot: {x: 0.94531816, y: 0.9247968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25c30fb86d734547b0a59b9756587c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_2
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 231
+        width: 40
+        height: 85
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59bcfc4b20946994089c68c29b333167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_3
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 285
+        width: 19
+        height: 31
+      alignment: 9
+      pivot: {x: 0.11495008, y: 0.94839674}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6283ff8e58bd74abbc59562756196c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_4
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 189
+        width: 28
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5653211, y: 0.972488}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa93f72aa09d754daa320b7fd2a88be
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_5
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 175
+        width: 21
+        height: 44
+      alignment: 9
+      pivot: {x: 0.50000036, y: 0.9655602}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38b2d7bff529054d81b4f2a225c25a6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_6
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 175
+        width: 21
+        height: 44
+      alignment: 9
+      pivot: {x: 0.465162, y: 0.9905007}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cb6061ec4bb6cd46a23e83ded92f6fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_7
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 168
+        width: 26
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5280339, y: 0.98591614}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b46ce60c55da8de4a8c13bdb5302c269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 70
+        width: 36
+        height: 84
+      alignment: 9
+      pivot: {x: 0.32681316, y: 0.99305254}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85379599c7dd14a4f86333069c89c9a5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_9
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 56
+        width: 32
+        height: 84
+      alignment: 9
+      pivot: {x: 0.3329978, y: 0.9877508}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea4a18ad1663b948bd1f2fad442ae17
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5d087b008cc53834b87dc9ba629cf01a
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
