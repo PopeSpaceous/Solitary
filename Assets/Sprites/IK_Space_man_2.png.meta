@@ -1,17 +1,21 @@
 fileFormatVersion: 2
-guid: 646d29f3eed038e479310ab4e83049fb
+guid: 196be6bea2aebe44e9815a58f9fe1571
 TextureImporter:
   fileIDToRecycleName:
-    21300000: IK_Space_man_0
-    21300002: IK_Space_man_1
-    21300004: IK_Space_man_2
-    21300006: IK_Space_man_3
-    21300008: IK_Space_man_4
-    21300010: IK_Space_man_5
-    21300012: IK_Space_man_6
-    21300014: IK_Space_man_7
-    21300016: IK_Space_man_8
-    21300018: IK_Space_man_9
+    21300000: IK_Space_man_2_0
+    21300002: IK_Space_man_2_1
+    21300004: IK_Space_man_2_2
+    21300006: IK_Space_man_2_3
+    21300008: IK_Space_man_2_4
+    21300010: IK_Space_man_2_5
+    21300012: IK_Space_man_2_6
+    21300014: IK_Space_man_2_7
+    21300016: IK_Space_man_2_8
+    21300018: IK_Space_man_2_9
+    21300020: IK_Space_man_2_10
+    21300022: IK_Space_man_2_11
+    21300024: IK_Space_man_2_12
+    21300026: IK_Space_man_2_13
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -94,201 +98,281 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IK_Space_man_0
+      name: IK_Space_man_2_0
       rect:
         serializedVersion: 2
-        x: 81
-        y: 319
+        x: 211
+        y: 486
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.7576769, y: 0.81549066}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e9a780d2789ad42bd851004b104f34
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_2_1
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 515
         width: 62
         height: 65
       alignment: 9
-      pivot: {x: 0.47126842, y: 0.088918835}
+      pivot: {x: 0.5, y: 0.09024001}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bb646843f15a0e46b14a0f741218a9f
+      spriteID: 6ae769766ba6fe84abd2e4ddd4c38a10
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IK_Space_man_1
+      name: IK_Space_man_2_2
       rect:
         serializedVersion: 2
-        x: 41
-        y: 268
-        width: 33
-        height: 41
+        x: 268
+        y: 424
+        width: 58
+        height: 94
       alignment: 9
-      pivot: {x: 0.81037325, y: 0.8211878}
+      pivot: {x: 0.6212711, y: 0.72148746}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f25c30fb86d734547b0a59b9756587c7
+      spriteID: 31ad07a8642cc9e448b2b0619317dd61
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IK_Space_man_2
+      name: IK_Space_man_2_3
       rect:
         serializedVersion: 2
-        x: 87
-        y: 226
-        width: 50
-        height: 95
-      alignment: 9
-      pivot: {x: 0.099999994, y: 0.05263158}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59bcfc4b20946994089c68c29b333167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IK_Space_man_3
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 280
-        width: 29
-        height: 41
-      alignment: 9
-      pivot: {x: 0.22828622, y: 0.7247545}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb6283ff8e58bd74abbc59562756196c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IK_Space_man_4
-      rect:
-        serializedVersion: 2
-        x: 24.000002
-        y: 184
-        width: 37.999992
-        height: 82
-      alignment: 9
-      pivot: {x: 0.5481314, y: 0.91486746}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7aa93f72aa09d754daa320b7fd2a88be
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IK_Space_man_5
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 170
-        width: 31
-        height: 54
-      alignment: 9
-      pivot: {x: 0.4499034, y: 0.887189}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a38b2d7bff529054d81b4f2a225c25a6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IK_Space_man_6
-      rect:
-        serializedVersion: 2
-        x: 118
-        y: 170
-        width: 31
-        height: 54
-      alignment: 9
-      pivot: {x: 0.4855307, y: 0.89442587}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1cb6061ec4bb6cd46a23e83ded92f6fe
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IK_Space_man_7
-      rect:
-        serializedVersion: 2
-        x: 154
-        y: 163
+        x: 335
+        y: 484
         width: 36
-        height: 82.000015
+        height: 41
       alignment: 9
-      pivot: {x: 0.4977222, y: 0.926234}
+      pivot: {x: 0.20589532, y: 0.81761205}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b46ce60c55da8de4a8c13bdb5302c269
+      spriteID: b4c935ac1f3f12540bc038a6506eadff
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IK_Space_man_8
+      name: IK_Space_man_2_4
       rect:
         serializedVersion: 2
-        x: 59
-        y: 65
-        width: 46
-        height: 94
+        x: 195
+        y: 416
+        width: 33.999985
+        height: 65.99997
       alignment: 9
-      pivot: {x: 0.3644625, y: 0.9406001}
+      pivot: {x: 0.60797685, y: 0.9072427}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85379599c7dd14a4f86333069c89c9a5
+      spriteID: 64ebdce53730b5041a6a005621405a24
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IK_Space_man_9
+      name: IK_Space_man_2_5
       rect:
         serializedVersion: 2
-        x: 171
-        y: 51
+        x: 349
+        y: 402
+        width: 34
+        height: 66.00003
+      alignment: 9
+      pivot: {x: 0.6045442, y: 0.90109813}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcefa2cf623fe4e428bff57798c56a60
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_2_6
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 370
+        width: 34
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5081159, y: 0.70933795}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b7a95d5426d454f80d7a6dd88c360d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_2_7
+      rect:
+        serializedVersion: 2
+        x: 246.99998
+        y: 326
+        width: 31.000015
+        height: 54
+      alignment: 9
+      pivot: {x: 0.48209038, y: 0.86039114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 204ee13d30c0b0c4f83604317463d900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_2_8
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 323
+        width: 31
+        height: 54
+      alignment: 9
+      pivot: {x: 0.4789222, y: 0.84774554}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48a3c9b661a6f014c949c0c837d152de
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_2_9
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 348
+        width: 34
+        height: 29
+      alignment: 9
+      pivot: {x: 0.4588264, y: 0.713763}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae4a88199cc9b042bc742f78d3ef0b2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_2_10
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 265
+        width: 38
+        height: 86
+      alignment: 9
+      pivot: {x: 0.47322243, y: 0.9200411}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cbc52c23c0f889499098c8e9f5e6f20
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_2_11
+      rect:
+        serializedVersion: 2
+        x: 246.99998
+        y: 276
+        width: 42.000015
+        height: 27
+      alignment: 9
+      pivot: {x: 0.29605854, y: 0.6098147}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1433e1da42a5274c961e04b0ab73072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_2_12
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 276
         width: 42
-        height: 94
+        height: 27
       alignment: 9
-      pivot: {x: 0.37276024, y: 0.9358624}
+      pivot: {x: 0.28036934, y: 0.6098136}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ea4a18ad1663b948bd1f2fad442ae17
+      spriteID: 4990749243e2f4a4ba7e877f9c533b8c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IK_Space_man_2_13
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 255
+        width: 38.00003
+        height: 86
+      alignment: 9
+      pivot: {x: 0.4787875, y: 0.917088}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50fbe9d0adb84744b9b061369d302b9e
       vertices: []
       indices: 
       edges: []
@@ -296,7 +380,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5d087b008cc53834b87dc9ba629cf01a
+    spriteID: dbd28b823ffe60d448e2a14db016ebd8
     vertices: []
     indices: 
     edges: []
@@ -304,6 +388,6 @@ TextureImporter:
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData: 636756960539659192
+  userData: 636758369745512144
   assetBundleName: 
   assetBundleVariant: 
