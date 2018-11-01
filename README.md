@@ -1,5 +1,5 @@
-# Development Has Ended
-This repo is only for archival purposes now.
+# Development Has Become Open
+
 
 # Creators
 •	Nathan Misener
