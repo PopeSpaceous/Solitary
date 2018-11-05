@@ -107,22 +107,15 @@ public class Crytogram: Puzzle {
 		List<string> textString = new List<string>(); 
 		//retString is the string we will return to Start() function
 		string retString = "";
-		//Opens a stream reader
-		StreamReader sr;
+		//create Resource functor
+		PuzzleResourceClass pr = new PuzzleResourceClass (); 
 		if (x == 5) {
-			//check the difficulty of the puzzle
-			sr = new StreamReader ("5LWords.csv");
+			//get 5 letter word list
+			textString = new List<string>(pr.GetFive());
 		} else {
-			sr = new StreamReader ("4LWords.csv");
+			//get 4 letter word list
+			textString = new List<string>(pr.GetFour());
 		}
-		//grab each line in the file
-		do {
-			textString.Add(sr.ReadLine ());
-		} while (sr.Peek () != -1);
-		//close the stream reader
-		sr.Close ();
-		//clone the split string by ';' delim
-
 		//get a random integer between 0 and thelength(exclusively) of the string
 		int r = (int)(Random.Range (0, (float)textString.Count));
 		//Get the random tan coordinate from the string array

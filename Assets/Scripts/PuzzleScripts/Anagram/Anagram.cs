@@ -106,29 +106,24 @@ public class Anagram: Puzzle {
 	}
 
 	public string getStringFromFile (int x){
+		
 		//textString holds the string data from the file which will be split by delimeter
 		//retString is the string we will return to Start() function
 		List<string> textString = new List<string>(); 
+		//create Resource functor
+		PuzzleResourceClass pr = new PuzzleResourceClass (); 
 		string retString = "";
-		//Opens a stream reader
-		StreamReader sr;
 		if (x == 6) {
-			sr = new StreamReader ("6LWords.csv");
+			//get 6 letter word list
+			textString = new List<string>(pr.GetSix());
 		}
 		else if (x == 5) {
-			//check the difficulty of the puzzle
-			sr = new StreamReader ("5LWords.csv");
+			//get 5 letter word list
+			textString = new List<string>(pr.GetFive());
 		} else {
-			sr = new StreamReader ("4LWords.csv");
+			//get 4 letter word list
+			textString = new List<string>(pr.GetFour());
 		}
-		//grab each line in the file
-		do {
-			textString.Add(sr.ReadLine ());
-		} while (sr.Peek () != -1);
-		//close the stream reader
-		sr.Close ();
-		//clone the split string by ';' delim
-
 		//get a random integer between 0 and thelength(exclusively) of the string
 		int r = (int)(Random.Range (0, (float)textString.Count));
 		//gets a random string from the list
