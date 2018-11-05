@@ -7,3 +7,5 @@
 •	Jacob Holland
 •	Leonel Jara
 •	Anthony Nguyen
+
+Discord chat link : (https://discord.gg/22htXJf)
