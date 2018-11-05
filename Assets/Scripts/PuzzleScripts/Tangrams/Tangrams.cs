@@ -159,32 +159,28 @@ public class Tangrams: Puzzle {
 		//textString holds the string data from the file which will be split by delimeter
 		//retString is the string we will return to Start() function
 		string textString="", retString;
+		//create Resource functor
+		PuzzleResourceClass pr = new PuzzleResourceClass (); 
 		//Opens a stream reader
-		StreamReader sr;
+
 		//check the difficulty of the puzzle
 		switch (this.difficulty){
 		case 1:
 			//load an easy puzzle
-			sr = new StreamReader ("tanEasy.txt");
+			textString = pr.GetTanEasy();
 			break;
 		case 2:
 			//load med puzzle
-			sr = new StreamReader ("tanMed.txt");
+			textString = pr.GetTanMed();
 			break;
 		case 3:
 			//load hard puzzle
-			sr = new StreamReader ("tanDiff.txt");
+			textString = pr.GetTanDiff();
 			break;
 		default:
 			//Debug.Log ("No Difficulty Assigned");
 			return "";
 		}
-		//grab each line in the file
-		do {
-			textString+=sr.ReadLine();
-		} while (sr.Peek () != -1);
-		//close the stream reader
-		sr.Close ();
 		//clone the split string by ';' delim
 		string[] parsedString = (string[]) (textString.Split(';')).Clone();
 		//get a random integer between 0 and thelength(exclusively) of the string
