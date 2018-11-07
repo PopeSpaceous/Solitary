@@ -88,7 +88,7 @@ git checkout -b add-new-asset upstream/master
 ### Step 1: Opening the Project using Unity  
 If this is your first time opening unity, the ability to open a project is not avaliable to you, create a new project with default values.  
 
-<img width="350" src='ReadmeAssets/Click on New.png'>  
+<img width="350" src='ReadmeAssets/Click_on_New.png'>  
 
 After you enter the development screen go to the top right corner and click on file.  
 <img width="350" src='ReadmeAssets/under_file_choose_open_project.png'>    
