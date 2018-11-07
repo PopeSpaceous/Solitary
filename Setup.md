@@ -3,14 +3,14 @@
 ### Step 1: Go to the [Unity Downloads page](https://unity3d.com/get-unity/download/archive)  
 
 ### Step 2: Under the Unity 2017.x tab navigate to the Unity 2017.3.0 Release  
-<img width="350" src='Readme Assets/unity under 2017.png'> 
+<img width="350" src='ReadmeAssets/unity_under_2017.png'> 
 
 ### Step 3: Download the release applicable to your environment  
-<img width="350" src='Readme Assets/unity 3.0.png'> 
+<img width="350" src='ReadmeAssets/unity_30.png'> 
 
 ### Step 4: Launch the installer and install the program (no changes to the default installation)  
 ### Step 5: Log into Unity/Create an account with Unity  
-<img width="350" src='Readme Assets/Log in.png'>   
+<img width="350" src='ReadmeAssets/Log_in.png'>   
 
 ### Step 5.5: If you have created an account, Unity will ask you what you are going to be using Unity for. In our case, we are using Unity in a Personal environment (Personal Edition) and not in any professional capacity.  
 
@@ -25,7 +25,7 @@ Once set up we can go to the next part
 The first step is to create a fork of this repo.  
 Do so by clicking on the fork button on the top of this page. A fork is basically your own working copy of this repository.
 
-<img width="500" src='Readme Assets/Fork Repo.png'>   
+<img width="500" src='ReadmeAssets/Fork_Repo.png'>   
 
 ### Step 3: Clone the project (repository)  
 
@@ -88,20 +88,20 @@ git checkout -b add-new-asset upstream/master
 ### Step 1: Opening the Project using Unity  
 If this is your first time opening unity, the ability to open a project is not avaliable to you, create a new project with default values.  
 
-<img width="350" src='Readme Assets/Click on New.png'>  
+<img width="350" src='ReadmeAssets/Click on New.png'>  
 
 After you enter the development screen go to the top right corner and click on file.  
-<img width="350" src='Readme Assets/under file choose open project.png'>    
+<img width="350" src='ReadmeAssets/under_file_choose_open_project.png'>    
 
 Click onto the open project button and navigate to where you have the project downloaded.  
 
 Once the project is open, go to the bottom left of the window, under screens click onto MainMenu.  
 
-<img width="350" src='Readme Assets/click on mainmenu.png'>   
+<img width="350" src='ReadmeAssets/click_on_mainmenu.png'>   
 
 In the top middle of the screen press the play button.  
 
-<img width="350" src='Readme Assets/click on play.png'>    
+<img width="350" src='ReadmeAssets/click_on_play.png'>    
 
 Ensure that the game is running.  
 
