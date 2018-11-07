@@ -111,4 +111,4 @@ After you ensure that the game is running you are able to contribute to the proj
 
 Remember to consult the contribution documentation on how to push your changes to the main project.  
 
-[Contributions](Contributions.md)
+[Contributions](Contribution.md)
