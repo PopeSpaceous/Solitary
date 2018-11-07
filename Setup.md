@@ -10,7 +10,7 @@
 
 ### Step 4: Launch the installer and install the program (no changes to the default installation)  
 ### Step 5: Log into Unity/Create an account with Unity  
-<img width="350" src='ReadmeAssets/Log_in.png'>   
+<img width="350" src='ReadmeAssets/Log_in.PNG'>   
 
 ### Step 5.5: If you have created an account, Unity will ask you what you are going to be using Unity for. In our case, we are using Unity in a Personal environment (Personal Edition) and not in any professional capacity.  
 
@@ -25,7 +25,7 @@ Once set up we can go to the next part
 The first step is to create a fork of this repo.  
 Do so by clicking on the fork button on the top of this page. A fork is basically your own working copy of this repository.
 
-<img width="500" src='ReadmeAssets/Fork_Repo.png'>   
+<img width="500" src='ReadmeAssets/Fork_Repo.PNG'>   
 
 ### Step 3: Clone the project (repository)  
 
@@ -88,7 +88,7 @@ git checkout -b add-new-asset upstream/master
 ### Step 1: Opening the Project using Unity  
 If this is your first time opening unity, the ability to open a project is not avaliable to you, create a new project with default values.  
 
-<img width="350" src='ReadmeAssets/Click_on_New.png'>  
+<img width="350" src='ReadmeAssets/Click_on_New.PNG'>  
 
 After you enter the development screen go to the top right corner and click on file.  
 <img width="350" src='ReadmeAssets/under_file_choose_open_project.png'>    

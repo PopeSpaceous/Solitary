@@ -1,5 +1,5 @@
 # Development Has Become Open
-<img src='ReadmeAssets/Solitary_Main_Screen.png'>
+<img src='ReadmeAssets/solitary_main_screen.PNG'>
 # [Cutting Edge Release Demo](http://compileofcrap.com/Solitary/)
 
 # [Buggy Live Version to Demo](http://compileofcrap.com/Solitary/)
