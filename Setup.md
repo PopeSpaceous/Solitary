@@ -8,7 +8,7 @@
 ### Step 3: Download the release applicable to your environment  
 <img width="350" src='ReadmeAssets/unity_30.png'> 
 
-### Step 4: Launch the installer and install the program (no changes to the default installation)  
+### Step 4: Launch the installer and install the program (no changes to the default installation)   
 ### Step 5: Log into Unity/Create an account with Unity  
 <img width="350" src='ReadmeAssets/Log_in.PNG'>   
 
