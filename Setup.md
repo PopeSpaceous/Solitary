@@ -3,7 +3,7 @@
 ### Step 1: Go to the [Unity Downloads page](https://unity3d.com/get-unity/download/archive)  
 
 ### Step 2: Under the Unity 2017.x tab navigate to the Unity 2017.3.0 Release  
-<img width="350" src='ReadmeAssets/unity_under_2017.png'> 
+<img width="350" src='ReadmeAssets/unity_under_2017.PNG'> 
 
 ### Step 3: Download the release applicable to your environment  
 <img width="350" src='ReadmeAssets/unity_30.png'> 
