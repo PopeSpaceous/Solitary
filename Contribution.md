@@ -41,8 +41,8 @@ git push origin <your-new-branch-name>
 
 Head over to your repository on GitHub and click on the green "Compare and pull request" button.
 
-<img src="ReadmeAssets/New_Pull_Request">
+<img src="ReadmeAssets/New_Pull_Request.PNG">
 
 Describe your changes and submit your pull request
 
-<img src=".github/pr2.png" alt="Submit pull request" />
+<img src="ReadmeAssets/Pull_Request_Description.PNG" />
