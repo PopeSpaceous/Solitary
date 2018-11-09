@@ -1,4 +1,7 @@
 # Development Has Become Open
+<img src='ReadmeAssets/solitary_main_screen.PNG'>  
+
+# [Cutting Edge Release Demo](http://compileofcrap.com/Solitary/)
 
 # [Buggy Live Version to Demo](http://compileofcrap.com/Solitary/)
 
