@@ -90,7 +90,7 @@ public class Tans : MonoBehaviour {
 				//if they're the same type of Tan
 				if (this.type == inTan.type) {
 					//move the current tan to the position of the Puzzle Tan. 
-					this.transform.position = new Vector3 (inTan.transform.position.x, this.transform.position.y, 1.0f);
+					this.transform.position = new Vector3 (inTan.transform.position.x, inTan.transform.position.y, 1.0f);
 					//set x & y to true
 					xCheck = true;	
 					yCheck = true;
