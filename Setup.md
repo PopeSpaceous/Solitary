@@ -54,7 +54,7 @@ If you haven't already, start by changing your directory to the rebus repository
 cd Solitary
 ```
 
-Then add `Popespacious/Solitary` as the upstream remote:
+Then add `PopeSpacious/Solitary` as the upstream remote:
 
 ```
 git remote add upstream https://github.com/PopeSpaceous/Solitary.git
