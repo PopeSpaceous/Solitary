@@ -54,10 +54,10 @@ If you haven't already, start by changing your directory to the rebus repository
 cd Solitary
 ```
 
-Then add `Popespacious/Solitary` as the upstream remote:
+Then add `PopeSpacious/Solitary` as the upstream remote:
 
 ```
-git remote add upstream https://github.com/Popespacious/Solitary.git
+git remote add upstream https://github.com/PopeSpaceous/Solitary.git
 ```  
 ### Step 5: Create a Branch  
 It's common practice to create a new branch for each new feature or bugfix you are working on. Let's go ahead and create one!
