@@ -9,6 +9,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TangramType
+{
+	Square = 1,
+	Parallelogram,
+	SmallTriangle,
+	MediumTriangle,
+	LargeTriangle
+}
+
 public class Tans : MonoBehaviour {
 	public Tangrams collectionTan;
 	public Tangrams puzzTan;
@@ -16,7 +25,7 @@ public class Tans : MonoBehaviour {
     bool placed; 
 	float distance = 10;
 	//5:Big tri, 4:med tri, 3:small tri, 2 Paral, 1: Square
-	public int type;
+	public TangramType type;
 	public Vector2 myTanPosition;
 	public int direction;
 	bool hasPlayed = false;
@@ -105,7 +114,7 @@ public class Tans : MonoBehaviour {
 	//checks to see if the direction of the tans are the same
 	public bool checkRotation(Tans inTan){
 		switch (type) {
-		case 2:
+		case TangramType.Parallelogram:
 			//For Paralellogram
 			//Check what direction its facing
 			if (flipped == inTan.flipped) {
@@ -114,7 +123,7 @@ public class Tans : MonoBehaviour {
 			} else {
 				return false;
 			}
-		case 1:
+		case TangramType.Square:
 			//For square
 //			Debug.Log ("square Direction " + (this.direction % 2).ToString () + " VS " + (inTan.direction % 2).ToString ());
 			//Since a square rotated 90 degrees fits the same way it really only has 2 directions

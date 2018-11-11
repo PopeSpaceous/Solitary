@@ -28,7 +28,7 @@ public class FlipBtn : MonoBehaviour {
 	}
 	//when button is clicked call the flip function if the Tangram is a paralellogram
 	void TaskOnClick(){
-		if (parTan.type == 2) {
+		if (parTan.type == TangramType.Parallelogram) {
 			parTan.Flip ();
 		}
 	}
