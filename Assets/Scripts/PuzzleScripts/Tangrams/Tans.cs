@@ -48,7 +48,9 @@ public class Tans : MonoBehaviour {
 	//used for flip button
 	public void Flip(){
 		//rotate 180 on y axis
-		transform.Rotate (new Vector3 (0, 180, 0));
+		Vector3 flippedScale = transform.localScale;
+		flippedScale.x *= -1;
+		transform.localScale = flippedScale;
 		//when its flipped the direction is off by 1 unit for some reason, so we add one.
 		direction = (int)((this.transform.eulerAngles.z+1.0f) / 45);
 		//toggle flip variable
