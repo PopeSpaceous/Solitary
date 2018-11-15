@@ -1,6 +1,7 @@
 - how to play 
 - helpful hints 
 - A guide to play testing
+
 You could add, how to play, helpful hints. A guide to play testing (this may need some research to make a guide). And a link to the readme and contributions.
 You could also find some tutorials or guides for coding in unity as resource links.
 
