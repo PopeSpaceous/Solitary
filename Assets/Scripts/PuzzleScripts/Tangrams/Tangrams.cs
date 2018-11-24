@@ -57,12 +57,18 @@ public class Tangrams: Puzzle {
 					Vector3 newPosition = new Vector3 (tempX+pC.transform.position.x, tempY+pC.transform.position.y, 1.0f);
 					myT.transform.position = newPosition;
 					//myT.snapToGrid();
-					//transforms the rotation of tan
-					myT.transform.Rotate (new Vector3 (0.0f, (float.Parse (tanCoord [2])),0.0f ));
-					myT.rotateTan((float.Parse (tanCoord [3])));
 
 					//check if flipped
-					myT.flipped = (tanCoord [4] == "0") ? false : true;	
+					bool isFlipped = (tanCoord[4] == "0") ? false : true;
+					if (isFlipped)
+					{
+						myT.Flip();
+					}
+
+					//transforms the rotation of tan
+					//myT.transform.Rotate (new Vector3 (0.0f, (float.Parse (tanCoord [2])),0.0f ));
+					myT.rotateTan((float.Parse (tanCoord [3])));
+
 					myT.transform.localScale += new Vector3 (0.04f, 0.04f, 0);
 					counter++;
 				}
