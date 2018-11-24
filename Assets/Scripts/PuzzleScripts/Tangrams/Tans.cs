@@ -70,6 +70,11 @@ public class Tans : MonoBehaviour {
 		direction = (int)((this.transform.eulerAngles.z+1.0f) / 45);
 		//toggle flip variable
 		flipped = (flipped)?false:true;
+
+#if DEBUG
+		Debug.Log(string.Format("Tans.Flip() [Parallelogram]: {0}, {1}, {2}, {3}, {4}",
+			this.transform.position, this.type, this.flipped, this.direction, this.transform.localEulerAngles));
+#endif
 	}
 
 	// Update is called once per frame
@@ -212,6 +217,11 @@ public class Tans : MonoBehaviour {
 		//check to see if it is solved
 		if (placed)
 			collectionTan.checkSolve (puzzTan);
+
+#if DEBUG
+		Debug.Log(string.Format("Tans.Flip() [Parallelogram]: {0}, {1}, {2}, {3}, {4}",
+			this.transform.position, this.type, this.flipped, this.direction, this.transform.localEulerAngles));
+#endif
 	}
 
 	//adjusts the position so it snaps to a spot

@@ -78,6 +78,14 @@ public class Tangrams: Puzzle {
 		foreach (Tans objT in myTans){
 			//loop through each tan in the Outline Tangram
 			foreach (Tans puzT in x.myTans) {
+#if DEBUG
+				if (objT.type == TangramType.Parallelogram && puzT.type == TangramType.Parallelogram)
+				{
+					Debug.Log(string.Format("Moveable: {0}, {1}, {2}, {3}, {4}\nOutline:{5} {6}, {7}, {8}, {9}",
+						objT.transform.position, objT.type, objT.flipped, objT.direction, objT.transform.localEulerAngles,
+						puzT.transform.position, puzT.type, puzT.flipped, puzT.direction, puzT.transform.localEulerAngles));
+				}
+#endif
 				//check to see if the positions match
 				if (objT.checkPos(puzT)) {
 					//check to see if the tan types match
@@ -187,6 +195,9 @@ public class Tangrams: Puzzle {
 		int r = (int)(Random.Range(0, (float)parsedString.Length));
 		//Get the random tan coordinate from the string array
 		retString = parsedString [(int)r];
+#if DEBUG
+		Debug.Log(string.Format("Tangram Puzzle: Difficulty: {0}, Index: {1}", this.difficulty, r));
+#endif
 		return retString;
 	}
 }
