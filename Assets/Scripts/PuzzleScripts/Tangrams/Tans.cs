@@ -47,12 +47,34 @@ public class Tans : MonoBehaviour {
 	}
 	//used for flip button
 	public void Flip(){
-		//rotate 180 on y axis
-		transform.Rotate (new Vector3 (0, 180, 0));
+		// Flip the x-coordinates
+		Vector3 flippedScale = transform.localScale;
+		flippedScale.x *= -1;
+		transform.localScale = flippedScale;
+
+		// Make proper adjustments when the parallelogram is rotated at
+		// 45, 135, 225, and 315 degrees
+		switch (direction)
+		{
+			case 3:  // 135
+			case 7:  // 315
+				transform.Rotate(new Vector3(0, 0, -90));
+				break;
+			case 1:  // 45
+			case 5:  // 225
+				transform.Rotate(new Vector3(0, 0, 90));
+				break;
+		}
+
 		//when its flipped the direction is off by 1 unit for some reason, so we add one.
 		direction = (int)((this.transform.eulerAngles.z+1.0f) / 45);
 		//toggle flip variable
 		flipped = (flipped)?false:true;
+
+#if DEBUG
+		Debug.Log(string.Format("Tans.Flip() [Parallelogram]: {0}, {1}, {2}, {3}, {4}",
+			this.transform.position, this.type, this.flipped, this.direction, this.transform.localEulerAngles));
+#endif
 	}
 
 	// Update is called once per frame
@@ -195,6 +217,11 @@ public class Tans : MonoBehaviour {
 		//check to see if it is solved
 		if (placed)
 			collectionTan.checkSolve (puzzTan);
+
+#if DEBUG
+		Debug.Log(string.Format("Tans.Flip() [Parallelogram]: {0}, {1}, {2}, {3}, {4}",
+			this.transform.position, this.type, this.flipped, this.direction, this.transform.localEulerAngles));
+#endif
 	}
 
 	//adjusts the position so it snaps to a spot
