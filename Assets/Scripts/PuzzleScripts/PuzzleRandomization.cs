@@ -96,7 +96,7 @@ public class PuzzleRandomization : MonoBehaviour {
                     i--;
                 }
                 else {
-                    listOfPuzzles[i] = "Crytogram";
+                    listOfPuzzles[i] = "Cryptogram";
                 }                
             }
             if (rnd == 2) {
