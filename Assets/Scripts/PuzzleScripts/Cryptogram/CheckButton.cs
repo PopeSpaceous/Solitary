@@ -12,7 +12,7 @@ using UnityEngine.UI;
 
 public class CheckButton : MonoBehaviour {
 	//refs cryptogram puzzle and self
-	public Crytogram Cryptogram;
+	public Cryptogram Cryptogram;
 	public Button myButt;
 	// Use this for initialization
 	void Start () {

@@ -13,7 +13,7 @@ using UnityEngine.UI;
 using System.IO;
 
 
-public class Crytogram: Puzzle {
+public class Cryptogram: Puzzle {
 	//List of alphabet a-z
 	public List<char> alpha= new List<char>();
 	//list of Alphabet Cipher uses 3 words then (a-z) without duplicate letters
@@ -63,7 +63,7 @@ public class Crytogram: Puzzle {
 			//sets the scrambled text field
 			z.setTextZone (this.mySWord);
 		}
-		puzzleName = "Crytogram";
+		puzzleName = "Cryptogram";
 		difficulty = NextSceneManager.instance.setPuzzledifficulty;
 		placeholder = NextSceneManager.instance.placeholder;
 		//calls hint method
