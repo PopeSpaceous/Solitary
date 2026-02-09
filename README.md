@@ -1,7 +1,7 @@
 # Development Has Become Open
 <img src='ReadmeAssets/solitary_main_screen.PNG'>  
 
-# [Cutting Edge Release Demo](http://compileofcrap.com/Solitary/)
+# [Cutting Edge Release Demo](https://travelingchalkboard.com/games/solitary/)
 
 ## Who can contribute?
 
