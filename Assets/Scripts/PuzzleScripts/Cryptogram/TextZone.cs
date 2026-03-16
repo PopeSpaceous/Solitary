@@ -16,7 +16,7 @@ public class TextZone : MonoBehaviour {
 	//list of input fields for cryptogram
 	public List<InputField> inFields;
 	//ref to cryptogram
-	public Crytogram myCryp;
+	public Cryptogram myCryp;
 	//the coded and actual word 
 	public string codedWord, actWord;
 	//my colours for the fields
